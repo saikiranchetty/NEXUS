@@ -1,0 +1,207 @@
+nexus:
+  name: NEXUS
+  description: Complete automated GitHub ecosystem
+  root_path: ./NEXUS
+  
+  repositories:
+    - id: "01"
+      name: "01-Web"
+      description: "Web development projects"
+      categories:
+        - Static-Websites
+        - Dynamic-Websites
+        - Frontend-Applications
+        - Backend-Applications
+        - FullStack-Applications
+        - Ecommerce
+        - CRM
+        - ERP
+        - Dashboards
+        - Landing-Pages
+        - Portfolio-Websites
+        - Web-Tools
+    
+    - id: "02"
+      name: "02-AI"
+      description: "Artificial Intelligence projects"
+      categories:
+        - Chatbots
+        - RAG-Systems
+        - AI-Assistants
+        - Computer-Vision
+        - NLP
+        - Fine-Tuning
+        - MultiModal
+        - AI-Products
+        - AI-Projects
+    
+    - id: "03"
+      name: "03-Agentic-AI"
+      description: "Agentic AI and multi-agent systems"
+      categories:
+        - Single-Agent
+        - Multi-Agent
+        - Browser-Agents
+        - Coding-Agents
+        - Research-Agents
+        - Recruiting-Agents
+        - Sales-Agents
+        - Agent-Platforms
+    
+    - id: "04"
+      name: "04-Automation"
+      description: "Automation and RPA projects"
+      categories:
+        - Browser-Automation
+        - Workflow-Automation
+        - Desktop-Automation
+        - Email-Automation
+        - Social-Media-Automation
+        - WhatsApp-Automation
+        - Telegram-Automation
+        - RPA
+        - AI-Automation
+    
+    - id: "05"
+      name: "05-Data"
+      description: "Data engineering and analytics"
+      categories:
+        - Databases
+        - Data-Science
+        - Analytics
+        - ETL
+        - Data-Engineering
+        - Visualization
+        - Data-Projects
+    
+    - id: "06"
+      name: "06-Cybersecurity"
+      description: "Security and ethical hacking"
+      categories:
+        - Web-Security
+        - API-Security
+        - OSINT
+        - Bug-Bounty
+        - Ethical-Hacking
+        - Linux
+        - Digital-Forensics
+        - Security-Projects
+    
+    - id: "07"
+      name: "07-DevOps"
+      description: "DevOps and infrastructure"
+      categories:
+        - Git
+        - GitHub
+        - CI-CD
+        - Docker
+        - Kubernetes
+        - Terraform
+        - Monitoring
+        - Logging
+        - Infrastructure
+        - DevOps-Projects
+    
+    - id: "08"
+      name: "08-Cloud"
+      description: "Cloud platforms and architecture"
+      categories:
+        - AWS
+        - Azure
+        - GCP
+        - Multi-Cloud
+        - Serverless
+        - Cloud-Security
+        - Cloud-Architecture
+    
+    - id: "09"
+      name: "09-SaaS"
+      description: "Software as a Service projects"
+      categories:
+        - CRM
+        - HRMS
+        - Inventory
+        - Finance
+        - Education
+        - Healthcare
+        - Analytics
+        - AI-SaaS
+    
+    - id: "10"
+      name: "10-Business"
+      description: "Business and startup resources"
+      categories:
+        - SaaS-Ideas
+        - Product-Ideas
+        - Marketing
+        - Sales
+        - Growth
+        - Investments
+        - Revenue-Models
+        - Startup-Research
+    
+    - id: "11"
+      name: "11-Research"
+      description: "Research and innovation"
+      categories:
+        - Whitepapers
+        - Experiments
+        - Innovation
+        - Architecture-Reviews
+        - Case-Studies
+        - Research-Projects
+    
+    - id: "12"
+      name: "12-Portfolio"
+      description: "Portfolio and showcase"
+      categories:
+        - Featured-Projects
+        - Achievements
+        - Certifications
+        - Blogs
+        - Resume
+        - Showcase
+    
+    - id: "13"
+      name: "13-Shared-Templates"
+      description: "Shared templates and resources"
+      categories:
+        - README-Templates
+        - Project-Templates
+        - Architecture-Templates
+        - Documentation-Templates
+        - Prompt-Templates
+        - Resume-Templates
+        - Proposal-Templates
+        - Checklists
+    
+    - id: "99"
+      name: "99-Archive"
+      description: "Archive and deprecated projects"
+      categories:
+        - Deprecated
+        - Legacy-Projects
+        - Experiments
+
+  repository_files:
+    - README.md
+    - LICENSE
+    - CONTRIBUTING.md
+    - SECURITY.md
+    - CHANGELOG.md
+    - ROADMAP.md
+    - .gitignore
+
+  project_folders:
+    - docs
+    - architecture
+    - frontend
+    - backend
+    - database
+    - infrastructure
+    - automation
+    - prompts
+    - scripts
+    - tests
+    - assets
+    - deployment

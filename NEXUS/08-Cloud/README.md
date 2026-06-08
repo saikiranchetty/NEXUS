@@ -1,0 +1,63 @@
+# 08-Cloud
+
+## Overview
+
+Repository for 08-Cloud projects and resources.
+
+## Categories
+
+- AWS
+- Azure
+- GCP
+- Multi-Cloud
+- Serverless
+- Cloud-Security
+- Cloud-Architecture
+
+## Directory Structure
+
+```
+08-Cloud/
+├── docs/                  # Documentation
+├── architecture/          # Architecture diagrams and specs
+├── frontend/              # Frontend code
+├── backend/               # Backend code
+├── database/              # Database schemas and migrations
+├── infrastructure/        # Infrastructure as Code
+├── automation/            # Automation scripts
+├── prompts/               # AI prompts and templates
+├── scripts/               # Utility scripts
+├── tests/                 # Test suites
+├── assets/                # Assets and resources
+├── deployment/            # Deployment configurations
+└── README.md              # This file
+```
+
+## Getting Started
+
+1. Clone the repository
+2. Follow the setup instructions in each project folder
+3. Check `CONTRIBUTING.md` for contribution guidelines
+
+## Documentation
+
+- [Contributing](CONTRIBUTING.md) - Contribution guidelines
+- [Security](SECURITY.md) - Security policy
+- [Changelog](CHANGELOG.md) - Version history
+- [Roadmap](ROADMAP.md) - Future plans
+
+## License
+
+This project is licensed under the MIT License - see [LICENSE](LICENSE) file for details.
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+
+## Security
+
+For security issues, please see [SECURITY.md](SECURITY.md) instead of using the issue tracker.
+
+---
+
+**Last Updated:** 2026-06-08 15:07:55
