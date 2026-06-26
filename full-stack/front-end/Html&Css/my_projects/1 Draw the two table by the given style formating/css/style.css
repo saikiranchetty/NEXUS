@@ -1,0 +1,32 @@
+
+.table1{
+    /* text-align: center; */
+    padding:10px;
+    margin: 50px;
+    color: white;
+}
+tr,th,td{
+    border: 5px solid black;
+}
+body{
+    background-color: rgb(40, 39, 90);
+}
+.table2{
+    border-collapse: collapse;
+    background-color: rgb(32, 154, 103);
+    text-align: center;
+    width: 700px;
+}
+.tr1{
+    font-weight: bolder;
+}
+#acc{
+    color:rgb(12, 12, 12);
+    padding: 30px;
+}
+#span1{
+    background-color: rgb(152, 76, 180);
+}
+.color1{
+    background-color:rgb(194, 236, 8);
+}

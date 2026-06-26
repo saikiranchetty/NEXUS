@@ -1,0 +1,75 @@
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    height: 100%;
+    width: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 9px;
+}
+
+#main{
+    width: 55vw;
+}
+
+
+.box1{
+    display: flex;
+    flex-direction: column;
+}
+
+.box2{
+    display: flex;
+    flex-direction: column;
+}
+
+.box3{
+    display: flex;
+    flex-direction: column;
+}
+label{
+    margin-bottom:3px ;
+}
+
+.box4{
+    display: flex;
+    flex-direction: column;
+}
+.box5{
+    display: flex;
+    flex-direction: column;
+}
+.box6{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    width: 100px;
+    height: 10px;
+}
+
+input::placeholder{
+    font-size: 8px;
+   
+}
+
+#main{
+    border: 10px solid blue;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#main #container{
+    display: flex;
+    gap: 40px;
+}
+
+#main .container2{
+    display: flex;
+    gap: 40px;
+}

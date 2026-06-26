@@ -1,0 +1,23 @@
+table { border-spacing: 30px;}.form-container {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.left-align {
+    text-align: left;
+}
+
+.center-align {
+    text-align: center;
+}
+
+.right-align {
+    text-align: right;
+}
+
+label, input {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+

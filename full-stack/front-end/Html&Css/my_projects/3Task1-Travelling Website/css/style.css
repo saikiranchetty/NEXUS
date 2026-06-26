@@ -1,0 +1,225 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+header{
+    width: 100vw;
+    height: 60vw;
+    background-image:url('https://images.unsplash.com/photo-1619995745882-f4128ac82ad6?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFja2dyb3VuZCUyMGltYWdlfGVufDB8fDB8fHww');
+    background-position:bottom;
+    background-size: cover;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.header-content{
+    margin-bottom: 150px;
+    text-align: center;
+}
+.header-content h4{
+    font-size: 4vmin;
+}
+.content-line{
+    width: 200px;
+    height: 4px;
+    background-color: red;
+    margin: 12px auto;
+    border-radius: 5px;
+}
+a{
+    text-decoration: none;
+    color: aliceblue;
+
+}
+.header-content h3{
+    font-size: 5vmin;
+    margin-top: 38px;
+    margin-bottom: 30px;
+}
+.btn{
+    padding: 7px 15px;
+    background: #fb0272;
+    border-radius: 30px;
+    color: whitesmoke;
+}
+ul{
+    list-style: none;
+}
+.active{
+    color:#fb0272;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.navbar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px;
+    color: aliceblue;
+
+}
+/* .logo{
+
+} */
+.navlinks{
+   display: flex;
+   align-items: center;
+}
+.navlinks li{
+    margin: 0px 30px;
+}
+/* .fa-bars{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 40px;
+    cursor: pointer;       
+}*/
+/* Mobile DEvice */
+/*@media only screen and (max-width:850px){
+    .navbar{
+        padding: 0;
+    }
+    .logo{
+        position: absolute;
+        top: 30px;
+        left: 30px;
+    }
+    .navlinks{
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        background: rgb(115, 6, 169);
+        margin-top: -900px;
+    }
+    .navlinks li{
+        margin: 30px auto;
+    }
+    .fa-bars{
+        margin-top: 0px;
+    }
+} */
+ section{
+    width: 80%;
+    margin: 80px auto;
+    
+ }
+ .title{
+    text-align: center;
+    font-size: 4vmin;    
+    color: rgb(103, 71, 132);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ }
+ .row{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+ }
+ .row .column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+ .events .row{
+    margin-top: 50px;
+ }
+ .holi{
+    font-size: 3vmin;
+    color: rgb(104, 76, 130);
+    margin: 20px auto;
+ }
+ .column p{
+    color: rgb(105, 102, 109);
+    padding: 0px 40px;
+ }
+ .events .btn{
+    margin: 30px;
+ }
+ body,html{
+    overflow-x: hidden;
+ }
+ .explore{
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://thumbs.dreamstime.com/b/faceless-girl-taking-photos-mountains-back-view-woman-blogger-mountain-hiking-tourist-traveler-adventure-traveling-208471694.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+ }
+ .explore-content{
+    width: 60%;
+    padding: 50px;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+ }
+ .explore-content h1{
+    font-size: 5vmin;
+    margin-bottom: 20px;
+ }
+ .explore-content p{
+    color: rgb(251, 250, 253);
+    font-weight: 600px;
+    font-size: 17px;
+ }
+ .explore-content .btn{
+    margin-top: 40px;
+ }
+  .imgcolumn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+  .imggallery{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 5px;
+  }
+  .imggallery img{
+    width: 100%;
+    height:100%;
+    border-radius: 8px;
+  }
+  .contentcolumn{
+    width: 30%;
+  }
+  .imgcolumn{
+    width: 55%;
+  }
+  .contentcolumn h1{
+    font-size: 4vmin;
+  }
+  .contentcolumn .content-line{
+    margin-left: 3px;
+  }
+  .contentcolumn p{
+    padding: 0;
+    margin: 30px auto;
+  }
+  .contentcolumn .btn{
+    margin-left: -100px;
+  }
+  .footer{
+    background-color: #484872;
+    width: 100%;
+    min-height: 100px;
+    padding: 20px 80px;
+    margin: 0;
+    text-align: center;
+  }
+  .footer p{
+    color: whitesmoke;
+    margin: 20px auto;
+    padding: 20px auto;
+  }

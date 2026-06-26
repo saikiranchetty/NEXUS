@@ -1,0 +1,143 @@
+<!-- doctype is used  for knowing the version of the html(here we use the html5 version)--><!DOCTYPE html><html lang="en"><!-- head tag is used used to adding external link or file --><head>
+    <!-- meta tag  is used for the responsive web design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--title tag is used for adding title to the documents or web page  -->
+    <title>structure of HTML</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <table class="table1">
+      <tbody><tr>
+          <th>Header Column 1</th>
+          <th>Header Column 2</th>
+          <th>Header Column 3</th>
+          <th>Header Column 4</th>
+      </tr>
+       <tr>
+          <td>Row2-Item1</td>
+          <td>Row2-Item2</td>
+          <td class="nest1" rowspan="2">
+              <h4>Row2-Nested Table1</h4>
+                <table class="table1.2">
+                    <tbody><tr>
+                        <th>Row 1 Header</th>
+                        <td>item</td>
+                    </tr>
+                    <tr>
+                        <th>Row 2 Header</th>
+                        <td>item</td>
+                    </tr>
+                    <tr>
+                        <th>Row 3 Header</th>
+                        <td>item</td>
+                    </tr>
+                </tbody></table>
+          </td>
+          <td>Row2-Item4
+              <p>A second line</p>
+          </td>
+       </tr>
+          <tr><td>
+            <h4>Row3-Nested Table2</h4>
+              <table class="table1.1">
+                  <tbody><tr>
+                      <th>Row 1 Header</th>
+                      <td>item</td>
+                  </tr>
+                  <tr>
+                      <th>Row 2 Header</th>
+                      <td>item</td>
+                  </tr>
+              </tbody></table>
+          </td>
+          <td>Row 3- Item 2</td>
+          <td rowspan="2">Row 3- Item 3</td>
+       </tr>
+       <tr>
+          <td>Row 4- Item 1</td>
+          <td>Row 4- Item 2</td>
+          <td>Row 4- Item 3</td>
+          <!-- <td></td> -->
+       </tr>
+       <tr>
+          <td colspan="4">Row 5 - Last rows of Outer Table</td>
+       </tr>
+  </tbody></table>
+  <table class="table2">
+      <tbody><tr class="tr1">
+          <td class="color1" id="acc"><span id="span1"><strong>ACC</strong></span></td>
+          <td class="color1"></td>
+          <td>Column <p>Header 1a</p></td>
+          <td>Column <p>Header 1b</p></td>
+          <td>Column <p>Header 1c</p></td>
+          <td>Column <p>Header 1d</p></td>
+      </tr>
+      <tr class="tr1">
+          <td class="color1"></td>
+          <td class="color1"></td>
+          <td>Column <p>Header 2a</p></td>
+          <td>Column <p>Header 2b</p></td>
+          <td>Column <p>Header 2c</p></td>
+          <td>Column <p>Header 2d</p></td>
+      </tr>
+      <tr>
+          <td rowspan="4" class="color1"><strong> Row header 1a</strong></td>
+          <td class="color1"><strong>Row header 2a</strong></td>
+          <td>Data col 1<p>row1</p></td>
+          <td>Data col 2<p>row1</p></td>
+          <td>Data col 3<p>row1</p></td>
+          <td>Data col 4<p>row1</p></td>
+      </tr>
+      <tr>
+          <td class="color1"><strong>Row header 2b</strong></td>
+          <td>Data col 1<p>row2</p></td>
+          <td>Data col 2<p>row2</p></td>
+          <td>Data col 3<p>row2</p></td>
+          <td>Data col 4<p>row2</p></td>
+      </tr>
+      <tr>
+          <td class="color1"><strong>Row header 2c</strong></td>
+          <td>Data col 1<p>row3</p></td>
+          <td>Data col 2<p>row3</p></td>
+          <td>Data col 3<p>row3</p></td>
+          <td>Data col 4<p>row3</p></td>
+      </tr>
+      <tr>
+          <td colspan="3" class="color1"><strong>Summary Sub-Total</strong></td>
+          <td>Total 1a</td>
+          <td>Total 2a</td>
+      </tr>
+      <tr>
+          <td rowspan="3" class="color1"><strong> Row header 1b</strong></td>
+          <td class="color1"><strong>Row header 2d</strong></td>
+          <td>Data col 1<p>row1</p></td>
+          <td>Data col 2<p>row1</p></td>
+          <td>Data col 3<p>row1</p></td>
+          <td>Data col 4<p>row1</p></td>
+      </tr>
+      <tr>
+          <td class="color1"><strong>Row header 2e</strong></td>
+          <td>Data col 1<p>row2</p></td>
+          <td>Data col 2<p>row2</p></td>
+          <td>Data col 3<p>row2</p></td>
+          <td>Data col 4<p>row2</p></td>
+      </tr>
+      <tr>
+          <td colspan="3" class="color1"><strong>Summary Sub-Total</strong></td>
+          <td>Total 1b</td>
+          <td>Total 2b</td>
+      </tr>
+      <tr>
+          <td colspan="4" class="color1"><strong>Grand Total</strong></td>
+          <td>Grand-Total</td>
+          <td>Grand-Total</td>
+      </tr>
+  </tbody></table>
+  
+
+
+   
+   
+      
+</body></html>

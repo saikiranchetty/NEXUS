@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-eqiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adventure website</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>  
+<body>
+    <!----Nav bar-->
+    <section class="header">
+        <nav>
+            <h1 style="color: aliceblue;">ADVENTURE</h1>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="#a">HOME</a></li>
+                    <li><a href="#b">TOUR</a></li>
+                    <li><a href="#c"> EXPLORE</a></li>
+                    <li><a href="#d">ABOUT</a></li>
+                    <li class="hero-btn"><a href="#e">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box" id="a">
+            <h2>Explore The Colorful World</h2>
+                <div>
+            <h1>A WONDERFUL GIFT</h1></div>
+           
+            <a href="#aa" class="hero-btn">Learn More</a>
+
+        </div>
+
+    </section>
+    <!-----===Events==-->
+    <section class="events">
+        <div class="title">
+            <h1>Upcoming events</h1>
+            <div class="line"></div>
+
+        </div>
+        <div class="row">
+           <div calss="col">
+             <img src="R.392485accbe8dea3501981800b565883" width="400px" alt="">
+              <h4>Event Camp Terk</h4>
+             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus voluptates eos laboriosam recusandae exceptur.</p>
+             <center><a href="#" class="hero-btn">learn More</a></center>
+            </div>
+            <div calss="col">
+                <img src="images/holiday.jpg" width="400px" alt="">
+                <h4>Event Camp Terk</h4>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus voluptates eos laboriosam recusandae.</p>
+                <center><a href="#" class="hero-btn">learn More</a></center>
+            </div>
+        </div>
+
+    </section>
+    <section class="explore">
+        <div class="explore-content">
+            <h1>EXPLORE THE WORLD</h1>
+            <div class="line"></div>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, quisquam praesentium vitae sed pariatur voluptates ex eum corporis voluptatem quibusdam debitis eaque. Facere  sequi.</p>
+            <a href="#" class="ctn">Learn More</a>
+
+        </div>
+
+    </section>
+    
+    <section class="tours">
+        <div class="row">
+            <div class="col content-col">
+                <h1>UPCOMING TOURS &amp; DESTINATION</h1>
+                <div class="line"></div>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde dolorem tempore beatae similique, deleniti cum accusantium fuga molestias alias ad esse numquam doloribus illum quae in laboriosam quis eos ratione!</p>
+                <a href="#" class="ctn">Learn more</a>
+            </div>
+            <div class="col image-col">
+                <div class="image-gaallery">
+                    <img src="images/adventure-hero.jpg" width="300" height="200px" alt="">
+                    <img src="OIP.hBtOvR5kG68FiDPY0E81BQHaE8" width="300" height="200px" alt="">
+                    <img src="images/5-New-Adventure-Travel-Tours-to-Book-Now.jpg" width="300" height="200px" alt="">
+                    <img src="images/adventure-trip-guide-3.jpg" width="300" height="200px" alt="">
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="footer">
+        <p>123 Fifth Avenue ,NY 10160,New York,USA |Phone:800-123-456 | Email: contact @gmail.com</p>
+        <p>Copyright @ 2020 Outdoor Adventure</p>
+    </section>
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+    </script>
+    
+
+    
+
+   
+
+</body></html>

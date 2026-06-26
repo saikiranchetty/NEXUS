@@ -1,0 +1,317 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+   
+}
+
+
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('https://www.japjitravel.com/blog/wp-content/uploads/2014/12/adventure2.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+nav{
+    display: flex;
+    padding: 2%  6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: rgb(236, 232, 232);
+    text-decoration: none;
+    font-size: 13px;
+}
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+    
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+.logo{
+    color: whitesmoke;
+    font-size: 20px;
+    top: 30px;
+    left: 30px;
+
+}
+
+.line{
+    height: 4px;
+    width: 150px;
+    margin: 10px auto;
+    background-color: #270be0;
+    border-radius: 5px;
+ 
+}
+.ctn{
+    padding: 8px 15px;
+    background-color: #0d92da;
+    border-radius: 30px;
+    color: whitesmoke;
+    text-decoration: none;
+
+}
+.btn:focus{
+    outline: none;
+}
+.header-content{
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.header-content h1{
+    margin-bottom: 20px;
+}
+nav .fa{
+    display: none;
+}
+.sec{
+    width: 80%;
+    margin: 80px auto;
+
+
+}
+.sec{
+    width: 80%;
+    margin: 80px auto;
+}
+.title{
+    text-align: center;
+    font-size: 4vmin;
+    color: #0cd2f0;
+}
+.row{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+.row .col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.col{
+    margin: 50px;
+}
+.col h4{
+    margin: 20px auto;
+    font-size: 3vmin;
+    color: #b30799;
+}
+.col p{
+    color: rgb(20, 98, 165);
+    font-size: smaller;
+    margin-bottom: 30px;
+    
+    
+   
+}
+
+.row .col img{
+    width: 100%;
+    height: 300px;
+    border-radius: 30px;
+
+}
+.Explore{
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://i.ytimg.com/vi/YEynA8oMnq8/maxresdefault.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    
+}
+.explorecontent{
+    width: 50%;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.explorecontent h1{
+    font-size: 7vmin;
+   
+    text-align: center;
+
+}
+.explorecontent .ctn{
+    margin-top: 40px;
+}
+.explorecontent .line{
+    margin-bottom: 50px ;
+}
+.tours .img{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+}
+.img img{
+    width: 250px;
+    margin: 5px;
+    height: 150px;
+
+    
+
+}
+.tours .row .col{
+    width: 60%;
+}
+.content-col{
+    margin-left: 30px;
+}
+.content-col h1{
+    font-size: 7vmin;
+    color: #711599;
+    margin: 10px;
+
+   
+}
+.content-col p{
+    font-weight: 600;
+    padding: 0;
+    margin: 20px auto;
+    
+}
+.content-col .ctn{
+    margin-left: 100px;
+}
+
+.footer{
+    width: 100%;
+    min-height: 100px;
+    padding: 20px 80px;
+    margin: 0;
+    background-color: #0fb4e1;
+    text-align: center;
+}
+.footer p{
+    color: whitesmoke;
+    margin: 20px auto;
+    padding: 20px auto;
+}
+
+
+@media(max-width: 750px){
+    .header-content h1{
+        font-size: 20px;
+    }
+    .nav-links ul li{
+        display: block;
+       
+    }
+    .nav-links{
+        position: absolute;
+        background: #aa49d7;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+       
+
+    }
+    nav .fa{
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    
+    .nav-links ul{
+        padding: 30px;
+    }
+    .row{
+        flex-direction: column;
+
+
+    }
+    .col img{
+        max-width: 90%;
+    }
+    .row .col{
+        margin: 20px auto;
+    }
+    .explorecontent{
+        width: 100%;
+
+
+    }
+    .tours .col{
+        width: 100%;
+    }
+    .img{
+        justify-content: center;
+        align-items: center;
+    }
+    .img img{
+        width: 70%;
+        height: 250px;
+    }
+    .footer{
+        padding: 10px;
+    }
+    
+
+
+
+
+}
+img{
+    transition: 0.3sease;
+}
+img:hover{
+    transform: scale(1.1);
+}
+.ctn:hover{
+    background: #c52d2d;
+    color: bisque;
+    box-shadow: 2px 2px 5px black;
+}
+
+
+
