@@ -1,0 +1,665 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            font-family: sans-serif;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: bold;
+            color: blue;
+            text-align: center;
+            text-decoration: underline ;
+
+        }
+    #c{
+            font-family: Verdana;
+            color: white;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: bold;
+            background: linear-gradient(to bottom, #33ccff ,#ff99cc 100%);
+            border-collapse: collapse;
+            border: 4px solid #000000;
+            border-style: dashed;
+        }
+    #c.inner{
+            border: 10px;
+        }
+        input[type=text],input[type=email],input[type=number]{
+            width=50%;
+            padding:6px 12px;
+            margin=5px 0;
+            box-sizing: border-box;
+        }
+        input[type=submit],input[type=reset]{
+      width:15%;
+      padding:6px 10px;
+      margin:5px 0;
+      box-sizing: border-box;}
+    </style>
+     <style>
+        #kk {
+            max-width: 600px;
+            height: fit-content;
+            margin: 20px auto;
+            padding: 20px;
+            border: solid ;
+            
+            
+        }
+
+        .KK-group {
+            display: flex;
+            justify-content: space-between ;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .KK-group label {
+            flex: 1;
+            margin-right: 10px;
+            display: block;
+        }
+        
+        
+
+    </style>
+   
+   
+</head>
+<body>
+    
+<h2>Student Registration From</h2>
+<table id="c" align="center" cellpadding="10">
+    <tbody><tr>
+        <td>First Name</td>
+        <td><input type="text" placeholder="Nanda"></td>
+    </tr>
+    <tr>
+        <td>Last Name</td>
+        <td><input type="text" placeholder="Tulasi"></td>
+    </tr>
+    <tr>
+        <td>Email ID</td>
+        <td><input type="email" placeholder="nandatulasi491@gmail.com"></td>
+
+    </tr>
+    <tr>
+        <td>Mobile number</td>
+        <td><input type="text" placeholder="9490135086"></td>
+
+    </tr>
+    <tr>
+        <td>GEnder</td>
+        <td>
+            <input type="radio">Male
+            <input type="radio">FeMale
+
+        </td>
+    </tr>
+    <tr>
+        <td>DOB</td>
+        <td>
+            <select name="Birthday_day" id="Birthday_day">
+                <option value="-1">Day:</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+            <select name="Birthday_month" id="Birthday_month">
+                <option value="-1">Month:</option>
+                <option value="January">Jan(1)</option>
+                <option value="Feburary">Feb(2)</option>
+               </select>
+               <select name="Birthday_year" id="Birthday_year">
+                <option value="-1">Year:</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Address <br><br><br></td>
+        <td><textarea name="address" rows="10" cols="50"></textarea></td>
+    </tr>
+    <tr>
+        <td>city</td>
+        <td><input type="text" placeholder="hyderbad"></td>
+    </tr>
+    <tr>
+        <td>Pin code</td>
+        <td><input type="text" placeholder="516228"></td>
+    </tr>
+    <tr>
+        <td>state</td>
+        <td><input type="text" placeholder="AP"></td>
+    </tr>
+    <tr>
+        <td>Country</td>
+        <td><input type="text" placeholder="India">
+        </td>
+    </tr>
+    <tr>
+        <td>HOBBIES</td>
+        <td>
+            <input type="checkbox"> Drawing
+            <input type="checkbox"> Dancing
+            <input type="checkbox">  Singing
+            <input type="checkbox">Sketching
+         <input type="checkbox">others
+            <input type="text">
+    
+        </td>
+    </tr>
+    <tr>
+        <td>Qualification<br><br><br></td>
+
+        <td><br>
+        <input type="checkbox">High School(10TH) <br>
+       <input type="checkbox">Graduates(degree) <br>
+        <input type="checkbox">Masters <br>
+        <input type="checkbox">Phd 
+    </td>
+    </tr>
+    <tr>
+    
+    <td>COURSES APPLIED FOR<br><br><br></td>
+    <td><br>
+    <input type="radio"> BCA<br>
+    <input type="radio"> B.com <br>
+     <input type="radio">B.Sc <br>
+     <input type="radio">B.A <br>
+     <input type="radio">M.com<br>
+    <input type="radio"> MCA <br>
+    <input type="radio">M.Sc<br>
+    <input type="radio">M.A<br>
+</td>
+</tr>
+<tr>
+    
+        <td colspan="2" align="center">
+            <input type="button" value="Submit">
+            <input type="button" value="Reset">
+        
+        </td>
+</tr>
+
+    
+</tbody></table>
+
+
+   
+    <u><center><h1>STUDENT REGISTRATION FORM</h1></center></u>
+    <form action="">
+        
+   
+    <table align="center" cellpadding="10" cellspacing="10" bgcolor="lightgreen" margin="20">
+        <tbody><tr>
+            <td>FIRST NAME</td><td><input type="text">(max 30 characters a-z and A-z)
+        </td>
+            
+        </tr>
+        <tr>
+            <td>lAST NAME</td>
+            <td>
+                <input type="text">(max 30 characters a-z and A-z)
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>DATE OF BIRTH</td>
+            <td>
+                <select name="Birthday_day" id="Birthday_day">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select>
+                <select name="Birthday_month" id="Birthday_month">
+                    <option value="-1">Month:</option>
+                    <option value="January">Jan</option>
+                    <option value="Feburary">Feb</option>
+                    <option value="March">Mar</option>
+                    <option value="April">Apr</option>
+                    <option value="May">May</option>
+                    <option value="June">Jun</option>
+                    <option value="July">Jul</option>
+                    <option value="August">Aug</option>
+                    <option value="september">Sep</option>
+                    <option value="octomber">OCt</option>
+                    <option value="November">Nov</option>
+                    <option value="December">Dec</option>
+                </select>
+                <select name="Birthday_year" id="Birthday_year">
+                    <option value="-1">Year:</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                    <option value="2017">2017</option>
+                    <option value="2016">2016</option>
+                    <option value="2015">2015</option>
+                    <option value="2014">2014</option>
+                    <option value="2013">2013</option>
+                    <option value="2012">2012</option>
+                    <option value="2011">2011</option>
+                    <option value="2010">2010</option>
+                    <option value="2009">2009</option>
+                    <option value="2008">2008</option>
+                    <option value="2007">2007</option>
+                    <option value="2006">2006</option>
+                    <option value="2005">2005</option>
+                    <option value="2004">2004</option>
+                    <option value="2003">2003</option>
+                    <option value="2002">2002</option>
+                    <option value="2001">2001</option>
+                    <option value="2000">2000</option>
+                    <option value="1999">1999</option>
+                    <option value="1998">1998</option>
+                    <option value="1997">1997</option>
+                    <option value="1996">1996</option>
+                </select>
+            </td>
+
+        </tr>
+        <tr>
+            <td>EMAIL ID</td>
+            <td>
+                <input type="email">
+            </td>
+        </tr>
+        <tr>
+            <td>MOBILE NUMBER</td>
+            <td><input type="text">(10 digit number)</td>
+        </tr>
+        <tr>
+            <td>GENDER</td>
+            <td>
+                Male <input type="radio">
+                Female <input type="radio"> 
+            </td>
+        </tr>
+        <tr>
+            <td>ADSRESS <br><br><br></td>
+            <td>
+                <textarea name="" id="" rows="5"></textarea><br>
+            </td>
+        </tr>
+        <tr>
+            <td>CITY</td>
+            <td><input type="text">(max 30 characters a-z and A-z)</td>
+        </tr>
+        <tr>
+            <td>PIN CODE</td>
+            <td><input type="text">(6 digits number)</td>
+           </tr>
+           <tr>
+            <td>STATE</td>
+            <td><input type="text">(max 30 characters a-z and A-z)</td>
+</tr>
+<tr>
+    <td>COUNTRY</td>
+    <td><input type="text"></td>
+</tr>
+<tr>
+    <td>HOBBIES</td>
+    <td>
+        Drawing <input type="checkbox">
+        Dancing <input type="checkbox">
+        Singing <input type="checkbox">
+        Sketching <input type="checkbox"><br>
+        others <input type="checkbox">
+        <input type="text">
+
+    </td>
+</tr>
+<tr>
+    <td>QULAIFICATIONS <br><br><br><br><br><br></td>
+
+    <td>
+        <table>
+        <tbody><tr>
+        <td align="center"><b>S1.No</b></td>
+        <td align="center"><b>Examination</b></td>
+        <td align="center"><b>Board</b></td>
+        <td align="center"><b>percentage</b></td>
+        <td align="center"><b>Year of Passing </b> </td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Class X</td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Class XII</td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Graduates</td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Masters</td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td align="center">( 10 char max)</td>
+        <td align="center">( upto 2 char decimal)</td>
+    </tr>
+</tbody></table>
+    </td>
+</tr>
+
+<tr>
+    <td>COURSES APPLIED FOR
+    BCA <input type="radio">
+    B.com <input type="radio">
+    B.Sc <input type="radio">
+    B.A <input type="radio">
+</td>
+</tr>
+
+    <tr>
+        <td colspan="2" align="center">
+            <input type="button" value="Submit">
+            <input type="button" value="Reset">
+        
+        </td>
+    
+
+</tr>
+
+    </tbody></table>
+</form>
+
+<br><br><br><br><br>
+
+
+
+<form id="kk" style="background-color: antiquewhite; border: 4px groove  rgb(2, 0, 128); width: 700px; height:1050px ;">
+    
+    
+    <h1><u><center>Student Registration form</center></u></h1>
+
+    <hr>
+    <label for="">FIrstName:</label><br><br>
+    <input type="text" value="FIrstName" style="width: 600px;"><br><br>
+    <label for="">MiddleName:</label><br><br>
+    <input type="text" value="MiddleName" style="width: 600px;"><br><br>
+    <label for="">lastName:</label><br><br>
+    
+    <input type="text" value="lastName" style="width: 600px;"><br><br>
+    <label for="">course :</label>
+    <select name="course" id="courses">
+        <option value="course">course:</option>
+        <option value="M.P.C">M.P.C</option>
+        <option value="Bi.P.C">Bi.P.C</option>
+        <option value="C.E.C">C.E.C</option>
+        <option value="M.E.C">M.E.C</option>
+    </select><br><br><br>
+
+    <label for="">Gender:</label><br>
+    <input type="radio">Male
+    <input type="radio">FeMale
+    <input type="radio">others <br><br>
+
+    <label for="">phone:</label><br><br>
+    <input type="text" value="+91" style="width: 600px;"><br><br>
+    <input type="text" value="" style="width: 600px;"><br><br>
+
+    <label for=""> current Address:</label><br><br>
+    <textarea name="" id="" rows="5" style="width: 600px;"></textarea><br><br>
+    <label for="">Email:</label><br>
+    <input type="email" value="email" style="width: 600px;"><br><br>
+    <label for="">password:</label><br><br>
+    <input type="text" value="password" style="width: 600px;"><br><br>
+    
+    <label for="">Re-Type:</label><br><br>
+    <input type="text" value="Re-Type password" style="width: 600px;"><br><br><br>
+
+    
+    <input type="button" value="Register" style="width: 600px; background-color: lightgreen" ;="">
+
+
+
+</form>
+
+<br><br><br><br><br><br>
+
+
+<form action="" id="kk" style=" width:900px; background-color: #7bcb19;  ; border: 4px  blueviolet inset; height: 950px;">
+    
+    
+    <h1><center>colleage/school</center></h1><br><h2> <center></center>Student Registrationform</h2><table align="center" cellpadding="">
+        
+        
+        <tbody><tr>
+        <td>student image</td>
+        <td><input type="file">(less than 5mb)</td>
+     </tr>
+     <tr>
+        <td>StudentName</td>
+        <td> <input type="text" value="StudentName" style="width: 500px;"></td>
+     </tr>
+     <tr>
+        <td>FatherName</td>
+        <td><input type="text" value="FatherName" style="width: 500px;"></td>
+     </tr>
+     <tr>
+        <td>MothersName</td>
+        <td><input type="text" value="Mother'sName" style="width: 500px;"></td>
+     </tr>
+     <tr>
+        <td>Gender</td>
+        <td>Male <input type="radio">
+            Female <input type="radio">
+            others <input type="radio">
+
+        </td>
+     </tr>
+     <tr>
+        <td>DOB</td>
+        <td><input type="date" style="width: 500px;"></td>
+     </tr>
+    <tr>
+        <td>Email</td>
+        <td><input type="email" value="eamil" style="width: 500px;"></td>
+    </tr>
+    <tr>
+        <td>level</td>
+        <td> <select name="level" id="level">
+            <option value="High school">High School</option>
+            <option value="Higher school">Higher school</option>
+            <option value="Graduate">Graduate</option>
+        </select> </td>
+
+    </tr>
+    <tr>
+        <td>Mobile</td>
+        <td><input type="text" name="" id="" style="width: 500px;"></td>
+    </tr>
+    </tbody></table>
+    <hr>
+    <h2><center>Peremanent Address</center></h2>
+    <table align="center" cellspacing="" cellpadding="">
+    <tbody><tr>
+        <td>State </td>
+        <td><input type="text" name="" id="" style="width: 500px;"></td>
+    </tr>
+    <tr>
+        <td>city</td>
+        <td><input type="text" style="width: 500px;"></td>
+    </tr>
+    <tr>
+        <td>Zip Code &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</td>
+        <td><input type="text" style="width: 500px;"></td>
+
+    </tr>
+    <tr>
+        <td>Mobile</td>
+        <td><input type="text" name="" id="" style="width: 500px;"></td>
+    </tr>
+</tbody></table>
+<hr>
+<h2><center>Temporary Address</center></h2>
+<table align="center" cellspacing="" cellpadding="">
+<tbody><tr>
+    <td>save as Permanent</td>
+    <td><input type="checkbox" name="" id="" style="width: 500px;"></td>
+</tr>
+    <tr>
+        <td>State</td>
+        <td><input type="text" name="" id="" style="width: 500px;"></td>
+    </tr>
+    <tr>
+        <td>city</td>
+        <td><input type="text" style="width: 500px;"></td>
+    </tr>
+    <tr>
+        <td>Zip Code  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</td>
+        <td><input type="text" style="width: 500px;"></td>
+
+    </tr>
+    <tr>
+        <td>Mobile</td>
+        <td><input type="text" name="" id="" style="width: 500px;"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="Register" style="background-color: blue;"></td>
+    </tr>
+    </tbody></table>
+
+</form>
+
+<br><br><br><br><br><br><br><br><br><br>
+
+
+<form id="" style="width:900px; background-color: #ff99cc;">
+
+    <br><br><br><br><br><br><br><table style="border:  3px dotted red; margin: 50px; padding: 20px;  background-color: #7bcb19;">
+            <tbody><tr>
+                <td><u style="font-size: 24 ;"><b>Registration </b> </u><br><br><br> Personal Details</td>
+            </tr>
+        
+            
+            
+            <tr>
+                <td>Full Name</td>
+                <td>Date of Birth</td>
+                <td>Email</td>
+            </tr>
+            <tr><td>
+                <input type="text" name="" id="" placeholder="Enter your name" size="30px">
+            </td>
+            <td>
+                <input type="date" name="" id="">
+            </td>
+            <td>
+                <input type="email" name="" id="" placeholder="Enter your emai@" size="30px">
+            </td>
+            
+            </tr><tr>
+                <td>Mobile number:</td>
+                <td>Gender</td>
+                <td>Occupation</td>
+            </tr>
+            <tr><td>
+                <input type="tel" name="" id="" placeholder="Enter your number" size="30px">
+            </td>
+            <td>
+                <input type="text" name="" id="" placeholder="Enter your Gender" size="30px">
+            </td>
+            <td>
+                <input type="text" name="" id="" placeholder="Enter your Occupation" size="30px">
+            </td>
+            
+</tr>
+<tr><td style="font-size: 25px; font-style:bold ;">Identity details </td></tr>
+<tr>
+<td>ID type:</td>
+<td>ID number:</td>
+<td>Issue Authority</td>
+</tr>
+<tr><td>
+<input type="text" name="" id="" placeholder="Enter your id type" size="30px">
+</td>
+<td>
+<input type="text" name="" id="" placeholder="Enter your id number" size="30px">
+</td>
+<td>
+<input type="text" name="" id="" placeholder="Enter your Issue Authority " size="30px">
+</td>
+
+
+</tr><tr>
+<td>Issue Date:</td>
+<td>Issue State:</td>
+<td>Expiry Date:</td>
+</tr>
+<tr><td>
+<input type="date" name="" id="" placeholder="Enter your date" size="30px">
+</td>
+<td>
+<input type="text" name="" id="" placeholder="Enter your issued state" size="30px">
+</td>
+<td>
+<input type="date" name="" id="" placeholder="Enter your expiry date " size="30px">
+</td>
+
+</tr><tr>
+    <td><input type="button" name="" id="" value="Next-->" style="background-color: rgb(0, 204, 255) ;color: rgb(215, 244, 250); size: 40px;">
+    </td>
+</tr>
+
+</tbody></table>
+</form>
+
+  
+   
+
+</body></html>

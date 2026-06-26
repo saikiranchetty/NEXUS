@@ -1,0 +1,181 @@
+<!DOCTYPE html><html lang="en"><head>
+    <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABEVBMVEX////q9v8AAAD+6X1gt/+DecHE4v/t+f9eXl5TU1MvKxf/8oLu+v/65ntSVlm1vsVMT1PF0Nc7PkHy//+jrLIsLjD+wWVarfBjvP8kIBE2Zo/S3eWIj5R0en8LCwyNlJrb7v/J6P9ufo97craZjUsYFiMfO1P/xmhJRGwSEBuObDgSIjD92nT/99L+6HUvIxNASVOXrsWlv9cyOUGJnrKxsbHk5OSDg4PDw8Ojo6PN7P8nJyeYmJmYk35saVq3p1WJfUA/Oh/m03EVEwrey21rYjUkGQ3nr1yBYjNnX5fKmVBUTnyjfEE5OTn+0G43M1FqUCpVYm65ydcoTWs9daN9kKJLkMmyzedjcoEaGx1ra2sqinhjAAAD60lEQVR4nO3daVPaQACA4SCtpJZWxUIPS6q97GHvEtDS+z6096H//4eUZDcJMMsyu4lOFt/nE87sJvuaRhTc6nkAAAAAAAAAAAAAMCbsdP1cOsNH6+c7Vm7dTjjW12vM5eZnh3uS/2i5NXrD188v5JjpIfuFHC43P72OYVDMEZ/ekZ4Vc7zcApkYFnXA53elF0UdMTeRWMAtGHt5qiq9KuiI+TWiwK30w+Cmhhjy+vwkCy9eVVNv3i5MHHjQ3g1kt93WoDD56MaV4xpXxKCr1VOTnKwOOTlx2MHbaLVa7z8kV23wPCEfftT1ZYUjHeW0OShsbXySXT2vKx581ge6VFjdiBO/iBV3vR3xYEqgU4W7rThRrHhH3oZfZ6lwUxR+kzei/DIzg4W3xJIppLCMKKSw/CiksPwopLD8KKSw/CiksPwopLD8KKSw/Cg8qoXHk0IHbG5EdkcLg2vTiHHnF1xwL/Z6pHCGUeg+Ct0nC29fn0aMay5ZkL/HZzN1yeq092PNkcIL545pnTsrxl1aqRlbacdTg4r51PqqOO1Fo9OuzUe2LxsVHksLK8ayQuOptbTQZJYoXLcsrBuvMis0R6EahRQao1CDQjUKKTRGoQaFahRSaIxCDQrVKNQXrtSNpYXmU7PXaUwmra1HLF+naS9aEDtUA5upZ8Rp981mPYh9typ0EIUUlh+FR66wvWxhP54a2ExdtDntj4exf1aFud6ZqRtPtXpnpr42vz5v/Yx/BL5ro1CBQg0K1Sik0BiFGhSqUUihMQo1KFSjkEJjjhXO/m9fOlBYy1X4pGFhT8y1mbpjddpHsT2rQgdRSGH5UThW2DxtQW7tsJm6ZHNaqx0l2fOhOS95PrSYu2pz2sr6duSyXeHsf9dGoQKFGhSqUUihMQo1KFSjkEJjFGpQqEYhhcYo1Jj9HSXZ6zQms3LtKNk/Y+G0KLSZekmc1jeb9TjGjhIKnUEhheV3GDtKkv2HFlPz7Cixe7ZwZEdJhHdmKDRAoQaFahRSaIxCDQrVKKTQGIUaFKqNFYq/6fxzBgvFT8BB8ne5Z6lwOy6cF1N3kr+t/mtKokuF4kf832Jq1+uJB3N/9IkO7beI/5FuP5BdPU/eiIMvNmcP6BrW7a9hJSkcPm196DNVU6wnCvwr/2OTwW3oeVtzieC2hhiy17Qgt3bYTG0qTusvp1m1Sls5K0ibtgaFXmPONavpVZy29kYU6IWHsqoiteVFrC9OGxl6IjGYNrBkfE/q68cFYTIw9A9nZUXpJwvvaYf5aWA01KWbcS9b9/7kUY2eNyrsdP0TLvD7w8vuKBftdzuhBwAAAAAAAAAAAABj/gMIT5o9DpdheQAAAABJRU5ErkJggg==" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TABLES</title>
+<style>
+    table{
+        border-collapse: collapse;
+    }
+    th, td,tr {
+      border:1px solid;
+      padding: 10px;
+      border-collapse: collapse;
+      
+      text-align:justify;}
+    .a{
+        background-color: yellow;
+    }
+    .b{
+        background-color:rgb(85, 221, 140) ;
+    }
+    .c{
+        display: flex;
+        border: 4px solid orangered;
+        background: linear-gradient(rgb(60, 60, 234),green);
+        padding: 25px;
+    }
+      
+</style>
+</head>
+<body>
+    <div class="c">
+            
+        
+        <table style="padding-right: 25px;">
+            <tbody><tr><th>Header Column 1</th>
+            <th>Header Column 2</th>
+            <th>Header Column 3</th>
+            <th>Header Column 4</th>
+    
+            </tr>
+            <tr>
+                <td>Row 2 - Item 1</td>
+                <td>Row 2 - Item 2</td>
+                <td rowspan="2">Row 2 - Nested Table1
+                    <table>
+                        <tbody><tr>
+                            <td>Row 1 Header</td>
+                            <td>item</td>
+                        </tr>
+                        <tr>
+                            <td>Row 1 Header</td>
+                            <td>item</td>
+                        </tr>
+                    </tbody></table>
+                    
+                </td>
+                <td>Row 2 - Item 3</td>
+    
+            </tr>
+            <tr><td>Row 3 - Nested Table 2
+                <table>
+                    <tbody><tr>
+                        <td>Row 1 Header</td>
+                        <td>item</td>
+                    </tr>
+                    <tr>
+                        <td>Row 1 Header</td>
+                        <td>item</td>
+                    </tr>
+                </tbody></table>
+                
+            </td>
+            
+                <td>Row 3 - Item 2</td>
+                
+                <td rowspan="2">Row 3 - Item 3</td>
+    
+            </tr>
+            <tr><td>Row 4 - Item 1</td>
+                <td>Row 4 - Item 2</td>
+                <td>Row 4 - Item 3 </td>
+                
+    
+            </tr>
+            <tr>
+                <td colspan="4">Row 5 last of outer table</td>
+            </tr>
+                    
+                
+                
+            
+        </tbody></table><br><br><br><br><br>
+        
+        <div>
+        <table border="1" style="padding: 25px;padding-right: 25px; margin: 20px;">
+            <tbody><tr>
+                <td class="a">ACC</td>
+                <td class="a"></td>
+                <td class="b">Column header 1a</td>
+                <td class="b">Column header 1b</td>
+                <td class="b">Column header 1c</td>
+                <td class="b">Column header 1d</td>
+    
+            </tr>
+            <tr>
+                <td class="a"></td>
+                <td class="a"></td>
+                <td class="b">Column header 2a</td>
+                <td class="b">Column header 2b</td>
+                <td class="b">Column header 2c</td>
+                <td class="b">Column header 2d</td>
+            </tr>
+            <tr>
+                <td class="a">Row header 1a</td>
+                <td class="a">Row header 2a</td>
+                <td class="b"> Data col 1 row 1</td>
+                <td class="b">Data col 2 row 1</td>
+                <td class="b">Data col 3 row 1</td>
+                <td class="b">Data col 4 row 1</td>
+            </tr>
+            <tr>
+                <td class="a"></td>
+                <td class="a">Row header 2b</td>
+                <td class="b">Data col 1 row 2</td>
+                <td class="b">Data col 2 row 2</td>
+                <td class="b">Data col 3 row 2</td>
+                <td class="b">Data col 4 row 2</td>
+            </tr>
+            <tr>
+                <td class="a"></td>
+                <td class="a">Row header 2c</td>
+                <td class="b">Data col 1 row 3</td>
+                <td class="b">Data col 2 row 3</td>
+                <td class="b">Data col 3 row 3</td>
+                <td class="b">Data col 4 row 3</td>
+            </tr>
+            <tr>
+                <td class="a"></td>
+                <td colspan="3" class="a">Summary Sub-Total</td>
+                
+                <td class="b">total 1a</td>
+                <td class="b">total 2a</td>
+            </tr>
+            <tr>
+                <td class="a"></td>
+                <td class="a">Row header 2d</td>
+                <td class="b">Data col 1 row 1</td>
+                <td class="b">Data col 2 row 1</td>
+                <td class="b">Data col 3 row 1</td>
+                <td class="b">Data col 4 row 1</td>
+            </tr>
+            <tr>
+                <td class="a"></td>
+                <td class="a">Row header 2e</td>
+                <td class="b">Data col 1 row 2</td>
+                <td class="b">Data col 2 row 2</td>
+                <td class="b">Data col 3 row 2</td>
+                <td class="b">Data col 4 row 2</td>
+            </tr>
+            <tr>
+                <td class="a"></td>
+                <td colspan="3" class="a">Summary Sub_Total</td>
+                
+                <td class="b">total 1b</td>
+                <td class="b">total 2b</td>
+            </tr>
+            <tr>
+                <td colspan="4" class="a">Grand Total</td>
+                
+                <td class="b">Grand Total</td>
+                <td class="b">Grand Total</td>
+            </tr>
+        </tbody></table>
+        </div>
+
+    </div>
+    
+    
+
+</body></html>

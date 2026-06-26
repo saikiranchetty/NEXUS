@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+h1{
+    text-align: center;
+    color: green;
+    padding: 20px;
+
+}
+nav {
+    background-color: lime;
+    display: grid;
+    place-items:center ;
+}
+nav ul {
+    list-style-type: none;
+
+}
+nav ul   a{
+    display: inline-block;
+    padding: 20px;
+    text-decoration: none;
+    color: #000;
+    transition: 0.2s ease-in;
+    font-size: 18px;
+}
+
+nav ul a:hover{
+    background-color: green;
+    color: white;
+}
+.items{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding: 30px 20px;
+    grid-column-gap: 20px;
+    grid-row-gap: 30px;
+}
+.item img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: 0.2s ease;
+
+}
+.item img:hover{
+    transform: scale(1.04);
+    
+
+}
+.item h4{
+    padding: 5px;
+    text-align: center;
+}
+.item button{
+    padding: 5px 30px;
+    border: none;
+    outline: none;
+    background-color:green;
+    cursor: pointer;
+    border-radius: 4px;
+    font: 20px;
+    display: block;
+    margin: 0 auto;
+}
+.item button:hover{
+    transform: scale(1.04);
+    background-color: chartreuse;
+}
+
+.row{
+    display: flex;
+    padding: 20px;
+    margin: 110px;
+    
+}
+.col-5{
+ 
+    width: 160px;
+    margin: 50px;
+}
+.col-5 img{
+    width: 100px;
+    cursor: pointer;
+    filter: grayscale(100%);
+    font-size: 50px;
+ 
+  
+}
+.col-5 img:hover{
+filter: grayscale(0);
+}
+.footer{
+    border: 3px solid red;
+    height: 100px;
+    background: -webkit-radial-gradient(red,green,yellow);
+}
+.b{
+    margin-left: 750px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    margin-right: 100px;
+    font-size: 30px;
+    background-color: burlywood;
+    border-radius: 10px;
+    transform: scale(1.04);
+    cursor: alias;
+
+}
+.b:hover
+{
+    background-color: cyan;
+}
+@media screen and (max-width:700px)
+{
+    .items{
+        grid-template-columns: repeat(1,1fr);
+    }
+    
+}

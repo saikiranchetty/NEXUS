@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRONTEND</title>
+    <style>
+        .head {
+            border: 3px dashed crimson;
+            border-radius: 20px;
+            background-color: white;
+            text-align: center;
+        }
+
+        .heading {
+            border: 2px dashed yellow;
+            border-radius: 30px;
+            background-color: blue;
+            color: white;
+            text-align: center;
+        }
+
+        #F p {
+            border: 3px solid darkmagenta;
+            background-color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #S>p {
+            border: 3px solid brown;
+            background-color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #T+p {
+            border: 3px solid blue;
+            background-color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #K~p {
+            border: 3px solid orangered;
+            background-color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .box {
+            text-align: center;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:hover {
+            background-color: salmon;
+            font-size: 40px;
+            text-decoration: none;
+        }
+
+        a:active {
+            background-color: darkcyan;
+            font-size: 60px;
+        }
+
+        a:link {
+            background-color: aqua;
+            font-size: 30px;
+            color: brown;
+        }
+
+        a:visited {
+            background-color: darkgoldenrod;
+        }
+
+        .FC {
+            border: 2px solid;
+            padding: 10px;
+            text-align: center;
+        }
+
+        div b:first-child {
+            color: red;
+            font-size: 30px;
+            background-color: white;
+        }
+
+        span p::first-letter {
+            font-size: 50px;
+            color: orange;
+        }
+
+        span p::first-line {
+            background-color: white;
+        }
+
+        .pagi div a {
+            text-decoration: none;
+            color: white;
+            background-color: red;
+            border-radius: 30px;
+            padding: 10px;
+            margin-left: 20px;
+        }
+
+        .pagi div {
+            display: inline-block;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body style="background-color: lightblue;">
+
+    <!--Day 20 Task 20 14-05-2025-->
+
+    <h1 class="head">
+        COMBINATORS
+    </h1>
+
+    <h2 class="heading">
+        DESCENENT SELECTOR-SPACE
+    </h2>
+    <div id="F">
+        <div>
+            <p>PARAGRAPH01</p>
+            <p>PARAGRAPH02</p>
+            <p>PARAGRAPH03</p>
+            <section>
+                <p>PARAGRAPH04</p>
+                <p>PARAGRAPH05</p>
+                <p>PARAGRAPH06</p>
+            </section>
+            <p>PARAGRAPH07</p>
+            <p>PARAGRAPH08</p>
+            <p>PARAGRAPH09</p>
+        </div>
+    </div>
+
+    <h2 class="heading">
+        CHILD SELECTOR(&gt;)
+    </h2>
+    <div>
+        <div>
+            <p>PARAGRAPH01</p>
+            <p>PARAGRAPH02</p>
+            <p>PARAGRAPH03</p>
+            <section id="S">
+                <p>PARAGRAPH04</p>
+                <p>PARAGRAPH05</p>
+                <p>PARAGRAPH06</p>
+            </section>
+            <p>PARAGRAPH07</p>
+            <p>PARAGRAPH08</p>
+            <p>PARAGRAPH09</p>
+        </div>
+    </div>
+
+    <h2 class="heading">
+        ADJACENT SIBLING SELECTOR(+)
+    </h2>
+    <div>
+        <p>PARAGRAPH01</p>
+        <p>PARAGRAPH02</p>
+        <p>PARAGRAPH03</p>
+        <section id="T">
+            <p>PARAGRAPH04</p>
+        </section>
+        <p>PARAGRAPH05</p>
+        <section id="T">
+            <p>PARAGRAPH06</p>
+        </section>
+        <p>PARAGRAPH07</p>
+        <p>PARAGRAPH08</p>
+        <p>PARAGRAPH09</p>
+    </div>
+
+    <h2 class="heading">
+        GENERAL SIBLING SELECTOR(~)
+    </h2>
+    <div>
+        <div>
+            <p>PARAGRAPH01</p>
+            <p>PARAGRAPH02</p>
+            <p>PARAGRAPH03</p>
+            <section id="K">
+                <p>PARAGRAPH04</p>
+                <p>PARAGRAPH05</p>
+                <p>PARAGRAPH06</p>
+            </section>
+            <p>PARAGRAPH07</p>
+            <p>PARAGRAPH08</p>
+            <p>PARAGRAPH09</p>
+        </div>
+    </div>
+    <br><br><br><br><br>
+
+    <h1 class="head">
+        PSEUDO CLASS
+    </h1>
+    <h2 class="heading">
+        Hover,Active,Link,visited
+    </h2>
+    <div class="box">
+        <a href="index_1.html" target="_blank">YOUTUBE</a>
+    </div>
+
+    <h2 class="heading">
+        FIRST-CHILD
+    </h2>
+    <div class="FC">
+        <p>
+            Kumar
+            <b>Ramesh</b>
+            Ganga
+            <b>Mohith</b>
+        </p>
+    </div>
+
+    <h1 class="head">
+        PSEUDO ELEMENTS
+    </h1>
+    <h2 class="heading">
+        FIRST-LETTER,FIRST-LINE
+    </h2>
+    <span>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos facilis rem tenetur qui sit quisquam a
+            dolores
+            quidem sapiente explicabo dolorem, mollitia hic quaerat unde porro adipisci vero totam quia.
+        </p>
+    </span>
+
+
+    <h1 class="head">
+        PAGINATION
+    </h1>
+    <div class="pagi">
+        <div><a href="">prev</a></div>
+        <div><a href="">1</a></div>
+        <div><a href="">2</a></div>
+        <div><a href="">3</a></div>
+        <div><a href="">4</a></div>
+        <div><a href="">5</a></div>
+        <div><a href="">6</a></div>
+        <div><a href="">7</a></div>
+        <div><a href="">8</a></div>
+        <div><a href="">9</a></div>
+        <div><a href="">10</a></div>
+        <div><a href="">next</a></div>
+    </div>
+
+
+</body></html>

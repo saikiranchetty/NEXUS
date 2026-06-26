@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+* {
+    font-family: "Audiowide", sans-serif;
+}
+
+.c{
+    border: 3px solid red;
+}
+.cf{
+    border: 3px solid red;
+}
+

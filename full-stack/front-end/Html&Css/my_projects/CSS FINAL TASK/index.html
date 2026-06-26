@@ -1,0 +1,1961 @@
+<!DOCTYPE html><html lang="en"><head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Complete CSS guide covering everything from borders to flexbox and grid.">
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" href="images/2-removebg-preview.png" type="image/x-icon">
+        <link rel="stylesheet" href="css/all.min.css">
+    <title>CSS FINAL TASK</title>
+</head>
+<body class="content">
+
+    <header id="header2">
+        <div style="position: sticky; top: 0; color: rgb(213, 208, 208);" class="header">
+            <h2 style="color: rgb(213, 208, 208); font-size: 30px;">CSS FINAL TASK</h2>
+        </div>
+        <div id="nav2" class="navbar">
+            <ul>
+                <li><a href="#0">CSS SYNTAX</a></li>
+                <li><a href="#00">BOX-MODEL PROPERTIES</a></li>
+                <li><a href="#000">CSS Comments</a></li>
+                <li><a href="#0000">Float &amp; Clear</a></li>
+                <li><a href="#1">BORDER STYLE</a></li>
+                <li><a href="#2">TEXT STYLE</a></li>
+                <li><a href="#3">CURSOR</a></li>
+                <li><a href="#4">LIST STYLE POSITION</a></li>
+                <li><a href="#5">LIST STYLE IMAGE</a></li>
+                <li><a href="#6">DISPLAY TYPES</a></li>
+                <li><a href="#7">OVERFLOW</a></li>
+                <li><a href="#8">DISPLAY-NONE</a></li>
+                <li><a href="#9">VISIBILITY</a></li>
+                <li><a href="#10">NAVBAR</a></li>
+                <li><a href="#11">DROPDOWN</a></li>
+                <li><a href="#12">ATTRIBUTE SELECTOR</a></li>
+                <li><a href="#13">COUNTER</a></li>
+                <li><a href="#14">PSUEDO ELEMENTS</a></li>
+                <li><a href="#15">ROUNDED CORNERS</a></li>
+                <li><a href="#16">BORDER IMAGE</a></li>
+                <li><a href="#17">BACKGROUND SIZE</a></li>
+                <li><a href="#18">BACKGROUND IMAGE POSITION</a></li>
+                <li><a href="#19">BACKGROUND CLIP</a></li>
+                <li><a href="#20">BACKGROUND ORIGIN</a></li>
+                <li><a href="#21">GRADIENT</a></li>
+                <li><a href="#24">TEXT SHADOW</a></li>
+                <li><a href="#25">BOX SHADOW</a></li>
+                <li><a href="#29">2D TRANSFORMATION</a></li>
+                <li><a href="#30">3D TRANSFORMATION</a></li>
+                <li><a href="#31">TRANSITION</a></li>
+                <li><a href="#32">ANIMATION</a></li>
+                <li><a href="#33">THUMBNAIL</a></li>
+                <li><a href="#34">TOOLTIP</a></li>
+                <li><a href="#35">POSITION</a></li>
+                <li><a href="#36">Z-INDEX</a></li>
+                <li><a href="#37">COMBINATORS</a></li>
+                <li><a href="#38">IMAGE FILTER</a></li>
+                <li><a href="#39">IMAGE REFLECTION</a></li>
+                <li><a href="#40">IMAGE MASKING</a></li>
+                <li><a href="#41">OBJECT POSITION</a></li>
+                <li><a href="#42">BUTTON</a></li>
+                <li><a href="#43">PAGENATION</a></li>
+                <li><a href="#44">COLUMN</a></li>
+                <li><a href="#45">TEXT AREA</a></li>
+                <li><a href="#46">FLEX DIRECTION</a></li>
+                <li><a href="#47">FLEX WRAP</a></li>
+                <li><a href="#48">JUSTIFY CONTENT</a></li>
+                <li><a href="#49">GRID</a></li>
+            </ul>
+        </div>
+    
+    </header>
+
+<!---------------------css syntax---------->
+
+
+    <h1 id="0" style="text-align: center;color: rgb(92, 62, 20); margin-top: 200px;">CSS SYNTAX</h1>
+    <div style="
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin: 0;
+    overflow: hidden;
+    color: #a29989;">
+    <div class="code-container">
+        <div class="code-line">
+            <span class="selector">.example-class</span> <span>{</span>
+        </div>
+        <div class="code-line">
+            <span class="property">background-color</span>: <span class="value">#3498db</span><span>;</span>
+        </div>
+        <div class="code-line">
+            <span class="property">padding</span>: <span class="value">20px</span><span>;</span>
+        </div>
+        <div class="code-line">
+            <span class="property">border-radius</span>: <span class="value">10px</span><span>;</span>
+        </div>
+        <div class="code-line">
+            <span class="property">color</span>: <span class="value">#fff</span><span>;</span>
+        </div>
+        <div class="code-line">
+            <span>}</span>
+        </div>
+    </div>
+<!---------------box model properties--------->
+
+    </div>
+    <h1 id="00" style="text-align: center;color: rgb(92, 62, 20); margin: 60px;">Box Model Properties</h1>
+    <div style=" display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background: linear-gradient(45deg,  rgb(248, 236, 206) 50%,rgb(183, 170, 138) 30%);
+    margin: 0;
+    font-family: Arial, sans-serif;">
+    <div class="boxm-containerm">
+        <div class="boxm">
+            <div class="contentm">
+                <p>Margin: 10px</p>
+                <p>Border: 5px solid #1dd1a1</p>
+                <p>Padding: 20px</p>
+                <p>Width: 200px</p>
+                <p>Height: 200px</p>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+    <!----------------------comments---------->
+<style>
+ .containerj {
+            text-align: center;
+            color: #664949;
+            padding: 20px;
+            background: linear-gradient(45deg, #ded4bb, #a29f7c, #949071);
+            border-radius: 15px;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+            animation: float 3s infinite ease-in-out;
+        }
+        .containerj h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 2s forwards 1s;
+        }
+
+        .containerj p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            opacity: 0;
+            animation: fadeIn 2s forwards 2s;
+        }
+
+       
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+</style>
+<h1 id="000" style="text-align: center;color: rgb(87, 55, 11); margin: 60px;">  CSS Comments</h1>
+<div style=" margin: 0;
+height: 50vh;
+display: flex;
+justify-content: center;
+align-items: center;
+background: linear-gradient(to right bottom, #6b5000 50%, #fcf1ca 50%);
+font-family: 'Arial', sans-serif;
+overflow: hidden;">
+<div class="containerj">
+    <h1 style="color:rgb(74, 11, 11) ;">CSS Comments </h1>
+    <p>/* This is a single-line comment in CSS */</p>
+    <p>/* 
+        This is a 
+        multi-line comment 
+        in CSS 
+        */</p>
+</div>
+</div>
+<!--------------------floa&clear----------->
+<h1 style="margin: 60px;color: rgb(92, 62, 20);text-align: center;">Float &amp; Clear</h1>
+
+    <style>
+    /* Container Styling */
+    .containeri {
+        width: 90%;
+        max-width: 1200px;
+        background: #dfd5aad0;
+        border-radius: 15px;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        animation: fadeIn 2s ease-in-out;
+        display: flex; /* Changed to flex for better responsiveness */
+        flex-wrap: wrap; /* Allows items to wrap in smaller screens */
+        justify-content: center; /* Centers items */
+    }
+
+    /* Float Box Styling */
+    .boxf {
+        flex: 1 1 calc(33.333% - 40px); /* Flex basis for three columns */
+        margin: 10px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        animation: slideIn 2s ease-in-out;
+        color: rgb(138, 126, 105);
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+
+    .boxf1 {
+        background: linear-gradient(135deg, #e9d1a1, #a69765);
+    }
+
+    .boxf2 {
+        background: linear-gradient(135deg, #d6c286, #ecd3a4);
+    }
+
+    .boxf3 {
+        background: linear-gradient(135deg, #dac794, #b9a674);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .boxf {
+            flex: 1 1 calc(50% - 40px); /* Two columns on medium screens */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .boxf {
+            flex: 1 1 100%; /* Single column on small screens */
+        }
+    }
+
+    @keyframes slideIn {
+        0% {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+</style>
+
+<div style="margin: 0; padding: 0; font-family: Arial, sans-serif; background: linear-gradient(to right top, #c5b394 50%, #9d8a6e 50%); display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden;">
+    <div class="containeri">
+        <div class="boxf boxf1">
+            <p><strong>Float Left:</strong> This box is floated to the left using <code>float: left;</code>. The content inside is styled with a vibrant gradient background.</p>
+        </div>
+        <div class="boxf boxf2">
+            <p><strong>Float Left:</strong> This box is also floated to the left using <code>float: left;</code>. It demonstrates how multiple floated elements align side by side.</p>
+        </div>
+        <div class="boxf boxf3">
+            <p><strong>Clear Left:</strong> This box uses <code>clear: left;</code> to clear the floated elements above. It starts on a new line after the floated elements.</p>
+        </div>
+    </div>
+</div>
+
+
+    <!------------border style----------->
+
+<h1 id="1" style="text-align: center;color:  rgb(87, 55, 11); margin: 60px;"> <a style="color:  rgb(87, 55, 11);" href="">BORDER STYLE</a></h1>
+
+<div class="a">
+  <div class="b">
+
+       <p class="c">border-style:solid</p>
+       <p class="d">border-style:dashed</p>
+       <p class="e">border-style:dotted</p>
+       <p class="f">border-style:groove</p>
+       <p class="g">border-style:ridge</p>
+       <p class="h">border-style:double</p>
+       <p class="hh">border-style:inset</p>
+       <p class="hhh">border-style:outset</p>
+       <p class="hh1">border-style:none</p>
+       <p class="hhh2">border-style:hidden</p>
+       
+
+ </div>
+</div>
+<!---------------text decoration----------->
+
+<h1 id="2" style="text-align: center;color:  rgb(87, 55, 11); margin: 40px;"> <a style="color:  rgb(87, 55, 11);;" href="">TEXT STYLES</a></h1>
+  
+
+   <div class="j">
+    <div class="mm">
+    <h2>TEXT DECORATION</h2> <br><br>
+    <p class="l">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam sunt autem quod sapiente unde expedita laboriosam minima optio!</p><br>
+    <p class="m" title="This is Text Color">Lorem ipsum dolor sit amet consectetur, adipisicing elit, aut incidunt nobis!</p><br>
+    <p class="n" title="This is text thickness">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam eos, voluptatem  </p><br>
+ </div>
+ <div class="mm">
+    <h2>TEXT DECORATION LINE</h2>
+    <p class="p" title="This is text underline">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p><br>
+    <p class="q" title="This is text overline">Lorem ipsum dolor sit amet consectetur adipisicing elit.  </p><br>
+    <p class="r" title="This is text through">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p><br>
+ </div>
+
+ <div class="mm">
+    <h2>TEXT TRANSFORMATION</h2>
+    <p class="s" title="This is text transfrom captalize">The text-transform property is used to specify captalize letters in a text.</p><br>
+    <p class="t" title="This is text transfrom uppercase">The text-transform property is used to specify uppercase letters in a text.</p><br>
+    <p class="u" title="This is text transfrom lowercase">The text-transform property is used to specify lowercase letters in a text.</p>
+
+ </div>
+ <div class="mm">
+    <h2>TEXT ALIGNMENT</h2>
+    <p style="text-align: center;" title="This is text-align:center">The text-align center </p><br>
+    <p style="text-align: left;" title="This is text-align:left">The text-align left </p><br>
+    <p style="text-align: right;" title="This is text-align:right">The text-align right </p><br>
+
+    <p style="text-align: justify;" title="This is text justify">When the text-align property is set to "justify", each line is stretched so that every line has equal width, and the left and right margins are straight (like in magazines and newspapers):  </p><br>
+    <p style="text-align-last:center" title="This is text-align-last">The text-align-last center</p><br>
+    <p style="text-align-last:right" title="This is text-align-last:right">The text-align-last right</p><br>
+    <p style="text-align-last:justify" title="This is text-align-last:justify">The text-align-last justify</p><br>
+    <p style=" direction: rtl;" title="This is text-direction">The text-direction rtl</p><br>
+    <p style="  direction: rtl;unicode-bidi: bidi-override;" title="This is unicode-bidi: bidi-override">The unicode-bidi: bidi-override</p><br>
+    <p style="  direction: rtl;unicode-bidi:embed;" title="This is unicode-bidi: embed">The unicode-bidi: embed</p><br>
+    <p style=" unicode-bidi:isolate; direction: rtl;" title="This is unicode-bidi: isolate">The unicode-bidi:isolate</p><br>
+    <p style=" direction: rtl; unicode-bidi:isolate-override;" title="This is unicode-bidi: isolate-override">The unicode-bidi:isolate-override</p><br>
+    <p style=" direction: rtl; unicode-bidi:plaintext;" title="This is unicode-bidi:plaintext">The unicode-bidi:plaintext</p><br>
+    <p style=" direction: rtl; unicode-bidi:normal;" title="This is unicode-bidi:normal">The unicode-bidi:normal</p><br>
+    <p style=" vertical-align: baseline; ;" title="This is vertical-align: baseline;">This is  vertical-align: baseline;</p><br>
+    <p style=" vertical-align: text-top; ;" title="This is vertical-align:text-top;">This is  vertical-align:text-top;</p><br>
+    <p style=" vertical-align: text-bottom;" title="This is vertical-align:text-bottom;">This is  vertical-align:text-bottom;</p><br>
+    <p style=" vertical-align: sub;" title="This is vertical-align:sub;">This is  vertical-align:sub;</p><br>
+    <p style=" vertical-align: super;" title="This is vertical-align:super;">This is  vertical-align:super;</p><br>
+   
+    
+ </div>
+ <div class="mm">
+    <h2>TEXT DECORATION LINE</h2>
+    <p class="p" title="This is text underline">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p><br>
+    <p class="q" title="This is text overline">Lorem ipsum dolor sit amet consectetur adipisicing elit.  </p><br>
+    <p class="r" title="This is text through">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p><br>
+ </div>
+
+
+ 
+ <div class="mm">
+    <h2>TEXT SPACING</h2>
+    <p class="v1" title="Text-Indent">The text-indent property is used to specify the indentation of the first line of a text</p><br>
+    <p class="v" title="word-spacing">The word-spacing property is used to specify the space between the words in a text.</p><br>
+    <p class="x" title="letter-spacing">The letter-spacing property is used to specify the space between the characters in a text.</p><br>
+    <p class="y" title="line-height"> The line-height property is used to specify the space between lines.</p> 
+    <p class="v2" title="white-spacing">The white-space property specifies how<br> white-space  inside an element is handled.</p><br>
+  
+ </div>
+   </div>
+
+
+  
+  <!-----------------cursors------------------->
+  <h1 id="3">
+    <a style="color: #664949;" href="">Cursors</a>
+  </h1>
+  
+  <div class="cursor-container">
+    <div class="cursor-box">
+      <p class="default">default</p>
+      <p class="e-resize">e-resize</p>
+      <p class="ew-resize">ew-resize</p>
+      <p class="grab">grab</p>
+      <p class="grabbing">grabbing</p>
+      <p class="help">help</p>
+      <p class="move">move</p>
+    </div>
+  
+    <div class="cursor-box">
+      <p class="n-resize">n-resize</p>
+      <p class="ne-resize">ne-resize</p>
+      <p class="nesw-resize">nesw-resize</p>
+      <p class="ns-resize">ns-resize</p>
+      <p class="nw-resize">nw-resize</p>
+      <p class="nwse-resize">nwse-resize</p>
+    </div>
+  
+    <div class="cursor-box">
+      <p class="no-drop">no-drop</p>
+      <p class="none">none</p>
+      <p class="not-allowed">not-allowed</p>
+      <p class="pointer">pointer</p>
+      <p class="progress">progress</p>
+      <p class="row-resize">row-resize</p>
+      <p class="s-resize">s-resize</p>
+    </div>
+  
+    <div class="cursor-box">
+      <p class="se-resize">se-resize</p>
+      <p class="sw-resize">sw-resize</p>
+      <p class="text">text</p>
+      <p class="url">url</p>
+      <p class="w-resize">w-resize</p>
+      <p class="wait">wait</p>
+      <p class="zoom-in">zoom-in</p>
+      <p class="zoom-out">zoom-out</p>
+    </div>
+  </div>
+  
+  <!---------------list style type postion -->
+  
+ <h1 id="4" style=" color: rgb(87, 55, 11); margin: 60px;text-align: center;">List Style Postion</h1>
+ <div style=" font-family: Arial, sans-serif;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 50vh;
+ margin: 0;
+ border-radius: 30px;
+ background-color: #8b856f;">
+    <div class="list-container">
+        <h2>List Style &amp; Position</h2>
+        <ul>
+            <li class="list-item">List Item 1</li>
+            <li class="list-item">List Item 2</li>
+            <li class="list-item">List Item 3</li>
+        </ul>
+    </div>
+
+ </div>
+
+
+  
+<!-- ===========================list style type images -->
+
+<h1 id="5" style="color: rgb(87, 55, 11);text-align: center;padding:50px ;
+;border-radius: 30px;">List Style Images</h1>
+<fieldset style="background-color: rgb(234, 229, 199); border-radius: 30px;">
+    <div class="mmo">
+        <div class="box">
+            <p><i class="fa-sharp fa-solid fa-check"></i> image1</p>
+            <p><i class="fa-sharp fa-solid fa-image"></i> image2</p>
+            <p><i class="fa-sharp fa-solid fa-arrow-right"></i> image3</p>
+        </div>
+        <div class="box">
+            <p><i class="fa-sharp fa-solid fa-circle-xmark"></i> image1</p>
+            <p><i class="fa-sharp fa-solid fa-comment"></i> image2</p>
+            <p><i class="fa-sharp fa-solid fa-star"></i> image3</p>
+        </div>
+        <div class="box">
+            <p><i class="fa-sharp fa-solid fa-user"></i> image1</p>
+            <p><i class="fa-sharp fa-solid fa-envelope"></i> image2</p>
+            <p><i class="fa-sharp fa-solid fa-music"></i> image3</p>
+        </div>
+        <div class="box">
+            <p><i class="fa-sharp fa-solid fa-cart-shopping"></i> image1</p>
+            <p><i class="fa-sharp fa-solid fa-face-smile"></i> image2</p>
+            <p><i class="fa-sharp fa-solid fa-paperclip"></i> image3</p>
+        </div>
+        <div class="box">
+            <p><i class="fa-sharp fa-solid fa-clipboard"></i> image1</p>
+            <p><i class="fa-sharp fa-solid fa-car"></i> image2</p>
+            <p><i class="fa-sharp fa-solid fa-bolt"></i> image3</p>
+        </div>
+    </div>
+</fieldset>
+<!---------------display types--------------->
+
+<h1 id="6" style="color: rgb(87, 55, 11);text-align: center;padding-right:50px ;
+;border-radius: 30px; margin: 40px;">Display Types</h1>
+<fieldset class="color-splash">
+    <div class="container1">
+        <h2>Display: Inline</h2>
+        <span class="box1 inline">Inline 1</span>
+        <span class="box1 inline">Inline 2</span>
+        <span class="box1 inline">Inline 3</span>
+    </div>
+
+    <div class="container1">
+        <h2>Display: Block</h2>
+        <div class="box1 block">Block 1</div>
+        <div class="box1 block">Block 2</div>
+        <div class="box1 block">Block 3</div>
+    </div>
+
+    <div class="container1">
+        <h2>Display: Inline-Block</h2>
+        <div class="box1 inline-block">Inline-Block 1</div>
+        <div class="box1 inline-block">Inline-Block 2</div>
+        <div class="box1 inline-block">Inline-Block 3</div>
+    </div>
+</fieldset>
+<!----------------overflow------------------->
+
+<h1 id="7" style="color: rgb(87, 55, 11);text-align: center;padding-right:50px ;border-radius: 30px;
+
+margin: 40px;
+">OVERFLOW</h1>
+<div style="height: 200px;">
+<div class="over">
+    <div class="overflow scroll">
+       <h2>overflow-scroll</h2>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus doloremque quae excepturi assumenda ratione iste, quidem praesentium quod dolor magni.</p>
+    </div>
+    <div class="overflow scroll" style="overflow-x:scroll;">
+        <h2>overflow-scrollX</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus doloremque quae excepturi assumenda ratione iste, quidem praesentium quod dolor magni.</p>
+     </div>
+     <div class="overflow scroll" style="overflow-y: scroll;">
+        <h2>overflow-scrollY</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus doloremque quae excepturi assumenda ratione iste, quidem praesentium quod dolor magni.</p>
+     </div>
+    <div class="overflow hidden">
+       <h2>overflow-hidden</h2>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus doloremque quae excepturi assumenda ratione iste, quidem praesentium quod dolor magni.</p>
+    </div>
+    <div class="overflow visible">
+        <h2>overflow-visible</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus doloremque quae excepturi assumenda ratione iste, quidem praesentium quod dolor magni.</p>
+     </div>
+    <div class="overflow auto">
+       <h2>overflow-auto</h2>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus doloremque quae excepturi assumenda ratione iste, quidem praesentium quod dolor magni.</p>
+    </div>
+    
+ </div>
+</div>
+ 
+
+<br>
+<div>
+    <br><br><br><br><br><br><br><br><br><br>
+    <!------------display none----------->
+    <h1 id="8">Display-None</h1>
+    <div style="background-color: rgb(177, 175, 144);">
+        <center>
+            <div class="man">
+                <div class="mik">
+                    <h3>DISPLAY-NONE</h3>
+                    <p class="none">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe eum voluptate itaque quod, accusamus sint dolor expedita, non unde</p>
+                </div>
+    
+                <h1 id="9" class="visibility-header">VISIBILITY</h1>
+    
+                <div class="mik">
+                    <h3><u>VISIBILITY-HIDDEN</u></h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi, sint dolorum nulla eum omnis ab voluptatum explicabo praesentium itaque! Quae</p>
+                    <div class="hidd">  
+                        <img src="images/free-photo-of-heron-flying-above-a-cherry-blossom.jpeg" alt="">
+                    </div>
+                </div>
+    
+                <div class="mik">  
+                    <h3><u>VISIBILITY-VISIBLE</u></h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis tempore nesciunt vero totam laudantium veniam saepe</p>
+                    <div class="visi">
+                        <img src="images/free-photo-of-heron-flying-above-a-cherry-blossom.jpeg" alt="">
+                    </div>
+                </div>
+            </div>
+        </center>
+    </div>
+    
+
+<!--------------navbar--------------->
+
+
+<h1 id="10" style="text-align:center;color: rgb(74, 10, 10);margin: 40px;">NAVIGATION BAR</h1>
+<div class="navborder">
+  <div class="nav">
+    <div class="navline">
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">CONTACT</a></li>
+        <li><a href="#">MENU</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!--============== DropDown========== -->
+<h1 id="11" style="text-align:center;color: rgb(73, 10, 10);margin: 40px;">DROPDOWN</h1>
+<div class="dropdown-container">
+    <div class="dropdown">
+        <button class="dropbtn">Volkswagen</button>
+        <div class="dropdown-content">
+            <a href="#">Audi</a>
+            <a href="#">Bentley</a>
+            <a href="#">Cupra</a>
+            <a href="#">Jetta</a>
+            <a href="#">Lamborghini</a>
+            <a href="#">Porsche</a>
+            <a href="#">SEAT</a>
+            <a href="#">Škoda</a>
+            <a href="#">Volkswagen</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn">TATA</button>
+        <div class="dropdown-content">
+            <a href="#">Land Rover</a>
+            <a href="#">Tata Hispano</a>
+            <a href="#">Tata Hitachi</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn">Ford</button>
+        <div class="dropdown-content">
+            <a href="#">Ford</a>
+            <a href="#">Mercedes</a>
+            <a href="#">Jaguar</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn">Rolls Royce</button>
+        <div class="dropdown-content">
+            <a href="#">Bentley</a>
+            <a href="#">Mini</a>
+            <a href="#">BMW</a>
+        </div>
+    </div>
+</div>
+
+
+<!--=============== ATTRIBUTE SELECTORS============== -->
+
+<h1 id="12" style="text-align:center;color:rgb(71, 10, 10);margin: 70px;">ATTRIBUTE SELECTORS</h1>
+<div style="background:linear-gradient(to left bottom,rgb(128, 122, 101) 50%,rgb(222, 208, 179) 50%) ;">
+<div class="atse">
+   <div class="atrise">
+      <h2>[attribute]</h2>
+       <div class="attr">
+           <p>selects all the elements with the specified attribute </p>
+           <p style="color: rgb(136, 29, 5);">selector [attribute]{property:value}</p>
+           <h4 class="h4">atribute is class</h4>
+           <li id="big">id="big"</li>
+       </div>
+   </div>
+   
+   <div class="atrise">
+       <h2>[attribute="value"]</h2>
+        <div class="attr1">
+           <p>selects all the elements where attribute and value are same</p>
+            <p>selector [attribute="value"]{property:value}</p>
+            <h4 class="h4">lorem ipsum</h4>
+        </div>
+    </div>
+   
+    <div class="atrise">
+       <h2>[attribute~="value"]</h2>
+        <div class="attr2">
+            <p>select elements with attribute :value ,containing specific word seperated with space</p>
+            <p class="high">selector [attribute~="value"]{property:value}</p>
+            <h4 class="highlight">class="highlight"</h4>
+            <p class="high level">class="high level"</p>
+        </div>
+    </div>
+   
+    <div class="atrise">
+       <h2>[attribute|="value"]</h2>
+        <div class="attr3">
+           <p>selects the elements whose attribute value starting with specific word and can be seperated by hyphen(-)</p>
+            <p class="top">slector [attribute|="value"]{property:value}</p>
+            <h4 class="top-list">class="top-list"</h4>
+            <li class="top load">class="top text"</li>
+        </div>
+    </div>
+   
+    <div class="atrise">
+       <h2>[attribute^="value"]</h2>
+        <div class="attr4">
+           <p>selects the elements whose attribute value begins with specific word and no space allowed</p>
+            <p class="peak">selector [attribute^="value"]{property:value}</p>
+            <li class="peak load">class="peak load"</li>
+            <h4 class="peak-list">class="peak-list"</h4>
+        </div>
+    </div>
+   
+    <div class="atrise">
+       <h2>[attribute$="value"]</h2>
+        <div class="attr5">
+           <p>selects the elements whose attribute value ends with specific word </p>
+            <p class="let">selector [attribute^="value"]{property:value}</p>
+            <li class="to let">class="to let"</li>
+            <h4 class="to-let">class="to-let"</h4>
+            <h4 class="to_let">class="to_let"</h4>
+            <h4 class="tolet">class="tolet"</h4>
+            
+        </div>
+    </div>
+   
+    <div class="atrise">
+       <h2>[attribute*="value"]</h2>
+        <div class="attr6">
+           <p>select all elements whose attribute value containing specific value</p>
+            <p class="pick">selector [attribute^="value"]{property:value}</p>
+            <li class="picker">class="picker"</li>
+            <h4 class="checker">class="checker"</h4>
+            <h4 class="list">class="list"</h4>
+            
+        </div>
+    </div>
+    </div>
+   </div>
+   <!------------------counter-reset-------------------->
+   <h1 id="13" style=" text-align: center;color:rgb(74, 7, 7);">COUNTER</h1>
+   <div class="cntr">
+   <div>
+       <h2 style="color: rgb(72, 9, 9);">Counter-reset</h2>
+   <div class="counter">
+       <h4>html</h4>
+       <h4>css</h4>
+       <h4>java</h4>
+       <h4>python</h4>
+       <h4>js</h4>
+       <h4>sql</h4>
+       <h4>react</h4>
+   </div>
+   </div>
+   
+   <div>
+       <h2 style="color: rgb(67, 8, 8);">Counter-set</h2>
+   <div class="counter1">
+       <h4>html</h4>
+       <h4>css</h4>
+       <h4>java</h4>
+       <h4>python</h4>
+       <h4>js</h4>
+       <h4>sql</h4>
+       <h4>react</h4>
+   </div>
+   </div>
+   
+   <div>
+       <h2 style="color: rgb(77, 10, 10);">Counter-reset-sub-section</h2>
+   <div class="counter2">
+       <h4>html</h4>
+       <h5>headings</h5>
+       <h5>form</h5>
+       <h5>fonts</h5>
+       <h4>css</h4>
+       <h5>background</h5>
+       <h5>combinator</h5>
+       <h5>attribute</h5>
+       <h4>java</h4>
+       <h5>variables</h5>
+       <h5>data types</h5>
+       <h5>comments</h5>
+   </div>
+   </div>
+   </div>
+   <br><br><br><br><br><br><br><br><br><br>
+   
+       <!-------------psuedo elements------------------>
+   
+       <h1 id="14" style="color:rgb(74, 9, 9);text-align: center;margin: 120px;">PSUDO-ELEMENTS</h1>
+       <div style="font-family: Arial, sans-serif;
+       background-color: #dcd5c3;
+       margin: 0;
+       padding: 0;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: 50vh;
+       text-align: center;">
+       <style>
+        
+        h1 {
+            color: #88111b;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .container2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            background-color: #b9b19e;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .box2 {
+            background-color: #eae6df;
+            border: 2px solid #890c17;
+            padding: 20px;
+            width: 250px;
+            height: 200px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s, background-color 0.5s;
+            position: relative;
+        }
+        
+        .box2:hover {
+            transform: rotateY(10deg) rotateX(-10deg);
+            background-color: #faf8ee;
+        }
+        
+        .box2 h2 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            color: #4d3c13;
+        }
+        
+        .box2 p, .box2 ul {
+            margin: 10px 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .first-line p::first-line {
+            color: #59220a;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        .first-letter p::first-letter {
+            font-size: 2em;
+            font-weight: bold;
+            color: #6f8000;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .marker ul li::marker {
+            color: #af4109;
+            font-size: 1.5em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hover-box:hover {
+            background-color: #ffedcc;
+            transform: rotateY(-10deg) rotateX(10deg);
+        }
+        
+        .focus-box input:focus {
+            border-color: #51210c;
+            box-shadow: 0 0 10px rgba(167, 155, 149, 0.8);
+            transform: scale(1.05);
+        }
+        
+        .nth-child-box ul li:nth-child(odd) {
+            background-color: #cdc1aa;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        
+        .hover-box::before {
+            content: 'Hovered!';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            font-size: 3em;
+            color: rgba(154, 140, 134, 0.2);
+            transform: rotate(-45deg);
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        
+        .hover-box:hover::before {
+            opacity: 1;
+        }
+        @media (max-width: 1024px) {
+            .container2 {
+                padding: 15px;
+            }
+        
+            .box2 {
+                width: 200px;
+                height: 160px;
+            }
+        
+            .box2 h2 {
+                font-size: 1.2em;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container2 {
+                padding: 10px;
+                gap: 15px;
+            }
+        
+            .box2 {
+                width: 180px;
+                height: 140px;
+                padding: 15px;
+            }
+        
+            .box2 h2 {
+                font-size: 1.1em;
+            }
+        
+            .box2 p, .box2 ul {
+                font-size: 0.9em;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container2 {
+                flex-direction: column;
+                align-items: center;
+                padding: 5px;
+            }
+        
+            .box2 {
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+                padding: 10px;
+            }
+        
+            .box2 h2 {
+                font-size: 1em;
+            }
+        
+            .box2 p, .box2 ul {
+                font-size: 0.8em;
+            }
+        }
+               </style>
+       
+        <div class="container2">
+            <div class="box2 first-line">
+                <h2>::first-line</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quaerat reiciendis exercitationem.</p>
+            </div>
+
+            <div class="box2 first-letter">
+                <h2>::first-letter</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quaerat reiciendis exercitationem.</p>
+            </div>
+
+            <div class="box2 marker">
+                <h2>::marker</h2>
+                <ul>
+                    <li>Coffee</li>
+                    <li>Tea</li>
+                    <li>Soft drinks</li>
+                </ul>
+            </div>
+
+            <div class="box2 hover-box">
+                <h2>:hover</h2>
+                <p>Hover over this box to see the effect!</p>
+            </div>
+
+            <div class="box2 focus-box">
+                <h2>:focus</h2>
+                <input type="text" placeholder="Click to focus">
+            </div>
+
+            <div class="box2 nth-child-box">
+                <h2>:nth-child</h2>
+                <ul>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                    <li>Item 4</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
+
+      <!------------------rounded corners----------------------->
+   
+      <h1 id="15" style="margin: 60px;color:rgb(71, 11, 11);">ROUNDED-CORNERS</h1>
+   
+      <div style=" font-family: Arial, sans-serif;
+      background-color: #cdc4ab;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;">
+      <div class="rounded-corners-container">
+        <div class="rounded-corner" style="border-radius: 10px 30px; ">border-radius: 10px 30px</div>
+        <div class="rounded-corner" style="border-radius: 50px 5px; ">"border-radius: 50px 5px</div>
+        <div class="rounded-corner" style="border-radius: 30px 30px; ">border-radius: 30px 30px</div>
+        <div class="rounded-corner" style="border-radius: 20px 20px 50px; ">border-radius: 20px 20px 50px</div>
+        <div class="rounded-corner" style="border-radius: 50px 10px 10px; ">border-radius: 50px 10px 10px</div>
+        <div class="rounded-corner" style="border-radius: 10px 60px 10px 10px ; ">border-radius: 10px 60px 10px 10px</div>
+        <div class="rounded-corner" style="border-radius: 10px 20px  10px 70px ; ">border-radius: 10px 20px  10px 70px</div>
+        <div class="rounded-corner" style="border-radius: 80px 50px; ">border-radius: 80px 50px</div>
+        <div class="rounded-corner" style="border-radius: 20px 80px; ">border-radius: 20px 80px</div>
+        <div class="rounded-corner" style="border-radius: 100%; ">border-radius: 100%</div>
+    </div>
+      </div>
+    
+   
+       <!-----------------border image--------------------->
+   
+       <h1 id="16" style="text-align: center;color:rgb(64, 8, 8);margin: 40px;">BORDER IMAGE</h1>
+       <div class="bord">
+        <div>
+       <p class="bi">border-image:20% round</p>
+       <p class="bi1">border image:20% stretch</p>
+       <p class="bi2">border imgae:30% stretch</p></div><div>
+       <p class="bi3">border-image:20% round</p>
+       <p class="bi4">border-image:20% round</p>
+       <p class="bi5">border-image:20% round</p>
+       </div></div>
+   
+   
+       <!---------------background-size---------------------->
+       <h1 id="17" style="margin: 40px;color:rgb(78, 10, 10);text-align: center;">BACKGROUND-SIZE</h1>
+       <div class="bg-size">
+       <div>
+           <h2>BACKGROUND-SIZE:cover</h2>
+       <div class="cover">
+           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis hic provident qui esse nihil, 
+              animi modi! Nesciunt fugiat maxime molestias, mollitia, a repellendus nobis sed modi voluptates inventore molestiae labore.
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat molestiae quasi laboriosam natus veniam ipsa nulla architecto labore beatae enim, 
+              delectus reprehenderit expedita est temporibus! Minima eum saepe qui alias?
+           </p>
+       </div>
+       </div>
+       <div>
+           <h2>BACKGROUND-SIZE:contain</h2>
+       <div class="contain">
+           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis hic provident qui esse nihil, 
+               animi modi! Nesciunt fugiat maxime molestias, mollitia, a repellendus nobis sed modi voluptates inventore molestiae labore.
+               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat molestiae quasi laboriosam natus veniam ipsa nulla architecto labore beatae enim, 
+               delectus reprehenderit expedita est temporibus! Minima eum saepe qui alias?
+           </p>
+       </div>
+       </div>
+       <div>
+           <h2>BACKGROUND-SIZE:auto</h2>
+       <div class="autos">
+           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis hic provident qui esse nihil, 
+               animi modi! Nesciunt fugiat maxime molestias, mollitia, a repellendus nobis sed modi voluptates inventore molestiae labore.
+               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat molestiae quasi laboriosam natus veniam ipsa nulla architecto labore beatae enim, 
+               delectus reprehenderit expedita est temporibus! Minima eum saepe qui alias?
+           </p>
+       </div>
+       </div>
+       </div>
+       <!------------------background image position----------------------->
+       <h1 id="18" style="text-align: center; margin: 40px;color:rgb(83, 16, 16);">BACKGROUND-IMAGE-POSITION </h1>
+       <div class="bgi">
+           <h1 style="text-align: center;color: black;">html</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id incidunt animi sequi. Sint ratione delectus tempora minus laudantium cum, nisi quis error voluptatum debitis laborum! In illo quia autem beatae.
+               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur recusandae error magnam optio sapiente soluta exercitationem veritatis. Voluptatum modi saepe, cumque neque ea, illum repudiandae, vitae atque laborum perferendis eveniet.
+               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur labore iusto fuga eos modi iure, qui autem veniam assumenda tempore vel deleniti! Dicta, sapiente rerum maiores totam omnis fuga libero.
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum reiciendis voluptas, dolore numquam, repellendus a atque enim iure tenetur quam natus laboriosam quibusdam maxime, at distinctio eligendi? Omnis, tempore exercitationem?
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam officiis atque autem assumenda, quas, ut, commodi enim accusamus nostrum praesentium tenetur nobis at magni velit pariatur dolore! Aliquid, dicta cum!
+               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore amet porro fuga vel deleniti voluptas nemo vero illum id veritatis inventore, vitae, illo ullam officia blanditiis voluptate exercitationem neque. Nostrum?
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius expedita beatae mollitia minus at debitis explicabo consequuntur unde, laborum repellat necessitatibus repellendus, id eaque nihil itaque ab a quo soluta!
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi omnis quam corporis amet ut. Voluptatum tempore, quasi vero nemo hic cumque nisi illo quaerat assumenda sapiente? Dicta aliquid amet fuga!
+            </p>
+           </div>
+        <!---------------background clip-------->
+   
+           <br><br><br>
+           <h1 id="19" style="margin: 40px;text-align: center;color:rgb(70, 57, 8);">BACKGROUND-CLIP</h1>
+          <div class="clip">
+          <div class="bgi1">
+           <h3>BACKGROUND-CLIP:CONTENT-BOX</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id incidunt animi sequi. Sint ratione delectus tempora minus laudantium cum, nisi quis error voluptatum debitis laborum! In illo quia autem beatae.
+               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur recusandae error magnam optio sapiente soluta exercitationem veritatis. Voluptatum modi saepe, cumque neque ea, illum repudiandae, vitae atque laborum perferendis eveniet.
+               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur labore iusto fuga eos modi iure, qui autem veniam assumenda tempore vel deleniti! Dicta, sapiente rerum maiores totam omnis fuga libero.
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum reiciendis voluptas, dolore numquam, repellendus a atque enim iure tenetur quam natus laboriosam quibusdam maxime, at distinctio eligendi? Omnis, tempore exercitationem?
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam officiis atque autem assumenda, quas, ut, commodi enim accusamus nostrum praesentium tenetur nobis at magni velit pariatur dolore! Aliquid, dicta cum!
+               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore amet porro fuga vel deleniti voluptas nemo vero illum id veritatis inventore, vitae, illo ullam officia blanditiis voluptate exercitationem neque. Nostrum?
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius expedita beatae mollitia minus at debitis explicabo consequuntur unde, laborum repellat necessitatibus repellendus, id eaque nihil itaque ab a quo soluta!
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi omnis quam corporis amet ut. Voluptatum tempore, quasi vero nemo hic cumque nisi illo quaerat assumenda sapiente? Dicta aliquid amet fuga!
+               
+              
+            </p>
+           </div>
+        
+   
+           <div class="bgi1_1">
+               <h3>BACKGROUND-CLIP:PADDING-BOX</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id incidunt animi sequi. Sint ratione delectus tempora minus laudantium cum, nisi quis error voluptatum debitis laborum! In illo quia autem beatae.
+                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur recusandae error magnam optio sapiente soluta exercitationem veritatis. Voluptatum modi saepe, cumque neque ea, illum repudiandae, vitae atque laborum perferendis eveniet.
+                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur labore iusto fuga eos modi iure, qui autem veniam assumenda tempore vel deleniti! Dicta, sapiente rerum maiores totam omnis fuga libero.
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum reiciendis voluptas, dolore numquam, repellendus a atque enim iure tenetur quam natus laboriosam quibusdam maxime, at distinctio eligendi? Omnis, tempore exercitationem?
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam officiis atque autem assumenda, quas, ut, commodi enim accusamus nostrum praesentium tenetur nobis at magni velit pariatur dolore! Aliquid, dicta cum!
+                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore amet porro fuga vel deleniti voluptas nemo vero illum id veritatis inventore, vitae, illo ullam officia blanditiis voluptate exercitationem neque. Nostrum?
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius expedita beatae mollitia minus at debitis explicabo consequuntur unde, laborum repellat necessitatibus repellendus, id eaque nihil itaque ab a quo soluta!
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi omnis quam corporis amet ut. Voluptatum tempore, quasi vero nemo hic cumque nisi illo quaerat assumenda sapiente? Dicta aliquid amet fuga!
+                   
+                   
+                  
+                </p>
+               </div>
+   
+               <div class="bgi1_2">
+                   <h3>BACKGROUND-CLIP:BORDER-BOX</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id incidunt animi sequi. Sint ratione delectus tempora minus laudantium cum, nisi quis error voluptatum debitis laborum! In illo quia autem beatae.
+                       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur recusandae error magnam optio sapiente soluta exercitationem veritatis. Voluptatum modi saepe, cumque neque ea, illum repudiandae, vitae atque laborum perferendis eveniet.
+                       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur labore iusto fuga eos modi iure, qui autem veniam assumenda tempore vel deleniti! Dicta, sapiente rerum maiores totam omnis fuga libero.
+                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum reiciendis voluptas, dolore numquam, repellendus a atque enim iure tenetur quam natus laboriosam quibusdam maxime, at distinctio eligendi? Omnis, tempore exercitationem?
+                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam officiis atque autem assumenda, quas, ut, commodi enim accusamus nostrum praesentium tenetur nobis at magni velit pariatur dolore! Aliquid, dicta cum!
+                       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore amet porro fuga vel deleniti voluptas nemo vero illum id veritatis inventore, vitae, illo ullam officia blanditiis voluptate exercitationem neque. Nostrum?
+                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius expedita beatae mollitia minus at debitis explicabo consequuntur unde, laborum repellat necessitatibus repellendus, id eaque nihil itaque ab a quo soluta!
+                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi omnis quam corporis amet ut. Voluptatum tempore, quasi vero nemo hic cumque nisi illo quaerat assumenda sapiente? Dicta aliquid amet fuga!
+                       
+                    </p>
+               </div>
+               </div>
+        <br>
+        <!------------background origin-------->
+   
+        <h1 id="20" style="margin: 40px;color:rgb(74, 9, 9);text-align: center;">BACKGROUND-ORIGIN</h1>
+       <div class="clip">
+       <div class="bgi2">
+           <h3>BACKGROUND-ORIGIN:CONTENT-BOX</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id incidunt animi sequi. Sint ratione delectus tempora minus laudantium cum, nisi quis error voluptatum debitis laborum! In illo quia autem beatae.
+               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur recusandae error magnam optio sapiente soluta exercitationem veritatis. Voluptatum modi saepe, cumque neque ea, illum repudiandae, vitae atque laborum perferendis eveniet.
+               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur labore iusto fuga eos modi iure, qui autem veniam assumenda tempore vel deleniti! Dicta, sapiente rerum maiores totam omnis fuga libero.
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum reiciendis voluptas, dolore numquam, repellendus a atque enim iure tenetur quam natus laboriosam quibusdam maxime, at distinctio eligendi? Omnis, tempore exercitationem?
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam officiis atque autem assumenda, quas, ut, commodi enim accusamus nostrum praesentium tenetur nobis at magni velit pariatur dolore! Aliquid, dicta cum!
+               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore amet porro fuga vel deleniti voluptas nemo vero illum id veritatis inventore, vitae, illo ullam officia blanditiis voluptate exercitationem neque. Nostrum?
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius expedita beatae mollitia minus at debitis explicabo consequuntur unde, laborum repellat necessitatibus repellendus, id eaque nihil itaque ab a quo soluta!
+               am corporis amet ut. Voluptatum tempore, quasi vero nemo hic cumque nisi illo quaerat assumenda sapiente? Dicta aliquid amet fuga!
+            </p>
+           </div>
+   
+           <div class="bgi3">
+               <h3>BACKGROUND-ORIGIN:BORDER-BOX</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id incidunt animi sequi. Sint ratione delectus tempora minus laudantium cum, nisi quis error voluptatum debitis laborum! In illo quia autem beatae.
+                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur recusandae error magnam optio sapiente soluta exercitationem veritatis. Voluptatum modi saepe, cumque neque ea, illum repudiandae, vitae atque laborum perferendis eveniet.
+                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur labore iusto fuga eos modi iure, qui autem veniam assumenda tempore vel deleniti! Dicta, sapiente rerum maiores totam omnis fuga libero.
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum reiciendis voluptas, dolore numquam, repellendus a atque enim iure tenetur quam natus laboriosam quibusdam maxime, at distinctio eligendi? Omnis, tempore exercitationem?
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam officiis atque autem assumenda, quas, ut, commodi enim accusamus nostrum praesentium tenetur nobis at magni velit pariatur dolore! Aliquid, dicta cum!
+                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore amet porro fuga vel deleniti voluptas nemo vero illum id veritatis inventore, vitae, illo ullam officia blanditiis voluptate exercitationem neque. Nostrum?
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius expedita beatae mollitia minus at debitis explicabo consequuntur unde, laborum repellat necessitatibus repellendus, id eaque nihil itaque ab a quo soluta!
+                   am corporis amet ut. Voluptatum tempore, quasi vero nemo hic cumque nisi illo quaerat assumenda sapiente? Dicta aliquid amet fuga!
+                </p>
+           </div>
+   
+           <div class="bgi4">
+               <h3>BACKGROUND-ORIGIN:PADDING-BOX</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id incidunt animi sequi. Sint ratione delectus tempora minus laudantium cum, nisi quis error voluptatum debitis laborum! In illo quia autem beatae.
+                       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur recusandae error magnam optio sapiente soluta exercitationem veritatis. Voluptatum modi saepe, cumque neque ea, illum repudiandae, vitae atque laborum perferendis eveniet.
+                       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur labore iusto fuga eos modi iure, qui autem veniam assumenda tempore vel deleniti! Dicta, sapiente rerum maiores totam omnis fuga libero.
+                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum reiciendis voluptas, dolore numquam, repellendus a atque enim iure tenetur quam natus laboriosam quibusdam maxime, at distinctio eligendi? Omnis, tempore exercitationem?
+                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam officiis atque autem assumenda, quas, ut, commodi enim accusamus nostrum praesentium tenetur nobis at magni velit pariatur dolore! Aliquid, dicta cum!
+                       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore amet porro fuga vel deleniti voluptas nemo vero illum id veritatis inventore, vitae, illo ullam officia blanditiis voluptate exercitationem neque. Nostrum?
+                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius expedita beatae mollitia minus at debitis explicabo consequuntur unde, laborum repellat necessitatibus repellendus, id eaque nihil itaque ab a quo soluta!
+                       am corporis amet ut. Voluptatum tempore, quasi vero nemo hic cumque nisi illo quaerat assumenda sapiente? Dicta aliquid amet fuga!
+                    </p>
+           </div>
+   
+       </div>
+       <br>
+       </div> 
+       
+       <br>
+       <br>
+       <!-------------gradients----------------------->
+   
+       <h1 id="21" style="margin: 40px;color:rgb(66, 11, 11); text-align: center;">LINEAR-GRADIENT</h1>
+       <div class="menu-bar">
+           <label for="gradient-type">Select Gradient Type:</label>
+           <select id="gradient-type">
+               <option value="linear">Linear Gradient</option>
+               <option value="radial">Radial Gradient</option>
+               <option value="conic">Conic Gradient</option>
+               <option value="repeating-linear">Repeating Linear Gradient</option>
+               <option value="repeating-radial">Repeating Radial Gradient</option>
+               <option value="repeating-conic">Repeating Conic Gradient</option>
+           </select>
+       
+           <div class="angle-input">
+               <label for="angle">Angle (degrees):</label>
+               <input type="number" id="angle" placeholder="Angle" min="0" max="360" value="90">
+           </div>
+       
+           <div class="color-inputs">
+               <label for="color1">Select Color 1:</label>
+               <input type="color" id="color1" value="#ff0000">
+               <input type="number" id="percent1" placeholder="Percentage" min="0" max="100" value="0">
+       
+               <label for="color2">Select Color 2:</label>
+               <input type="color" id="color2" value="#0000ff">
+               <input type="number" id="percent2" placeholder="Percentage" min="0" max="100" value="100">
+       
+               <button id="add-color">Add More Colors</button>
+           </div>
+       
+           <div id="additional-colors"></div>
+       
+           <label for="border-radius">Border Radius:</label>
+           <input type="range" id="border-radius" min="0" max="50" value="0"> 
+           <span id="radius-value">0</span>px
+       
+           <button id="generate-gradient">Generate Gradient</button>
+       </div>
+       
+       <div class="output">
+           <h3>Gradient Output:</h3>
+           <div id="gradient-display"></div>
+       </div>
+       
+       <script>
+       let colorCounter = 3;
+       
+       document.getElementById('add-color').addEventListener('click', function() {
+           const additionalColors = document.getElementById('additional-colors');
+           
+           const newColorInput = document.createElement('input');
+           newColorInput.type = 'color';
+           newColorInput.id = `color${colorCounter}`;
+           newColorInput.value = '#ffffff';
+           
+           const newPercentInput = document.createElement('input');
+           newPercentInput.type = 'number';
+           newPercentInput.id = `percent${colorCounter}`;
+           newPercentInput.placeholder = 'Percentage';
+           newPercentInput.min = '0';
+           newPercentInput.max = '100';
+           newPercentInput.value = '100';
+           
+           additionalColors.appendChild(newColorInput);
+           additionalColors.appendChild(newPercentInput);
+           
+           colorCounter++;
+       });
+       
+       document.getElementById('border-radius').addEventListener('input', function() {
+           const radiusValue = document.getElementById('border-radius').value;
+           document.getElementById('radius-value').textContent = radiusValue;
+       });
+       
+       document.getElementById('generate-gradient').addEventListener('click', function() {
+           const gradientType = document.getElementById('gradient-type').value;
+           const angle = document.getElementById('angle').value;
+           
+           const colorsWithPercents = [];
+           for (let i = 1; i < colorCounter; i++) {
+               const color = document.getElementById(`color${i}`).value;
+               const percent = document.getElementById(`percent${i}`).value;
+               colorsWithPercents.push(`${color} ${percent}%`);
+           }
+           
+           let gradient = '';
+       
+           switch (gradientType) {
+               case 'linear':
+               case 'repeating-linear':
+                   gradient = `${gradientType}-gradient(${angle}deg, ${colorsWithPercents.join(', ')})`;
+                   break;
+               case 'radial':
+               case 'repeating-radial':
+                   gradient = `${gradientType}-gradient(circle, ${colorsWithPercents.join(', ')})`;
+                   break;
+               case 'conic':
+               case 'repeating-conic':
+                   gradient = `${gradientType}-gradient(from ${angle}deg, ${colorsWithPercents.join(', ')})`;
+                   break;
+           }
+       
+           const borderRadius = document.getElementById('border-radius').value + 'px';
+           
+           const gradientDisplay = document.getElementById('gradient-display');
+           gradientDisplay.style.backgroundImage = gradient;
+           gradientDisplay.style.borderRadius = borderRadius;
+       });
+       
+       document.getElementById('gradient-type').addEventListener('change', function() {
+           const angleInput = document.querySelector('.angle-input');
+           if (this.value.includes('radial')) {
+               angleInput.style.display = 'none';
+           } else {
+               angleInput.style.display = 'block';
+           }
+       });
+       </script>
+
+   
+   <br>
+
+
+   <!--------------Text-Shadow------------>
+   <h1 id="24" style="margin: 40px;text-align: center;color:rgb(61, 7, 7); ">Text-SHADOW</h1>
+   <div class="text-shadow-container" style="display: flex;
+   justify-content:space-around;
+   align-items: center;
+   height: 100vh;
+   background-color: #d5c6a9;
+   color: white;
+   font-family: Arial, sans-serif;">
+    <h1 class="text1">Shadow <br>Effect 1</h1>
+    <h1 class="text2">Shadow <br> Effect 2</h1>
+    <h1 class="text3">Shadow  <br>Effect 3</h1>
+    <h1 class="text4">Shadow <br>Effect 4</h1>
+    <h1 class="text5">Shadow <br>Effect 5</h1>
+</div>
+
+   <!----------------------box-shadow------------------------------>
+   <h1 id="25" style="margin: 40px;text-align: center;color:rgb(82, 11, 11);">BOX-SHADOW</h1>
+   <br><br><br>
+       <div class="shad">
+          <h1 class="box11">BOX-SHADOW</h1>
+          <h1 class="box12">BOX-SHADOW</h1>  
+          <h1 class="box13">BOX-SHADOW</h1> 
+       </div>
+       <div class="shad"> 
+          <h1 class="box14">BOX-SHADOW</h1>
+          <h1 class="box15">BOX-SHADOW</h1>
+          <h1 class="box16">BOX-SHADOW</h1>
+       </div>
+   
+   <!----------------2D-transformations------------------------>
+       <h1 id="29" style="margin: 60px;color:rgb(78, 10, 10);">2D-TRANSFORMS</h1>
+       <h2>translate</h2>
+       <hr style="margin-left: 80px;margin-right: 80px;">
+       <div class="translate ">
+       <p class="tran">
+           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia pariatur sint praesentium quisquam nemo eos aliquid quia beatae omnis dolore? 
+           Quaerat fugit illum distinctio est dolorum exercitationem  
+       </p>
+       <br><br><br><br>
+       <p class="tran1">
+           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia pariatur sint praesentium quisquam nemo eos aliquid quia beatae omnis dolore? 
+           Quaerat fugit illum distinctio est dolorum exercitationem possimus consequatur ipsam?
+       </p>
+       </div>
+       <br><br><br><br>
+    <h2>ROTATE</h2>
+    <hr style="margin-left: 80px;margin-right: 80px;margin-bottom: 60px;color:rgb(73, 12, 12);">
+       <div class="translate">
+       <p class="tran2">
+           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia pariatur sint praesentium quisquam nemo eos aliquid quia beatae omnis dolore? 
+           Quaerat fugit illum distinctio est dolorum exercitationem possimus consequatur ipsam?
+       </p>
+       
+       <br><br><br><br>
+       
+       <p class="tran3">
+           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia pariatur sint praesentium quisquam nemo eos aliquid quia beatae omnis dolore? 
+           Quaerat fugit illum distinctio est dolorum exercitationem possimus consequatur ipsam?
+       </p>
+       </div>
+       <br><br><br><br><br><br><br><br>
+        <h2>SCALE</h2>
+        <hr style="margin-left: 80px;margin-right: 80px;margin-bottom: 100px;">
+       <div class="translate">
+       <p class="tran4">
+           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia pariatur sint praesentium quisquam nemo eos aliquid quia beatae omnis dolore? 
+           Quaerat fugit illum distinctio est dolorum exercitationem possimus consequatur ipsam?
+       </p>
+       <br><br><br>
+       <p class="tran5">
+           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia pariatur sint praesentium quisquam nemo eos aliquid quia beatae omnis dolore? 
+           
+       </p>
+       
+       <br><br><br><br>
+      
+       <p class="tran6">
+           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia pariatur sint praesentium quisquam nemo eos aliquid quia beatae omnis dolore? 
+           Quaerat fugit illum distinctio est dolorum exercitationem possimus consequatur ipsam?
+       </p>
+      </div>
+       <br><br><br><br><br><br><br><br><br>
+       <h2>SKEW</h2>
+       <hr style="margin-left: 80px;margin-right: 80px;">
+       <div class="translate">
+       <p class="tran7">
+           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia pariatur sint praesentium quisquam nemo eos aliquid quia beatae omnis dolore? 
+           Quaerat fugit illum distinctio est dolorum exercitationem possimus consequatur ipsam?
+       </p>
+       <br><br><br><br><br><br><br><br><br>
+       <p class="tran8">
+           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia pariatur sint praesentium quisquam nemo eos aliquid quia beatae omnis dolore? 
+           Quaerat fugit illum distinctio est dolorum exercitationem possimus consequatur ipsam?
+       </p>
+       </div>
+   
+       <br><br> <br><br>
+       <hr>
+   
+       <!---------------3D-transform--------------------->
+       <h1 id="30" style="color: rgb(82, 40, 12);margin: 60px;">3D-TRANSFORMATION</h1>
+       <div class="threed">
+       <div>
+           <h2>rotateX</h2>
+       <div class="rotx">
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam quam pariatur temporibus dolorem! Quam nobis dicta nulla temporibus aut. 
+           Voluptatibus ratione ipsam facere dolore sit magni quibusdam repellendus quasi dolorem.</p>
+       </div> 
+       </div>
+   
+       <div>
+           <h2>rotateY</h2>
+       <div class="roty">
+           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam quam pariatur temporibus dolorem! Quam nobis dicta nulla temporibus aut. 
+            Voluptatibus ratione ipsam facere dolore sit magni quibusdam repellendus quasi dolorem.</p>
+        </div> 
+       </div>
+   
+       <div>
+           <h2>rotateZ</h2>
+        <div class="rotz">
+           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam quam pariatur temporibus dolorem! Quam nobis dicta nulla temporibus aut. 
+            Voluptatibus ratione ipsam facere dolore sit magni quibusdam repellendus quasi dolorem.</p>
+        </div> 
+       </div>
+       </div>
+   
+   <hr>
+       <!-------------------transitions------------------------->
+    
+       <h1 id="31" style="color: rgb(70, 20, 11);margin-top: 80px;">TRANSITIONS &amp; TIMING-FUNCTIONS</h1>
+       <br>
+       <div class="tr">
+           ease
+       </div>
+       <br><br>
+       <div class="t1">
+           ease
+       </div>
+       <br><br>
+       <div class="t2">
+           ease-in
+       </div>
+       <br><br>
+       <div class="t3">
+           ease-out
+       </div>
+       <br><br>
+       <div class="t4">
+           ease-in-out
+       </div>
+       <br><br>
+       <div class="t5">
+           ease
+       </div>
+   
+       <br><br>
+   
+   
+       <!----------animations------------->
+       <h1 id="32" style="color: rgb(67, 19, 7);">ANIMATIONS</h1>
+       <br>
+       <div class="anime">
+              
+       </div>
+       <br><br>
+       <div class="anime1">
+              
+       </div>
+       <br><br>
+       <div class="anime2">
+              
+       </div>
+       <br><br><br><br>
+       <div class="anime3">
+              
+       </div>
+       <br><br><br><br>
+       <div class="anime4">
+              
+       </div>
+       <br><br> <br><br> <br><br>
+       <div class="anime5">
+              
+       </div>
+   
+   
+       <br><br><br>
+   
+   
+       <!-----------------thumnails------------------------>
+   
+       <h1 id="33" style="margin: 60px;text-align: center;color:rgb(78, 8, 8);">THUMB-NAIL</h1>
+       <div class="thumbn">
+            <img class="thumb" src="images_4" alt="">
+            <img class="thumb" src="images_2" alt="">
+            <img class="thumb" src="images/MainAfter.jpg" alt="">
+       </div> 
+    <br><br><br>
+   
+   
+       <!--------------tool-tip-------------------->
+   
+       <h1 id="34" style="color:rgb(73, 11, 11);margin: 60px;">TOOL-TIP</h1>
+       <div class="container">
+           <div class="tooltip tooltip-right">
+               <span class="tooltiptext">Right Tooltip</span>
+               Hover me (Right)!
+           </div>
+           <div class="tooltip tooltip-left">
+               <span class="tooltiptext">Left Tooltip</span>
+               Hover me (Left)!
+           </div>
+           <div class="tooltip tooltip-top">
+               <span class="tooltiptext">Top Tooltip</span>
+               Hover me (Top)!
+           </div>
+           <div class="tooltip tooltip-bottom">
+               <span class="tooltiptext">Bottom Tooltip</span>
+               Hover me (Bottom)!
+           </div></div>
+   
+   <!----------------position--------------------->
+        <h1 id="35" style="color:rgb(68, 7, 7);margin: 40px;">POSITIONS</h1>
+        <h4>IMAGE POSITION IS : relative</h4>
+        <h4>TEXT POSITION IS : absolute</h4>
+       <div class="con">
+           <img class="im" src="images/IMG20240818165547.jpg" alt="">
+           <div class="tex">CENTER</div>
+           <div class="tex1">TOP LEFT</div>
+           <div class="tex2">TOP RIGHT</div>
+           <div class="tex3">BOTTOM LEFT</div>
+           <div class="tex4">BOTTOM RIGHT</div>
+       </div>  
+   
+       <!-----------------z-index------------------------->
+      
+       <style>
+        .containera{
+               position: relative;
+               width: 400px;
+               height: 400px;
+           }
+   
+           .boxa {
+               position: absolute;
+               width: 200px;
+               height: 200px;
+               border-radius: 15px;
+               animation: move 5s infinite alternate ease-in-out;
+           }
+   
+           .boxa1 {
+               background-color: #cebca5;
+               top: 50px;
+               left: 50px;
+               z-index: 1;
+               animation-delay: 0s;
+           }
+   
+           .boxa2 {
+               background-color: #ada3c8;
+               top: 100px;
+               left: 100px;
+               z-index: 2;
+               animation-delay: 0.5s;
+           }
+   
+           .boxa3 {
+               background-color: #b0cad6;
+               top: 150px;
+               left: 150px;
+               z-index: 3;
+               animation-delay: 1s;
+           }
+   
+           .boxa4 {
+               background-color: #b8cda7;
+               top: 200px;
+               left: 200px;
+               z-index: 0;
+               animation-delay: 1.5s;
+           }
+   
+           @keyframes move {
+               0% { transform: scale(1); }
+               100% { transform: scale(1.2); }
+           }
+      </style>
+          <h1 id="36" style="margin: 60px;color:rgb(71, 9, 9);">Z-INDEX</h1>
+          <div style=" margin: 0;
+          height: 80vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: linear-gradient(180deg, rgb(203, 194, 170), rgb(185, 166, 136), rgba(77, 49, 8, 0.708));;
+          font-family: Arial, sans-serif;">
+          <div class="containerz"><center>
+           <div class="box boxz1">Box 1</div>
+           <div class="box boxz2">Box 2</div>
+           <div class="box boxz3">Box 3</div>
+   
+       </center>
+       </div><div class="containera">
+           <div class="boxa boxa1">Z-Index: 1</div>
+           <div class="boxa boxa2">Z-Index: 2</div>
+           <div class="boxa boxa3">Z-Index: 3</div>
+           <div class="boxa boxa4">Z-Index: 0</div>
+       </div>
+   </div>
+       <br><br><br><br><br><br><br><hr>
+         
+      
+      
+   
+       <!-----------------combinator selector--------------------->
+   
+       <h1 id="37" style="margin: 60px;color:rgb(79, 10, 10);">COMBINATOR-SELECTORS</h1>
+       <div style="display: flex;justify-content: space-evenly;">
+        <div class="containerc">
+            <div class="descendant">
+                <p>Descendant Selector</p>
+                <div class="child">
+                    <p>Child Selector</p>
+                    <div class="adjacent"></div>
+                    <div class="general"></div>
+                </div>
+            </div>
+            <p class="adjacent-sibling">Adjacent Sibling Selector</p>
+            <p class="general-sibling">General Sibling Selector</p>
+        </div>
+       </div><br><br><br><br><br><br><br><br><br><br><hr>
+        
+   
+   <!---------------image filter---------------------------->
+   
+       <h1 id="38" style="margin: 60px;color:rgb(34, 4, 4);">IMAGE FILTER</h1>
+       <div class="imge">
+           <img class="filter" src="images/pexels-photo-6800945.jpeg" alt="">
+           <img class="filter1" src="images/pexels-photo-6800945.jpeg" alt="">
+           <img class="filter2" src="images/pexels-photo-6800945.jpeg" alt="">
+           <img class="filter3" src="images/pexels-photo-6800945.jpeg" alt="">
+       </div>
+       <div class="imge">
+           <img class="filter4" src="images/pexels-photo-6800945.jpeg" alt="">
+           <img class="filter5" src="images/pexels-photo-6800945.jpeg" alt="">
+           <img class="filter6" src="images/pexels-photo-6800945.jpeg" alt="">
+           <img class="filter7" src="images/pexels-photo-6800945.jpeg" alt="">
+       </div>
+   
+       <br><br><br><br>
+       <!--------------image reflection--------------->
+       <h1 id="39" style="margin: 60px;color:rgb(54, 6, 6);text-align: center;">IMAGE REFLECTION</h1>
+       <br><br>
+       <div class="masking">
+           <div class="a001"><img class="imgr1" src="images/pexels-photo-6800946.jpeg" alt="Image Reflection 1">
+           <div><img class="imgr" src="images/pexels-photo-6800945.jpeg" alt="Image Reflection 2"></div>
+           </div></div>
+           
+       
+       
+       <h1 id="40" style="color:rgb(42, 5, 5);margin-top: 120px;text-align: center;">IMAGE MASKING</h1>
+       <div class="a81">
+        <div class="container0">
+            <div class="image-mask mask1">
+                <img src="images/pexels-photo-6800946.jpeg" alt="Masked Image">
+            </div>
+            <div class="image-mask mask2">
+                <img src="images/pexels-photo-2604929.jpeg">
+            </div>
+            <div class="image-mask mask3">
+                <img src="images/pexels-photo-1883386.jpeg" alt="Masked Image">
+            </div>
+        </div>
+        
+       
+       </div>
+   
+      <br><br><br>
+      <br><br><br>
+   
+      <!----------------object position------------------->
+        <h1 id="41" style="color:rgb(76, 12, 12);margin-top: 60px;">OBJECT-POSITION</h1>
+       <div class="objectp">
+          <img class="objp" src="images/pexels-photo-1883386.jpeg" alt="">
+          <img class="objp1" src="images/pexels-photo-1883386.jpeg" alt="">
+          <img class="objp2" src="images/pexels-photo-1883386.jpeg" alt="">
+          <img class="objp3" src="images/pexels-photo-1883386.jpeg" alt="">
+       </div>
+       <br><br><br>
+   <hr>
+       <!----------------button----------------------->
+   
+       <h1 id="42" style="margin: 60px;color:rgb(79, 13, 13);">BUTTON</h1>
+       <div style=" margin: 0;
+       padding: 0;
+       height: 150px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+        background-color: #615f5f;"> 
+        <div class="button-container">
+            <button class="neon-button register-btn">Register</button>
+            <button class="neon-button login-btn">Login</button>
+            <button class="neon-button submit-btn">Submit</button>
+        </div>
+        
+       </div><br><br><br><br><br>
+       <!---------------pagenation----------------->
+   
+       <h1 id="43" style="margin: 60px;color:rgb(70, 7, 7);">PAGINATION</h1>
+       <div style="margin: 0;
+       padding: 0;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: 50vh;
+       background:linear-gradient(#ece2ce,#ece2ce) ; 
+       font-family: 'Arial', sans-serif;">
+   
+       <div class="pagination-container">
+        <div class="pagination pagination1">
+            <a href="#">«</a>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">»</a>
+        </div>
+    
+        <div class="pagination pagination2">
+            <a href="#">«</a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">»</a>
+        </div>
+    
+        <div class="pagination pagination3">
+            <a href="#">«</a>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">»</a>
+        </div>
+    </div>
+</div>
+    
+          
+       <!------------------colums---------------------->
+   
+        <h1 id="44" style=" text-align: center;color:rgb(56, 8, 8); margin: 60px;">COLUMN</h1>
+
+        <div class="col">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet ipsum omnis voluptatum animi vitae fugiat obcaecati doloremque dolores delectus placeat repudiandae beatae consequuntur id nisi tempora, earum vel nulla laboriosam!
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum nostrum cupiditate adipisci necessitatibus natus perspiciatis amet asperiores voluptas vel, et corporis, aperiam voluptatum magni consectetur, in qui doloribus sunt facere.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, fugiat temporibus reiciendis ipsam doloribus obcaecati inventore sed molestiae, blanditiis sequi eaque optio animi, nulla nostrum ipsa! Qui eos maxime officiis.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo corporis numquam id, autem labore, illo reiciendis maxime ipsum quia quibusdam quaerat aspernatur nesciunt dolores accusantium. Architecto voluptatem et odit est?
+            </p>
+        </div>
+        
+        <br><br><br>
+        
+        <p class="col1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet ipsum omnis voluptatum animi vitae fugiat obcaecati doloremque dolores delectus placeat repudiandae beatae consequuntur id nisi tempora, earum vel nulla laboriosam!
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum nostrum cupiditate adipisci necessitatibus natus perspiciatis amet asperiores voluptas vel, et corporis, aperiam voluptatum magni consectetur, in qui doloribus sunt facere.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, fugiat temporibus reiciendis ipsam doloribus obcaecati inventore sed molestiae, blanditiis sequi eaque optio animi, nulla nostrum ipsa! Qui eos maxime officiis.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo corporis numquam id, autem labore, illo reiciendis maxime ipsum quia quibusdam quaerat aspernatur nesciunt dolores accusantium. Architecto voluptatem et odit est?
+        </p>
+        
+        <div class="col3">
+            <h4>column-span</h4>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet ipsum omnis voluptatum animi vitae fugiat obcaecati doloremque dolores delectus placeat repudiandae beatae consequuntur id nisi tempora, earum vel nulla laboriosam!
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum nostrum cupiditate adipisci necessitatibus natus perspiciatis amet asperiores voluptas vel, et corporis, aperiam voluptatum magni consectetur, in qui doloribus sunt facere.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, fugiat temporibus reiciendis ipsam doloribus obcaecati inventore sed molestiae, blanditiis sequi eaque optio animi, nulla nostrum ipsa! Qui eos maxime officiis.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo corporis numquam id, autem labore, illo reiciendis maxime ipsum quia quibusdam quaerat aspernatur nesciunt dolores accusantium. Architecto voluptatem et odit est?
+        </div>
+        
+   
+       <!-----------------text area------------------------->
+   
+       <h1 id="45" style="margin: 60px;color:rgb(75, 10, 10);">TEXT-AREA</h1>
+       <div style=" font-family: Arial, sans-serif;
+       background-color: #d4caaab6;
+       padding: 50px;
+       text-align: center;">
+         <div>
+        <textarea>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet ipsum omnis voluptatum animi vitae fugiat obcaecati doloremque dolores delectus placeat repudiandae beatae consequuntur id nisi tempora, earum vel nulla laboriosam!
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum nostrum cupiditate adipisci necessitatibus natus perspiciatis amet asperiores voluptas vel, et corporis, aperiam voluptatum magni consectetur, in qui doloribus sunt facere.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, fugiat temporibus reiciendis ipsam doloribus obcaecati inventore sed molestiae, blanditiis sequi eaque optio animi, nulla nostrum ipsa! Qui eos maxime officiis.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo corporis numquam id, autem labore, illo reiciendis maxime ipsum quia quibusdam quaerat aspernatur nesciunt dolores accusantium. Architecto voluptatem et odit est?
+        </textarea>
+
+       </div><div>
+        <textarea class="colt">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet ipsum omnis voluptatum animi vitae fugiat obcaecati doloremque dolores delectus placeat repudiandae beatae consequuntur id nisi tempora, earum vel nulla laboriosam!
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum nostrum cupiditate adipisci necessitatibus natus perspiciatis amet asperiores voluptas vel, et corporis, aperiam voluptatum magni consectetur, in qui doloribus sunt facere.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, fugiat temporibus reiciendis ipsam doloribus obcaecati inventore sed molestiae, blanditiis sequi eaque optio animi, nulla nostrum ipsa! Qui eos maxime officiis.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo corporis numquam id, autem labore, illo reiciendis maxime ipsum quia quibusdam quaerat aspernatur nesciunt dolores accusantium. Architecto voluptatem et odit est?
+        </textarea><br>
+
+       </div>
+       </div>
+   
+      
+         
+       
+
+       <!---------------flex directions------------------>
+   
+       <h1 id="46" style="margin: 120px;color:rgb(45, 6, 6);
+      ">FLEX-DIRECTION:COLUMN-REVERSE</h1>
+       <div style="font-family: Arial, sans-serif;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: 125vh;
+       background:linear-gradient( #b29ab6,rgb(192, 166, 166))">
+       
+       <div class="containerf">
+        <div class="flex-box" id="imageContainer">
+           
+            <img style="background-size: 100px;" src="images/pexels-photo-6800946.jpeg" alt="Image 2" class="flex-item">
+            <img style="background-size: 100px;" src="images/pexels-photo-6800945.jpeg" alt="Image 3" class="flex-item">
+        </div>
+        <button id="reverseButton">Reverse</button>
+    </div>
+       </div>
+    <script>
+      document.getElementById('reverseButton').addEventListener('click', function() {
+    const imageContainer = document.getElementById('imageContainer');
+    
+    if (imageContainer.style.flexDirection === 'column-reverse') {
+        imageContainer.style.flexDirection = 'column';
+    } else {
+        imageContainer.style.flexDirection = 'column-reverse';
+    }
+});
+
+
+    </script>
+   <!-----------row reverse----------->
+   <h1 style="margin: 60px;text-align: center;color:rgb(50, 7, 7);">FLEX-DIRECTION:ROW-REVERSE</h1>
+   <div style="font-family: Arial, sans-serif;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 50vh;
+   background:linear-gradient(to top right,rgb(190, 178, 155) 50%,#917268 20%);">
+   <div class="containerc">
+    <div class="flex-box1" id="imageContainer">
+        <img src="images_1" alt="Image 1" class="flex-item1">
+        <img src="images_5" alt="Image 2" class="flex-item1">
+        <img src="images_6" alt="Image 3" class="flex-item1">
+        <img src="images_3" alt="Image 4" class="flex-item1">
+    </div>
+    
+</div>
+   </div>
+   
+       <br><br><br><br>
+   
+       <!----------------flex-wrap----------------->
+   
+   <h1 id="47" style="margin: 60px; text-align: center;color:rgb(67, 11, 11);">FLEX-WRAP:WRAP</h1>
+       <div class="flexw">
+           <div class="glowing-element">1</div>
+           <div class="glowing-element">2</div>
+           <div class="glowing-element">3</div>
+           <div class="glowing-element">4</div>
+           <div class="glowing-element">5</div> 
+           <div class="glowing-element">6</div>
+           <div class="glowing-element">7</div>
+           <div class="glowing-element">8</div>
+           <div class="glowing-element">9</div>
+           <div class="glowing-element">10</div>    
+       </div>
+   <!-----------flex-wrap------------>
+   <h1 style="margin: 60px ;color:rgb(72, 9, 9);">FLEX-WRAP:WRAP-REVERSE</h1>
+   
+   <div class="flexw1">
+       <div>1</div>
+       <div>2</div>
+       <div>3</div>
+       <div>4</div>
+       <div>5</div> 
+       <div>6</div>
+       <div>7</div>
+       <div>8</div>
+       <div>9</div>
+       <div>10</div>    
+   </div>
+   
+   <!---------------------justify content--------------------------->
+   
+   <h1 id="48" style="margin: 60px;color:rgb(44, 6, 6);">JUSTIFY-CONTENT</h1>
+   <div style=" display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 50vh;
+   margin: 0;
+  
+   overflow: hidden;
+   flex-direction: column;">
+   <div class="wrapper">
+    <div class="container111">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <div class="container111 space-end">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <div class="container111 space-around">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</div>
+   </div>
+<br><br><br><br><br><br>
+
+  
+   
+       <!-------------------grid-------------------------->
+   
+   <h1 id="49" style="margin: 80px;color:rgb(68, 10, 10);">GRID</h1>
+       
+    <div class="gr">
+        <div>1</div>
+        <div class="itm1">2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div class="itm2">6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+      </div>
+   
+
+       
+   
+   
+
+
+</body></html>

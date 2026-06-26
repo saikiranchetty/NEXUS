@@ -1,0 +1,372 @@
+body {
+    background-color: lightblue;
+    color: black;
+    font-family: cursive;
+}
+
+h1 {
+    border: 3px solid black;
+    border-radius: 30px;
+    background-color: tomato;
+    color: white;
+    text-align: center;
+}
+
+h2 {
+    border: 3px dashed blue;
+    border-radius: 30px;
+    background-color: crimson;
+    color: white;
+    text-align: center;
+}
+
+h3 {
+    border: 5px solid hotpink;
+    border-radius: 30px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+div[class="uma"] {
+    border: 3px solid sienna;
+    border-radius: 20px;
+    background: red;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+div[class="rama"] {
+    border: 3px solid sienna;
+    border-radius: 20px;
+    background: blue;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+div[class~="ram"] {
+    border: 3px solid sienna;
+    border-radius: 20px;
+    background: orange;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+div[class|="academy"] {
+    border: 3px solid sienna;
+    border-radius: 20px;
+    background: navy;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+div[class$="keer"] {
+    border: 3px solid sienna;
+    border-radius: 20px;
+    background: yellow;
+    text-align: center;
+    padding: 20px;
+}
+
+div[class^="teks"] {
+    border: 3px solid sienna;
+    border-radius: 20px;
+    background: chocolate;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+div[class*="sai"] {
+    border: 3px solid sienna;
+    border-radius: 20px;
+    background: chartreuse;
+    color: black;
+    text-align: center;
+    padding: 20px;
+}
+
+.box-1 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: linear-gradient(red, blue);
+}
+
+.box-2 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: linear-gradient(red, blue);
+}
+
+.box1 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: linear-gradient(to right, red, blue);
+}
+
+.box2 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: linear-gradient(to left, red, blue);
+}
+
+.box3 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: repeating-linear-gradient(gold, silver, brown);
+}
+
+.box4 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: repeating-linear-gradient(to right, gold, silver, brown);
+}
+
+.box5 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: repeating-linear-gradient(to left, gold, silver, brown);
+}
+
+.box6 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: linear-gradient(gold 40%, brown 10%);
+}
+
+.box7 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: linear-gradient(to right, gold 40%, brown 10%);
+}
+
+.box7 p b {
+    color: black;
+}
+
+.box8 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: linear-gradient(to left, gold 40%, brown 10%);
+}
+
+.box8 p b {
+    color: black;
+}
+
+.box9 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background: linear-gradient(to bottom, brown 40%, gold 40%);
+}
+
+.box10 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background: repeating-linear-gradient(gold 20%, silver 30%, brown 40%);
+}
+
+.box11 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background: repeating-linear-gradient(brown 20%, silver 30%, gold 40%);
+}
+
+.rg1 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: radial-gradient(red 40%, white 40%);
+}
+
+.rg2 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: radial-gradient(violet 10%, indigo 20%, blue 30%, green 40%, yellow 50%, orange 60%, red 70%);
+}
+
+.rg3 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: radial-gradient(circle at 50% 80%, red 20%, white 20%, green 0%);
+}
+
+.rg4 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background: radial-gradient(closest-side, red, white);
+}
+
+.rg5 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background: radial-gradient(farthest-side at 20% 50%, red, white);
+}
+
+.rg6 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background: radial-gradient(closest-corner at 30% 40%, red, white);
+}
+
+.rg7 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: radial-gradient(farthest-corner at 30% 40%, red, white);
+}
+
+.rg8 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: repeating-radial-gradient(red 10%, blue 20%, tan 30%);
+}
