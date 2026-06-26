@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRONTEND</title>
+    <link rel="stylesheet" href="./Task58 11.css">
+
+</head>
+
+<body>
+    <!--Day58  Task58 11-07-2025-->
+
+    <h1>
+        JS DOM AND BOM
+    </h1>
+
+    <h2>
+        DOM - DOCUMENT OBJECT MODEL
+        BOM - BROWSER OBJECT MODEL
+    </h2>
+    <br>
+    <div class="container1">
+        <p>
+            SETTIMEOUT is used to set time to get the operation after the timcount is done.
+        </p> 
+        <br>
+        <p>
+            SETINTERVAL is used to set interval to get the operation in specfic time is done.
+        </p>
+        <br>
+        <p>
+            window.history.go(number) it is used to see previous pages.]]]
+        </p>
+
+    </div> 
+    <br> <br>
+    <div class="container1">
+        <div>
+            <h3>
+            <i class="fa-solid fa-arrow-down"></i>
+                NORMAL FUNCTION
+            <i class="fa-solid fa-arrow-down"></i>
+            </h3>
+            <p>
+            </p><h4>
+                Syntax :-
+            </h4>
+            function function_name(Arguments) { <br>
+            Operations <br>
+            } <br>
+            function_name(parameters)
+            <p></p>
+            <p>
+            </p><h4>
+                example
+            </h4>
+            function f2(a,b) { <br>
+            return a*b <br>
+            } <br>
+            console.log(f2(5,6))
+            <p></p>
+        </div>
+        <div>
+            <h3>
+            <i class="fa-solid fa-arrow-down"></i>
+                ARROW FUNCTION
+            <i class="fa-solid fa-arrow-down"></i>
+            </h3>
+            <p>
+            </p><h4>
+                Syntax :-
+            </h4>
+            function function_name(Arguments) =&gt; { <br>
+            Operations <br>
+            } <br>
+            function_name(parameters)
+            <p></p>
+            <p>
+            </p><h4>
+                example
+            </h4>
+            let f3=(a,b) =&gt; { <br>
+            return a*b <br>
+            } <br>
+            console.log(f3(3,6));
+            <p></p>
+        </div>
+    </div>
+    <br> <br>
+    <div class="container2">
+        <h4 id="b1"></h4>
+        
+        <div class="center">
+            <i class="fa-solid fa-arrow-right"></i>
+            <button id="btn" onclick="b11 = setTimeout(f1,3000)">SETTIMEOUT</button>
+            <i class="fa-solid fa-arrow-left"></i>
+        </div>
+        <br>
+        <div class="center">
+            <i class="fa-solid fa-arrow-right"></i>
+            <button id="btn" onclick="clearTimeout(b11)">CLEARTIMEOUT</button>
+            <i class="fa-solid fa-arrow-left"></i>
+        </div>
+
+        <h4 id="b2"></h4>
+
+        <p>
+            <i class="fa-solid fa-arrow-down"></i>
+            Enter Value Between 100 to 200
+            <i class="fa-solid fa-arrow-down"></i>
+        </p>
+        <input type="number" id="v1" min="100" max="200">
+        <button onclick="f41()" id="v2">Fine</button>
+        <h4 id="ou"></h4>
+
+        <h4 id="lc"></h4>
+    </div>
+
+    <script src="./Task58 11.js"></script>
+    <script src="https://kit.fontawesome.com/0e24bfa3ea.js" crossorigin="anonymous"></script>
+
+
+</body></html>

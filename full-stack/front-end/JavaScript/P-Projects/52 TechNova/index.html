@@ -1,0 +1,171 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Website</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo"><img src="images/logo.png" alt="Logo" width="200px"></div>
+        <div class="toggle-btn" onclick="toggleMenu()">☰</div>
+        <ul id="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#solutions">Solutions</a></li>
+            <li><a href="#team">Our Team</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><button class="login-btn" onclick="window.location.href='login.html'">Login</button></li>
+
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to TechNova</h1>
+            <p>Your trusted partner for innovation, transformation, and success.</p>
+            <button class="cta-btn">Discover More</button>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <h2>About Us</h2>
+            <p>
+                At TechNova, we specialize in delivering exceptional services and solutions tailored to our clients' needs. 
+                Established in [Year], our mission is to empower businesses by providing cutting-edge technology, consulting, 
+                and strategic expertise. We believe in creating value and driving growth for organizations worldwide.
+            </p>
+            <img src="images/about-us.png" alt="Team Collaboration" class="about-image">
+            <p>
+                With a global presence, an experienced team, and a commitment to excellence, we take pride in being a trusted partner 
+                for businesses of all sizes.
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <h2>Our Services</h2>
+        <div class="service-container">
+            <div class="service-card">
+                <img src="images/consulting.png" alt="Business Consulting">
+                <h3>Business Consulting</h3>
+                <p>
+                    Unlock your business's potential with expert insights, strategies, and solutions 
+                    tailored to your unique challenges.
+                </p>
+            </div>
+            <div class="service-card">
+                <img src="images/it-solutions.png" alt="IT Solutions">
+                <h3>IT Solutions</h3>
+                <p>
+                    From custom software development to IT infrastructure management, we ensure 
+                    your technology works for you.
+                </p>
+            </div>
+            <div class="service-card">
+                <img src="images/digital-marketing.png" alt="Digital Marketing">
+                <h3>Digital Marketing</h3>
+                <p>
+                    Drive engagement, increase brand awareness, and achieve measurable results 
+                    through comprehensive digital campaigns.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="solutions-section">
+        <h2>Our Solutions</h2>
+        <img src="images/solutions.png" alt="Innovative Solutions" class="solutions-image">
+        <p>
+            We offer innovative solutions to help your business overcome challenges and achieve 
+            long-term success. Our expertise spans multiple domains, including:
+        </p>
+        <ul class="solutions-list" style="list-style-type: none;">
+            <li>Cloud Computing: Scale your operations with secure, cost-effective cloud solutions.</li>
+            <li>Data Analytics: Unlock actionable insights with advanced analytics and AI-driven tools.</li>
+            <li>Cybersecurity: Protect your business with state-of-the-art security solutions.</li>
+            <li>Workflow Automation: Streamline processes and increase efficiency with automated solutions.</li>
+        </ul>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team-section">
+        <h2>Meet Our Team</h2>
+        <p>
+            Our success is driven by a team of talented professionals who are passionate about 
+            delivering exceptional results. Meet the people behind our achievements:
+        </p>
+        <div class="team-container">
+            <div class="team-member">
+                <img src="images/ceo.png" alt="CEO">
+                <h3>John Doe</h3>
+                <p>Chief Executive Officer</p>
+            </div>
+            <div class="team-member">
+                <img src="images/cto.png" alt="CTO">
+                <h3>Jane Smith</h3>
+                <p>Chief Technology Officer</p>
+            </div>
+            <div class="team-member">
+                <img src="images/manager.png" alt="Manager">
+                <h3>Michael Brown</h3>
+                <p>Project Manager</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog-section">
+        <h2>Latest Insights</h2>
+        <div class="blog-container">
+            <div class="blog-card">
+                <img src="images/digital-transformation.png" alt="Digital Transformation">
+                <h3>Digital Transformation</h3>
+                <p>Learn how businesses are adapting to the digital age.</p>
+                <button class="read-more-btn">Read More</button>
+            </div>
+            <div class="blog-card">
+                <img src="images/cloud-migration%20.png" alt="Cloud Migration">
+                <h3>Cloud Migration Strategies</h3>
+                <p>Explore the benefits and best practices for cloud migration.</p>
+                <button class="read-more-btn">Read More</button>
+            </div>
+            <div class="blog-card">
+                <img src="images/ai-in-business.png" alt="AI in Business">
+                <h3>AI in Business</h3>
+                <p>Discover how AI is revolutionizing industries worldwide.</p>
+                <button class="read-more-btn">Read More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>
+            We’re here to help. Reach out to us for inquiries, partnerships, or support.
+        </p>
+        <form>
+            <input type="text" placeholder="Your Name" required="">
+            <input type="email" placeholder="Your Email" required="">
+            <textarea placeholder="Your Message" required=""></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2024 TechNova. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+
+</body></html>

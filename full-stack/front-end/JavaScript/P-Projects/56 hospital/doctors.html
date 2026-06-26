@@ -1,0 +1,140 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors - Sunrise Hospital</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="sticky-header">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Sunrise Hospital Logo">
+                <h1>Sunrise Hospital</h1>
+            </div>
+            <nav class="navbar">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/departments">Departments</a></li>
+                    <li><a class="active" href="/doctors">Doctors</a></li>
+                    <li><a href="/appointments">Appointments</a></li>
+                    <li><a href="/gallery">Gallery</a></li>
+                    <li><a href="/downloads">Downloads</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="doctors">
+        <div class="container">
+            <h2 class="section-title">Meet Our Expert Doctors</h2>
+            <div class="doctor-filter">
+                <label>Filter by Department:</label>
+                <select id="dept-filter">
+                    <option value="all">All</option>
+                    <option value="cardiology">Cardiology</option>
+                    <option value="orthopedics">Orthopedics</option>
+                    <option value="pediatrics">Pediatrics</option>
+                    <option value="neurology">Neurology</option>
+                    <option value="oncology">Oncology</option>
+                    <option value="gastroenterology">Gastroenterology</option>
+                </select>
+            </div>
+            <div class="doctor-grid">
+                <div class="doctor-card" data-dept="cardiology">
+                    <img src="images/doctor1.png" alt="Dr. Anil Sharma" class="fade-in">
+                    <h3>Dr. Anil Sharma</h3>
+                    <p>Cardiologist</p>
+                    <p>15+ Years Experience</p>
+                    <p>Mon-Fri, 9 AM - 5 PM</p>
+                    <p>Specializes in heart surgeries and diagnostics.</p>
+                    <a class="btn" href="/appointments">Book Appointment</a>
+                </div>
+                <div class="doctor-card" data-dept="orthopedics">
+                    <img src="images/doctor2.png" alt="Dr. Priya Singh" class="fade-in">
+                    <h3>Dr. Priya Singh</h3>
+                    <p>Orthopedic Surgeon</p>
+                    <p>12+ Years Experience</p>
+                    <p>Mon-Sat, 10 AM - 6 PM</p>
+                    <p>Expert in joint replacements and trauma care.</p>
+                    <a class="btn" href="/appointments">Book Appointment</a>
+                </div>
+                <div class="doctor-card" data-dept="pediatrics">
+                    <img src="images/doctor3.png" alt="Dr. Neha Gupta" class="fade-in">
+                    <h3>Dr. Neha Gupta</h3>
+                    <p>Pediatrician</p>
+                    <p>10+ Years Experience</p>
+                    <p>Mon-Fri, 8 AM - 4 PM</p>
+                    <p>Specialized in child healthcare and vaccinations.</p>
+                    <a class="btn" href="/appointments">Book Appointment</a>
+                </div>
+                <div class="doctor-card" data-dept="neurology">
+                    <img src="images/doctor4.png" alt="Dr. Rajesh Patel" class="fade-in">
+                    <h3>Dr. Rajesh Patel</h3>
+                    <p>Neurologist</p>
+                    <p>18+ Years Experience</p>
+                    <p>Tue-Sat, 9 AM - 3 PM</p>
+                    <p>Expert in stroke and epilepsy management.</p>
+                    <a class="btn" href="/appointments">Book Appointment</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Sunrise Road, Health City, India</p>
+                    <p><i class="fas fa-phone"></i> +91-9876543210</p>
+                    <p><i class="fas fa-envelope"></i> info@sunrisehospital.com</p>
+                    <p><i class="fas fa-clock"></i> Open 24/7</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/departments">Departments</a></li>
+                        <li><a href="/doctors">Doctors</a></li>
+                        <li><a href="/appointments">Appointments</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/departments#cardiology">Cardiology</a></li>
+                        <li><a href="/departments#orthopedics">Orthopedics</a></li>
+                        <li><a href="/departments#pediatrics">Pediatrics</a></li>
+                        <li><a href="/appointments">Book Appointment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Sunrise Hospital. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button class="scroll-top"><i class="fas fa-arrow-up"></i></button>
+    <script src="js/script.js"></script>
+
+</body></html>

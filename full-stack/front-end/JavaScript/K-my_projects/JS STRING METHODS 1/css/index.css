@@ -1,0 +1,31 @@
+body {
+    background-color: lightblue;
+    color: black;
+    font-family: monospace;
+    font-size: 20px;
+}
+
+h1 {
+    border: 4px groove blue;
+    border-radius: 20px;
+    text-align: center;
+    background-color: tomato;
+    color: white;
+}
+
+h3 {
+    border: 3px double;
+    border-radius: 20px;
+    text-align: center;
+    background-color: teal;
+    color: wheat;
+}
+
+p {
+    background-color: red;
+    color: white;
+}
+
+.container {
+    background-color: white;
+}

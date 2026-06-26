@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+
+body {
+    background-color: hsl(195, 53%, 79%);
+    color: hsl(0, 0%, 0%);
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1 {
+    border: 5px solid hsl(30, 59%, 53%);
+    border-radius: 50px;
+    text-align: center;
+    background-color: hsl(120, 61%, 34%);
+    color: hsl(40, 100%, 97%);
+}
+
+h4 {
+    border: 3px dashed hsl(240, 100%, 50%);
+    border-radius: 30px;
+    text-align: center;
+    background-color: hsl(0, 0%, 96%);
+    color: hsl(0, 100%, 50%);
+    font-size: 1.5rem;
+}
+
+.container1 {
+    border: 3px solid;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: hsl(0, 0%, 100%);
+    padding: 10px;
+    margin: 10px;
+}
+#i1 {
+    background-color: hsl(0, 29%, 55%);
+    border: 3px dashed;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 60px;
+    margin: 10px;
+}
+
+#i2 {
+    background-color: hsl(0, 0%, 50%);
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 10px;
+    margin: 10px;
+}
+
+img {
+    width: 548px;
+    height: 823px;
+}
+ 
+#i3,
+#i4 {
+    background-color: hsl(0, 100%, 50%);
+    border-radius: 20px;
+    font-size: 15px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+#i5 {
+    background-color: hsl(0, 29%, 55%);
+    border: 3px dashed;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 60px;
+    margin: 10px;
+}
+
+.container2 {
+    border: 3px solid;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(71, 23%, 54%);
+    padding: 10px;
+    margin: 10px;
+}
+

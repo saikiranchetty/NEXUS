@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRONTEND</title>
+    <link rel="stylesheet" href="./Task57 10.css">
+    
+</head>
+
+<body>
+    <!--Day57  Task57 10-07-2025-->
+
+    <h1>
+        JS DOM AND BOM
+    </h1>
+
+    <h2>
+        DOM - DOCUMENT OBJECT MODEL
+        BOM - BROWSER OBJECT MODEL
+    </h2>
+
+    <div class="container1">
+        <p class="head">
+            firstChild is used to repilcate immediate next tag.
+        </p>
+        
+        <p class="head">
+            childNodes is used to copy from any tag with help of indexing value.
+        </p>
+        
+        <p class="head">
+            nodetype is to find out the indexing value of particular element.
+        </p>
+        
+        <p class="head">
+            We can insert, remove, replace appendChild using nodes concept.
+        </p>
+        <p class="head">
+            We can find length of an elements.
+        </p>
+        
+        <p class="syn">
+            This is the syntax of creating text node by using nodes concept
+            <br>
+            const p = document.createElement('elements'); <br>
+            const n = document.createTextNode('This is the New text by nodes concept'); <br>
+            p.appendChild(n); <br>
+            const el = document.getElementById('id'); <br>
+            el.appendChild(elements); <br>
+            el1.insertBefore(element1,element2); <br>
+            const r = document.getElementById('id'); <br>
+            r.remove();
+        </p>
+
+    </div> 
+
+    <div class="container2">
+        <h3 id="a1">
+            TEKS ACADEMY ASPIRANTS
+        </h3>
+        <h4 id="b1">
+            
+        </h4>
+        <h4 id="b11">
+            
+        </h4>
+        <h3 id="a2">
+            FULL STACK DEVELOPERS
+        </h3>
+        <h4 id="b2">
+            
+        </h4>
+        
+        <div class="container3" id="dv">
+            <p id="a3">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum, error architecto, nam nemo sapiente.
+            </p>
+            
+            <p id="a4">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum, error architecto, nam nemo sapiente.
+            </p>
+            <p id="a5">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum, error architecto, nam nemo sapiente.
+            </p>
+        </div>
+
+        <pre>Lorem ipsum 1</pre>
+        <pre>Lorem ipsum 2</pre>
+        <pre>Lorem ipsum 3</pre>
+        <pre>Lorem ipsum 4</pre>
+        <h4 id="a6">
+
+        </h4>
+
+        <p id="p">
+            Hello World
+        </p>
+        <p id="p">
+            Full Stack Developers
+        </p>
+        <p id="p">
+            FRONTEND
+        </p>
+        <div>
+        <i class="fa-solid fa-arrow-right"></i>
+        <button id="btn" onclick="f1()">Style the elements at a time</button> 
+        <i class="fa-solid fa-arrow-left"></i>
+        </div>
+
+        <h4 id="a7">
+
+        </h4>
+
+        <h3>
+            <i class="fa-solid fa-arrow-down"></i>
+            Check console for below things
+            <i class="fa-solid fa-arrow-down"></i>
+        </h3>
+        <div class="console">
+            console.log(navigator.cookieEnabled); <br> 
+            console.log(navigator.languages); <br>
+            console.log(navigator.language); <br>
+            console.log(navigator.vendor); <br>
+            console.log(navigator.vendorSub); <br>
+            console.log(navigator.appVersion); <br>
+            console.log(navigator.appCodeName); <br>
+            console.log(navigator.appName); <br>
+            console.log(navigator.product); <br>
+            console.log(navigator.productSub); <br>
+            console.log(navigator.onLine); <br>
+            console.log(navigator.platform); <br>
+            console.log(navigator.javaEnabled()); <br>
+            console.log(navigator.mediaSession); <br>
+            console.log(window.innerHeight); <br>
+            console.log(window.innerWidth); <br>
+            console.log(window.screen.availHeight); <br>
+            console.log(window.screen.orientation); <br>
+            console.log(window.history.forward()); <br>
+            console.log(window.history.back()); <br>
+            console.log(window) <br>
+        </div>
+    </div>
+
+    <script src="./Task57 10.js"></script>
+    <script src="https://kit.fontawesome.com/0e24bfa3ea.js" crossorigin="anonymous"></script>
+
+
+</body></html>

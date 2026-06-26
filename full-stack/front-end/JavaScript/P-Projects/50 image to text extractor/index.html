@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Text Extractor</title>
+    <link rel="icon" href="images/img.webp" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/tesseract.min.js"></script>
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-text-height"></i> Advanced Text Extractor</h1>
+            <p>Extract text from any image with precision and speed.</p>
+        </header>
+
+        <div id="dropArea" class="drop-area">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Drag &amp; Drop an image here or <span>click to upload</span></p>
+            <input type="file" id="imageInput" accept="image/*">
+        </div>
+
+        <div class="url-input">
+            <input type="text" id="imageURL" placeholder="Paste image URL here">
+            <button id="urlProcessBtn"><i class="fas fa-link"></i> Extract</button>
+        </div>
+
+        <div id="spinner" class="spinner" style="display: none;"></div>
+
+        <div id="outputText" class="output-text">
+            <h2>Extracted Text</h2>
+            <p>Text will appear here after processing...</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Advanced Text Extractor | Built with <i class="fas fa-heart"></i> by You</p>
+    </footer>
+    <script src="js/script.js"></script>
+
+
+</body></html>

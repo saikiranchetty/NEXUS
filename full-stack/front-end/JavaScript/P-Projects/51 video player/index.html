@@ -1,0 +1,143 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player with Suggestions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Set a default font */
+            background-color: #f0f0f0; /* Light gray background */
+            color: #333; /* Dark text color */
+        }
+        h1, h2 {
+            text-align: center;
+            color: #444; /* Darker color for headings */
+        }
+        video {
+            width: 80%;
+            margin: 20px auto;
+            display: block;
+            border: 2px solid #ccc; /* Light gray border */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        }
+        .controls {
+            text-align: center;
+            margin-top: 10px;
+        }
+        #suggestions {
+            display: grid; /* Use grid layout */
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive columns */
+            gap: 20px; /* Space between grid items */
+            padding: 20px; /* Padding around suggestions */
+            max-width: 1200px; /* Max width for the grid */
+            margin: 0 auto; /* Center the grid */
+            background-color: #fff; /* White background for the suggestions */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+        }
+        #suggestions div {
+            background-color: #fafafa; /* Light background for each video */
+            border: 1px solid #ddd; /* Light border */
+            border-radius: 8px; /* Rounded corners */
+            padding: 10px; /* Padding inside each video box */
+            text-align: center; /* Center text for each video */
+            transition: transform 0.2s; /* Animation for hover effect */
+        }
+        #suggestions div:hover {
+            transform: scale(1.05); /* Scale up on hover */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+        }
+        iframe {
+            width: 100%; /* Full width of the parent div */
+            height: 200px; /* Fixed height for iframes */
+            border-radius: 5px; /* Slightly rounded corners for the iframe */
+        }
+        p {
+            margin: 10px 0 0; /* Spacing for the paragraph */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Video Player</h1>
+    
+    <!-- Video Player -->
+    <video id="videoPlayer" controls="">
+        Your browser does not support HTML5 video.
+    </video>
+    
+    <!-- File Input -->
+    <div class="controls">
+        <input type="file" id="videoFile" accept="video/*">
+        <button onclick="playVideo()">Play Local Video</button>
+    </div>
+
+    <!-- Video Suggestions -->
+    <h2>Suggested Telugu Videos</h2>
+    <div id="suggestions">Loading suggestions...</div>
+
+    <script>
+        const API_KEY = 'AIzaSyCUn8Ckk1j3MjTW-6OI6hGIkEXMOlTvs1o'; // Your YouTube API Key
+        const SUGGESTIONS_CONTAINER = document.getElementById('suggestions');
+
+        // Play local video function
+        function playVideo() {
+            const videoPlayer = document.getElementById('videoPlayer');
+            const fileInput = document.getElementById('videoFile');
+            const file = fileInput.files[0];
+
+            if (file) {
+                const fileURL = URL.createObjectURL(file);
+                videoPlayer.src = fileURL;
+                videoPlayer.play();
+            }
+        }
+
+        // Fetch Telugu videos from YouTube
+        async function fetchTeluguVideos() {
+            const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=telugu&type=video&regionCode=IN&maxResults=20&key=${API_KEY}`; // Increase maxResults
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (data.items && data.items.length > 0) {
+                    displaySuggestions(data.items);
+                } else {
+                    SUGGESTIONS_CONTAINER.innerHTML = 'No video suggestions found.';
+                }
+            } catch (error) {
+                console.error('Error fetching YouTube videos:', error);
+                SUGGESTIONS_CONTAINER.innerHTML = 'Error fetching video suggestions. Please check the console for more details.';
+            }
+        }
+
+        // Display fetched videos
+        function displaySuggestions(videos) {
+            SUGGESTIONS_CONTAINER.innerHTML = ''; // Clear loading message
+            videos.forEach(video => {
+                const videoId = video.id.videoId;
+                const videoTitle = video.snippet.title;
+
+                const videoElement = `
+                    <div>
+                        <h3>${videoTitle}</h3>
+                        <iframe src="https://www.youtube.com/embed/${videoId}" 
+                                frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                                encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                        </iframe>
+                        <p>If the video is unavailable, <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank">watch on YouTube</a>.</p>
+                    </div>
+                `;
+
+                SUGGESTIONS_CONTAINER.innerHTML += videoElement;
+            });
+        }
+
+        // Fetch videos when the page loads
+        fetchTeluguVideos();
+    </script>
+
+
+
+</body></html>

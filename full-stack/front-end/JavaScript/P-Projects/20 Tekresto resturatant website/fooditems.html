@@ -1,0 +1,432 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Restaurant Food Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0e6d9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #f0e6d9;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-weight: bold;
+        }
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: black;
+        }
+        .icons {
+            display: flex;
+            gap: 15px;
+        }
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-top: 40px;
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .menu-item {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .menu-item-info {
+            padding: 15px;
+        }
+        .menu-item-info h3 {
+            margin: 0;
+        }
+        .menu-item-info p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .price {
+            color: #e44d26;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0.7vw;
+    background-color: rgb(248, 232, 217);
+    border-bottom: 2px solid rgb(252, 196, 124);
+    box-shadow: 0 2px 20px rgb(253, 124, 124);
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nav ul {
+    display: flex;
+    align-items: center;
+}
+
+.nav ul li {
+    padding: 0 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    color: blueviolet;
+    text-decoration: underline;
+}
+
+.account ul {
+    display: flex;
+    align-items: center;
+}
+
+.account ul li {
+    padding: 0 15px;
+    font-size: 18px;
+}
+
+.search {
+    display: none;
+    width: 200px;
+    justify-content: center;
+}
+
+.search input {
+    padding: 5px;
+    border: none;
+    border-radius: 40px;
+    width: 100%;
+    outline: none;
+}
+
+.srchicon {
+    background-color: rgb(255, 210, 210);
+    display: block;
+    padding: 4px 5px;
+    cursor: pointer;
+}
+
+.bar {
+    display: none;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    background-color: rgb(252, 231, 216);
+    box-shadow: 0 2px 15px rgb(252, 193, 169);
+}
+
+.dropdown-menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.dropdown-menu li {
+    width: 96vw;
+    margin: 10px 0;
+    padding: 15px 30px;
+    font-size: 15px;
+}
+
+.dropdown-menu a:hover {
+    color: blueviolet;
+    text-decoration: underline;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+             <div class="logo">
+                 🍕🍟🥪 ᏖᏋᏦᏕ ᏒᏋᏕᏖᎧ 🥙🥡🍖
+             </div>
+             <div class="bar">
+                 <i class="fa-solid fa-bars" id="menu-bar"></i>
+                 <i class="fa-solid fa-xmark" id="menu-close"></i>
+             </div>
+             <div class="nav" id="nav-menu">
+                 <ul>
+                     <li><a href="/about/" target="_blank">Home</a></li>
+                     <li><a href="#">About</a></li>
+                     <li><a href="#">Food Menu</a></li>
+                     <li><a href="#">Book Table</a></li>
+                 </ul>
+             </div>
+             <div class="account">
+                 <ul>
+                     <li><a href="#"><i class="fa-solid fa-house-chimney"></i></a></li>
+                     <li><a href="#"><i class="fa-solid fa-magnifying-glass searchicon"></i></a></li>
+                     <li>
+                         <div class="search">
+                             <input type="search" id="searchinput1">
+                             <i class="fa-solid fa-magnifying-glass srchicon" id="srchicon1"></i>
+                         </div>
+                     </li>
+                     <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+                 </ul>
+             </div>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu">
+             <ul>
+                 <li><a href="/about/fooditems/">Home</a></li>
+                 <li><a href="/about/">About</a></li>
+                 <li><a href="#">Food Items</a></li>
+                 <li><a href="/book/">Book Table</a></li>
+             </ul>
+         </div>
+     </header>
+
+    <div class="container">
+        <h1>Food Menu</h1>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt2T4WWwPum_DhbjobiGDSRmCA20-hX5Q0M72CcGmxYaf7JMsSZacEUH0v7hFQmHiJvno&amp;usqp=CAU" alt="Appetizer platter">
+                <div class="menu-item-info">
+                    <h3>Food name</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur</p>
+                    <div class="price">$15.00</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://www.thespruceeats.com/thmb/8QckubvFi_t5olUZ-7yZMip0wqU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/moms-fish-curry-1957442-hero-01-f6ff12421b64408e8d96ba975fe31409.jpg" alt="Pasta dish">
+                <div class="menu-item-info">
+                    <h3>Food name</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur</p>
+                    <div class="price">$39.00</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV8iDV33hvuD4OosvJJjKhOZ2hQAB93d0-YUbJ1qjPx6PEv_hEsrxdGz35O8-Hot7_rf4&amp;usqp=CAU" alt="Dumplings">
+                <div class="menu-item-info">
+                    <h3>Food name</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur</p>
+                    <div class="price">$10.00</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfo3Nvnr3YC7VxduDPBVERMlFPyyehhVCm5ipIRMeHeqUFSKKMQ7xQE74wHkDGRswDBWY&amp;usqp=CAU" alt="Rice dish">
+                <div class="menu-item-info">
+                    <h3>Food name</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur</p>
+                    <div class="price">$20.00</div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWwmaE8Irb6aqSeqbEdr2NstNOPC-jUlz-cjC2S4rYxI2yyr6AcQsuUNwc7O3-5bjMeSI&amp;usqp=CAU" alt="Appetizer platter">
+                <div class="menu-item-info">
+                    <h3>Food name</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur</p>
+                    <div class="price">$15.00</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBhLvS57hnPFRoV_oc8pCeBdc27LrNw-cATjkQWehcTadxSZpTU4q1XGEO30mI2Xdc4go&amp;usqp=CAU" alt="Pasta dish">
+                <div class="menu-item-info">
+                    <h3>Food name</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur</p>
+                    <div class="price">$39.00</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgJA_WWKhTJ-BP8q31Q6SYRNGhjC3loinW0OdOIFIN0VbcE6qHtlqVPbkJBGj5yVM-qJo&amp;usqp=CAU" alt="Dumplings">
+                <div class="menu-item-info">
+                    <h3>Food name</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur</p>
+                    <div class="price">$10.00</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStKHNNO-BpcW2wZjKQ_6VVYeJKQeh04A7GjKHbPRkD1G5nGkLZDPN4CIVnh9GHC2f21Vw&amp;usqp=CAU" alt="Rice dish">
+                <div class="menu-item-info">
+                    <h3>Food name</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur</p>
+                    <div class="price">$20.00</div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSExaXrWl0aaPRqHFDSM7PHCYtY8WWvAQozoJZyg5u0_Ei-a_13SnFuqxrxwjNIDe_NgsY&amp;usqp=CAU" alt="Appetizer platter">
+                <div class="menu-item-info">
+                    <h3>Food name</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur</p>
+                    <div class="price">$15.00</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtDMxT-Tp_tfeKVPdD_-agLt2XR9TpWY6M3NjY0kE33iuQc0m1aGaO-9ceMFvTn5j6ATs&amp;usqp=CAU" alt="Pasta dish">
+                <div class="menu-item-info">
+                    <h3>Food name</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur</p>
+                    <div class="price">$39.00</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWfnyGc0huXj3EERx_JDE5Kn1ydsLfiWgI9c3ZAEQM8viK18tGg0Xr2ll2YmXgB34nlbQ&amp;usqp=CAU" alt="Dumplings">
+                <div class="menu-item-info">
+                    <h3>Food name</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur</p>
+                    <div class="price">$10.00</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://www.foodandwine.com/thmb/EuorRdLisZJ5XCD1ZJJnGXGHP_4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/201012-ss-dishes-leeks-7624862883b54db29fbfa87295ba42ac.jpg" alt="Rice dish">
+                <div class="menu-item-info">
+                    <h3>Food name</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur</p>
+                    <div class="price">$20.00</div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="https://images.ctfassets.net/trvmqu12jq2l/6FV4Opt7wUyR91t2FXyOIr/f32972fce10fc87585e831b334ea17ef/header.jpg" alt="Appetizer platter">
+                <div class="menu-item-info">
+                    <h3>Food name</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur</p>
+                    <div class="price">$15.00</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://lh6.googleusercontent.com/XLd8i1p1HQ5_3nJmymY0pRuia13ZFCxaG2coMvcRXDtzlE9HbthENnxPf2CO7MEbQpmjH0pXQT28BCITYs7aGRMdz36dfgBZU0nvt1eQ8M0XdaOXnDJOejv3M8UMHyRbVT8CXdxrjQAXTXAQMPke0BU" alt="Pasta dish">
+                <div class="menu-item-info">
+                    <h3>Food name</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur</p>
+                    <div class="price">$39.00</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG9wm6B9pGuoeo5RUx2yW_x_r1zGd-7r9CYNwWVOSunNUa6Ff8DMPAkjKq3MvXO_ekFMg&amp;usqp=CAU" alt="Dumplings">
+                <div class="menu-item-info">
+                    <h3>Food name</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur</p>
+                    <div class="price">$10.00</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8PnZSoGSyCL2Tsd-siepzqVyfOQ6YrON7lXStRHnVv9Du7i-yC5wgk7-WiHkHfCqBv1Q&amp;usqp=CAU" alt="Rice dish">
+                <div class="menu-item-info">
+                    <h3>Food name</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur</p>
+                    <div class="price">$20.00</div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjtFwNJosFWSkH_q-edJk2JCOes9g67E3C6_l1t2rDlyKsqzN5RJV5Hhd05RhpnG_nsj4&amp;usqp=CAU" alt="Appetizer platter">
+                <div class="menu-item-info">
+                    <h3>Food name</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur</p>
+                    <div class="price">$15.00</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://c.ndtvimg.com/2022-04/fq5cs53_biryani-doubletree-by-hilton_625x300_12_April_22.jpg?im=FaceCrop,algorithm=dnn,width=1200,height=886" alt="Pasta dish">
+                <div class="menu-item-info">
+                    <h3>Food name</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur</p>
+                    <div class="price">$39.00</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU2rXgYU9AMEXj1H308QaVYtN-NX-ZTQHgNrn4L-b_VkBQ333ceZgMcb8Sa8YE43A3o_k&amp;usqp=CAU" alt="Dumplings">
+                <div class="menu-item-info">
+                    <h3>Food name</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur</p>
+                    <div class="price">$10.00</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwl18NV3toTNOKX4Z6PvhoypkRLLwo6FFIffT679JgUDwpt54vusAEfX4gFAGV69VnAO4&amp;usqp=CAU" alt="Rice dish">
+                <div class="menu-item-info">
+                    <h3>Food name</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur</p>
+                    <div class="price">$20.00</div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="https://recipes.timesofindia.com/img/62711151/Master.jpg" alt="Appetizer platter">
+                <div class="menu-item-info">
+                    <h3>Food name</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur</p>
+                    <div class="price">$15.00</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwPluhhhhIU2-9G_d4cx8-rucjPJWJCGrIYQHXowyu5RFrsC-vOoy3Hv_xZZZHv1MXWv0&amp;usqp=CAU" alt="Pasta dish">
+                <div class="menu-item-info">
+                    <h3>Food name</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur</p>
+                    <div class="price">$39.00</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLrnQJ6eieu0l6OW6iOcVB3pdKtLdumb-Z-iM5zSoSN_bpVKbdu8YrIN1SyBtgnM3i5RY&amp;usqp=CAU" alt="Dumplings">
+                <div class="menu-item-info">
+                    <h3>Food name</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur</p>
+                    <div class="price">$10.00</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://c.ndtvimg.com/2020-07/0vhf999_chicken-wings_625x300_17_July_20.jpg" alt="Rice dish">
+                <div class="menu-item-info">
+                    <h3>Food name</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur</p>
+                    <div class="price">$20.00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRONTEND</title>
+
+    <style>
+        
+        .head {
+            border: 3px dashed red;
+            background-color: white;
+            text-align: center;
+        }
+
+        .head1 {
+            border: 3px solid blue;
+            background-color: aliceblue;
+            text-align: center;
+        }
+
+        .head2 {
+            border: 3px solid green;
+            background-color: cadetblue;
+            text-align: center;
+        }
+
+        .box {
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #overflow {
+            border: 3px solid black;
+            background-color: turquoise;
+            text-align: center;
+            width: 250px;
+            height: 150px;
+        }
+
+        #auto {
+            border: 3px solid black;
+            background-color: aquamarine;
+            text-align: center;
+            width: 250px;
+            height: 150px;
+            overflow: auto;
+        }
+
+        #hidden {
+            border: 3px solid black;
+            background-color: antiquewhite;
+            text-align: center;
+            width: 250px;
+            height: 150px;
+            overflow: hidden;
+        }
+
+        #hidden:hover {
+            overflow: visible;
+        }
+
+        #scroll {
+            border: 3px solid black;
+            background-color: beige;
+            text-align: center;
+            width: 250px;
+            height: 150px;
+            overflow: scroll;
+        }
+
+        #visible {
+            border: 3px solid black;
+            background-color: bisque;
+            text-align: center;
+            width: 250px;
+            height: 150px;
+            overflow: visible;
+        }
+
+        #fixed {
+            border: 3px solid black;
+            background-color: burlywood;
+            width: 250px;
+            height: 150px;
+            position: fixed;
+        }
+
+        #sticky {
+            border: 3px solid black;
+            background-color: tomato;
+            width: 250px;
+            height: 150px;
+            top: 0;
+            left: 35%;
+            position: sticky;
+        }
+
+        #static {
+            border: 3px solid black;
+            background-color: dodgerblue;
+            width: 250px;
+            height: 150px;
+            position: static;
+        }
+
+        #relative {
+            border: 3px solid black;
+            background-color: thistle;
+            height: 490px;
+            position: absolute;
+        }
+
+        #absolute {
+            border: 3px solid black;
+            background-color: lightgreen;
+            top: 100px;
+            position: relative;
+            width: 150px;
+            left: 20px;
+        }
+
+        #absolute1 {
+            border: 3px solid black;
+            background-color: lightgreen;
+            position: relative;
+            width: 150px;
+            bottom: 227px;
+            left: 180px;
+        }
+
+        #absolute2 {
+            border: 3px solid black;
+            background-color: lightgreen;
+            position: relative;
+            width: 150px;
+            bottom: 554px;
+            left: 340px;
+        }
+
+        #absolute3 {
+            border: 3px solid black;
+            background-color: lightgreen;
+            position: relative;
+            width: 150px;
+            bottom: 881px;
+            left: 500px;
+        }
+
+        #absolute4 {
+            border: 3px solid black;
+            background-color: lightgreen;
+            position: relative;
+            width: 150px;
+            bottom: 1207px;
+            left: 660px;
+        }
+        
+    </style>
+</head>
+
+<body style="background-color: lightblue;">
+
+    <!--Day 18 Task 18 12-05-2025-->
+    <div class="container">
+    <h1 class="head">
+        POSITION
+    </h1>
+
+    <h2 class="head2">
+        FIXED
+    </h2>
+    <div class="box" id="fixed">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam harum magni quod ipsum dolorum ab maiores
+            corrupti a sint vitae ducimus id rem, minima veniam asperiores cum, reprehenderit odit repellat.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio nesciunt consequuntur corporis, iste
+            libero
+            debitis culpa molestiae asperiores ad commodi laborum similique odit, aut velit sapiente dicta cupiditate.
+            Tempore, esse?
+        </p>
+    </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <h2 class="head2">
+        STICKY
+    </h2>
+    <div class="box" id="sticky">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium iusto facere sunt possimus? Alias non,
+            rem quae perferendis illum, nostrum maiores quidem dolore ut ducimus totam natus molestiae inventore dicta?
+
+        </p>
+    </div>
+    <h2 class="head2">
+        STATIC
+    </h2>
+    <div class="box" id="static">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid eligendi qui sit molestiae iure voluptatem
+            consequuntur repellat minus quaerat doloribus voluptates, harum rem explicabo dignissimos sunt incidunt
+            architecto libero totam?
+        </p>
+    </div>
+    <h2 class="head2">
+        RELATIVE
+    </h2>
+    <div class="box" id="relative">
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus quisquam molestias accusantium rerum.
+            Eum aliquam cum aliquid fugiat eaque? Culpa harum et error, distinctio veritatis odit omnis doloribus nobis
+            nisi.
+        </p>
+
+        <h2 class="head2" id="absolute">
+            ABSOLUTE
+        </h2>
+        <div class="box" id="absolute">
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur id sunt obcaecati accusamus, et
+                distinctio maxime beatae sed laborum quasi, expedita est qui quaerat repudiandae laudantium delectus
+                assumenda inventore soluta.
+            </p>
+        </div>
+        <h2 class="head2" id="absolute1">
+            ABSOLUTE
+        </h2>
+        <div class="box" id="absolute1">
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur id sunt obcaecati accusamus, et
+                distinctio
+                maxime beatae sed laborum quasi, expedita est qui quaerat repudiandae laudantium delectus assumenda
+                inventore
+                soluta.
+            </p>
+        </div>
+        <h2 class="head2" id="absolute2">
+            ABSOLUTE
+        </h2>
+        <div class="box" id="absolute2">
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur id sunt obcaecati accusamus, et
+                distinctio
+                maxime beatae sed laborum quasi, expedita est qui quaerat repudiandae laudantium delectus assumenda
+                inventore
+                soluta.
+            </p>
+        </div>
+        <h2 class="head2" id="absolute3">
+            ABSOLUTE
+        </h2>
+        <div class="box" id="absolute3">
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur id sunt obcaecati accusamus, et
+                distinctio
+                maxime beatae sed laborum quasi, expedita est qui quaerat repudiandae laudantium delectus assumenda
+                inventore
+                soluta.
+            </p>
+        </div>
+        <h2 class="head2" id="absolute4">
+            ABSOLUTE
+        </h2>
+        <div class="box" id="absolute4">
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur id sunt obcaecati accusamus, et
+                distinctio
+                maxime beatae sed laborum quasi, expedita est qui quaerat repudiandae laudantium delectus assumenda
+                inventore
+                soluta.
+            </p>
+        </div>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <h1 class="head">
+        OVERFLOW
+    </h1>
+
+    <h2 class="head1">
+        AUTO
+    </h2>
+    <div class="box" id="auto">
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid aperiam accusantium tenetur eius soluta
+            tempore sit nihil quae nemo a facilis omnis doloribus dolor, perferendis eum eligendi, quisquam voluptas
+            modi?
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora recusandae rem delectus quisquam fugit
+            obcaecati, tempore unde numquam dignissimos. Aspernatur impedit reiciendis vitae accusamus quod numquam
+            omnis autem pariatur esse?
+        </p>
+    </div>
+    <h2 class="head1">
+        OVERFLOW
+    </h2>
+    <div class="box" id="overflow">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ex facere explicabo illum reiciendis quam
+            vel ratione exercitationem a libero, consectetur placeat dolore sapiente consequatur recusandae
+            reprehenderit sequi eligendi fuga.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam dignissimos delectus at ex nisi sed, dolor
+            aspernatur numquam possimus repudiandae, dolores veritatis alias asperiores molestiae itaque velit maxime
+            consequatur odio?
+        </p>
+    </div><br><br><br><br><br><br>
+    <h2 class="head1">
+        HIDDEN
+    </h2>
+    <div class="box" id="hidden">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore consequatur libero odit exercitationem at
+            aliquid deserunt iusto cupiditate totam eveniet. Sunt explicabo eum dolores cupiditate minus labore impedit
+            qui quae!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam sit amet tenetur officia modi velit beatae
+            quibusdam quidem, repudiandae earum sequi ad harum unde consequatur rerum odit voluptatibus aliquid
+            repellendus!
+        </p>
+    </div>
+    <h2 class="head1">
+        SCROLL
+    </h2>
+    <div class="box" id="scroll">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam dolore minima rem non accusantium quibusdam,
+            qui impedit cum consequuntur nobis magni nostrum delectus sit possimus itaque, veritatis eveniet excepturi
+            et! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati voluptate magni exercitationem harum
+            amet nisi illo laudantium debitis voluptatibus nam fugit consequuntur laboriosam facere sapiente fuga, alias
+            aut cum aliquam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam dolore minima rem non
+            accusantium quibusdam, qui impedit
+            cum consequuntur nobis magni nostrum delectus sit possimus itaque, veritatis eveniet excepturi et! Lorem,
+            ipsum dolor
+            sit amet consectetur adipisicing elit. Obcaecati voluptate magni exercitationem harum amet nisi illo
+            laudantium debitis
+            voluptatibus nam fugit consequuntur laboriosam facere sapiente fuga, alias aut cum aliquam.
+        </p>
+    </div>
+    <h2 class="head1">
+        VISIBLE
+    </h2>
+    <div class="box" id="visible">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem repellat enim perferendis
+            voluptatum iure omnis praesentium eius soluta, suscipit nostrum fugit porro ad eveniet deleniti quaerat,
+            quos, sequi voluptas officia!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium vel quod repellat laudantium iure
+            reiciendis ipsam, molestiae laboriosam facere enim omnis assumenda quas, voluptatibus perspiciatis
+            reprehenderit quis eveniet labore quos.
+        </p>
+    </div>
+</div>
+
+
+</body></html>

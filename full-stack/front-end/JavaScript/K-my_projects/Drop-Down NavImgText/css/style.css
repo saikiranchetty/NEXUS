@@ -1,0 +1,464 @@
+body {
+    background-color: lightblue;
+}
+
+.Head {
+    border: 3px dashed red;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    background-color: royalblue;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+/* NAV-DROP-DOWN */
+.nav {
+    border: 3px dashed firebrick;
+    border-radius: 20px;
+    width: 500px;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    color: white;
+    background-color: red;
+}
+
+.dd {
+    text-align: center;
+    border: 3px solid blue;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    position: absolute;
+    display: none;
+    width: 200px;
+    top: 20px;
+    left: -12px;
+}
+
+.nav:hover .dd {
+    display: flex;
+    text-align: center;
+    padding: 10px;
+}
+
+.nav1 {
+    border: 3px dashed firebrick;
+    border-radius: 20px;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    color: white;
+    background-color: red;
+}
+
+.dd1 {
+    text-align: center;
+    border: 3px solid blue;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    position: absolute;
+    display: none;
+    width: 200px;
+    top: 5px;
+    left: 90px;
+}
+
+.nav1:hover .dd1 {
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+
+.nav2 {
+    border: 3px dashed firebrick;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    color: white;
+    background-color: red;
+}
+
+.dd2 {
+    text-align: center;
+    border: 3px solid blue;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    position: absolute;
+    display: none;
+    width: 200px;
+    top: 5px;
+    left: 90px;
+}
+
+.nav2:hover .dd2 {
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+
+.nav3 {
+    border: 3px dashed firebrick;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    color: white;
+    background-color: red;
+}
+
+.dd3 {
+    text-align: center;
+    border: 3px solid blue;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    position: absolute;
+    display: none;
+    width: 150px;
+    top: 5px;
+    left: 90px;
+}
+
+.nav3:hover .dd3 {
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+
+.nav4 {
+    border: 3px dashed firebrick;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    color: white;
+    background-color: red;
+}
+
+.dd4 {
+    text-align: center;
+    border: 3px solid blue;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    position: absolute;
+    display: none;
+    width: 150px;
+    top: 5px;
+    left: 160px;
+}
+
+.nav4:hover .dd4 {
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+
+.nav5 {
+    border: 3px dashed firebrick;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    color: white;
+    background-color: red;
+}
+
+.dd5 {
+    text-align: center;
+    border: 3px solid blue;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    position: absolute;
+    display: none;
+    width: 150px;
+    top: 5px;
+    left: 160px;
+}
+
+.nav5:hover .dd5 {
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+
+.nav6 {
+    border: 3px dashed firebrick;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    color: white;
+    background-color: red;
+}
+
+.dd6 {
+    text-align: center;
+    border: 3px solid blue;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    position: absolute;
+    display: none;
+    width: 150px;
+    top: 5px;
+    left: 160px;
+}
+
+.nav6:hover .dd6 {
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+
+.nav7 {
+    border: 3px dashed firebrick;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    color: white;
+    background-color: red;
+}
+
+.dd7 {
+    text-align: center;
+    border: 3px solid blue;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    position: absolute;
+    display: none;
+    width: 150px;
+    top: 5px;
+    left: 160px;
+}
+
+.nav7:hover .dd7 {
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+
+.nav8 {
+    border: 3px dashed firebrick;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    color: white;
+    background-color: red;
+}
+
+.dd8 {
+    text-align: center;
+    border: 3px solid blue;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    position: absolute;
+    display: none;
+    width: 150px;
+    top: 5px;
+    left: 160px;
+}
+
+.nav8:hover .dd8 {
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+
+.nav9 {
+    border: 3px dashed firebrick;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    color: white;
+    background-color: red;
+}
+
+.dd9 {
+    text-align: center;
+    border: 3px solid blue;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    position: absolute;
+    display: none;
+    width: 150px;
+    top: 5px;
+    left: 160px;
+}
+
+.nav9:hover .dd9 {
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+
+.nav10 {
+    border: 3px dashed firebrick;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    color: white;
+    background-color: red;
+}
+
+.dd10 {
+    text-align: center;
+    border: 3px solid blue;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    position: absolute;
+    display: none;
+    width: 150px;
+    top: 5px;
+    left: 160px;
+}
+
+.nav10:hover .dd10 {
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+
+.img1 {
+    border: 3px solid blue;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    width: 200px;
+}
+
+.img2 {
+    border: 3px solid rebeccapurple;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    position: absolute;
+    display: none;
+
+}
+
+.img1:hover .img2 {
+    display: block;
+    padding: 10px;
+}
+
+.text1 {
+    border: 3px dashed firebrick;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    color: white;
+    background-color: red;
+    text-align: center;
+    cursor: pointer;
+}
+
+.text2 {
+    text-align: center;
+    border: 3px solid blue;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    position: absolute;
+    display: none;
+    left: 160px;
+}
+
+.text3 {
+    text-align: center;
+    border: 3px solid blue;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    position: absolute;
+    display: none;
+    left: 360px;
+}
+
+.text4 {
+    text-align: center;
+    border: 3px solid blue;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    position: absolute;
+    display: none;
+    left: 560px;
+}
+
+.text1:hover .text2 {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: blue;
+}
+
+.text1:hover .text3 {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: blue;
+}
+
+.text1:hover .text4 {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: blue;
+}
+
+.text1 li {
+    list-style: none;
+    ;
+}
+
+.dd1 li {
+    border-radius: 20px;
+    background-color: red;
+    padding: 5px;
+}
+
+.dd2 li {
+    border-radius: 20px;
+    background-color: red;
+    padding: 5px;
+}
+
+.dd3 li {
+    border-radius: 20px;
+    background-color: red;
+    padding: 5px;
+}
+
+.dd ul li {
+    list-style-type: none;
+    text-align: center;
+    border: 2px solid black;
+    margin: 5px;
+}
+
+.dd ul li a {
+    text-decoration: none;
+    color: white;
+}

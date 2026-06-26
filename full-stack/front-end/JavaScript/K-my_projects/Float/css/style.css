@@ -1,0 +1,51 @@
+body {
+    background-color: lightblue;
+    color: black;
+    font-family: cursive;
+}
+
+h1 {
+    border: 3px solid red;
+    border-radius: 30px;
+    background-color: pink;
+    text-align: center;
+    padding: 10px;
+}
+
+h2 {
+    border: 5px groove red;
+    border-radius: 20px;
+    background-color: steelblue;
+    text-align: center;
+    padding: 10px;
+}
+
+img {
+    width: 200px;
+}
+
+.box {
+    border: 5px double blue;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.sk1 {
+    float: left;
+    margin: 20px;
+    padding: 20px;
+}
+
+.sk2 {
+    float: right;
+    margin: 20px;
+    padding: 20px;
+}
+
+
+
+.clfx {
+    display: table;
+    content: ' ';
+    clear: both;
+}

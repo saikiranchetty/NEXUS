@@ -1,0 +1,120 @@
+/* Import Google Font - Audiowide */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Audiowide", sans-serif;
+    transition: all 0.4s ease;
+}
+section{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: hsl(208, 100%, 97%);
+    padding: 0 20px;
+}
+section.dark{
+    background: hsl(210, 10%, 16%);
+}
+section .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 220px;
+    max-width: 560px;
+    width: 100%;
+    background: hsl(0, 0%, 100%);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    position: relative;
+}
+section.dark .container {
+    background: hsl(214, 12%, 22%);
+}
+section .container .icons i{
+    position: absolute;
+    right: 17px;
+    top: 17px;
+    height: 30px;
+    width: 30px;
+    background: hsl(207, 11%, 16%);
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+}
+section.dark .container .icons i{
+    background: hsl(0, 0%, 100%);
+    color: hsl(214, 12%, 22%);
+}
+.container .icons i.fa-sun{
+    opacity: 0;
+    pointer-events: none;
+}
+section.dark .container .icons i.fa-sun{
+    opacity: 1;
+    pointer-events: auto;
+    font-size: 16px;
+}
+section .container .time{
+    display: flex;
+    align-items: center;
+}
+.container .time .time-colon{
+    display: flex;
+    align-items: center;
+    position: relative;
+} 
+.time .time-colon .am_pm{
+    position: absolute;
+    top: 0;
+    right: -50px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+section.dark .time .time-colon .am_pm{
+    color: hsl(0, 0%, 100%);
+}
+.time .time-colon .time-text{
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: hsl(208, 100%, 97%);
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+section.dark .time .time-colon .time-text{
+    background: hsl(207, 11%, 16%);
+}
+.time .time-colon .time-text,
+.time .time-colon .colon{
+    font-size: 35px;
+    font-weight: 500;
+}
+section.dark .time .time-text .num,
+section.dark .time .colon{
+    color: hsl(0, 0%, 100%);
+}
+.time .time-colon .colon{
+    font-size: 40px;
+    margin: 0 10px;
+}
+.time .time-colon .time-text .text{
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+section.dark .time .time-colon .text{
+    color: hsl(0, 0%, 100%);
+}

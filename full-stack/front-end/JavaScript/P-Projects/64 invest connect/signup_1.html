@@ -1,0 +1,127 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | InvestorConnect</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>Create Your Account</h1>
+                <p>Join as an investor or entrepreneur</p>
+            </div>
+            
+            <div class="user-type-selector">
+                <button id="investorBtn" class="user-type-btn active">I'm an Investor</button>
+                <button id="entrepreneurBtn" class="user-type-btn">I Need Investment</button>
+            </div>
+            
+            <form id="signupForm" class="auth-form">
+                <div class="success-message hidden"></div>
+                
+                <div class="form-group">
+                    <input type="text" id="fullname" name="fullname" class="form-control" placeholder=" " required="">
+                    <label for="fullname" class="form-label">Full Name</label>
+                    <div class="error-message"></div>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" id="email" name="email" class="form-control" placeholder=" " required="">
+                    <label for="email" class="form-label">Email</label>
+                    <div class="error-message"></div>
+                </div>
+                
+                <div class="form-group password-toggle">
+                    <input type="password" id="password" name="password" class="form-control" placeholder=" " required="">
+                    <label for="password" class="form-label">Password</label>
+                    <button type="button" class="toggle-password">👁️</button>
+                    <div class="error-message"></div>
+                    <div class="password-strength">
+                        <div class="strength-bar"></div>
+                    </div>
+                    <div class="strength-text"></div>
+                </div>
+                
+                <div class="form-group password-toggle">
+                    <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder=" " required="">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <button type="button" class="toggle-password">👁️</button>
+                    <div class="error-message"></div>
+                </div>
+                
+                <div id="investorFields">
+                    <div class="form-group">
+                        <select id="investmentFocus" name="investmentFocus" class="form-control" required="">
+                            <option value="" disabled="" selected="">Select Investment Focus</option>
+                            <option value="tech">Technology</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="realestate">Real Estate</option>
+                            <option value="consumer">Consumer Goods</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <label for="investmentFocus" class="form-label">Investment Focus</label>
+                        <div class="error-message"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <select id="investmentRange" name="investmentRange" class="form-control" required="">
+                            <option value="" disabled="" selected="">Select Investment Range</option>
+                            <option value="under50k">Under $50K</option>
+                            <option value="50k-250k">$50K - $250K</option>
+                            <option value="250k-1m">$250K - $1M</option>
+                            <option value="over1m">Over $1M</option>
+                        </select>
+                        <label for="investmentRange" class="form-label">Typical Investment Range</label>
+                        <div class="error-message"></div>
+                    </div>
+                </div>
+                
+                <div id="entrepreneurFields" class="hidden">
+                    <div class="form-group">
+                        <input type="text" id="companyName" name="companyName" class="form-control" placeholder=" " required="">
+                        <label for="companyName" class="form-label">Company Name</label>
+                        <div class="error-message"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <select id="industry" name="industry" class="form-control" required="">
+                            <option value="" disabled="" selected="">Select Industry</option>
+                            <option value="tech">Technology</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="retail">Retail</option>
+                            <option value="manufacturing">Manufacturing</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <label for="industry" class="form-label">Industry</label>
+                        <div class="error-message"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="number" id="fundingGoal" name="fundingGoal" class="form-control" placeholder=" " required="">
+                        <label for="fundingGoal" class="form-label">Funding Goal ($)</label>
+                        <div class="error-message"></div>
+                    </div>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required="">
+                    <label for="terms" class="checkbox-label">
+                        <span class="checkbox-custom"></span>
+                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                    </label>
+                    <div class="error-message"></div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                
+                <div class="auth-footer">
+                    Already have an account? <a href="/login">Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+
+</body></html>

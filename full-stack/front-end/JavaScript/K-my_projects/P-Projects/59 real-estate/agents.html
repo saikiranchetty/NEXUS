@@ -1,0 +1,1392 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Agents | PrimeProperties</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    
+         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"></noscript>
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"></noscript>
+    <style>
+        :root {
+            --primary-color: #2a5bd7;
+            --primary-dark: #1e4bbf;
+            --primary-light: #4a7df8;
+            --secondary-color: #f8a62b;
+            --secondary-dark: #e6951f;
+            --dark-color: #1a1a1a;
+            --darker-color: #111;
+            --light-color: #f8f9fa;
+            --lighter-color: #fff;
+            --gray-color: #6c757d;
+            --light-gray: #e9ecef;
+            --success-color: #28a745;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1), 0 5px 10px rgba(0,0,0,0.05);
+            --shadow-xl: 0 20px 40px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.05);
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-color);
+            overflow-x: hidden;
+            line-height: 1.7;
+            background-color: var(--lighter-color);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        .text-primary { color: var(--primary-color) !important; }
+        .text-secondary { color: var(--secondary-color) !important; }
+        .bg-primary { background-color: var(--primary-color) !important; }
+        .bg-secondary { background-color: var(--secondary-color) !important; }
+        .bg-dark { background-color: var(--dark-color) !important; }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 12px 28px;
+            font-weight: 600;
+            border-radius: 50px;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            color: var(--darker-color);
+            padding: 12px 28px;
+            font-weight: 600;
+            border-radius: 50px;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--secondary-dark);
+            border-color: var(--secondary-dark);
+            color: var(--darker-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-outline-light {
+            border-width: 2px;
+            padding: 10px 26px;
+            font-weight: 600;
+            border-radius: 50px;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+        }
+        
+        .btn-outline-light:hover {
+            background-color: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+        
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            display: inline-block;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+        
+        .section-title.text-white h2 {
+            color: var(--lighter-color);
+        }
+        
+        .section-title.text-white h2:after {
+            background: var(--lighter-color);
+        }
+        
+        /* Navigation */
+        .navbar {
+            padding: 20px 0;
+            transition: var(--transition);
+            background-color: rgba(255, 255, 255, 0.98) !important;
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar.scrolled {
+            padding: 12px 0;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 26px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar-brand img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            padding: 8px 18px !important;
+            color: var(--dark-color) !important;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover:before, .nav-link.active:before {
+            width: 100%;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            padding: 0.5rem;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .page-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .breadcrumb {
+            justify-content: center;
+            background: transparent;
+            padding: 0;
+        }
+        
+        .breadcrumb-item a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+        
+        .breadcrumb-item.active {
+            color: var(--secondary-color);
+        }
+        
+        .breadcrumb-item+.breadcrumb-item::before {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Agents Section */
+        .agents-section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            display: inline-block;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+        
+        .agent-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .agent-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .agent-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 5px solid rgba(42, 91, 215, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .agent-card:hover .agent-image {
+            border-color: rgba(42, 91, 215, 0.3);
+        }
+        
+        .agent-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .agent-position {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .agent-bio {
+            color: var(--gray-color);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .agent-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--gray-color);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: rgba(42, 91, 215, 0.1);
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        /* Join Team CTA */
+        .join-team {
+            background: linear-gradient(to right, var(--primary-color), #4a7df8);
+            color: white;
+            padding: 80px 0;
+            margin: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .join-team:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center;
+            background-size: cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .join-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        
+        .join-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .join-text {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+      .footer {
+            background-color: var(--darker-color);
+            color: white;
+            padding: 100px 0 0;
+            position: relative;
+        }
+        
+        .footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%231a1a1a"></path><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%231a1a1a"></path><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%231a1a1a"></path></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+            transform: rotate(180deg);
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 25px;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .footer-logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .footer-about {
+            margin-bottom: 30px;
+        }
+        
+        .footer-about p {
+            color: #aaa;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+        
+        .footer-links h3, .footer-contact h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-links h3:after, .footer-contact h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .footer-contact p {
+            color: #aaa;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .footer-contact i {
+            margin-right: 15px;
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin-top: 3px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary-color);
+            color: var(--darker-color);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            background: #111;
+            padding: 25px 0;
+            margin-top: 70px;
+        }
+        
+        .footer-bottom p {
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+        
+        .footer-bottom a {
+            color: #aaa;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-bottom a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .animate-in {
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite ease-in-out;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1399.98px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media (max-width: 1199.98px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .section {
+                padding: 90px 0;
+            }
+            
+            .feature-box {
+                padding: 35px 25px;
+            }
+        }
+        
+        @media (max-width: 991.98px) {
+            .navbar {
+                padding: 15px 0;
+            }
+            
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-section {
+                padding: 160px 0 100px;
+                background-attachment: scroll;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .cta-title {
+                font-size: 2.4rem;
+            }
+            
+            .stat-box:after {
+                display: none;
+            }
+            
+            .footer-logo {
+                font-size: 1.6rem;
+            }
+            
+            .footer-links h3, .footer-contact h3 {
+                font-size: 1.3rem;
+                margin-bottom: 25px;
+            }
+        }
+        
+        @media (max-width: 767.98px) {
+            .hero-title {
+                font-size: 2.4rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .search-form {
+                padding: 30px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons .btn {
+                margin: 10px;
+                display: block;
+                width: 100%;
+                max-width: 280px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .footer {
+                padding: 80px 0 0;
+            }
+            
+            .footer-links, .footer-contact {
+                margin-top: 40px;
+            }
+        }
+        
+        @media (max-width: 575.98px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-section {
+                padding: 140px 0 80px;
+            }
+            
+            .search-form {
+                padding: 25px;
+            }
+            
+            .btn-primary, .btn-secondary {
+                padding: 10px 24px;
+                font-size: 0.95rem;
+            }
+            
+            .property-img-container {
+                height: 200px;
+            }
+            
+            .category-card {
+                height: 200px;
+            }
+            
+            .category-title {
+                font-size: 1.4rem;
+            }
+            
+            .back-to-top {
+                width: 45px;
+                height: 45px;
+                font-size: 1rem;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 991.98px) {
+            .page-title {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .join-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 767.98px) {
+            .page-title {
+                font-size: 1.8rem;
+            }
+            
+            .agent-stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .join-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMmE1YmQ3IiBkPSJNMjU2IDhDMTE5IDggOCAxMTkgOCAyNTZzMTExIDI0OCAyNDggMjQ4IDI0OC0xMTEgMjQ4LTI0OFMzOTMgOCAyNTYgOHptMCA0NDhjLTExMC41IDAtMjAwLTg5LjUtMjAwLTIwMFMxNDUuNSA1NiAyNTYgNTZzMjAwIDg5LjUgMjAwIDIwMC04OS41IDIwMC0yMDAgMjAwWm04MS44LTE0Mi4yYy0xMi4yIDEyLjItMzIuMSAxMi4yLTQ0LjMgMGwtMTExLTExMWMtNi4yLTYuMi02LjItMTYuMyAwLTIyLjVzMTYuMy02LjIgMjIuNSAwbDEwMCAxMDAgMTAwLTEwMGM2LjItNi4yIDE2LjMtNi4yIDIyLjUgMHM2LjIgMTYuMyAwIDIyLjVsLTEwMCAxMDAgMTAwIDEwMGM2LjIgNi4yIDYuMiAxNi4zIDAgMjIuNXoiLz48L3N2Zz4=" alt="Prime Properties Logo">
+                <span>Prime<span class="text-primary">Properties</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/listings">Properties</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/agents">Agents</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/buying">Buying</a></li>
+                            <li><a class="dropdown-item" href="/selling">Selling</a></li>
+                            <li><a class="dropdown-item" href="/renting">Renting</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/valuation">Free Valuation</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                </ul>
+                <div class="ms-lg-3 mt-3 mt-lg-0">
+                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <i class="fas fa-user me-2"></i>Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Meet Our Agents</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Agents</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Agents Section -->
+    <section class="agents-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Professional Team</h2>
+                <p class="text-muted">Meet our experienced real estate agents ready to assist you</p>
+            </div>
+            
+            <div class="row">
+                <!-- Agent 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="agent-card">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="agent-image" alt="Michael Chen">
+                        <h3 class="agent-name">Michael Chen</h3>
+                        <div class="agent-position">Senior Real Estate Agent</div>
+                        <div class="agent-bio">
+                            With over 15 years of experience in luxury real estate, Michael specializes in high-end properties in Beverly Hills and Malibu.
+                        </div>
+                        <div class="agent-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">245</div>
+                                <div class="stat-label">Properties</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">98%</div>
+                                <div class="stat-label">Satisfaction</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">12</div>
+                                <div class="stat-label">Years</div>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                        <a href="agent.html" class="btn btn-outline-primary w-100">View Profile</a>
+                    </div>
+                </div>
+                
+                <!-- Agent 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="agent-card">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" class="agent-image" alt="Sarah Johnson">
+                        <h3 class="agent-name">Sarah Johnson</h3>
+                        <div class="agent-position">Commercial Specialist</div>
+                        <div class="agent-bio">
+                            Sarah has been helping businesses find their perfect commercial spaces for over a decade, with expertise in retail and office properties.
+                        </div>
+                        <div class="agent-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">178</div>
+                                <div class="stat-label">Properties</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">95%</div>
+                                <div class="stat-label">Satisfaction</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">10</div>
+                                <div class="stat-label">Years</div>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                        <a href="agent.html" class="btn btn-outline-primary w-100">View Profile</a>
+                    </div>
+                </div>
+                
+                <!-- Agent 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="agent-card">
+                        <img src="https://randomuser.me/api/portraits/men/68.jpg" class="agent-image" alt="David Wilson">
+                        <h3 class="agent-name">David Wilson</h3>
+                        <div class="agent-position">Investment Consultant</div>
+                        <div class="agent-bio">
+                            David helps clients build their real estate investment portfolios with a focus on long-term growth and rental properties.
+                        </div>
+                        <div class="agent-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">312</div>
+                                <div class="stat-label">Properties</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">92%</div>
+                                <div class="stat-label">Satisfaction</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">8</div>
+                                <div class="stat-label">Years</div>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                        <a href="agent.html" class="btn btn-outline-primary w-100">View Profile</a>
+                    </div>
+                </div>
+                
+                <!-- Agent 4 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="agent-card">
+                        <img src="https://randomuser.me/api/portraits/women/28.jpg" class="agent-image" alt="Emily Rodriguez">
+                        <h3 class="agent-name">Emily Rodriguez</h3>
+                        <div class="agent-position">First-Time Home Specialist</div>
+                        <div class="agent-bio">
+                            Emily specializes in helping first-time home buyers navigate the complex process of purchasing their dream home.
+                        </div>
+                        <div class="agent-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">156</div>
+                                <div class="stat-label">Properties</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">97%</div>
+                                <div class="stat-label">Satisfaction</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">6</div>
+                                <div class="stat-label">Years</div>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <a href="agent.html" class="btn btn-outline-primary w-100">View Profile</a>
+                    </div>
+                </div>
+                
+                <!-- Agent 5 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="agent-card">
+                        <img src="https://randomuser.me/api/portraits/men/55.jpg" class="agent-image" alt="Robert Taylor">
+                        <h3 class="agent-name">Robert Taylor</h3>
+                        <div class="agent-position">Luxury Properties Director</div>
+                        <div class="agent-bio">
+                            Robert leads our luxury division, catering to high-net-worth individuals seeking exceptional properties worldwide.
+                        </div>
+                        <div class="agent-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">420</div>
+                                <div class="stat-label">Properties</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">99%</div>
+                                <div class="stat-label">Satisfaction</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">18</div>
+                                <div class="stat-label">Years</div>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                        <a href="agent.html" class="btn btn-outline-primary w-100">View Profile</a>
+                    </div>
+                </div>
+                
+                <!-- Agent 6 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="agent-card">
+                        <img src="https://randomuser.me/api/portraits/women/62.jpg" class="agent-image" alt="Jennifer Lee">
+                        <h3 class="agent-name">Jennifer Lee</h3>
+                        <div class="agent-position">Rental Properties Expert</div>
+                        <div class="agent-bio">
+                            Jennifer helps clients find the perfect rental properties and manages investment properties for optimal returns.
+                        </div>
+                        <div class="agent-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">287</div>
+                                <div class="stat-label">Properties</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">94%</div>
+                                <div class="stat-label">Satisfaction</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">9</div>
+                                <div class="stat-label">Years</div>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                        <a href="agent.html" class="btn btn-outline-primary w-100">View Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Team CTA -->
+    <section class="join-team">
+        <div class="container">
+            <div class="join-content">
+                <h2 class="join-title">Join Our Team</h2>
+                <p class="join-text">Are you a passionate real estate professional looking to take your career to the next level? Join our award-winning team and benefit from our extensive network and resources.</p>
+                <a class="btn btn-light btn-lg px-4 me-2" href="/contact">Contact Us</a>
+                <a href="#" class="btn btn-outline-light btn-lg px-4">Career Opportunities</a>
+            </div>
+        </div>
+    </section>
+
+     <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <a class="footer-logo" href="/">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjZjhhNjJiIiBkPSJNMjU2IDhDMTE5IDggOCAxMTkgOCAyNTZzMTExIDI0OCAyNDggMjQ4IDI0OC0xMTEgMjQ4LTI0OFMzOTMgOCAyNTYgOHptMCA0NDhjLTExMC41IDAtMjAwLTg5LjUtMjAwLTIwMFMxNDUuNSA1NiAyNTYgNTZzMjAwIDg5LjUgMjAwIDIwMC04OS41IDIwMC0yMDAgMjAwWm04MS44LTE0Mi4yYy0xMi4yIDEyLjItMzIuMSAxMi4yLTQ0LjMgMGwtMTExLTExMWMtNi4yLTYuMi02LjItMTYuMyAwLTIyLjVzMTYuMy02LjIgMjIuNSAwbDEwMCAxMDAgMTAwLTEwMGM2LjItNi4yIDE2LjMtNi4yIDIyLjUgMHM2LjIgMTYuMyAwIDIyLjVsLTEwMCAxMDAgMTAwIDEwMGM2LjIgNi4yIDYuMiAxNi4zIDAgMjIuNXoiLz48L3N2Zz4=" alt="Prime Properties Logo">
+                        <span>Prime<span class="text-secondary">Properties</span></span>
+                    </a>
+                    <div class="footer-about">
+                        <p>PrimeProperties is a leading luxury real estate agency with over 18 years of experience helping clients buy, sell, and rent premium properties in the most desirable neighborhoods worldwide.</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="/listings">Properties</a></li>
+                            <li><a href="/agents">Agents</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="/blog">Blog</a></li>
+                            <li><a href="/contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h3>Property Types</h3>
+                        <ul>
+                            <li><a href="/listings?type=apartment">Apartments</a></li>
+                            <li><a href="/listings?type=villa">Villas</a></li>
+                            <li><a href="/listings?type=townhouse">Townhouses</a></li>
+                            <li><a href="/listings?type=commercial">Commercial</a></li>
+                            <li><a href="/listings?type=land">Land</a></li>
+                            <li><a href="/listings?type=beachfront">Beachfront</a></li>
+                            <li><a href="/listings?type=luxury">Luxury Homes</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-contact">
+                        <h3>Contact Us</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Real Estate Ave, Suite 500<br>New York, NY 10001</p>
+                        <p><i class="fas fa-phone"></i> +1 (800) 555-1234</p>
+                        <p><i class="fas fa-envelope"></i> info@primeproperties.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9am - 6pm<br>Sat: 10am - 4pm</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>© 2023 PrimeProperties. All rights reserved. | <a href="#">Sitemap</a></p>
+                        </div>
+                        <div class="col-md-6 text-md-end">
+                            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Licensing</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login to Your Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="loginEmail" required="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="loginPassword" required="">
+                        </div>
+                        <div class="mb-3 d-flex justify-content-between align-items-center">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                            </div>
+                            <a href="#" class="text-decoration-none">Forgot password?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 mb-3">Login</button>
+                        <div class="text-center">
+                            <p class="mb-0">Don't have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal" class="text-decoration-none">Register</a></p>
+                        </div>
+                        <div class="position-relative my-4">
+                            <hr>
+                            <div class="position-absolute top-50 start-50 translate-middle bg-white px-2">or</div>
+                        </div>
+                        <button type="button" class="btn btn-outline-secondary w-100 mb-2">
+                            <i class="fab fa-google me-2"></i> Continue with Google
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary w-100">
+                            <i class="fab fa-facebook-f me-2"></i> Continue with Facebook
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Create an Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" required="">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" required="">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="registerEmail" required="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="registerPassword" required="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" required="">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="agreeTerms" required="">
+                            <label class="form-check-label" for="agreeTerms">I agree to the <a href="#" class="text-decoration-none">Terms of Service</a> and <a href="#" class="text-decoration-none">Privacy Policy</a></label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 mb-3">Register</button>
+                        <div class="text-center">
+                            <p class="mb-0">Already have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal" class="text-decoration-none">Login</a></p>
+                        </div>
+                        <div class="position-relative my-4">
+                            <hr>
+                            <div class="position-absolute top-50 start-50 translate-middle bg-white px-2">or</div>
+                        </div>
+                        <button type="button" class="btn btn-outline-secondary w-100 mb-2">
+                            <i class="fab fa-google me-2"></i> Continue with Google
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary w-100">
+                            <i class="fab fa-facebook-f me-2"></i> Continue with Facebook
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            const backToTop = document.querySelector('.back-to-top');
+            
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            if (window.scrollY > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+
+        // Price range slider
+        const priceRange = document.getElementById('priceRange');
+        const priceValue = document.getElementById('priceValue');
+        
+        priceRange.addEventListener('input', function() {
+            const value = parseInt(this.value);
+            priceValue.textContent = `$0 - $${value.toLocaleString()}`;
+        });
+
+        // Counter animation for stats
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count');
+                const count = +counter.innerText;
+                const increment = target / speed;
+                
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.innerText = target.toLocaleString();
+                }
+            });
+        }
+
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if(elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                    
+                    if(element.classList.contains('stat-number')) {
+                        animateCounters();
+                    }
+                }
+            });
+        }
+
+        // Back to top button
+        document.querySelector('.back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Initialize tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+
+        // Initialize popovers
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Initialize animations on load
+        window.addEventListener('load', function() {
+            animateOnScroll();
+        });
+
+        // Continue animations on scroll
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Add loading animation to buttons on click
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function() {
+                if(this.getAttribute('type') === 'submit' || this.getAttribute('href') === '#') {
+                    this.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Processing...';
+                    setTimeout(() => {
+                        this.innerHTML = 'Done <i class="fas fa-check ms-2"></i>';
+                    }, 1500);
+                }
+            });
+        });
+
+        // Lazy loading for images
+        if('loading' in HTMLImageElement.prototype) {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            images.forEach(img => {
+                img.src = img.dataset.src;
+            });
+        } else {
+            // Fallback for browsers that don't support lazy loading
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+            document.body.appendChild(script);
+        }
+    </script>
+
+</body></html>

@@ -1,0 +1,712 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture Blog - GreenHarvest</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;family=Roboto+Slab:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+<style>
+    /* Blog Page Styles */
+.blog-header {
+ background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")
+            no-repeat center center/cover;    padding: 150px 0 100px;
+    color: #fff;
+    text-align: center;
+}
+
+.blog-content {
+    background-color: #f9f9f9;
+}
+
+.blog-post {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.blog-post:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.featured-post {
+    margin-bottom: 50px;
+}
+
+.post-thumbnail {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+}
+
+.featured-post .post-thumbnail {
+    height: 400px;
+}
+
+.post-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.post-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    z-index: 1;
+}
+
+.post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0 15px;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.post-meta span i {
+    margin-right: 5px;
+}
+
+.post-title {
+    margin-bottom: 15px;
+}
+
+.post-title a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.post-title a:hover {
+    color: #4CAF50;
+}
+
+.featured-post .post-title {
+    font-size: 1.8rem;
+}
+
+.post-excerpt {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.read-more {
+    color: #4CAF50;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+}
+
+.read-more i {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.read-more:hover i {
+    transform: translateX(5px);
+}
+
+/* Sidebar Styles */
+.blog-sidebar {
+    position: sticky;
+    top: 30px;
+}
+
+.sidebar-widget {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.widget-title {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.search-form .input-group {
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.search-form .form-control {
+    border-right: none;
+}
+
+.search-form .btn {
+    border-left: none;
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.categories-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.categories-list li {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #eee;
+}
+
+.categories-list li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.categories-list li a {
+    color: #555;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    transition: color 0.3s ease;
+}
+
+.categories-list li a:hover {
+    color: #4CAF50;
+}
+
+.categories-list li a span {
+    color: #999;
+}
+
+.popular-post {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.popular-post:last-child {
+    margin-bottom: 0;
+}
+
+.popular-post .post-thumb {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.popular-post .post-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.popular-post .post-info h4 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.popular-post .post-info h4 a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.popular-post .post-info h4 a:hover {
+    color: #4CAF50;
+}
+
+.popular-post .post-info .post-date {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tags-list a {
+    display: inline-block;
+    background-color: #f0f0f0;
+    color: #555;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.tags-list a:hover {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.newsletter-form .form-group {
+    margin-bottom: 15px;
+}
+
+/* Blog CTA */
+.blog-cta {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('./images/blog-cta.png') no-repeat center center/cover;
+    color: #fff;
+}
+
+/* Responsive Styles */
+@media (max-width: 991.98px) {
+    .featured-post .post-thumbnail {
+        height: 300px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .blog-header {
+        padding: 120px 0 80px;
+    }
+    
+    .featured-post .post-thumbnail {
+        height: 250px;
+    }
+    
+    .featured-post .post-title {
+        font-size: 1.5rem;
+    }
+    
+    .popular-post {
+        flex-direction: column;
+    }
+    
+    .popular-post .post-thumb {
+        width: 100%;
+        height: 150px;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+ .breadcrumb {
+            justify-content: center;
+            background-color: transparent;
+            padding: 0;
+        }
+        
+        .breadcrumb-item a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+        
+        .breadcrumb-item.active {
+            color: #4CAF50;
+        }
+        
+        .breadcrumb-item + .breadcrumb-item::before {
+            color: rgba(255, 255, 255, 0.5);
+        }
+</style></head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader-inner">
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+ <img src="https://images.pexels.com/photos/219794/pexels-photo-219794.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=20" alt="GreenHarvest">                <span>GreenHarvest</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/products">Products</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+     
+
+    <!-- Page Header -->
+    <section class="page-header blog-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 data-aos="fade-down">Agriculture Blog</h1>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="200">Latest news, tips, and insights for modern farmers</p>
+                    <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Blog</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="py-5 blog-content">
+        <div class="container">
+            <div class="row">
+                <!-- Main Blog Posts -->
+                <div class="col-lg-8">
+                    <!-- Featured Post -->
+                    <article class="blog-post featured-post" data-aos="fade-up">
+                        <div class="post-thumbnail">
+                            <img src="images/blog-cta.png" alt="Featured Post" class="img-fluid">
+                            <div class="post-badge">Featured</div>
+                        </div>
+                        <div class="post-meta">
+                            <span class="post-date"><i class="far fa-calendar-alt"></i> June 15, 2023</span>
+                            <span class="post-category"><i class="far fa-folder"></i> Organic Farming</span>
+                            <span class="post-comments"><i class="far fa-comment"></i> 12 Comments</span>
+                        </div>
+                        <h2 class="post-title"><a href="/single-post">The Future of Organic Farming in India: Trends and Opportunities</a></h2>
+                        <div class="post-excerpt">
+                            <p>Organic farming in India is experiencing unprecedented growth as consumers become more health-conscious and environmentally aware. This comprehensive guide explores the current trends, government initiatives, and market opportunities for organic farmers...</p>
+                        </div>
+                        <a class="read-more" href="/single-post">Continue Reading <i class="fas fa-arrow-right"></i></a>
+                    </article>
+
+                    <!-- Regular Posts -->
+                    <div class="row">
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                            <article class="blog-post">
+                                <div class="post-thumbnail">
+                                    <img src="images/water.png" alt="Water Conservation" class="img-fluid">
+                                </div>
+                                <div class="post-meta">
+                                    <span class="post-date"><i class="far fa-calendar-alt"></i> June 2, 2023</span>
+                                    <span class="post-category"><i class="far fa-folder"></i> Irrigation</span>
+                                </div>
+                                <h3 class="post-title"><a href="/single-post">Innovative Water Conservation Techniques for Small Farmers</a></h3>
+                                <div class="post-excerpt">
+                                    <p>Discover practical water-saving methods that can help small-scale farmers optimize their water usage while maintaining or even increasing crop yields...</p>
+                                </div>
+                                <a class="read-more" href="/single-post">Read More <i class="fas fa-arrow-right"></i></a>
+                            </article>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                            <article class="blog-post">
+                                <div class="post-thumbnail">
+                                    <img src="images/drone.png" alt="Agricultural Technology" class="img-fluid">
+                                </div>
+                                <div class="post-meta">
+                                    <span class="post-date"><i class="far fa-calendar-alt"></i> May 20, 2023</span>
+                                    <span class="post-category"><i class="far fa-folder"></i> Technology</span>
+                                </div>
+                                <h3 class="post-title"><a href="/single-post">How AI and Drones Are Revolutionizing Precision Agriculture</a></h3>
+                                <div class="post-excerpt">
+                                    <p>Explore how cutting-edge technologies like artificial intelligence, drones, and IoT are transforming traditional farming practices into precision agriculture...</p>
+                                </div>
+                                <a class="read-more" href="/single-post">Read More <i class="fas fa-arrow-right"></i></a>
+                            </article>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                            <article class="blog-post">
+                                <div class="post-thumbnail">
+                                    <img src="images/soil.png" alt="Soil Health" class="img-fluid">
+                                </div>
+                                <div class="post-meta">
+                                    <span class="post-date"><i class="far fa-calendar-alt"></i> May 5, 2023</span>
+                                    <span class="post-category"><i class="far fa-folder"></i> Soil Health</span>
+                                </div>
+                                <h3 class="post-title"><a href="/single-post">5 Signs Your Soil Needs Attention and How to Fix It</a></h3>
+                                <div class="post-excerpt">
+                                    <p>Learn to recognize the warning signs of unhealthy soil and discover practical, sustainable methods to restore its fertility and productivity...</p>
+                                </div>
+                                <a class="read-more" href="/single-post">Read More <i class="fas fa-arrow-right"></i></a>
+                            </article>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                            <article class="blog-post">
+                                <div class="post-thumbnail">
+                                    <img src="images/ag.png" alt="Market Trends" class="img-fluid">
+                                </div>
+                                <div class="post-meta">
+                                    <span class="post-date"><i class="far fa-calendar-alt"></i> April 18, 2023</span>
+                                    <span class="post-category"><i class="far fa-folder"></i> Market Trends</span>
+                                </div>
+                                <h3 class="post-title"><a href="/single-post">2023 Agricultural Market Trends: What Farmers Should Know</a></h3>
+                                <div class="post-excerpt">
+                                    <p>Stay ahead of the curve with our analysis of emerging market trends, consumer preferences, and profitable crop opportunities for the coming season...</p>
+                                </div>
+                                <a class="read-more" href="/single-post">Read More <i class="fas fa-arrow-right"></i></a>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <nav aria-label="Blog pagination" class="mt-5" data-aos="fade-up">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4" data-aos="fade-left">
+                    <div class="blog-sidebar">
+                        <!-- Search Widget -->
+                        <div class="sidebar-widget search-widget">
+                            <h3 class="widget-title">Search Blog</h3>
+                            <form class="search-form">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search articles...">
+                                    <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Categories Widget -->
+                        <div class="sidebar-widget categories-widget">
+                            <h3 class="widget-title">Categories</h3>
+                            <ul class="categories-list">
+                                <li><a href="#">Organic Farming <span>(24)</span></a></li>
+                                <li><a href="#">Irrigation <span>(15)</span></a></li>
+                                <li><a href="#">Soil Health <span>(18)</span></a></li>
+                                <li><a href="#">Crop Management <span>(22)</span></a></li>
+                                <li><a href="#">Technology <span>(12)</span></a></li>
+                                <li><a href="#">Market Trends <span>(9)</span></a></li>
+                                <li><a href="#">Government Schemes <span>(7)</span></a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Popular Posts Widget -->
+                        <div class="sidebar-widget popular-posts">
+                            <h3 class="widget-title">Popular Posts</h3>
+                            <div class="popular-post">
+                                <div class="post-thumb">
+                                    <a href="#"><img src="images/essential.png" alt="Popular Post" class="img-fluid"></a>
+                                </div>
+                                <div class="post-info">
+                                    <h4><a href="#">10 Essential Tools Every Small Farmer Should Have</a></h4>
+                                    <span class="post-date">May 28, 2023</span>
+                                </div>
+                            </div>
+                            <div class="popular-post">
+                                <div class="post-thumb">
+                                    <a href="#"><img src="images/organic.png" alt="Popular Post" class="img-fluid"></a>
+                                </div>
+                                <div class="post-info">
+                                    <h4><a href="#">How to Start Organic Farming with Minimal Investment</a></h4>
+                                    <span class="post-date">April 15, 2023</span>
+                                </div>
+                            </div>
+                            <div class="popular-post">
+                                <div class="post-thumb">
+                                    <a href="#"><img src="images/blog-cta.png" alt="Popular Post" class="img-fluid"></a>
+                                </div>
+                                <div class="post-info">
+                                    <h4><a href="#">Understanding Soil pH and Its Impact on Crop Yield</a></h4>
+                                    <span class="post-date">March 22, 2023</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tags Widget -->
+                        <div class="sidebar-widget tags-widget">
+                            <h3 class="widget-title">Popular Tags</h3>
+                            <div class="tags-list">
+                                <a href="#">Organic</a>
+                                <a href="#">Farming</a>
+                                <a href="#">Irrigation</a>
+                                <a href="#">Soil</a>
+                                <a href="#">Crops</a>
+                                <a href="#">Technology</a>
+                                <a href="#">Sustainability</a>
+                                <a href="#">Market</a>
+                                <a href="#">Tips</a>
+                            </div>
+                        </div>
+
+                        <!-- Newsletter Widget -->
+                        <div class="sidebar-widget newsletter-widget">
+                            <h3 class="widget-title">Subscribe to Newsletter</h3>
+                            <p>Get the latest agricultural tips and updates directly to your inbox.</p>
+                            <form class="newsletter-form">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Your Email Address" required="">
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog CTA -->
+    <section class="py-5 blog-cta" data-aos="fade-up">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4 mb-lg-0">
+                    <h2 class="text-white mb-3">Have an Agriculture Topic to Share?</h2>
+                    <p class="text-white mb-0">We're always looking for guest contributors with expertise in farming, agri-tech, or sustainable agriculture.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a class="btn btn-light btn-lg" href="/contact">Become a Contributor</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-top py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-widget about-widget">
+ <img src="https://images.pexels.com/photos/219794/pexels-photo-219794.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=20" alt="GreenHarvest" class="footer-logo">     Green Harvest                       <p class="mt-3">Empowering farmers with sustainable agricultural solutions for a food-secure future.</p>
+                            <div class="social-links mt-4">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-widget">
+                            <h3>Quick Links</h3>
+                            <ul class="footer-links">
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/about">About Us</a></li>
+                                <li><a href="/services">Services</a></li>
+                                <li><a href="/products">Products</a></li>
+                                <li><a href="/blog">Blog</a></li>
+                                <li><a href="/contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h3>Our Services</h3>
+                            <ul class="footer-links">
+                                <li><a href="/services">Organic Farming</a></li>
+                                <li><a href="/services">Soil Testing</a></li>
+                                <li><a href="/services">Equipment Rental</a></li>
+                                <li><a href="/services">Crop Consultancy</a></li>
+                                <li><a href="/services">Market Access</a></li>
+                                <li><a href="/services">Training Programs</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget contact-widget">
+                            <h3>Contact Us</h3>
+                            <ul class="footer-contact">
+                                <li><i class="fas fa-map-marker-alt"></i> 123 Farm Road, Agricultural Zone, India</li>
+                                <li><i class="fas fa-phone"></i> +91 9876543210</li>
+                                <li><i class="fas fa-envelope"></i> info@greenharvest.com</li>
+                                <li><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom py-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="mb-md-0">© 2023 GreenHarvest. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-bottom-links text-md-end">
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms of Service</a>
+                            <a href="#">Sitemap</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/blog.js"></script>
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Blog post hover effect
+        $(document).ready(function() {
+            $('.blog-post').hover(
+                function() {
+                    $(this).find('.post-thumbnail img').css('transform', 'scale(1.05)');
+                    $(this).find('.post-title a').css('color', '#4CAF50');
+                },
+                function() {
+                    $(this).find('.post-thumbnail img').css('transform', 'scale(1)');
+                    $(this).find('.post-title a').css('color', '');
+                }
+            );
+        });
+    </script>
+
+</body></html>

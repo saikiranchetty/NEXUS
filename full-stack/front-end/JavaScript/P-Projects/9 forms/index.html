@@ -1,0 +1,316 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login Form</title>
+    <style>
+        
+        
+        form{
+            max-width: 900px;
+            height: fit-content;
+            margin: 20px auto;
+            padding: 20px;
+            border:  solid ;
+            border-radius: 10px;
+            background: linear-gradient(rgb(227, 125, 125),rgb(131, 131, 244));
+            
+            
+        }
+        .form group{
+            display: flex;
+            justify-content:space-between ;
+            align-items: center;
+            margin-bottom: 15px;
+
+        }
+        .form-group label{
+            flex: 1;
+            margin-right: 10px;
+            display: block;
+
+        }
+    </style>
+</head>
+<body>
+    <h2 style="color: blue;"><center>Student Registration Form</center></h2>
+    <form action="">
+        <fieldset style="border: dashed saddlebrown;">
+        <br><table style="background: linear-gradient(rgb(227, 125, 125),rgb(131, 131, 244)); justify-content: space-between;width: 500px;">
+            <tbody><tr><td>FIRST NAME: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="" id="" placeholder="enter the first name">( Max  50 characters allowed)</td></tr>    
+            <tr><td>LAST NAME:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="" id="" placeholder="enter the last name">( Max  50 characters allowed)</td></tr>    
+            <tr><td>EMAIL:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" name="" id="" placeholder="enter email"></td></tr>
+            <tr><td>MOBILE NUMBER: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="" id="" placeholder="enter the number"></td></tr>
+            <tr><td>GENDER:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="" id="">Male <input type="radio" name="" id="">Female</td></tr>
+            <tr><td>DATA OF BIRTH:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" name="" id=""></td></tr>
+            <tr><td>ADDRESS: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <textarea name="" id="" style="height: 100px;" value="enter the address" placeholder="enter the address"></textarea></td></tr>
+            
+            <tr><td>CITY: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="" id="" placeholder="enter the city">( Max  50 characters allowed)</td></tr>
+            <tr><td>PIN CODE: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="" id="" placeholder="enter the pincode">( Max  50 characters allowed)</td></tr>
+            <tr><td>STATE: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=" name=" id="" placeholder="enter State name">( Max  50 characters allowed)</td></tr>
+            <tr><td>COUNTRY: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="" id="" placeholder="enter the country"></td></tr>
+            <tr><td>HOBBIES: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="" id="">Singing <input type="checkbox" name="" id="">Dancing <input type="checkbox" name="" id="">Drawing <input type="checkbox" name="" id="">Sketching <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="" id="">others <input type="text" name="" id=""></td></tr>
+            <tr><td>QULAIFICATION: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="" id="">High School <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="" id="">Higher School <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="" id=""> Graduation <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="" id="">Post-Graduation <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="" id="">Phd </td></tr>
+
+            <tr><td>COURSES: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="" id="">BCA(Bachelor of Computer Application) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="" id="">B.COM(Bachelor of Commerce) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="" id="">B.SC(Bachelor of Science) <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="" id="">BA(Bachelor of Arts) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="" id="">MCA(Masters of Computer Application) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="" id="">M.COM(Masters of Commerce) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="" id="">M.SC(Masters of Science) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="" id="">MA(Masters of Arts) </td></tr>
+            <tr><td colspan="2" align="center"><input type="submit" value="Submit"><input type="reset" value="Reset"></td>
+
+           
+
+        </tr></tbody></table>
+        </fieldset>
+    </form>
+    <br><hr>
+    <form action="" style="background:linear-gradient( rgb(80, 80, 217),red);">
+        <legend style="font-size: x-large;"><center> <b>XYZ College /School</b> <br>Student Registration Form </center> </legend>
+        <fieldset><div><label for="image-upload"> Student Image</label>
+            <input type="file" name="" id="image-upload" accept="image-upload">( less than 5MB) <br><br>
+            <label for=""> Student Name :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="" id="" placeholder=" Student name" size="60px"><br><br>
+            <label for=""> Father Name :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="" id="" placeholder=" Father name" size="60px"><br><br>
+            <label for=""> Mother Name:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="" id="" placeholder=" Mother Name" size="60px"><br><br> 
+            <label for=""> Gender:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="" id=""> Male
+            <input type="radio" name="" id=""> female
+            <input type="radio" name="" id=""> others <br><br>
+            <label for=""> DateofBirth:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="date" name="" id="" size="60px"><br><br>
+            <label for=""> E-Mail:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="email" name="" id="" size="60px" placeholder="enter email@"><br><br>
+            <label for="school-level">Level:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+            <select id="school-level" name="school-level">
+                <option value="high-school">High School</option>
+                <option value="higher-school">Higher School</option>
+                <option value="graduate">Graduate</option>
+                <option value="post-graduate">Post-Graduate</option>
+            </select><br><br>
+             <label for="btech-department">Department:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <select id="btech-department" name="btech-department">
+                <option value="computer-science">Computer Science and Engineering</option>
+                <option value="information-technology">Information Technology</option>
+                <option value="mechanical-engineering">Mechanical Engineering</option>
+                <option value="electrical-engineering">Electrical Engineering</option>
+                <option value="civil-engineering">Civil Engineering</option>
+                <option value="electronics-communication">Electronics and Communication Engineering</option>
+                <option value="chemical-engineering">Chemical Engineering</option>
+                <option value="biotechnology">Biotechnology</option>
+                <option value="aerospace-engineering">Aerospace Engineering</option>
+                <option value="automobile-engineering">Automobile Engineering</option>
+                &nbsp;&nbsp;</select><br><br>
+            <label for="">Mobile:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="number" size="60px"><br>
+            <hr>
+            <legend><center>Premanent Address</center></legend><br>
+            <label for="">State:</label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="" id="" placeholder="State" size="60px"><br><br>
+            <label for="">City:</label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="" id="" placeholder="City" size="60px"><br><br>
+            <label for="">Zip Code:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="" id="" placeholder="Zip Code" size="60px"><br><br>
+            <label for="">Mobile Number:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="" id="" placeholder="Mobile Number" size="60px"><br><hr>
+            <legend><center>Temporary Address</center></legend><br>
+            <label for=""> Set as Premanent Address</label>
+            <input type="checkbox" name="" id=""><br><br>
+            <label for="">State:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="" id="" placeholder="State" size="60px"><br><br>
+            <label for="">City :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="" id="" placeholder="City" size="60px"><br><br>
+            <label for="">Zip Code :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="number" name="" id="" placeholder="Zip Code" size="60px"><br><br>
+            <label for="">Mobile Number:</label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="tel" name="" id="" placeholder="Mobile Number" size="60px"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            <button style="padding: 0; background-color: blue;color: white; size: 60px;width: 90px;height: 40px;">Register</button>
+
+
+
+
+
+        </div>
+
+              
+
+        </fieldset>
+    </form>
+    <br><hr>
+    <form action="" style="background: linear-gradient( to right,#1E2761, #408EC6, #7A2048 );color: white;">
+        <legend style="color:aqua;font-size: x-large;"> <center>Student Registration form</center></legend>
+        <fieldset>
+            <label for="">Firstname:</label><br>
+            <input type="text" name="" id="" size="70px" placeholder="Firstname" style="height: 30px;"><br><br>
+            <label for="">Middlename:</label><br>
+            <input type="text" name="" id="" placeholder="Middlename" size="70px" style="height: 30px;"><br><br><label for="">Lastname:</label><br>
+            <input type="text" name="" id="" size="70px" placeholder="Lastname" style="height: 30px;"><br><br>
+            <label for="">Course:</label><br>
+            <select id="btech-department" name="btech-department" style="width: 40px;">
+                <option value="computer-science">Computer Science and Engineering</option>
+                <option value="information-technology">Information Technology</option>
+                <option value="mechanical-engineering">Mechanical Engineering</option>
+                <option value="electrical-engineering">Electrical Engineering</option>
+                <option value="civil-engineering">Civil Engineering</option>
+                <option value="electronics-communication">Electronics and Communication Engineering</option>
+                <option value="chemical-engineering">Chemical Engineering</option>
+                <option value="biotechnology">Biotechnology</option>
+                <option value="aerospace-engineering">Aerospace Engineering</option>
+                <option value="automobile-engineering">Automobile Engineering</option>
+                &nbsp;&nbsp;</select><br>
+            
+            <label for="">Phone:</label><br>
+            <input type="tel" name="" id="" size="70px" placeholder="+91" disabled="" style="height: 30px;"><br>
+            <input type="tel" name="" id="" size="70px" placeholder="Phone" style="height: 30px;"><br><br>
+            <label for="">Current Address:</label><br>
+            <textarea name="" id="" size="70px" style="height: 60px ;width: 500px;;" placeholder="enter your address"></textarea><br><br>
+            <label for="">EMAIL:</label><br>
+            <input type="email" name="" id="" size="70px" placeholder="email" style="height: 30px;"><br><br>
+            <label for="">Password:</label><br>
+            <input type="text" name="" id="" placeholder="Password" size="70px" style="height: 30px;"><br><br><label for="">Confirm Password:</label><br>
+            <input type="text" name="" id="" size="70px" placeholder="Confirm Password" style="height: 30px;"><br><br>
+            <button size="70px" style="background-color: lightgreen; block-size: 40px ;width: 500px;">Register</button>
+
+        </fieldset>
+
+    </form><br><hr>
+    <form action="" style="background:linear-gradient(to right, #375E97, #FB6542, #FFBB00) ;">
+        <fieldset>
+            <legend>Registration</legend>
+            <h2>Personal Details</h2><br><br><br><br><table style="padding-top: 0;"> 
+                <tbody><tr>
+                    <td> Full Name</td>
+                    <td> Date of Birth</td>
+                    <td> Email</td>
+                </tr>
+                <tr><td>
+                    <input type="text" name="" id="" placeholder="Enter your name" size="30px" style="height: 30px;"><br><br>
+                </td>
+                <td>
+                    <input type="date" name="" id="" style="height: 30px; width: 230px;"><br><br>
+                </td>
+                <td>
+                    <input type="email" name="" id="" placeholder="Enter your emai@" size="30px" style="height: 30px;"><br><br>
+                </td>
+                </tr><tr>
+                    <td> Mobile number:</td>
+                    <td> Gender</td>
+                    <td> Occupation</td>
+                </tr>
+                <tr><td>
+                    <input type="tel" name="" id="" placeholder="Enter your number" size="30px" style="height: 30px;"><br><br>
+                </td>
+                <td>
+                    <input type="text" name="" id="" placeholder="Enter your Gender" size="30px" style="height: 30px;"><br><br>
+                </td>
+                <td>
+                    <input type="text" name="" id="" placeholder="Enter your Occupation" size="30px" style="height: 30px;"><br><br>
+                </td>
+                </tr><tr>
+                    <th><h2>Identity Details</h2></th>
+                </tr>
+                
+                
+                <tr>
+                    <td> ID type:</td>
+                    <td> ID number:</td>
+                    <td> Issue Authority</td>
+                </tr>
+                <tr><td>
+                    <input type="text" name="" id="" placeholder="Enter your id type" size="30px" style="height: 30px;"><br><br>
+                </td>
+                <td>
+                    <input type="text" name="" id="" placeholder="Enter your id number" size="30px" style="height: 30px;"><br><br>
+                </td>
+                <td>
+                    <input type="text" name="" id="" placeholder="Enter your Issue Authority " size="30px" style="height: 30px;"><br><br>
+                </td>
+                </tr><tr>
+                    <td> Issue Date:</td>
+                    <td> Issue State:</td>
+                    <td> Expiry Date:</td>
+                </tr>
+                <tr><td>
+                    <input type="date" name="" id="" placeholder="Enter your date" size="30px" style="height: 30px;width: 235px;;"><br><br>
+                </td>
+                <td>
+                    <input type="text" name="" id="" placeholder="Enter your issued state" size="30px" style="height: 30px;"><br><br>
+                </td>
+                <td>
+                    <input type="date" name="" id="" placeholder="Enter your expiry date " size="30px" style="height: 30px; width: 235px;;"><br><br>
+                </td>
+                            
+                
+                
+                
+            </tr></tbody></table>
+            
+            <input type="button" name="" id="" value="Next-->" style="background-color: blue ;color: antiquewhite; size: 40px ;height: 40px;width: 90px;">
+
+        </fieldset>
+    </form>
+
+    <form action="" style="background: linear-gradient(rgb(131, 195, 244),rgb(227, 179, 125),rgb(131, 195, 244)); justify-content: space-between;width: 900px;"><legend style="color: rgba(241, 248, 246, 0.922) ; font-size:x-large;"><center>Student Registration Form</center></legend>
+        <fieldset style="border: dashed saddlebrown;">
+            
+                
+        <br><br><br><table align="center" cellpadding="5" cellspacing="5">
+            <tbody><tr><td>FIRST NAME: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="" id="">( Max  50 characters allowed)</td></tr>    
+            <tr><td>LAST NAME: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="" id="">( Max  50 characters allowed)</td></tr>    
+            <tr><td>EMAIL: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" name="" id=""></td></tr>
+            <tr><td>MOBILE NUMBER: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="" id=""></td></tr>
+            <tr><td>GENDER: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="" id="">Male <input type="radio" name="" id="">Female</td></tr>
+            <tr><td>DATA OF BIRTH: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" name="" id=""></td></tr>
+            <tr><td>ADDRESS: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="" id="">(enter the address)</td></tr>
+            
+            <tr><td>CITY:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="" id="">( Max  50 characters allowed)</td></tr>
+            <tr><td>PIN CODE: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="" id="">( Max  50 characters allowed)</td></tr>
+            <tr><td>STATE: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="" id="">( Max  50 characters allowed)</td></tr>
+            <tr><td>COUNTRY: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="" id=""></td></tr>
+            <tr><td>HOBBIES: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="" id="">Singing <input type="checkbox" name="" id="">Dancing <input type="checkbox" name="" id="">Drawing <input type="checkbox" name="" id="">Sketching <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="" id="">others <input type="text" name="" id=""></td></tr>
+            <tr>
+                <td>QULAIFICATION: <br><center></center><table>
+                    <tbody><tr>
+                        <td>Sl.NO. </td> 
+                        <td>Examination <pre>                        </pre></td>
+                        <td>Board</td>
+                        <td>Percentage</td>
+                        <td>Year of Passing</td>
+                    </tr>
+                    <tr>
+                        <td>1</td><td>Class X</td><td><input type="text" name="" id=""></td><td><input type="text" name="" id=""></td><td><input type="text" name="" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>2</td><td>Class XII</td><td><input type="text" name="" id=""></td><td><input type="text" name="" id=""></td><td><input type="text" name="" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>3</td><td>Graduation</td><td><input type="text" name="" id=""></td><td><input type="text" name="" id=""></td><td><input type="text" name="" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>4</td><td>Masters</td><td><input type="text" name="" id=""></td><td><input type="text" name="" id=""></td><td><input type="text" name="" id=""></td>
+                    </tr>
+                    <tr><td></td><td></td><td>(10 char max)</td><td>(upto 2 decimal)</td>
+                </tr>
+            
+            <tr><td>Courses Applied for</td> <td><input type="radio" name="" id="">BCA <input type="radio" name="" id="">B.COM <br> 
+                <input type="radio" name="" id="">BA <input type="radio" name="" id="">B.SC
+
+                </td></tr></tbody></table> 
+
+            </td></tr><tr><td colspan="2" align="center"><input type="button" value="Submit"><input type="button" value="Reset"></td>
+        
+        
+
+
+    
+
+    
+   
+
+
+    
+    
+    
+
+</tr></tbody></table></fieldset></form></body></html>

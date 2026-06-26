@@ -1,0 +1,170 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRONTEND</title>
+    <link rel="stylesheet" href="./Task48 27.css">
+</head>
+
+<body>
+    <!--Day47  Task47  27-06-2025-->
+
+    <h1>
+        JS CONDITIONAL STATEMENTS
+    </h1>
+
+    <div class="text">
+        <p>
+            </p><h3>SYNTAX</h3>
+            let variable = " "; //Declaration <br><br>
+
+            for -&gt; loops through a block of code a number of times <br> <br>
+            for/in -&gt; loops through the properties of an object <br><br>
+            for/of - loops through the values of an iterable object <br><br>
+            while - loops through a block of code while a specified condition is true <br><br>
+            do/while - also loops through a block of code while a specified condition is true <br><br>
+
+            The For Loop <br>
+            The for statement creates a loop with 3 optional expressions: <br>
+            
+            for (expression 1; expression 2; expression 3) { <br>
+            // code block to be executed <br>
+            } <br><br>
+            Expression 1 is executed (one time) before the execution of the code block. <br>
+            
+            Expression 2 defines the condition for executing the code block. <br>
+            
+            Expression 3 is executed (every time) after the code block has been executed. <br>
+
+            <hr><hr><hr>
+            <h3>EXAMPLES</h3>
+            let w = " "; <br><br>
+            let w1 = " "; <br><br>
+            const stud1 = { <br>
+            firstname: "rajesh", <br>
+            Lastname: "kumar", <br>
+            age: 19, <br>
+            course:"Full-stack-java" <br>
+            } <br>
+            let w2 = " "; <br><br>
+            let w3 = " "; <br><br>
+            let w4 = " "; <br><br>
+            let w5 = " "; <br><br>
+            let w7; <br><br>
+
+            <h3>FOR LOOP</h3>
+            for (i = 0; i &lt; 10; i++){ <br>
+                w +='For loop Answer is : ' + i; <br> 
+                document.getElementById("a1").innerHTML=w; <br>
+            } <br>
+
+            <h3>FOR IN LOOP</h3>
+            for (let k in array1) { <br>
+                w1 +='For in loop Answer is : ' + array1[k]; <br>
+                document.getElementById("a2").innerHTML = w1; <br> 
+            } <br>
+
+            <h3>FOR OF LOOP</h3>
+            for(let j in stud1) { <br>
+                w2 +='For of loop Answer is : ' + stud1[j]; <br>        
+                document.getElementById("a3").innerHTML = w2; <br>
+            } <br>
+            
+            <h3>FOR EACH LOOP</h3>
+            array1.forEach(f1); <br>
+            function f1(value, index, array) { <br>
+                w3 +='For each loop Answer is : ' + value; <br>
+                document.getElementById("a4").innerHTML = w3; <br>
+            } <br>
+
+            <h3>WHILE LOOP</h3>
+            while (i&lt;20) { <br>
+                w4 +='While loop Answer is : ' + i; <br>
+                i++; <br>
+                document.getElementById("a5").innerHTML=w4; <br>         
+            } <br>
+            <h3>DO WHILE LOOP</h3>
+            do { <br>
+                w5 += 'do While loop Answer is : ' + i; <br>
+                i++; <br>
+                document.getElementById("a6").innerHTML = w5; <br>
+            } while (i &lt; 30); <br>
+            
+            <h3>SWITCH</h3>
+            switch (new Date().getDay()) { <br>
+                case 0: <br>
+                    w7 = "sunday" <br>
+                break; <br>
+                case 1: <br>
+                    w7 = "monday" <br>
+                break; <br>
+                case 2: <br>
+                    w7 = "Tuesday" <br>
+                break; <br>
+                case 3: <br>
+                    w7 = "Wednesday" <br>
+                break; <br>
+                case 4: <br>
+                    w7 = "Thursday" <br>
+                break; <br>
+                case 5: <br>
+                    w7 = "Friday" <br>
+                break; <br>
+                case 6: <br>
+                    w7 = "Saturday" <br>
+                break; <br>
+                <br>
+                default: <br>
+                    w7 = "enter correct output" <br>
+                break; <br>
+            } <br>
+            document.getElementById("a7").innerHTML = w7;
+           
+        <p></p>
+    </div>
+    
+    
+    <div class="container">
+        <h3>OUTPUTS</h3>
+
+        <h2>
+            FOR LOOP
+        </h2>
+        <h4 id="a1"></h4>
+        
+        <h2>
+            FOR IN LOOP
+        </h2>
+        <h4 id="a2"></h4>
+        
+        <h2>
+            FOR OF LOOP            
+        </h2>
+        <h4 id="a3"></h4>
+
+        <h2>
+            FOR EACH LOOP
+        </h2>
+        <h4 id="a4"></h4>
+
+        <h2>
+            WHILE LOOP
+        </h2>
+        <h4 id="a5"></h4>
+
+        <h2>
+            DO WHILE LOOP
+        </h2>
+        <h4 id="a6"></h4>
+
+        <h2>
+            SWITCH
+        </h2>
+        <h4 id="a7"></h4>
+    </div>
+
+
+
+    <script src="./Task48 27.js"></script>
+
+
+</body></html>

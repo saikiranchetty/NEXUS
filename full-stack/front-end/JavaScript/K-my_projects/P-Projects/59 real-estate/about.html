@@ -1,0 +1,1339 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | PrimeProperties</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"></noscript>
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"></noscript>
+    <style>
+        :root {
+            --primary-color: #2a5bd7;
+            --primary-dark: #1e4bbf;
+            --primary-light: #4a7df8;
+            --secondary-color: #f8a62b;
+            --secondary-dark: #e6951f;
+            --dark-color: #1a1a1a;
+            --darker-color: #111;
+            --light-color: #f8f9fa;
+            --lighter-color: #fff;
+            --gray-color: #6c757d;
+            --light-gray: #e9ecef;
+            --success-color: #28a745;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1), 0 5px 10px rgba(0,0,0,0.05);
+            --shadow-xl: 0 20px 40px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.05);
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-color);
+            overflow-x: hidden;
+            line-height: 1.7;
+            background-color: var(--lighter-color);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        .text-primary { color: var(--primary-color) !important; }
+        .text-secondary { color: var(--secondary-color) !important; }
+        .bg-primary { background-color: var(--primary-color) !important; }
+        .bg-secondary { background-color: var(--secondary-color) !important; }
+        .bg-dark { background-color: var(--dark-color) !important; }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 12px 28px;
+            font-weight: 600;
+            border-radius: 50px;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            color: var(--darker-color);
+            padding: 12px 28px;
+            font-weight: 600;
+            border-radius: 50px;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--secondary-dark);
+            border-color: var(--secondary-dark);
+            color: var(--darker-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-outline-light {
+            border-width: 2px;
+            padding: 10px 26px;
+            font-weight: 600;
+            border-radius: 50px;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+        }
+        
+        .btn-outline-light:hover {
+            background-color: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+        
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            display: inline-block;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+        
+        .section-title.text-white h2 {
+            color: var(--lighter-color);
+        }
+        
+        .section-title.text-white h2:after {
+            background: var(--lighter-color);
+        }
+        
+        /* Navigation */
+        .navbar {
+            padding: 20px 0;
+            transition: var(--transition);
+            background-color: rgba(255, 255, 255, 0.98) !important;
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar.scrolled {
+            padding: 12px 0;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 26px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar-brand img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            padding: 8px 18px !important;
+            color: var(--dark-color) !important;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover:before, .nav-link.active:before {
+            width: 100%;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            padding: 0.5rem;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .page-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .breadcrumb {
+            justify-content: center;
+            background: transparent;
+            padding: 0;
+        }
+        
+        .breadcrumb-item a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+        
+        .breadcrumb-item.active {
+            color: var(--secondary-color);
+        }
+        
+        .breadcrumb-item+.breadcrumb-item::before {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* About Section */
+        .about-section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            display: inline-block;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+        
+        .about-image {
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .about-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .about-content p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: var(--gray-color);
+        }
+        
+        .feature-box {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(42, 91, 215, 0.1);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .feature-text h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .feature-text p {
+            color: var(--gray-color);
+            margin-bottom: 0;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(rgba(42, 91, 215, 0.9), rgba(42, 91, 215, 0.9)), url('https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Team Section */
+        .team-section {
+            padding: 80px 0;
+            background: var(--light-color);
+        }
+        
+        .team-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .team-image {
+            height: 300px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .team-body {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .team-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .team-position {
+            color: var(--secondary-color);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .team-bio {
+            color: var(--gray-color);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .social-links a {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: rgba(42, 91, 215, 0.1);
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 80px 0;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .testimonial-text:before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            top: -20px;
+            left: -15px;
+            opacity: 0.2;
+            font-family: serif;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 2px solid var(--primary-color);
+        }
+        
+        .author-name {
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+        
+        .author-position {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+        
+        /* Partners Section */
+        .partners-section {
+            padding: 60px 0;
+            background: var(--light-color);
+        }
+        
+        .partner-logo {
+            height: 80px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .partner-logo:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+        
+        /* Footer */
+         .footer {
+            background-color: var(--darker-color);
+            color: white;
+            padding: 100px 0 0;
+            position: relative;
+        }
+        
+        .footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%231a1a1a"></path><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%231a1a1a"></path><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%231a1a1a"></path></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+            transform: rotate(180deg);
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 25px;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .footer-logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .footer-about {
+            margin-bottom: 30px;
+        }
+        
+        .footer-about p {
+            color: #aaa;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+        
+        .footer-links h3, .footer-contact h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-links h3:after, .footer-contact h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .footer-contact p {
+            color: #aaa;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .footer-contact i {
+            margin-right: 15px;
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin-top: 3px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary-color);
+            color: var(--darker-color);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            background: #111;
+            padding: 25px 0;
+            margin-top: 70px;
+        }
+        
+        .footer-bottom p {
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+        
+        .footer-bottom a {
+            color: #aaa;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-bottom a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .animate-in {
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite ease-in-out;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1399.98px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media (max-width: 1199.98px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .section {
+                padding: 90px 0;
+            }
+            
+            .feature-box {
+                padding: 35px 25px;
+            }
+        }
+        
+        @media (max-width: 991.98px) {
+            .navbar {
+                padding: 15px 0;
+            }
+            
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-section {
+                padding: 160px 0 100px;
+                background-attachment: scroll;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .cta-title {
+                font-size: 2.4rem;
+            }
+            
+            .stat-box:after {
+                display: none;
+            }
+            
+            .footer-logo {
+                font-size: 1.6rem;
+            }
+            
+            .footer-links h3, .footer-contact h3 {
+                font-size: 1.3rem;
+                margin-bottom: 25px;
+            }
+        }
+        
+        @media (max-width: 767.98px) {
+            .hero-title {
+                font-size: 2.4rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .search-form {
+                padding: 30px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons .btn {
+                margin: 10px;
+                display: block;
+                width: 100%;
+                max-width: 280px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .footer {
+                padding: 80px 0 0;
+            }
+            
+            .footer-links, .footer-contact {
+                margin-top: 40px;
+            }
+        }
+        
+        @media (max-width: 575.98px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-section {
+                padding: 140px 0 80px;
+            }
+            
+            .search-form {
+                padding: 25px;
+            }
+            
+            .btn-primary, .btn-secondary {
+                padding: 10px 24px;
+                font-size: 0.95rem;
+            }
+            
+            .property-img-container {
+                height: 200px;
+            }
+            
+            .category-card {
+                height: 200px;
+            }
+            
+            .category-title {
+                font-size: 1.4rem;
+            }
+            
+            .back-to-top {
+                width: 45px;
+                height: 45px;
+                font-size: 1rem;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+        /* Responsive Styles */
+        @media (max-width: 991.98px) {
+            .page-title {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 767.98px) {
+            .page-title {
+                font-size: 1.8rem;
+            }
+            
+            .feature-box {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .feature-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .stat-item {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMmE1YmQ3IiBkPSJNMjU2IDhDMTE5IDggOCAxMTkgOCAyNTZzMTExIDI0OCAyNDggMjQ4IDI0OC0xMTEgMjQ4LTI0OFMzOTMgOCAyNTYgOHptMCA0NDhjLTExMC41IDAtMjAwLTg5LjUtMjAwLTIwMFMxNDUuNSA1NiAyNTYgNTZzMjAwIDg5LjUgMjAwIDIwMC04OS41IDIwMC0yMDAgMjAwWm04MS44LTE0Mi4yYy0xMi4yIDEyLjItMzIuMSAxMi4yLTQ0LjMgMGwtMTExLTExMWMtNi4yLTYuMi02LjItMTYuMyAwLTIyLjVzMTYuMy02LjIgMjIuNSAwbDEwMCAxMDAgMTAwLTEwMGM2LjItNi4yIDE2LjMtNi4yIDIyLjUgMHM2LjIgMTYuMyAwIDIyLjVsLTEwMCAxMDAgMTAwIDEwMGM2LjIgNi4yIDYuMiAxNi4zIDAgMjIuNXoiLz48L3N2Zz4=" alt="Prime Properties Logo">
+                <span>Prime<span class="text-primary">Properties</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/listings">Properties</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/agents">Agents</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/buying">Buying</a></li>
+                            <li><a class="dropdown-item" href="/selling">Selling</a></li>
+                            <li><a class="dropdown-item" href="/renting">Renting</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/valuation">Free Valuation</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                </ul>
+                <div class="ms-lg-3 mt-3 mt-lg-0">
+                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <i class="fas fa-user me-2"></i>Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">About Us</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">About</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80" class="about-image img-fluid" alt="About PrimeProperties">
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <h3>Our Story</h3>
+                        <p>Founded in 2005, PrimeProperties began as a small real estate agency with a big vision: to redefine the property buying and selling experience. What started as a team of three passionate agents has grown into one of the most trusted names in real estate across multiple states.</p>
+                        <p>Our journey has been marked by a commitment to exceptional service, deep market knowledge, and innovative approaches to real estate. We've helped thousands of clients find their dream homes, investment properties, and commercial spaces.</p>
+                        <p>Today, with over 150 agents and offices in six major cities, we continue to uphold our founding principles while embracing new technologies and strategies to serve our clients better.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Our Mission</h4>
+                            <p>To provide exceptional real estate services through professionalism, integrity, and expertise, helping our clients achieve their property goals with confidence and satisfaction.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Our Vision</h4>
+                            <p>To be the most trusted and innovative real estate company, setting the standard for excellence in service and customer experience in every market we serve.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Our Values</h4>
+                            <p>Integrity, professionalism, innovation, and client satisfaction are at the core of everything we do. We believe in building lasting relationships based on trust.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <div class="stat-number">18+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <div class="stat-number">2,450+</div>
+                        <div class="stat-label">Properties Sold</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <div class="stat-number">150+</div>
+                        <div class="stat-label">Professional Agents</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Our Leadership</h2>
+                <p class="text-muted">The experienced professionals leading our company</p>
+            </div>
+            
+            <div class="row">
+                <!-- Team Member 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="team-card">
+                        <img src="https://randomuser.me/api/portraits/men/65.jpg" class="team-image" alt="James Wilson">
+                        <div class="team-body">
+                            <h3 class="team-name">James Wilson</h3>
+                            <div class="team-position">Founder &amp; CEO</div>
+                            <p class="team-bio">With over 25 years in real estate, James founded PrimeProperties with a vision to create a client-first agency.</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="team-card">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" class="team-image" alt="Sarah Johnson">
+                        <div class="team-body">
+                            <h3 class="team-name">Sarah Johnson</h3>
+                            <div class="team-position">Chief Operations Officer</div>
+                            <p class="team-bio">Sarah oversees all operations, ensuring seamless service delivery across all our offices.</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="team-card">
+                        <img src="https://randomuser.me/api/portraits/men/42.jpg" class="team-image" alt="Michael Chen">
+                        <div class="team-body">
+                            <h3 class="team-name">Michael Chen</h3>
+                            <div class="team-position">Director of Sales</div>
+                            <p class="team-bio">Michael leads our sales team, implementing strategies that have consistently grown our business.</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p class="text-muted">Hear from our satisfied customers</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            PrimeProperties helped us find our dream home in just three weeks! Their attention to detail and understanding of our needs was exceptional.
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Emily Rodriguez">
+                            <div>
+                                <h4 class="author-name">Emily Rodriguez</h4>
+                                <p class="author-position">Home Buyer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            As a first-time seller, I was nervous about the process. The team at PrimeProperties made it seamless and got me 10% above asking price!
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="David Thompson">
+                            <div>
+                                <h4 class="author-name">David Thompson</h4>
+                                <p class="author-position">Home Seller</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            We've worked with many real estate companies, but none compare to PrimeProperties. Their market knowledge and negotiation skills are unmatched.
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Jennifer Lee">
+                            <div>
+                                <h4 class="author-name">Jennifer Lee</h4>
+                                <p class="author-position">Investor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Partners</h2>
+                <p class="text-muted">We work with the best in the industry</p>
+            </div>
+            
+          <div class="row align-items-center justify-content-center">
+    <div class="col-lg-2 col-md-3 col-4 mb-4">
+        <img src="https://logo.clearbit.com/zillow.com" class="img-fluid partner-logo" alt="Zillow" onerror="this.src='https://via.placeholder.com/150x80?text=Zillow'">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4 mb-4">
+        <img src="https://logo.clearbit.com/realtor.com" class="img-fluid partner-logo" alt="Realtor.com" onerror="this.src='https://via.placeholder.com/150x80?text=Realtor'">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4 mb-4">
+        <img src="https://logo.clearbit.com/redfin.com" class="img-fluid partner-logo" alt="Redfin" onerror="this.src='https://via.placeholder.com/150x80?text=Redfin'">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4 mb-4">
+        <img src="https://logo.clearbit.com/trulia.com" class="img-fluid partner-logo" alt="Trulia" onerror="this.src='https://via.placeholder.com/150x80?text=Trulia'">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4 mb-4">
+        <img src="https://logo.clearbit.com/homes.com" class="img-fluid partner-logo" alt="Homes.com" onerror="this.src='https://via.placeholder.com/150x80?text=Homes'">
+    </div>
+</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+     <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <a class="footer-logo" href="/">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjZjhhNjJiIiBkPSJNMjU2IDhDMTE5IDggOCAxMTkgOCAyNTZzMTExIDI0OCAyNDggMjQ4IDI0OC0xMTEgMjQ4LTI0OFMzOTMgOCAyNTYgOHptMCA0NDhjLTExMC41IDAtMjAwLTg5LjUtMjAwLTIwMFMxNDUuNSA1NiAyNTYgNTZzMjAwIDg5LjUgMjAwIDIwMC04OS41IDIwMC0yMDAgMjAwWm04MS44LTE0Mi4yYy0xMi4yIDEyLjItMzIuMSAxMi4yLTQ0LjMgMGwtMTExLTExMWMtNi4yLTYuMi02LjItMTYuMyAwLTIyLjVzMTYuMy02LjIgMjIuNSAwbDEwMCAxMDAgMTAwLTEwMGM2LjItNi4yIDE2LjMtNi4yIDIyLjUgMHM2LjIgMTYuMyAwIDIyLjVsLTEwMCAxMDAgMTAwIDEwMGM2LjIgNi4yIDYuMiAxNi4zIDAgMjIuNXoiLz48L3N2Zz4=" alt="Prime Properties Logo">
+                        <span>Prime<span class="text-secondary">Properties</span></span>
+                    </a>
+                    <div class="footer-about">
+                        <p>PrimeProperties is a leading luxury real estate agency with over 18 years of experience helping clients buy, sell, and rent premium properties in the most desirable neighborhoods worldwide.</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="/listings">Properties</a></li>
+                            <li><a href="/agents">Agents</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="/blog">Blog</a></li>
+                            <li><a href="/contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h3>Property Types</h3>
+                        <ul>
+                            <li><a href="/listings?type=apartment">Apartments</a></li>
+                            <li><a href="/listings?type=villa">Villas</a></li>
+                            <li><a href="/listings?type=townhouse">Townhouses</a></li>
+                            <li><a href="/listings?type=commercial">Commercial</a></li>
+                            <li><a href="/listings?type=land">Land</a></li>
+                            <li><a href="/listings?type=beachfront">Beachfront</a></li>
+                            <li><a href="/listings?type=luxury">Luxury Homes</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-contact">
+                        <h3>Contact Us</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Real Estate Ave, Suite 500<br>New York, NY 10001</p>
+                        <p><i class="fas fa-phone"></i> +1 (800) 555-1234</p>
+                        <p><i class="fas fa-envelope"></i> info@primeproperties.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9am - 6pm<br>Sat: 10am - 4pm</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>© 2023 PrimeProperties. All rights reserved. | <a href="#">Sitemap</a></p>
+                        </div>
+                        <div class="col-md-6 text-md-end">
+                            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Licensing</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login to Your Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="loginEmail" required="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="loginPassword" required="">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <p>Don't have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Register</a></p>
+                        <p><a href="#">Forgot password?</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Create an Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" required="">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" required="">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="registerEmail" required="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="registerPassword" required="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" required="">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="agreeTerms" required="">
+                            <label class="form-check-label" for="agreeTerms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Register</button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <p>Already have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Login</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+</body></html>

@@ -1,0 +1,84 @@
+body {
+    background-color: lightblue;
+    color: black;
+    font-family: monospace;
+    font-size: 20px;
+}
+
+h1 {
+    border: 5px solid red;
+    border-radius: 30px;
+    text-align: center;
+    background-color: royalblue;
+    color: white;
+}
+
+#para1 {
+    border: 3px double black;
+    border-radius: 30px;
+    text-align: center;
+    background-color: white;
+}
+
+#para3 {
+    border: 3px dashed orangered;
+    padding: 30px;
+    border-radius: 30px;
+    color: white;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#para6 {
+    border: 3px dashed orangered;
+    padding: 30px;
+    border-radius: 30px;
+    color: white;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.note,
+.Ex {
+    border: 2px solid red;
+    border-radius: 30px;
+    text-align: center;
+    background-color: rosybrown;
+    color: white;
+}
+
+table,
+th,
+td,
+tr {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+}
+
+th,
+td {
+    border: 2px solid blueviolet;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: lightgray;
+}
+
+td:hover {
+    background-color: navy;
+    color: white;
+    font-size: larger;
+}

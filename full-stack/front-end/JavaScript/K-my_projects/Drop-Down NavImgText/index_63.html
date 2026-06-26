@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRONTEND</title>
+    <link rel="stylesheet" href="./task65 22.css">
+    <script src="https://kit.fontawesome.com/0e24bfa3ea.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!--Day65  Task65 22-07-2025-->
+
+    <h1>
+        JQUERY UTILITIES
+    </h1>
+    <br>
+    <div class="container1">
+        Utilities are used to add some additional functionalities we can work by using the predefine function. <br>
+
+        <div>
+            $.each() <br>
+            $.extend() <br>
+            $.trim() <br>
+            $.isArray() <br>
+            $.isFunction() <br>
+            $.type() <br>
+            $.now() <br>
+        </div>
+    </div>
+    <br> <br>
+    <div class="container1">
+        <h3><i class="fa fa-arrow-down"></i> $.each() <i class="fa fa-arrow-down"></i></h3>
+        <div>
+            <button id="b1">CLICK HERE</button>
+        </div>
+        <h3><i class="fa fa-arrow-down"></i> $.extend() <i class="fa fa-arrow-down"></i></h3>
+        <div>
+            <p>TO SEE THE DATA VISIT CONSOLE</p>
+            <button id="b2">CLICK HERE</button>
+        </div>
+        <h3><i class="fa fa-arrow-down"></i> $.trim() <i class="fa fa-arrow-down"></i></h3>
+        <div>
+            <button id="b3">CLICK HERE</button>
+        </div>
+        <h3><i class="fa fa-arrow-down"></i> $.isArray() <i class="fa fa-arrow-down"></i></h3>
+        <div>
+            <button id="b4">CLICK HERE</button>
+        </div>
+        <h3><i class="fa fa-arrow-down"></i> $.isFunction() <i class="fa fa-arrow-down"></i></h3>
+        <div>
+            <button id="b5">CLICK HERE</button>
+        </div>
+        <h3><i class="fa fa-arrow-down"></i> $.type() <i class="fa fa-arrow-down"></i></h3>
+        <div>
+            <button id="b6">CLICK HERE</button>
+        </div>
+        <h3><i class="fa fa-arrow-down"></i> $.now() <i class="fa fa-arrow-down"></i></h3>
+        <div>
+            <button id="b7">CLICK HERE</button>
+        </div>
+    </div>
+
+    <script>
+        /* each */
+        var data=[1,2,3,4,5];
+        $.each(data,function(index,value){
+            $("#b1").click(function(){
+                alert(value);
+                console.log(index,'-------',value);
+            });
+        });
+        /* extend */
+        var data={1:1,2:2,3:3,4:4};
+        var data1=$.extend([],data,{0:5,1:10,2:20})
+        $(document).ready(function(){
+            $("#b2").click(function(){
+                console.log(data);
+                console.log(data1);
+            });
+        });
+        /* trim */
+        var str='         JQUERY            ';
+        $(document).ready(function(){
+            $("#b3").click(function(){
+                alert('Before Trim'+ str);
+                alert('After Trim '+ $.trim(str));
+            });
+        });
+        /* isArray */
+        var array=[1,2,3,4,5,6];
+        $(document).ready(function(){
+            $("#b4").click(function(){
+                alert($.isArray(array));
+            });
+        });
+        /* isFunction */
+        var fun=()=>{[1,2,3,4,5,6]};
+        $(document).ready(function(){
+            $("#b5").click(function(){
+                alert($.isFunction(fun));
+            });
+        });
+        /* type */
+        var fun=()=>{[1,2,3,4,5,6]};
+        $(document).ready(function(){
+            $("#b6").click(function(){
+                alert($.type(fun));
+                alert($.type('fun'));
+                alert($.type(600));
+                alert($.type([]));
+                alert($.type({}));
+                alert($.type(null));
+            });
+        });
+        /* now */
+        var fun=()=>{[1,2,3,4,5,6]};
+        $(document).ready(function(){
+            $("#b7").click(function(){
+                alert($.now());
+            });
+        });
+        
+    </script>
+    
+    <script src="./task65 22.js"></script>
+
+</body></html>

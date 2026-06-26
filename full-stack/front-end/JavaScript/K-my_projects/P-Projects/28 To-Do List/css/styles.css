@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #222;
+    color: #fff;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px; /* Adds perspective to the scene */
+}
+
+.todo-container {
+    background: linear-gradient( #6ba1ff, #4d5b9b);
+    border-radius: 10px;
+    box-shadow: 18px 18px rgb(249, 247, 247),-18px -18px rgb(249, 247, 247);
+    padding: 20px;
+    width: 300px;
+    transform-style: preserve-3d;
+    animation: backgroundColorChange 10s infinite alternate;
+}
+
+
+h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #fff;
+}
+
+.input-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#taskInput {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    margin-left: 10px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #218838;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    perspective: 1000px;
+}
+
+li {
+    background: #444;
+    border: 1px solid #555;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.6s ease, background 0.3s ease;
+    transform-style: preserve-3d;
+    animation: spin 5s  linear;
+}
+
+li:hover {
+    background: #555;
+    transform: rotateY(10deg);
+}
+
+li.completed {
+    text-decoration: line-through;
+    color: #999;
+}
+
+li button {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+li button:hover {
+    background: #c82333;
+}
+
+@keyframes spin {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}

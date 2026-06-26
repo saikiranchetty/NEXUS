@@ -1,0 +1,459 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PestGuard - Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes zoomIn { from { transform: scale(1); } to { transform: scale(1.05); } }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+        @keyframes slideInLeft { from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes slideInRight { from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-10px); } 60% { transform: translateY(-5px); } }
+        .card:hover, .service-card:hover { transform: scale(1.05); box-shadow: 0 6px 15px rgba(0,0,0,0.2); }
+        .btn-cta { background: linear-gradient(45deg, #ff4d4d, #ff6666); border: none; transition: all 0.3s; }
+        .btn-cta:hover { background: linear-gradient(45deg, #cc0000, #ff4d4d); transform: scale(1.1); }
+        .accordion-button { transition: all 0.3s; }
+        .accordion-button:not(.collapsed) { background: linear-gradient(45deg, #ff4d4d, #ff6666); color: white; }
+        .card-img-top {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            object-position: center;
+        }
+        @media (max-width: 768px) {
+            .card-img-top {
+                height: 150px;
+            }
+        }
+         .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .footer-links a:hover {
+            color: #ff4d4d;
+            transform: translateY(-3px);
+        }
+         .social-icons {
+            margin: 25px 0;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: #ff4d4d;
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+    .nav-hover {
+        transition: all 0.3s ease-in-out;
+        position: relative;
+    }
+
+    .nav-hover:hover {
+        color: #ff4d4d !important;
+    }
+
+    .nav-hover::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        left: 0;
+        bottom: 0;
+        background-color: #ff4d4d;
+        transition: width 0.3s ease-in-out;
+    }
+
+    .nav-hover:hover::after {
+        width: 100%;
+    }
+
+    .navbar-toggler {
+        filter: invert(100%);
+    }
+
+    .navbar-brand i {
+        color: #ffcc00;
+        font-size: 1.3rem;
+    }
+
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg sticky-top shadow-sm" style="background: linear-gradient(90deg, #003087, #0050b3);">
+    <div class="container">
+        <a class="navbar-brand fw-bold fs-3 text-white" href="/" style="letter-spacing: 1px; font-family: \" poppins\',="" sans-serif;'="">
+            <i class="fas fa-bug me-2"></i>PestGuard
+        </a>
+        <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav gap-3">
+                <li class="nav-item">
+                    <a class="nav-link text-white fw-medium nav-hover" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fw-medium nav-hover" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fw-medium nav-hover" href="/services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fw-medium nav-hover" href="/book">Book Now</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fw-medium nav-hover" href="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    <!-- Hero Section -->
+    <section style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('./assets/images/service.png') no-repeat center center/cover; color: white; padding: 120px 0; text-align: center;">
+        <div class="container">
+            <h1 style="font-size: 3.5rem; font-weight: 700; animation: fadeInUp 1s ease-in;">Our Pest Control Services</h1>
+            <p class="lead" style="font-size: 1.5rem; animation: fadeInUp 1.3s ease-in;">Comprehensive, eco-friendly solutions to keep your home and business pest-free.</p>
+            <a class="btn btn-cta btn-lg" href="/book" style="padding: 12px 30px; font-size: 1.2rem; animation: pulse 2s infinite;">Book a Service</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section style="padding: 80px 0; background-color: #fff;">
+        <div class="container">
+            <h2 class="text-center mb-5" style="font-size: 2.5rem; font-weight: 600; animation: fadeInUp 1s ease-in;">Our Expert Services</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card" style="border: none; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); animation: fadeInUp 1.2s ease-in; transition: transform 0.3s;">
+                        <img src="./assets/images/s1.png" class="card-img-top" alt="Termite Control" style="border-radius: 15px 15px 0 0;">
+                        <div class="card-body text-center">
+                            <i class="fas fa-bug fa-4x mb-3" style="color: #ff4d4d; animation: bounce 2s infinite;"></i>
+                            <h5 class="card-title" style="font-weight: 600;">Termite Control</h5>
+                            <p class="card-text">Comprehensive inspections and advanced treatments to protect your property from termite damage.</p>
+                            <ul style="font-size: 0.9rem; text-align: left;">
+                                <li>Termite barrier treatments</li>
+                                <li>Wood damage assessments</li>
+                                <li>Long-term prevention plans</li>
+                            </ul>
+                            <a class="btn btn-cta" href="/book" style="font-size: 1rem;">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card" style="border: none; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); animation: fadeInUp 1.4s ease-in; transition: transform 0.3s;">
+                        <img src="./assets/images/s2.png" class="card-img-top" alt="Mosquito Control" style="border-radius: 15px 15px 0 0;">
+                        <div class="card-body text-center">
+                            <i class="fas fa-mosquito fa-4x mb-3" style="color: #ff4d4d; animation: bounce 2s infinite 0.2s;"></i>
+                            <h5 class="card-title" style="font-weight: 600;">Mosquito Control</h5>
+                            <p class="card-text">Barrier sprays and larvicide treatments to ensure mosquito-free outdoor spaces.</p>
+                            <ul style="font-size: 0.9rem; text-align: left;">
+                                <li>Seasonal mosquito barriers</li>
+                                <li>Standing water treatments</li>
+                                <li>Eco-friendly solutions</li>
+                            </ul>
+                            <a class="btn btn-cta" href="/book" style="font-size: 1rem;">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card" style="border: none; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); animation: fadeInUp 1.6s ease-in; transition: transform 0.3s;">
+                        <img src="./assets/images/s3.png" class="card-img-top" alt="Rodent Removal" style="border-radius: 15px 15px 0 0;">
+                        <div class="card-body text-center">
+                            <i class="fas fa-mouse fa-4x mb-3" style="color: #ff4d4d; animation: bounce 2s infinite 0.4s;"></i>
+                            <h5 class="card-title" style="font-weight: 600;">Rodent Removal</h5>
+                            <p class="card-text">Humane trapping and exclusion techniques to eliminate rodents and prevent re-entry.</p>
+                            <ul style="font-size: 0.9rem; text-align: left;">
+                                <li>Entry point sealing</li>
+                                <li>Humane trapping methods</li>
+                                <li>Preventive monitoring</li>
+                            </ul>
+                            <a class="btn btn-cta" href="/book" style="font-size: 1rem;">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card" style="border: none; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); animation: fadeInUp 1.8s ease-in; transition: transform 0.3s;">
+                        <img src="./assets/images/s4.png" class="card-img-top" alt="Bed Bug Treatment" style="border-radius: 15px 15px 0 0;">
+                        <div class="card-body text-center">
+                            <i class="fas fa-bed fa-4x mb-3" style="color: #ff4d4d; animation: bounce 2s infinite 0.6s;"></i>
+                            <h5 class="card-title" style="font-weight: 600;">Bed Bug Treatment</h5>
+                            <p class="card-text">Heat treatments and eco-friendly chemical solutions to eradicate bed bugs.</p>
+                            <ul style="font-size: 0.9rem; text-align: left;">
+                                <li>Heat treatment technology</li>
+                                <li>Follow-up inspections</li>
+                                <li>Non-toxic options</li>
+                            </ul>
+                            <a class="btn btn-cta" href="/book" style="font-size: 1rem;">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card" style="border: none; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); animation: fadeInUp 2s ease-in; transition: transform 0.3s;">
+                        <img src="./assets/images/s5.png" class="card-img-top" alt="Cockroach Elimination" style="border-radius: 15px 15px 0 0;">
+                        <div class="card-body text-center">
+                            <i class="fas fa-bug fa-4x mb-3" style="color: #ff4d4d; animation: bounce 2s infinite 0.8s;"></i>
+                            <h5 class="card-title" style="font-weight: 600;">Cockroach Elimination</h5>
+                            <p class="card-text">Targeted treatments to eliminate cockroaches and prevent infestations.</p>
+                            <ul style="font-size: 0.9rem; text-align: left;">
+                                <li>Baiting and trapping</li>
+                                <li>Sanitation advice</li>
+                                <li>Residual treatments</li>
+                            </ul>
+                            <a class="btn btn-cta" href="/book" style="font-size: 1rem;">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card" style="border: none; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); animation: fadeInUp 2.2s ease-in; transition: transform 0.3s;">
+                        <img src="./assets/images/s6.png" class="card-img-top" alt="General Pest Control" style="border-radius: 15px 15px 0 0;">
+                        <div class="card-body text-center">
+                            <i class="fas fa-shield-alt fa-4x mb-3" style="color: #ff4d4d; animation: bounce 2s infinite 1s;"></i>
+                            <h5 class="card-title" style="font-weight: 600;">General Pest Control</h5>
+                            <p class="card-text">Comprehensive solutions for ants, spiders, and other common pests.</p>
+                            <ul style="font-size: 0.9rem; text-align: left;">
+                                <li>Seasonal pest management</li>
+                                <li>Interior and exterior treatments</li>
+                                <li>Customized plans</li>
+                            </ul>
+                            <a class="btn btn-cta" href="/book" style="font-size: 1rem;">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pest Identification Guide -->
+    <section style="padding: 80px 0; background: linear-gradient(180deg, #f8f9fa, #e9ecef);">
+        <div class="container">
+            <h2 class="text-center mb-5" style="font-size: 2.5rem; font-weight: 600; animation: fadeInUp 1s ease-in;">Pest Identification Guide</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="card" style="border: none; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); animation: fadeInUp 1.2s ease-in; transition: transform 0.3s;">
+                        <img src="./assets/images/s7.png" class="card-img-top" alt="Termite" style="border-radius: 15px 15px 0 0;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title" style="font-weight: 600;">Termites</h5>
+                            <p class="card-text">Small, wood-eating insects that cause structural damage.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card" style="border: none; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); animation: fadeInUp 1.4s ease-in; transition: transform 0.3s;">
+                        <img src="./assets/images/s8.png" class="card-img-top" alt="Mosquito" style="border-radius: 15px 15px 0 0;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title" style="font-weight: 600;">Mosquitoes</h5>
+                            <p class="card-text">Blood-sucking pests that thrive in standing water.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card" style="border: none; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); animation: fadeInUp 1.6s ease-in; transition: transform 0.3s;">
+                        <img src="./assets/images/s9.png" class="card-img-top" alt="Rodent" style="border-radius: 15px 15px 0 0;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title" style="font-weight: 600;">Rodents</h5>
+                            <p class="card-text">Mice and rats that invade homes and spread disease.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card" style="border: none; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); animation: fadeInUp 1.8s ease-in; transition: transform 0.3s;">
+                        <img src="./assets/images/s10.png" class="card-img-top" alt="Bed Bug" style="border-radius: 15px 15px 0 0;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title" style="font-weight: 600;">Bed Bugs</h5>
+                            <p class="card-text">Tiny pests that hide in bedding and cause itchy bites.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section style="padding: 80px 0; background-color: #fff;">
+        <div class="container">
+            <h2 class="text-center mb-5" style="font-size: 2.5rem; font-weight: 600; animation: fadeInUp 1s ease-in;">What Our Customers Say</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card" style="border: none; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); animation: fadeInUp 1.2s ease-in; transition: transform 0.3s;">
+                        <div class="card-body text-center">
+                            <p class="card-text" style="font-size: 1.1rem;">"The termite control service was thorough and effective. No issues since!"</p>
+                            <p style="font-weight: 500;">- Sarah Johnson</p>
+                            <div>
+                                <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card" style="border: none; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); animation: fadeInUp 1.4s ease-in; transition: transform 0.3s;">
+                        <div class="card-body text-center">
+                            <p class="card-text" style="font-size: 1.1rem;">"Mosquito control made our backyard enjoyable again!"</p>
+                            <p style="font-weight: 500;">- Mike Patel</p>
+                            <div>
+                                <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star-half-alt text-warning"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card" style="border: none; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); animation: fadeInUp 1.6s ease-in; transition: transform 0.3s;">
+                        <div class="card-body text-center">
+                            <p class="card-text" style="font-size: 1.1rem;">"Fast and professional rodent removal. Highly recommend!"</p>
+                            <p style="font-weight: 500;">- Emily Chen</p>
+                            <div>
+                                <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section style="padding: 80px 0; background: linear-gradient(180deg, #f8f9fa, #e9ecef);">
+        <div class="container">
+            <h2 class="text-center mb-5" style="font-size: 2.5rem; font-weight: 600; animation: fadeInUp 1s ease-in;">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item" style="border: none; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); animation: fadeInUp 1.2s ease-in;">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" style="font-weight: 600;">
+                            Are your treatments safe for pets and children?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, we use eco-friendly and pet-safe chemicals that are rigorously tested to ensure safety for pets and children.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item" style="border: none; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); animation: fadeInUp 1.4s ease-in;">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" style="font-weight: 600;">
+                            How long does a typical treatment take?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Most treatments take 1-2 hours, depending on the property size and pest severity.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item" style="border: none; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); animation: fadeInUp 1.6s ease-in;">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" style="font-weight: 600;">
+                            Do you offer warranties for your services?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, we provide a satisfaction guarantee and warranties on select services, such as termite control, for up to one year.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item" style="border: none; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); animation: fadeInUp 1.8s ease-in;">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" style="font-weight: 600;">
+                            Can you treat both residential and commercial properties?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Absolutely! We offer tailored solutions for homes, apartments, offices, and commercial spaces.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="padding: 80px 0; background: linear-gradient(45deg, #003087, #0050b3); color: white; text-align: center;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; font-weight: 600; animation: fadeInUp 1s ease-in;">Ready to Eliminate Pests?</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 20px;">Book your pest control service today or request a free consultation!</p>
+            <a class="btn btn-cta btn-lg" href="/book" style="padding: 12px 30px; font-size: 1.2rem; animation: pulse 2s infinite;">Book Now</a>
+            <a class="btn btn-outline-light btn-lg" href="/contact" style="padding: 12px 30px; font-size: 1.2rem; margin-left: 10px; animation: fadeInUp 1.3s ease-in;">Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+     <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h3 style="font-weight: 600; margin-bottom: 20px;">PestGuard </h3>
+                    <p>Your trusted partner in pest control since 2010. We provide safe, effective solutions for homes and businesses.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h3 style="font-weight: 600; margin-bottom: 20px;">Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="/">Home</a>
+                        <a href="/about">About Us</a>
+                        <a href="/services">Services</a>
+                        <a href="/contact">Contact</a>
+                        <a href="/book">Book Now</a>
+                        <a href="#">Blog</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h3 style="font-weight: 600; margin-bottom: 20px;">Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> 123 PestFree St, Cityville, ST 12345</p>
+                    <p><i class="fas fa-phone me-2"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope me-2"></i> info@pestguard.com</p>
+                    <p><i class="fas fa-clock me-2"></i> Mon-Fri: 8AM-6PM, Sat: 9AM-2PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>© 2025 PestGuard . All Rights Reserved.</p>
+                <p class="small">Licensed, Bonded &amp; Insured | EPA Certified</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/1234567890" style="position: fixed; bottom: 30px; right: 30px; background: linear-gradient(45deg, #25D366, #28a745); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: all 0.3s; animation: pulse 2s infinite;" onmouseover="this.style.background='linear-gradient(45deg, #1ebe56, #22c55e)'" onmouseout="this.style.background='linear-gradient(45deg, #25D366, #28a745)'">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+
+</body></html>

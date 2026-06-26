@@ -1,0 +1,1090 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serenity Gardens | Premium Senior Care</title>
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="css/css2.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.min.css">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #3a7ca5;
+            --secondary-color: #2f6690;
+            --accent-color: #d9dcd6;
+            --dark-color: #16425b;
+            --light-color: #f8f9fa;
+            --font-main: 'Montserrat', sans-serif;
+            --font-heading: 'Playfair Display', serif;
+        }
+        
+        body {
+            font-family: var(--font-main);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+        }
+        
+        .navbar {
+            background-color: rgba(22, 66, 91, 0.9);
+            transition: all 0.3s ease;
+            padding: 15px 0;
+        }
+        
+        .navbar.scrolled {
+            background-color: var(--dark-color);
+            padding: 10px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand img {
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled .navbar-brand img {
+            height: 40px;
+        }
+        
+        .hero-section {
+            height: 100vh;
+            min-height: 600px;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('photo-1503387762-592deb58ef4e') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(58, 124, 165, 0.3) 0%, rgba(22, 66, 91, 0.7) 100%);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            color: var(--dark-color);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .section-subtitle {
+            color: #6c757d;
+            font-size: 1.1rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .stat-card {
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card {
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .quote-icon {
+            color: var(--primary-color);
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .footer {
+            background-color: var(--dark-color);
+        }
+        
+        .footer a {
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: var(--accent-color) !important;
+            text-decoration: underline;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Custom Animations */
+        .slide-in-from-top {
+            animation: slideInFromTop 1s ease-out forwards;
+        }
+        
+        @keyframes slideInFromTop {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .zoom-on-hover {
+            transition: transform 0.3s ease;
+        }
+        
+        .zoom-on-hover:hover {
+            transform: scale(1.03);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        /* New Gallery Section Styles */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 250px; /* Fixed height for all gallery items */
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(58, 124, 165, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        /* New Events Section Styles */
+        .event-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .event-date {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+        
+        /* New Team Highlights Section */
+        .team-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .team-social {
+            position: absolute;
+            bottom: -40px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: var(--primary-color);
+            padding: 10px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .team-card:hover .team-social {
+            bottom: 0;
+        }
+        
+        .team-social a {
+            color: white;
+            margin: 0 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .team-social a:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        /* New FAQ Section */
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(58, 124, 165, 0.1);
+            color: var(--dark-color);
+        }
+        
+        .accordion-button:focus {
+            box-shadow: 0 0 0 0.25rem rgba(58, 124, 165, 0.25);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 500px;
+                height: auto;
+                padding: 100px 0;
+            }
+            
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .gallery-item {
+                height: 200px; /* Slightly smaller on mobile */
+            }
+        }
+        
+        /* Image equalization */
+        .equal-height-img {
+            height: 300px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .team-img {
+            height: 300px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .event-img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .welcome-img {
+            height: 400px;
+            object-fit: cover;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/l.png" alt="Serenity Gardens" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="facilities.html">Facilities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="staff.html">Our Staff</a></li>
+                    <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <a class="btn btn-primary ms-lg-3" href="contact.html#schedule-tour">Schedule a Tour</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 text-center text-white">
+                    <h1 class="display-3 fw-bold mb-4 slide-in-from-top">Compassionate Care for Your Loved Ones</h1>
+                    <p class="lead mb-5 fade-in">Providing exceptional senior living with dignity, respect, and joy since 1995</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a class="btn btn-primary btn-lg px-4 py-2 pulse" href="contact.html#schedule-tour">Schedule a Tour</a>
+                        <a href="tel:+18005551234" class="btn btn-outline-light btn-lg px-4 py-2">Call Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-down animate__animated animate__bounce animate__infinite">
+            <a href="#quick-stats" class="text-white">
+                <i class="fas fa-chevron-down fa-2x"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Quick Stats -->
+    <section id="quick-stats" class="quick-stats py-5 bg-light">
+        <div class="container">
+            <div class="row g-4 text-center">
+                <div class="col-md-3">
+                    <div class="stat-card p-4 rounded shadow-sm">
+                        <h2 class="display-4 text-primary" data-count="25">0</h2>
+                        <p class="mb-0 fw-bold">Years of Experience</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card p-4 rounded shadow-sm">
+                        <h2 class="display-4 text-primary" data-count="120">0</h2>
+                        <p class="mb-0 fw-bold">Residents</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card p-4 rounded shadow-sm">
+                        <h2 class="display-4 text-primary" data-count="50">0</h2>
+                        <p class="mb-0 fw-bold">Qualified Staff</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card p-4 rounded shadow-sm">
+                        <h2 class="display-4 text-primary" data-count="98">0</h2>
+                        <p class="mb-0 fw-bold">% Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="welcome-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="photo-1581056771107-24ca5f033842" alt="Welcome to Serenity Gardens" class="img-fluid rounded shadow zoom-on-hover welcome-img">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title mb-4">Welcome to Serenity Gardens</h2>
+                    <p class="lead">Where compassionate care meets comfortable living for your loved ones.</p>
+                    <p>At Serenity Gardens, we understand that choosing a nursing home is one of the most important decisions you'll make for your family. Our mission is to provide exceptional care in a warm, homelike environment where residents can thrive physically, emotionally, and socially.</p>
+                    <p>Our dedicated team of healthcare professionals is committed to meeting each resident's unique needs while preserving their dignity and independence. We offer a range of services from assisted living to specialized memory care, all designed to enhance quality of life.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a class="btn btn-outline-primary" href="about.html">Learn More About Us</a>
+                        <a class="btn btn-primary" href="services.html">Our Services</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section class="services-preview py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Our Comprehensive Services</h2>
+                <p class="section-subtitle">Tailored care for every stage of senior living</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="service-card p-4 rounded shadow-sm h-100">
+                        <div class="service-icon mb-4">
+                            <i class="fas fa-home fa-3x text-primary"></i>
+                        </div>
+                        <h3>Assisted Living</h3>
+                        <p>Personalized support with daily activities while promoting independence in our comfortable residential setting.</p>
+                        <a class="btn btn-link p-0" href="services.html#assisted-living">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card p-4 rounded shadow-sm h-100">
+                        <div class="service-icon mb-4">
+                            <i class="fas fa-brain fa-3x text-primary"></i>
+                        </div>
+                        <h3>Memory Care</h3>
+                        <p>Specialized care for residents with Alzheimer's and other forms of dementia in a secure, supportive environment.</p>
+                        <a class="btn btn-link p-0" href="services.html#memory-care">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card p-4 rounded shadow-sm h-100">
+                        <div class="service-icon mb-4">
+                            <i class="fas fa-procedures fa-3x text-primary"></i>
+                        </div>
+                        <h3>Rehabilitation</h3>
+                        <p>Professional physical, occupational, and speech therapy services to help residents regain independence.</p>
+                        <a class="btn btn-link p-0" href="services.html#rehabilitation">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a class="btn btn-primary btn-lg" href="services.html">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Our Beautiful Facilities</h2>
+                <p class="section-subtitle">A glimpse into our welcoming environment</p>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-4 col-6">
+                    <div class="gallery-item h-100">
+                        <img src="photo-1571896349842-33c89424de2d" alt="Facility Image" class="img-fluid w-100 equal-height-img">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus fa-2x text-white"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-6">
+                    <div class="gallery-item h-100">
+                        <img src="photo-1586023492125-27b2c045efd7" alt="Facility Image" class="img-fluid w-100 equal-height-img">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus fa-2x text-white"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-6">
+                    <div class="gallery-item h-100">
+                        <img src="photo-1601758003122-53c40e686a19" alt="Facility Image" class="img-fluid w-100 equal-height-img">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus fa-2x text-white"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-6">
+                    <div class="gallery-item h-100">
+                        <img src="photo-1579684385127-1ef15d508118" alt="Facility Image" class="img-fluid w-100 equal-height-img">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus fa-2x text-white"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-6">
+                    <div class="gallery-item h-100">
+                        <img src="images/t.png" alt="Facility Image" class="img-fluid w-100 equal-height-img">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus fa-2x text-white"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-6">
+                    <div class="gallery-item h-100">
+                        <img src="images/di.png" alt="Facility Image" class="img-fluid w-100 equal-height-img">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus fa-2x text-white"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a class="btn btn-outline-primary" href="facilities.html">View More Photos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Highlights -->
+    <section class="team-section py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Meet Our Care Team</h2>
+                <p class="section-subtitle">Compassionate professionals dedicated to your loved ones</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="team-card">
+                        <img src="photo-1559839734-2b71ea197ec2" class="card-img-top team-img" alt="Team Member">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Dr. Sarah Williams</h5>
+                            <p class="card-text text-muted">Medical Director</p>
+                        </div>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="team-card">
+                        <img src="photo-1594824476967-48c8b964273f" class="card-img-top team-img" alt="Team Member">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Michael Johnson</h5>
+                            <p class="card-text text-muted">Head Nurse</p>
+                        </div>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="team-card">
+                        <img src="photo-1622253692010-333f2da6031d" class="card-img-top team-img" alt="Team Member">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Lisa Chen</h5>
+                            <p class="card-text text-muted">Activities Director</p>
+                        </div>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a class="btn btn-primary" href="staff.html">Meet Our Full Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Preview -->
+    <section class="testimonials-preview py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">What Families Say</h2>
+                <p class="section-subtitle">Hear from those who've entrusted us with their loved ones</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="testimonial-card p-4 p-lg-5 text-center">
+                                    <div class="quote-icon mb-4">
+                                        <i class="fas fa-quote-left fa-2x text-primary"></i>
+                                    </div>
+                                    <p class="testimonial-text mb-4">"The care my mother receives at Serenity Gardens is exceptional. The staff treats her with such kindness and respect, and I know she's safe and happy. It's such a relief to our family."</p>
+                                    <div class="testimonial-author">
+                                        <h5 class="mb-1">Sarah Johnson</h5>
+                                        <p class="text-muted mb-0">Daughter of Resident</p>
+                                        <div class="rating mt-2">
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-card p-4 p-lg-5 text-center">
+                                    <div class="quote-icon mb-4">
+                                        <i class="fas fa-quote-left fa-2x text-primary"></i>
+                                    </div>
+                                    <p class="testimonial-text mb-4">"After my stroke, the rehabilitation team worked miracles. They were patient, encouraging, and helped me regain my independence. I'm now able to do things I never thought possible again."</p>
+                                    <div class="testimonial-author">
+                                        <h5 class="mb-1">Robert Thompson</h5>
+                                        <p class="text-muted mb-0">Former Resident</p>
+                                        <div class="rating mt-2">
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-card p-4 p-lg-5 text-center">
+                                    <div class="quote-icon mb-4">
+                                        <i class="fas fa-quote-left fa-2x text-primary"></i>
+                                    </div>
+                                    <p class="testimonial-text mb-4">"The memory care program has been a godsend for my husband. The staff understands his needs and creates activities that engage him. I see him smile more now than he has in years."</p>
+                                    <div class="testimonial-author">
+                                        <h5 class="mb-1">Margaret Williams</h5>
+                                        <p class="text-muted mb-0">Wife of Resident</p>
+                                        <div class="rating mt-2">
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star-half-alt text-warning"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a class="btn btn-outline-primary" href="testimonials.html">Read More Testimonials</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events-section py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Upcoming Events</h2>
+                <p class="section-subtitle">Join our community activities and programs</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="event-card">
+                        <div class="position-relative">
+                            <img src="photo-1541178735493-479c1a27ed24" class="card-img-top event-img" alt="Event Image">
+                            <div class="event-date">
+                                <span>Jun 15</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Family Appreciation Day</h5>
+                            <p class="card-text text-muted">Join us for a special day celebrating our residents and their families with music, food, and fun activities.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="event-card">
+                        <div class="position-relative">
+                            <img src="photo-1517457373958-b7bdd4587205" class="card-img-top event-img" alt="Event Image">
+                            <div class="event-date">
+                                <span>Jun 22</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Music Therapy Workshop</h5>
+                            <p class="card-text text-muted">Experience the healing power of music in this interactive workshop led by certified music therapists.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="event-card">
+                        <div class="position-relative">
+                            <img src="photo-1545205597-3d9d02c29597" class="card-img-top event-img" alt="Event Image">
+                            <div class="event-date">
+                                <span>Jun 29</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Alzheimer's Support Group</h5>
+                            <p class="card-text text-muted">Monthly meeting for family members caring for loved ones with Alzheimer's and dementia.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-primary">View All Events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Answers to common questions about our care</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    What types of care do you provide?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We offer a full continuum of care including assisted living, memory care for residents with Alzheimer's and dementia, rehabilitation services (physical, occupational, and speech therapy), and long-term skilled nursing care. Our services are tailored to meet each resident's individual needs.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    How do you handle medical emergencies?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We have licensed nurses on staff 24/7 to handle any medical situations that arise. For emergencies, we have protocols in place to immediately contact emergency services while providing appropriate first response care. We also maintain close relationships with local hospitals and physicians.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    What is your staff-to-resident ratio?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our staffing ratios exceed state requirements. During daytime hours, we maintain a ratio of at least 1 staff member for every 6 residents in assisted living and 1:4 in our memory care unit. At night, these ratios are 1:8 and 1:6 respectively. Additional staff are always available as needed.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                    Can residents bring personal furniture and belongings?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Absolutely! We encourage residents to personalize their living spaces with their own furniture, photos, and cherished items to make it feel like home. Our rooms are designed to accommodate personal furnishings within safety guidelines. We'll work with you to ensure the space is both comfortable and safe.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="#" class="btn btn-outline-primary">View All FAQs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4 mb-lg-0">
+                    <h2 class="mb-3">Ready to Learn More About Our Community?</h2>
+                    <p class="lead mb-0">Schedule a personalized tour to see our facilities and meet our team.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a class="btn btn-light btn-lg px-4" href="contact.html#schedule-tour">Schedule a Tour</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="images/l.png" alt="Serenity Gardens" height="50" class="mb-3">
+                    <p>Providing exceptional senior care with compassion and dignity since 1995. Our mission is to enhance the quality of life for our residents through personalized care in a warm, homelike environment.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a class="text-white" href="index.html">Home</a></li>
+                        <li class="mb-2"><a class="text-white" href="about.html">About Us</a></li>
+                        <li class="mb-2"><a class="text-white" href="services.html">Services</a></li>
+                        <li class="mb-2"><a class="text-white" href="facilities.html">Facilities</a></li>
+                        <li class="mb-2"><a class="text-white" href="staff.html">Our Staff</a></li>
+                        <li class="mb-2"><a class="text-white" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            123 Care Avenue, Serenity, ST 12345
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-phone-alt me-2"></i>
+                            <a href="tel:+18005551234" class="text-white">(800) 555-1234</a>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-envelope me-2"></i>
+                            <a href="mailto:info@serenitygardens.com" class="text-white">info@serenitygardens.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock me-2"></i>
+                            Visiting Hours: 8am - 8pm Daily
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p>Subscribe to our newsletter for updates and senior care tips.</p>
+                    <form class="mt-3">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">© 2023 Serenity Gardens. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white me-3">Privacy Policy</a>
+                    <a href="#" class="text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top btn btn-primary rounded-circle" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+
+        // Counter animation for stats
+        function animateCounters() {
+            const counters = document.querySelectorAll('[data-count]');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count');
+                const count = +counter.innerText;
+                const increment = target / speed;
+                
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+
+        // Initialize counters when scrolled to the section
+        const statsSection = document.querySelector('.quick-stats');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {threshold: 0.5});
+
+        observer.observe(statsSection);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Initialize tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        });
+    </script>
+
+</body></html>

@@ -1,0 +1,1620 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - GreenHarvest | Sustainable Agriculture Solutions</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;family=Roboto+Slab:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+      /* Custom About Page Styles */
+      :root {
+        --primary-color: #4caf50;
+        --primary-dark: #3d8b40;
+        --secondary-color: #ffc107;
+        --dark-color: #333;
+        --light-color: #f8f9fa;
+        --white-color: #fff;
+        --transition: all 0.4s ease;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        color: var(--dark-color);
+        overflow-x: hidden;
+        background-color: #f9f9f9;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Roboto Slab", serif;
+        font-weight: 600;
+      }
+
+      /* Preloader */
+      .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--white-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+      }
+
+      .loader {
+        width: 100px;
+        height: 100px;
+        position: relative;
+      }
+
+      .loader-inner {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        perspective: 800px;
+      }
+
+      .loader-line-wrap {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        animation: spin 1.5s infinite linear;
+      }
+
+      .loader-line-wrap:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .loader-line-wrap:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      .loader-line-wrap:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+      .loader-line-wrap:nth-child(4) {
+        animation-delay: 0.3s;
+      }
+      .loader-line-wrap:nth-child(5) {
+        animation-delay: 0.4s;
+      }
+
+      .loader-line {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        border-top-color: var(--primary-color);
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Navigation */
+      .navbar {
+        padding: 15px 0;
+        transition: var(--transition);
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      .navbar.scrolled {
+        padding: 10px 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-brand {
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: var(--white-color);
+      }
+
+      .navbar-brand img {
+        margin-right: 10px;
+      }
+
+      .nav-link {
+        color: var(--white-color);
+        font-weight: 500;
+        padding: 8px 15px;
+        margin: 0 5px;
+        position: relative;
+      }
+
+      .nav-link::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background-color: var(--primary-color);
+        bottom: 0;
+        left: 0;
+        transition: var(--transition);
+      }
+
+      .nav-link:hover::before,
+      .nav-link.active::before {
+        width: 100%;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: var(--primary-color);
+      }
+
+      /* Page Header */
+      .about-header {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")
+            no-repeat center center/cover;
+        padding: 180px 0 100px;
+        color: var(--white-color);
+        text-align: center;
+        position: relative;
+      }
+
+      .about-header h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      }
+
+      .breadcrumb {
+        justify-content: center;
+        background-color: transparent;
+        padding: 0;
+      }
+
+      .breadcrumb-item a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .breadcrumb-item a:hover {
+        color: var(--primary-color);
+      }
+
+      .breadcrumb-item.active {
+        color: var(--white-color);
+      }
+
+      .breadcrumb-item + .breadcrumb-item::before {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      /* About Intro */
+      .about-intro {
+        padding: 100px 0;
+        background-color: var(--white-color);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .about-intro::before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        left: -50px;
+        width: 200px;
+        height: 200px;
+        background-color: rgba(76, 175, 80, 0.1);
+        border-radius: 50%;
+        z-index: 0;
+      }
+
+      .about-intro::after {
+        content: "";
+        position: absolute;
+        bottom: -100px;
+        right: -100px;
+        width: 300px;
+        height: 300px;
+        background-color: rgba(76, 175, 80, 0.05);
+        border-radius: 50%;
+        z-index: 0;
+      }
+
+      .intro-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        background-color: var(--primary-color);
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .section-subtitle {
+        color: #6c757d;
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+      }
+
+      .divider {
+        width: 80px;
+        height: 3px;
+        background-color: var(--primary-color);
+        margin: 20px auto 30px;
+      }
+
+      /* Mission Vision */
+      .mission-vision {
+        padding: 80px 0;
+        background-color: #f8f9fa;
+      }
+
+      .mission-card,
+      .vision-card {
+        background-color: var(--white-color);
+        border-radius: 10px;
+        padding: 40px;
+        height: 100%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .mission-card:hover,
+      .vision-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .mission-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 100%;
+        background-color: var(--primary-color);
+      }
+
+      .vision-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 100%;
+        background-color: var(--secondary-color);
+      }
+
+      .mission-icon,
+      .vision-icon {
+        width: 70px;
+        height: 70px;
+        background-color: rgba(76, 175, 80, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+        transition: var(--transition);
+      }
+
+      .vision-icon {
+        background-color: rgba(255, 193, 7, 0.1);
+        color: var(--secondary-color);
+      }
+
+      .mission-card:hover .mission-icon {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        transform: rotateY(180deg);
+      }
+
+      .vision-card:hover .vision-icon {
+        background-color: var(--secondary-color);
+        color: var(--white-color);
+        transform: rotateY(180deg);
+      }
+
+      /* Our Story */
+      .our-story {
+        padding: 100px 0;
+        position: relative;
+      }
+
+      .story-img {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transform: perspective(1000px) rotateY(10deg);
+        transition: var(--transition);
+      }
+
+      .story-img:hover {
+        transform: perspective(1000px) rotateY(0);
+      }
+
+      .story-img img {
+        width: 100%;
+        height: auto;
+      }
+
+      .story-badge {
+        position: absolute;
+        bottom: -20px;
+        right: -20px;
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+      }
+
+      .story-badge span {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .story-badge p {
+        margin: 0;
+        font-size: 0.9rem;
+      }
+
+      .story-content {
+        padding-left: 50px;
+      }
+
+      .story-timeline {
+        position: relative;
+        padding-left: 30px;
+        margin-top: 30px;
+      }
+
+      .story-timeline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        background-color: var(--primary-color);
+      }
+
+      .timeline-item {
+        position: relative;
+        padding-bottom: 30px;
+      }
+
+      .timeline-item:last-child {
+        padding-bottom: 0;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: -38px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+        border: 4px solid var(--white-color);
+        box-shadow: 0 0 0 2px var(--primary-color);
+      }
+
+      .timeline-year {
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 5px;
+      }
+
+      /* Team Section */
+      .team-section {
+        padding: 80px 0;
+        background-color: #f8f9fa;
+      }
+
+      .team-card {
+        background-color: var(--white-color);
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: var(--transition);
+      }
+
+      .team-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .team-img {
+        position: relative;
+        overflow: hidden;
+        height: 300px;
+      }
+
+      .team-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .team-card:hover .team-img img {
+        transform: scale(1.1);
+      }
+
+      .team-social {
+        position: absolute;
+        bottom: -60px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(76, 175, 80, 0.9);
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        transition: var(--transition);
+      }
+
+      .team-card:hover .team-social {
+        bottom: 0;
+      }
+
+      .social-link {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--white-color);
+        transition: var(--transition);
+      }
+
+      .social-link:hover {
+        background-color: var(--white-color);
+        color: var(--primary-color);
+        transform: translateY(-5px);
+      }
+
+      .team-info {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .team-info h4 {
+        margin-bottom: 5px;
+      }
+
+      .team-info p {
+        color: #6c757d;
+        margin-bottom: 0;
+      }
+
+      /* Values Section */
+      .values-section {
+        padding: 80px 0;
+        background-color: var(--white-color);
+      }
+
+      .value-card {
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        padding: 30px;
+        height: 100%;
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+      }
+
+      .value-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background-color: var(--primary-color);
+      }
+
+      .value-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .value-icon {
+        width: 80px;
+        height: 80px;
+        background-color: rgba(76, 175, 80, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: var(--primary-color);
+        margin: 0 auto 20px;
+        transition: var(--transition);
+      }
+
+      .value-card:hover .value-icon {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        transform: rotate(15deg);
+      }
+
+      .value-card h3 {
+        margin-bottom: 15px;
+      }
+
+      /* Partners Section */
+     .partners-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .section-header {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+        
+        .divider {
+            width: 80px;
+            height: 3px;
+            background-color: #4CAF50;
+        }
+        
+        .partner-slider {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 20px 0;
+        }
+        
+        .partner-item {
+            flex: 0 0 calc(20% - 30px);
+            max-width: calc(20% - 30px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 120px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .partner-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .partner-item img {
+            max-width: 100%;
+            max-height: 80px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .partner-item:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .partner-item {
+                flex: 0 0 calc(33.333% - 30px);
+                max-width: calc(33.333% - 30px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .partner-item {
+                flex: 0 0 calc(50% - 30px);
+                max-width: calc(50% - 30px);
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .partner-item {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+      /* CTA Section */
+      .about-cta {
+        padding: 100px 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+          url("https://images.unsplash.com/photo-1535254973040-607b474cb50d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")
+            no-repeat center center/cover;
+        color: var(--white-color);
+        text-align: center;
+        position: relative;
+      }
+
+      .cta-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .cta-content h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .cta-content p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        border: none;
+        padding: 12px 30px;
+        font-weight: 500;
+        transition: var(--transition);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--primary-dark);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-outline-light {
+        border: 2px solid var(--white-color);
+        color: var(--white-color);
+        background-color: transparent;
+        padding: 12px 30px;
+        font-weight: 500;
+        transition: var(--transition);
+      }
+
+      .btn-outline-light:hover {
+        background-color: var(--white-color);
+        color: var(--primary-color);
+      }
+
+      /* Footer */
+      .footer {
+        background-color: #222;
+        color: #aaa;
+        padding-top: 80px;
+      }
+
+      .footer-widget {
+        margin-bottom: 30px;
+      }
+
+      .footer-widget h3 {
+        color: var(--white-color);
+        font-size: 1.3rem;
+        margin-bottom: 25px;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .footer-widget h3::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 40px;
+        height: 2px;
+        background-color: var(--primary-color);
+      }
+
+      .footer-logo {
+        height: 40px;
+        margin-bottom: 15px;
+      }
+
+      .footer-links li {
+        margin-bottom: 12px;
+      }
+
+      .footer-links a {
+        color: #aaa;
+        transition: var(--transition);
+        display: inline-block;
+      }
+
+      .footer-links a:hover {
+        color: var(--primary-color);
+        transform: translateX(5px);
+      }
+
+      .footer-contact li {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .footer-contact i {
+        color: var(--primary-color);
+        margin-right: 10px;
+        margin-top: 5px;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 10px;
+      }
+
+      .social-links a {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--white-color);
+        transition: var(--transition);
+      }
+
+      .social-links a:hover {
+        background-color: var(--primary-color);
+        transform: translateY(-5px);
+      }
+
+      .footer-bottom {
+        background-color: #111;
+        padding: 20px 0;
+        margin-top: 50px;
+      }
+
+      .footer-bottom-links a {
+        color: #aaa;
+        margin-left: 15px;
+        transition: var(--transition);
+      }
+
+      .footer-bottom-links a:hover {
+        color: var(--primary-color);
+      }
+
+      /* Back to Top */
+      .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        z-index: 99;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .back-to-top.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .back-to-top:hover {
+        background-color: var(--primary-dark);
+        color: var(--white-color);
+        transform: translateY(-5px);
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 1199.98px) {
+        .about-header h1 {
+          font-size: 3rem;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 991.98px) {
+        .story-content {
+          padding-left: 0;
+          margin-top: 50px;
+        }
+
+        .team-img {
+          height: 250px;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .about-header {
+          padding: 120px 0 80px;
+        }
+
+        .about-header h1 {
+          font-size: 2.2rem;
+        }
+
+        .section-title {
+          font-size: 1.8rem;
+        }
+
+        .mission-card,
+        .vision-card {
+          padding: 30px;
+        }
+
+        .story-badge {
+          width: 100px;
+          height: 100px;
+        }
+
+        .story-badge span {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 575.98px) {
+        .about-header h1 {
+          font-size: 1.8rem;
+        }
+
+        .btn-primary,
+        .btn-outline-light {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+
+        .btn-outline-light:last-child {
+          margin-bottom: 0;
+        }
+      }
+       .breadcrumb {
+            justify-content: center;
+            background-color: transparent;
+            padding: 0;
+        }
+        
+        .breadcrumb-item a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+        
+        .breadcrumb-item.active {
+            color: #4CAF50;
+        }
+        
+        .breadcrumb-item + .breadcrumb-item::before {
+            color: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="loader">
+        <div class="loader-inner">
+          <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+          </div>
+          <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+          </div>
+          <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+          </div>
+          <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+          </div>
+          <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+ <img src="https://images.pexels.com/photos/219794/pexels-photo-219794.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=20" alt="GreenHarvest">          <span>GreenHarvest</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/products">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/blog">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="about-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h1 class="animate__animated animate__fadeInDown">
+              About GreenHarvest
+            </h1>
+            <nav aria-label="breadcrumb" class="animate__animated animate__fadeInUp animate__delay-1s">
+              <ol class="breadcrumb justify-content-center">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  About
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Intro -->
+    <section class="about-intro">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="intro-content animate__animated animate__fadeInLeft">
+              <h2 class="section-title">Our Agricultural Journey</h2>
+              <div class="divider"></div>
+              <p>
+                Founded in 2008, GreenHarvest has grown from a small family farm
+                to a leading agricultural enterprise serving communities across
+                India. Our story is one of passion, innovation, and commitment
+                to sustainable farming practices that nourish both people and
+                the planet.
+              </p>
+              <p>
+                What began as a 5-acre organic farm has blossomed into a network
+                of over 500 acres of cultivated land, supporting more than 1,000
+                small farmers through our cooperative programs. We take pride in
+                bridging traditional farming wisdom with modern agricultural
+                technologies.
+              </p>
+              <a href="#story" class="btn btn-primary mt-3">Discover Our Story</a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="animate__animated animate__fadeInRight animate__delay-1s">
+              <img src=" ./images/farm.png" alt="Our Farm" class="img-fluid rounded shadow-lg" style="
+                  transform: perspective(1000px) rotateY(-10deg);
+                  transition: all 0.5s ease;
+                ">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission Vision -->
+    <section class="mission-vision">
+      <div class="container">
+        <div class="section-header text-center mb-5">
+          <h2 class="section-title animate__animated animate__fadeInUp">
+            Our Core Principles
+          </h2>
+          <p class="section-subtitle animate__animated animate__fadeInUp animate__delay-1s">
+            Guiding our agricultural practices and community impact
+          </p>
+          <div class="divider mx-auto animate__animated animate__fadeInUp animate__delay-2s"></div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="mission-card animate__animated animate__fadeInLeft">
+              <div class="mission-icon">
+                <i class="fas fa-bullseye"></i>
+              </div>
+              <h3>Our Mission</h3>
+              <p>
+                To revolutionize agriculture through sustainable practices that
+                increase farmer prosperity while protecting our environment. We
+                are committed to producing nutritious, chemical-free food that
+                nourishes communities and preserves biodiversity for future
+                generations.
+              </p>
+              <p>
+                Through education, innovation, and fair trade, we empower small
+                farmers to thrive in an evolving agricultural landscape.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="vision-card animate__animated animate__fadeInRight">
+              <div class="vision-icon">
+                <i class="fas fa-eye"></i>
+              </div>
+              <h3>Our Vision</h3>
+              <p>
+                To create a world where agriculture sustains both people and
+                planet. We envision an India where every farmer can earn a
+                dignified living through ecologically sound practices, where
+                consumers have access to affordable, nutritious food, and where
+                rural communities flourish.
+              </p>
+              <p>
+                By 2030, we aim to transform 10,000 acres to organic cultivation
+                and train 5,000 farmers in sustainable techniques.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Story -->
+    <section id="story" class="our-story">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="story-img animate__animated animate__fadeInLeft">
+              <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=2070&amp;q=80" alt="Our History" class="img-fluid">
+              <div class="story-badge animate__animated animate__zoomIn animate__delay-2s">
+                <span>15+</span>
+                <p>Years Experience</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="story-content animate__animated animate__fadeInRight">
+              <h2 class="section-title">Our Humble Beginnings</h2>
+              <div class="divider"></div>
+              <p>
+                GreenHarvest was founded by agricultural scientist Dr. Rajesh
+                Patel with a simple goal: to prove that organic farming could be
+                both environmentally sustainable and economically viable for
+                small farmers.
+              </p>
+
+              <div class="story-timeline">
+                <div class="timeline-item">
+                  <h4 class="timeline-year">2008</h4>
+                  <p>
+                    Established our first 5-acre organic demonstration farm in
+                    Punjab, focusing on wheat and vegetable cultivation.
+                  </p>
+                </div>
+                <div class="timeline-item">
+                  <h4 class="timeline-year">2012</h4>
+                  <p>
+                    Launched farmer training programs and expanded to 50 acres
+                    with 15 partner farmers.
+                  </p>
+                </div>
+                <div class="timeline-item">
+                  <h4 class="timeline-year">2015</h4>
+                  <p>
+                    Opened our first farmer's market outlet and began supplying
+                    to organic stores in major cities.
+                  </p>
+                </div>
+                <div class="timeline-item">
+                  <h4 class="timeline-year">2020</h4>
+                  <p>
+                    Reached 500 acres under cultivation with 200+ partner
+                    farmers across 3 states.
+                  </p>
+                </div>
+                <div class="timeline-item">
+                  <h4 class="timeline-year">2023</h4>
+                  <p>
+                    Launched our e-commerce platform and expanded exports to
+                    international markets.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+      <div class="container">
+        <div class="section-header text-center mb-5">
+          <h2 class="section-title animate__animated animate__fadeInUp">
+            Meet Our Team
+          </h2>
+          <p class="section-subtitle animate__animated animate__fadeInUp animate__delay-1s">
+            The passionate people behind GreenHarvest
+          </p>
+          <div class="divider mx-auto animate__animated animate__fadeInUp animate__delay-2s"></div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="team-card animate__animated animate__fadeInUp" style="animation-delay: 0.1s">
+              <div class="team-img">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=987&amp;q=80" alt="Dr. Rajesh Patel" class="img-fluid">
+                <div class="team-social">
+                  <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+              <div class="team-info">
+                <h4>Dr. Rajesh Patel</h4>
+                <p>Founder &amp; CEO</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="team-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+              <div class="team-img">
+                <img src="./images/priya.png" alt="Priya Sharma" class="img-fluid">
+                <div class="team-social">
+                  <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+              <div class="team-info">
+                <h4>Priya Sharma</h4>
+                <p>Agricultural Scientist</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="team-card animate__animated animate__fadeInUp" style="animation-delay: 0.3s">
+              <div class="team-img">
+                <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=2070&amp;q=80" alt="Amir Khan" class="img-fluid">
+                <div class="team-social">
+                  <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+              <div class="team-info">
+                <h4>Amir Khan</h4>
+                <p>Field Operations</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="team-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
+              <div class="team-img">
+                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=987&amp;q=80" alt="Anjali Gupta" class="img-fluid">
+                <div class="team-social">
+                  <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+              <div class="team-info">
+                <h4>Anjali Gupta</h4>
+                <p>Marketing Head</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="values-section">
+      <div class="container">
+        <div class="section-header text-center mb-5">
+          <h2 class="section-title animate__animated animate__fadeInUp">
+            Our Core Values
+          </h2>
+          <p class="section-subtitle animate__animated animate__fadeInUp animate__delay-1s">
+            Principles that guide everything we do
+          </p>
+          <div class="divider mx-auto animate__animated animate__fadeInUp animate__delay-2s"></div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="value-card animate__animated animate__fadeInUp" style="animation-delay: 0.1s">
+              <div class="value-icon">
+                <i class="fas fa-leaf"></i>
+              </div>
+              <h3>Sustainability</h3>
+              <p>
+                We prioritize farming methods that regenerate the land rather
+                than deplete it, ensuring long-term productivity and ecological
+                balance.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="value-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+              <div class="value-icon">
+                <i class="fas fa-hands-helping"></i>
+              </div>
+              <h3>Community</h3>
+              <p>
+                We believe in empowering farming communities through knowledge
+                sharing, fair wages, and cooperative economic models.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="value-card animate__animated animate__fadeInUp" style="animation-delay: 0.3s">
+              <div class="value-icon">
+                <i class="fas fa-flask"></i>
+              </div>
+              <h3>Innovation</h3>
+              <p>
+                We combine traditional wisdom with cutting-edge agricultural
+                technology to develop solutions tailored to local conditions.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="value-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
+              <div class="value-icon">
+                <i class="fas fa-award"></i>
+              </div>
+              <h3>Integrity</h3>
+              <p>
+                We maintain transparency in our operations and stand by our
+                promise of chemical-free, ethically produced agricultural
+                products.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="py-5" style="background-color: #f9f9f9;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="animate__animated animate__fadeInUp" style="font-size: 2.5rem;">Our Trusted Partners</h2>
+                <p class="animate__animated animate__fadeInUp animate__delay-1s" style="color: #6c757d; font-size: 1.1rem;">
+                    Collaborating for agricultural transformation
+                </p>
+                <div class="mx-auto animate__animated animate__fadeInUp animate__delay-2s" style="width: 80px; height: 3px; background-color: #4CAF50; margin: 20px auto 30px;"></div>
+            </div>
+            <div class="row">
+                <div class="col-12" data-aos="fade-in">
+                    <div class="d-flex flex-wrap justify-content-center align-items-center gap-4">
+                        <!-- Partner Logos -->
+                        <div style="flex: 0 0 calc(20% - 30px); max-width: calc(20% - 30px); display: flex; justify-content: center; align-items: center; height: 120px; padding: 20px; background-color: white; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+                            <img src="./images/p1.png" alt="Syngenta" style="max-width: 100%; max-height: 80px; width: auto; height: auto; object-fit: contain; filter: grayscale(100%); opacity: 0.7; transition: all 0.3s ease;">
+                        </div>
+                        <div style="flex: 0 0 calc(20% - 30px); max-width: calc(20% - 30px); display: flex; justify-content: center; align-items: center; height: 120px; padding: 20px; background-color: white; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+                            <img src="./images/p2.png" alt="Bayer" style="max-width: 100%; max-height: 80px; width: auto; height: auto; object-fit: contain; filter: grayscale(100%); opacity: 0.7; transition: all 0.3s ease;">
+                        </div>
+                        <div style="flex: 0 0 calc(20% - 30px); max-width: calc(20% - 30px); display: flex; justify-content: center; align-items: center; height: 120px; padding: 20px; background-color: white; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+                            <img src="./images/p3.png" alt="John Deere" style="max-width: 100%; max-height: 80px; width: auto; height: auto; object-fit: contain; filter: grayscale(100%); opacity: 0.7; transition: all 0.3s ease;">
+                        </div>
+                        <div style="flex: 0 0 calc(20% - 30px); max-width: calc(20% - 30px); display: flex; justify-content: center; align-items: center; height: 120px; padding: 20px; background-color: white; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+                            <img src="./images/p4.png" alt="Dow" style="max-width: 100%; max-height: 80px; width: auto; height: auto; object-fit: contain; filter: grayscale(100%); opacity: 0.7; transition: all 0.3s ease;">
+                        </div>
+                        <div style="flex: 0 0 calc(20% - 30px); max-width: calc(20% - 30px); display: flex; justify-content: center; align-items: center; height: 120px; padding: 20px; background-color: white; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+                            <img src="./images/p5.png " alt="DuPont" style="max-width: 100%; max-height: 80px; width: auto; height: auto; object-fit: contain; filter: grayscale(100%); opacity: 0.7; transition: all 0.3s ease;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="about-cta">
+      <div class="container">
+        <div class="cta-content animate__animated animate__zoomIn">
+          <h2>Join Our Agricultural Revolution</h2>
+          <p>
+            Whether you're a farmer looking to adopt sustainable practices, a
+            consumer interested in organic produce, or an organization wanting
+            to collaborate, we'd love to hear from you.
+          </p>
+          <div class="d-flex gap-3 justify-content-center">
+            <a class="btn btn-primary" href="/contact">Contact Us</a>
+            <a class="btn btn-outline-light" href="/services">Our Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-widget">
+              <img src="https://images.pexels.com/photos/219794/pexels-photo-219794.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=20" alt="GreenHarvest" class="footer-logo"> Green Harvest
+              <p class="mt-3">
+                Empowering farmers with sustainable agricultural solutions for a
+                food-secure future.
+              </p>
+              <div class="social-links mt-4">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <div class="footer-widget">
+              <h3>Quick Links</h3>
+              <ul class="footer-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <h3>Our Services</h3>
+              <ul class="footer-links">
+                <li><a href="/services">Organic Farming</a></li>
+                <li><a href="/services">Soil Testing</a></li>
+                <li><a href="/services">Equipment Rental</a></li>
+                <li><a href="/services">Crop Consultancy</a></li>
+                <li><a href="/services">Market Access</a></li>
+                <li><a href="/services">Training Programs</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <h3>Contact Us</h3>
+              <ul class="footer-contact">
+                <li>
+                  <i class="fas fa-map-marker-alt"></i> 123 Farm Road,
+                  Agricultural Zone, India
+                </li>
+                <li><i class="fas fa-phone"></i> +91 9876543210</li>
+                <li><i class="fas fa-envelope"></i> info@greenharvest.com</li>
+                <li><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <p class="mb-md-0">© 2023 GreenHarvest. All rights reserved.</p>
+            </div>
+            <div class="col-md-6">
+              <div class="footer-bottom-links text-md-end">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Sitemap</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+      // Preloader
+      window.addEventListener("load", function () {
+        const preloader = document.querySelector(".preloader");
+        preloader.style.opacity = "0";
+        setTimeout(() => {
+          preloader.style.display = "none";
+        }, 500);
+      });
+
+      // Navbar Scroll Effect
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // Back to Top Button
+      const backToTopButton = document.querySelector(".back-to-top");
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 300) {
+          backToTopButton.classList.add("active");
+        } else {
+          backToTopButton.classList.remove("active");
+        }
+      });
+
+      backToTopButton.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      // Smooth Scrolling for Navigation Links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 70,
+              behavior: "smooth",
+            });
+
+            // Close mobile menu if open
+            const navbarCollapse = document.querySelector(".navbar-collapse");
+            if (navbarCollapse.classList.contains("show")) {
+              const navbarToggler = document.querySelector(".navbar-toggler");
+              navbarToggler.click();
+            }
+          }
+        });
+      });
+
+      // Partner Slider
+      $(document).ready(function () {
+        $(".partner-slider").slick({
+          dots: false,
+          arrows: false,
+          infinite: true,
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 2000,
+          responsive: [
+            {
+              breakpoint: 992,
+              settings: {
+                slidesToShow: 3,
+              },
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 2,
+              },
+            },
+            {
+              breakpoint: 576,
+              settings: {
+                slidesToShow: 1,
+              },
+            },
+          ],
+        });
+      });
+
+      // Animation on Scroll
+      function animateOnScroll() {
+        const elements = document.querySelectorAll(".animate__animated");
+
+        elements.forEach((element) => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+
+          if (elementPosition < windowHeight - 100) {
+            const animationClass = element.classList.contains(
+              "animate__fadeInUp"
+            )
+              ? "animate__fadeInUp"
+              : element.classList.contains("animate__fadeInLeft")
+              ? "animate__fadeInLeft"
+              : element.classList.contains("animate__fadeInRight")
+              ? "animate__fadeInRight"
+              : element.classList.contains("animate__zoomIn")
+              ? "animate__zoomIn"
+              : "animate__fadeIn";
+            element.style.opacity = "1";
+            element.classList.add(animationClass);
+          }
+        });
+      }
+
+      // Initial check
+      animateOnScroll();
+
+      // Check on scroll
+      window.addEventListener("scroll", animateOnScroll);
+    </script>
+  
+
+</body></html>

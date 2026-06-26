@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Search Engine</title>
+    <link rel="shortcut icon" href="images/images.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="search-container">
+        <h1>Basic Search Engine</h1>
+        <!-- Search Box -->
+        <input type="text" id="search-box" placeholder="Search..." onkeyup="search()">
+        <!-- Search Button -->
+        <button id="search-button" onclick="search()">Search</button>
+    </div>
+
+    <div class="results" id="results-container">
+        <!-- Search results will be displayed here -->
+    </div>
+
+    <script src="js/app.js"></script>
+
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-container {
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+#search-box {
+    width: 300px;
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#search-button {
+    padding: 10px 15px;
+    font-size: 18px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: #0056b3;
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(100vh - 100px); /* Adjust height to fit within the viewport */
+    overflow-y: auto; /* Allow scrolling if results overflow */
+    padding: 20px;
+}
+
+.result-item {
+    padding: 10px;
+    background-color: white;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Set width of result items */
+}
+
+.result-item a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+.result-item a:hover {
+    color: #007BFF;
+}
+
+.result-item p {
+    margin-top: 5px;
+    color: #555;
+    font-size: 14px;
+}
+
+</style></body></html>

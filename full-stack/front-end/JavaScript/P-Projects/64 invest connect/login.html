@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | InvestorConnect</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>Welcome Back</h1>
+                <p>Login to access your investor or entrepreneur dashboard</p>
+            </div>
+            
+            <form id="loginForm" class="auth-form">
+                <div class="success-message hidden"></div>
+                
+                <div class="form-group">
+                    <input type="email" id="email" name="email" class="form-control" placeholder=" " required="">
+                    <label for="email" class="form-label">Email</label>
+                    <div class="error-message"></div>
+                </div>
+                
+                <div class="form-group password-toggle">
+                    <input type="password" id="password" name="password" class="form-control" placeholder=" " required="">
+                    <label for="password" class="form-label">Password</label>
+                    <button type="button" class="toggle-password">👁️</button>
+                    <div class="error-message"></div>
+                </div>
+                
+                <div class="form-options">
+                    <div class="remember-me checkbox-group">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember" class="checkbox-label">
+                            <span class="checkbox-custom"></span>
+                            Remember me
+                        </label>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                
+                <div class="auth-footer">
+                    Don't have an account? <a href="/signup">Sign up</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+
+</body></html>

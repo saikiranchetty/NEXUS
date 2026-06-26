@@ -1,0 +1,1708 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenHarvest - Modern Agriculture Solutions</title>
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="css/css2.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.min.css">
+    <!-- AOS (Animate On Scroll) -->
+    <link href="css/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --primary-dark: #388E3C;
+            --primary-light: #C8E6C9;
+            --secondary-color: #FFC107;
+            --dark-color: #263238;
+            --light-color: #f8f9fa;
+            --text-color: #333;
+            --text-light: #777;
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto Slab', serif;
+            font-weight: 600;
+        }
+        
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--light-color);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .loader {
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+        
+        .loader-inner {
+            width: 100%;
+            height: 100%;
+            border: 5px solid transparent;
+            border-radius: 50%;
+            border-top-color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+            animation: rotate 1.5s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Navigation */
+        .navbar {
+            padding: 15px 0;
+            transition: var(--transition);
+            color: white;
+            background: rgba(0, 0, 0);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            background: rgba(0, 0, 0);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .navbar-brand img {
+            transition: var(--transition);
+        }
+        
+        .navbar.scrolled .navbar-brand img {
+            height: 35px;
+        }
+        
+        .nav-item {
+            margin: 0 5px;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            position: relative;
+            padding: 8px 15px !important;
+            color: white;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 15px;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover:after,
+        .nav-link.active:after {
+            width: calc(100% - 30px);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('photo-1500382017468-9049fed747ef') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .hero-section:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%23ffffff"></path><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%23ffffff"></path><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23ffffff"></path></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(to right, #fff, #c8e6c9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-section p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-btns .btn {
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            margin: 0 10px;
+            transition: var(--transition);
+        }
+        
+        .hero-btns .btn-primary {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .hero-btns .btn-primary:hover {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero-btns .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero-scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            animation: bounce 2s infinite;
+        }
+        
+        .hero-scroll-down a {
+            display: block;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            color: #fff;
+            transition: var(--transition);
+        }
+        
+        .hero-scroll-down a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(5px);
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-20px) translateX(-50%); }
+            60% { transform: translateY(-10px) translateX(-50%); }
+        }
+        
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            opacity: 0.7;
+            z-index: 0;
+        }
+        
+        .floating-leaf-1 {
+            top: 20%;
+            left: 5%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-leaf-2 {
+            top: 40%;
+            right: 8%;
+            animation: float 8s ease-in-out infinite 2s;
+        }
+        
+        .floating-leaf-3 {
+            bottom: 30%;
+            left: 10%;
+            animation: float 7s ease-in-out infinite 1s;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+        
+        /* Section Styling */
+        .section-header {
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+        
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+        
+        .divider {
+            width: 80px;
+            height: 3px;
+            background: var(--primary-color);
+            margin-top: 20px;
+        }
+        
+        /* Features Section */
+        .feature-item {
+            transition: var(--transition);
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .feature-item:hover .feature-icon {
+            background: var(--primary-color);
+            color: #fff;
+            transform: rotateY(180deg);
+        }
+        
+        /* About Section */
+        .about-section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-img-container {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-img {
+            width: 100%;
+            height: auto;
+            transition: var(--transition);
+        }
+        
+        .about-img-container:hover .about-img {
+            transform: scale(1.05);
+        }
+        
+        .experience-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--primary-color);
+            color: #fff;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.4);
+        }
+        
+        .experience-badge span {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        
+        .experience-badge p {
+            margin: 0;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        
+        .about-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        
+        .about-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .about-list li i {
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            top: 5px;
+        }
+        
+        /* Services Cards */
+        .service-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            opacity: 0;
+            z-index: -1;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            color: #fff;
+        }
+        
+        .service-card:hover:before {
+            opacity: 1;
+        }
+        
+        .service-card:hover .service-icon {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+        
+        .service-card:hover h3,
+        .service-card:hover p,
+        .service-card:hover .service-link {
+            color: #fff;
+        }
+        
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+            transition: var(--transition);
+        }
+        
+        .service-card p {
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+        
+        .service-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .service-link i {
+            margin-left: 5px;
+            transition: var(--transition);
+        }
+        
+        .service-link:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Product Cards */
+        .product-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            margin-bottom: 30px;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-img {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h3 {
+            margin-bottom: 10px;
+        }
+        
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .price {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .rating {
+            color: var(--secondary-color);
+        }
+        
+        /* Testimonials */
+        .testimonial-slider {
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        .testimonial-item {
+            padding: 0 15px;
+        }
+        
+        .testimonial-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .testimonial-content:before {
+            content: '\201C';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 60px;
+            color: var(--primary-light);
+            font-family: serif;
+            line-height: 1;
+            z-index: 0;
+        }
+        
+        .testimonial-text {
+            position: relative;
+            z-index: 1;
+            font-style: italic;
+            margin-bottom: 20px;
+            padding-left: 40px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 3px solid var(--primary-light);
+        }
+        
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            margin: 0;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Blog Cards */
+        .blog-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .blog-img {
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+        }
+        
+        .blog-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .blog-card:hover .blog-img img {
+            transform: scale(1.1);
+        }
+        
+        .blog-date {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+        }
+        
+        .blog-content {
+            padding: 20px;
+        }
+        
+        .blog-content h3 {
+            margin-bottom: 15px;
+        }
+        
+        .blog-content h3 a {
+            color: var(--dark-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .blog-content h3 a:hover {
+            color: var(--primary-color);
+        }
+        
+        .read-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .read-more i {
+            margin-left: 5px;
+            transition: var(--transition);
+        }
+        
+        .read-more:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Newsletter */
+        .newsletter-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('photo-1500382017468-9049fed747ef') no-repeat center center/cover;
+            color: #fff;
+            position: relative;
+        }
+        
+        .newsletter-form .input-group {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-form .form-control {
+            height: 60px;
+            border-radius: 50px 0 0 50px !important;
+            border: none;
+            padding-left: 25px;
+        }
+        
+        .newsletter-form .btn {
+            border-radius: 0 50px 50px 0 !important;
+            padding: 0 30px;
+            font-weight: 600;
+            background: var(--primary-color);
+            border: none;
+        }
+        
+        .newsletter-form .btn:hover {
+            background: var(--primary-dark);
+        }
+        
+        /* Weather Widget */
+        .weather-widget {
+            background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+            border-radius: 15px;
+            color: #fff;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
+        }
+        
+        .weather-header {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.1);
+        }
+        
+        .weather-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+        
+        .location {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .location i {
+            margin-right: 5px;
+        }
+        
+        .weather-body {
+            padding: 30px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .weather-icon {
+            font-size: 3rem;
+        }
+        
+        .weather-info {
+            text-align: right;
+        }
+        
+        .temperature {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        
+        .condition {
+            font-size: 1.1rem;
+        }
+        
+        .weather-footer {
+            padding: 15px 20px;
+            background: rgba(0, 0, 0, 0.1);
+        }
+        
+        .weather-details {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        
+        .detail-item i {
+            margin-right: 5px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark-color);
+            color: #fff;
+        }
+        
+        .footer-top {
+            padding: 80px 0 40px;
+        }
+        
+        .footer-widget {
+            margin-bottom: 40px;
+        }
+        
+        .footer-widget h3 {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-widget h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary-color);
+        }
+        
+        .footer-logo {
+            height: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: #fff;
+            transform: translateX(5px);
+        }
+        
+        .footer-contact {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-contact li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--primary-color);
+            margin-top: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            margin: 0 -8px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 8px;
+            color: #fff;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+        
+        .footer-bottom-links {
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .footer-bottom-links a {
+            color: rgba(255, 255, 255, 0.7);
+            margin-left: 20px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-bottom-links a:hover {
+            color: #fff;
+        }
+        
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1199.98px) {
+            .hero-section h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 991.98px) {
+            .hero-section {
+                min-height: 600px;
+            }
+            
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-section p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 767.98px) {
+            .navbar {
+                padding: 10px 0;
+            }
+            
+            .hero-section {
+                min-height: 500px;
+            }
+            
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-section p {
+                font-size: 1rem;
+            }
+            
+            .hero-btns .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .footer-bottom-links {
+                justify-content: flex-start;
+                margin-top: 15px;
+            }
+            
+            .footer-bottom-links a {
+                margin-left: 0;
+                margin-right: 15px;
+            }
+        }
+        
+        @media (max-width: 575.98px) {
+            .hero-section {
+                min-height: 450px;
+            }
+            
+            .hero-section h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-btns .btn {
+                display: block;
+                width: 80%;
+                margin: 10px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader-inner"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/pexels-photo-219794.jpeg" alt="GreenHarvest">
+          <span>GreenHarvest</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active " href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="products.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <!-- Floating decorative elements -->
+        <div class="floating-element floating-leaf-1">
+            <img src="images/2909792.png" alt="Leaf" width="80" style="filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));">
+        </div>
+        <div class="floating-element floating-leaf-2">
+            <img src="images/2909779.png" alt="Leaf" width="60" style="filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));">
+        </div>
+        <div class="floating-element floating-leaf-3">
+            <img src="images/2909779.png" alt="Leaf" width="70" style="filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));">
+        </div>
+        
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 text-center text-white">
+                    <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                        <h1 class="display-3 fw-bold mb-4">Empowering Farmers, Nourishing Nations</h1>
+                        <p class="lead mb-5">Sustainable agricultural solutions for a better tomorrow through innovation and technology</p>
+                        <div class="hero-btns">
+                            <a class="btn btn-primary btn-lg me-3" href="services.html">Our Services</a>
+                            <a class="btn btn-outline-light btn-lg" href="contact.html">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-down">
+            <a href="#features" class="scroll-down-link">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Why Choose Us</h2>
+                <p class="section-subtitle">We provide innovative solutions for modern agriculture</p>
+                <div class="divider mx-auto"></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4 feature-item">
+                    <div class="card h-100 border-0 shadow-sm" data-aos="fade-up" data-aos-delay="0">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mb-4">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h3 class="h4">Organic Farming</h3>
+                            <p class="mb-0">100% natural and chemical-free farming practices that protect the environment and your health while ensuring premium quality produce.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 feature-item">
+                    <div class="card h-100 border-0 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mb-4">
+                                <i class="fas fa-tractor"></i>
+                            </div>
+                            <h3 class="h4">Modern Equipment</h3>
+                            <p class="mb-0">State-of-the-art farming equipment available for rent or purchase to maximize your yield and operational efficiency.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 feature-item">
+                    <div class="card h-100 border-0 shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mb-4">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <h3 class="h4">Soil Testing</h3>
+                            <p class="mb-0">Comprehensive soil analysis to help you understand and improve your land's productivity with data-driven recommendations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5 about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="about-img-container">
+                        <img src="photo-1605000797499-95a51c5269ae" alt="About Us" class="img-fluid rounded shadow-lg about-img" data-aos="fade-right">
+                        <div class="experience-badge" data-aos="fade-up" data-aos-delay="300">
+                            <span>15+</span>
+                            <p>Years Experience</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="ps-lg-5" data-aos="fade-left">
+                        <h2 class="section-title mb-4">About GreenHarvest</h2>
+                        <p class="mb-4">Founded in 2008, GreenHarvest has been at the forefront of agricultural innovation, helping farmers across the region improve their yields while adopting sustainable practices. Our mission is to bridge the gap between traditional farming and modern technology.</p>
+                        <ul class="about-list">
+                            <li><i class="fas fa-check-circle"></i> Certified organic farming methods with global standards</li>
+                            <li><i class="fas fa-check-circle"></i> Expert agricultural consultants with field experience</li>
+                            <li><i class="fas fa-check-circle"></i> Government-approved training programs and certifications</li>
+                            <li><i class="fas fa-check-circle"></i> Direct market access for farmers to maximize profits</li>
+                            <li><i class="fas fa-check-circle"></i> IoT-based monitoring systems for precision agriculture</li>
+                        </ul>
+                        <a class="btn btn-primary mt-3" href="about.html">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive solutions for all your agricultural needs</p>
+                <div class="divider mx-auto"></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card" data-aos="zoom-in" data-aos-delay="0">
+                        <div class="service-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3>Crop Cultivation</h3>
+                        <p>Expert guidance on selecting and cultivating the right crops for your soil and climate conditions with precision agriculture techniques.</p>
+                        <a class="service-link" href="services.html">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="service-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h3>Irrigation Solutions</h3>
+                        <p>Smart water management systems with IoT monitoring tailored to your farm's specific requirements for optimal water usage.</p>
+                        <a class="service-link" href="services.html">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="service-icon">
+                            <i class="fas fa-vial"></i>
+                        </div>
+                        <h3>Soil Testing</h3>
+                        <p>Advanced soil analysis with detailed reports to determine nutrient levels and optimal crop choices for maximum yield.</p>
+                        <a class="service-link" href="services.html">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Market Access</h3>
+                        <p>Direct connections to domestic and international markets through our extensive buyer network and digital platforms.</p>
+                        <a class="service-link" href="services.html">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a class="btn btn-outline-primary btn-lg" href="services.html">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Preview -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Our Products</h2>
+                <p class="section-subtitle">High-quality agricultural produce straight from our farms</p>
+                <div class="divider mx-auto"></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="product-card" data-aos="flip-left" data-aos-delay="0">
+                        <div class="product-img">
+                            <img src="images/wheat.png" alt="Organic Wheat" class="img-fluid">
+                            <div class="product-overlay">
+                                <a class="btn btn-sm btn-primary" href="products.html">View Details</a>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Organic Wheat</h3>
+                            <div class="product-meta">
+                                <span class="price">$5.99/kg</span>
+                                <span class="rating"><i class="fas fa-star"></i> 4.8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="product-card" data-aos="flip-left" data-aos-delay="100">
+                        <div class="product-img">
+                            <img src="images/basmati.png" alt="Basmati Rice" class="img-fluid">
+                            <div class="product-overlay">
+                                <a class="btn btn-sm btn-primary" href="products.html">View Details</a>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Basmati Rice</h3>
+                            <div class="product-meta">
+                                <span class="price">$7.49/kg</span>
+                                <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="product-card" data-aos="flip-left" data-aos-delay="200">
+                        <div class="product-img">
+<img src="photo-1582284540020-8acbe03f4924" alt="Organic Tomatoes" class="img-fluid">                            <div class="product-overlay">
+                                <a class="btn btn-sm btn-primary" href="products.html">View Details</a>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Organic Tomatoes</h3>
+                            <div class="product-meta">
+                                <span class="price">$3.99/kg</span>
+                                <span class="rating"><i class="fas fa-star"></i> 4.7</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="product-card" data-aos="flip-left" data-aos-delay="300">
+                        <div class="product-img">
+                            <img src="photo-1568702846914-96b305d2aaeb" alt="Fresh Apples" class="img-fluid">
+                            <div class="product-overlay">
+                                <a class="btn btn-sm btn-primary" href="products.html">View Details</a>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Fresh Apples</h3>
+                            <div class="product-meta">
+                                <span class="price">$2.99/kg</span>
+                                <span class="rating"><i class="fas fa-star"></i> 4.8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a class="btn btn-outline-primary btn-lg" href="products.html">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">What Farmers Say</h2>
+                <p class="section-subtitle">Success stories from our community</p>
+                <div class="divider mx-auto"></div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="testimonial-slider">
+                        <div class="testimonial-item" data-aos="fade-up">
+                            <div class="testimonial-content">
+                                <div class="testimonial-text">
+                                    <p>"GreenHarvest's soil testing service helped me understand my land better. My wheat yield increased by 30% after following their recommendations. Their precision agriculture techniques transformed my farming approach completely."</p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <img src="images/32.jpg" alt="Rajesh Kumar" class="author-img">
+                                    <div class="author-info">
+                                        <h4>Rajesh Kumar</h4>
+                                        <p>Wheat Farmer, Punjab</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
+                            <div class="testimonial-content">
+                                <div class="testimonial-text">
+                                    <p>"The organic farming training transformed my approach to agriculture. Now I get premium prices for my chemical-free produce. The market access program doubled my income by connecting me directly with exporters."</p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <img src="images/44.jpg" alt="Priya Sharma" class="author-img">
+                                    <div class="author-info">
+                                        <h4>Priya Sharma</h4>
+                                        <p>Vegetable Farmer, Maharashtra</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="testimonial-content">
+                                <div class="testimonial-text">
+                                    <p>"Their market access program connected me directly with exporters. I no longer depend on middlemen and get better prices for my rice. The irrigation solutions reduced my water usage by 40% while maintaining yield."</p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <img src="images/75.jpg" alt="Amir Khan" class="author-img">
+                                    <div class="author-info">
+                                        <h4>Amir Khan</h4>
+                                        <p>Rice Farmer, Uttar Pradesh</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Preview -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Latest From Our Blog</h2>
+                <p class="section-subtitle">Agricultural insights and updates</p>
+                <div class="divider mx-auto"></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="blog-card" data-aos="fade-up" data-aos-delay="0">
+                        <div class="blog-img">
+                            <img src="images/organic.png" alt="Organic Farming" class="img-fluid">
+                            <div class="blog-date">15 June 2023</div>
+                        </div>
+                        <div class="blog-content">
+                            <h3><a href="blog.html">The Future of Organic Farming in India</a></h3>
+                            <p>Exploring the growing demand for organic produce and how small farmers can benefit from this trend through certification and direct marketing.</p>
+                            <a class="read-more" href="blog.html">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="blog-img">
+                            <img src="images/water.png" alt="Water Conservation" class="img-fluid">
+                            <div class="blog-date">2 June 2023</div>
+                        </div>
+                        <div class="blog-content">
+                            <h3><a href="blog.html">Smart Water Conservation Techniques</a></h3>
+                            <p>Practical methods to reduce water usage while maintaining or increasing crop yields using IoT sensors and precision irrigation systems.</p>
+                            <a class="read-more" href="blog.html">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="blog-img">
+                            <img src="images/agri.png" alt="Agricultural Technology" class="img-fluid">
+                            <div class="blog-date">20 May 2023</div>
+                        </div>
+                        <div class="blog-content">
+                            <h3><a href="blog.html">Agri-Tech Revolution in India</a></h3>
+                            <p>From drones to AI, discover the tech innovations revolutionizing farming practices and how small farmers can adopt these technologies affordably.</p>
+                            <a class="read-more" href="blog.html">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a class="btn btn-outline-primary btn-lg" href="blog.html">View All Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-5 newsletter-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <h2 class="mb-4">Subscribe to Our Newsletter</h2>
+                    <p class="mb-5">Get the latest agricultural tips, market updates, and exclusive offers directly to your inbox. Join our community of 10,000+ farmers.</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your Email Address" required="">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weather Widget -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <h2 class="mb-4">Farm Weather Updates</h2>
+                    <p>Stay informed about weather conditions that may affect your crops. Our real-time weather data helps you plan your farming activities better. Get alerts for frost, heavy rain, or drought conditions specific to your region.</p>
+                    <a href="#" class="btn btn-outline-primary">View Detailed Forecast</a>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="weather-widget">
+                        <div class="weather-header">
+                            <h3>Current Weather</h3>
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span id="weather-location">Farm Region</span>
+                            </div>
+                        </div>
+                        <div class="weather-body">
+                            <div class="weather-icon">
+                                <i class="fas fa-sun"></i>
+                            </div>
+                            <div class="weather-info">
+                                <div class="temperature">
+                                    <span id="weather-temp">28</span>°C
+                                </div>
+                                <div class="condition" id="weather-condition">Sunny</div>
+                            </div>
+                        </div>
+                        <div class="weather-footer">
+                            <div class="weather-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-tint"></i>
+                                    <span id="weather-humidity">45%</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-wind"></i>
+                                    <span id="weather-wind">12 km/h</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span id="weather-date">Today</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-widget about-widget">
+<img src="images/pexels-photo-219794.jpeg" alt="GreenHarvest" class="footer-logo">                          GreenHarvest   <p class="mt-3">Empowering farmers with sustainable agricultural solutions for a food-secure future through innovation, education, and technology.</p>
+                            <div class="social-links mt-4">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-widget">
+                            <h3>Quick Links</h3>
+                            <ul class="footer-links">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="products.html">Products</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h3>Our Services</h3>
+                            <ul class="footer-links">
+                                <li><a href="services.html">Organic Farming</a></li>
+                                <li><a href="services.html">Soil Testing</a></li>
+                                <li><a href="services.html">Equipment Rental</a></li>
+                                <li><a href="services.html">Crop Consultancy</a></li>
+                                <li><a href="services.html">Market Access</a></li>
+                                <li><a href="services.html">Training Programs</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget contact-widget">
+                            <h3>Contact Us</h3>
+                            <ul class="footer-contact">
+                                <li><i class="fas fa-map-marker-alt"></i> 123 Farm Road, Agricultural Zone, India</li>
+                                <li><i class="fas fa-phone"></i> +91 9876543210</li>
+                                <li><i class="fas fa-envelope"></i> info@greenharvest.com</li>
+                                <li><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom py-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="mb-md-0">© 2023 GreenHarvest. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-bottom-links text-md-end">
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms of Service</a>
+                            <a href="#">Sitemap</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/aos.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Preloader
+        $(window).on('load', function() {
+            $('.preloader').fadeOut('slow');
+        });
+        
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Navbar scroll effect
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+                $('.navbar').addClass('scrolled');
+            } else {
+                $('.navbar').removeClass('scrolled');
+            }
+        });
+        
+        // Back to top button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 300) {
+                $('.back-to-top').addClass('active');
+            } else {
+                $('.back-to-top').removeClass('active');
+            }
+        });
+        
+        $('.back-to-top').click(function(e) {
+            e.preventDefault();
+            $('html, body').animate({scrollTop: 0}, '300');
+        });
+        
+        // Smooth scrolling for navigation links
+        $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function(event) {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    event.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: target.offset().top - 70
+                    }, 1000, function() {
+                        var $target = $(target);
+                        $target.focus();
+                        if ($target.is(":focus")) {
+                            return false;
+                        } else {
+                            $target.attr('tabindex','-1');
+                            $target.focus();
+                        }
+                    });
+                }
+            }
+        });
+        
+        // Testimonial slider
+        $('.testimonial-slider').slick({
+            dots: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            adaptiveHeight: true,
+            autoplay: true,
+            autoplaySpeed: 5000,
+            arrows: false
+        });
+        
+        // Weather widget data (simulated)
+        function updateWeather() {
+            const conditions = ['Sunny', 'Partly Cloudy', 'Cloudy', 'Rainy', 'Thunderstorm'];
+            const randomCondition = conditions[Math.floor(Math.random() * conditions.length)];
+            
+            $('#weather-condition').text(randomCondition);
+            $('#weather-temp').text(Math.floor(Math.random() * 10) + 20);
+            $('#weather-humidity').text(Math.floor(Math.random() * 30) + 40 + '%');
+            $('#weather-wind').text(Math.floor(Math.random() * 10) + 5 + ' km/h');
+            
+            // Change icon based on condition
+            const weatherIcon = $('#weather-condition').parent().prev();
+            weatherIcon.removeClass().addClass('weather-icon');
+            
+            if (randomCondition === 'Sunny') {
+                weatherIcon.append('<i class="fas fa-sun"></i>');
+            } else if (randomCondition === 'Partly Cloudy') {
+                weatherIcon.append('<i class="fas fa-cloud-sun"></i>');
+            } else if (randomCondition === 'Cloudy') {
+                weatherIcon.append('<i class="fas fa-cloud"></i>');
+            } else if (randomCondition === 'Rainy') {
+                weatherIcon.append('<i class="fas fa-cloud-rain"></i>');
+            } else {
+                weatherIcon.append('<i class="fas fa-bolt"></i>');
+            }
+        }
+        
+        // Update weather every 10 seconds (simulation)
+        updateWeather();
+        setInterval(updateWeather, 10000);
+    </script>
+
+</body></html>

@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+
+body {
+    background-color: lightblue;
+    color: black;
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1 {
+    border: 5px solid peru;
+    border-radius: 50px;
+    text-align: center;
+    background-color: violet;
+    color: black;
+}
+
+
+h3 {
+    border: 3px double;
+    border-radius: 10px;
+    text-align: center;
+    background-color: tomato;
+    color: white;
+}
+
+.text {
+    border: 5px double black;
+    background-color: white;
+    border-radius: 30px;
+    padding: 25px;
+}
+
+.text1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    border: 5px double black;
+    border-radius: 30px;
+    background-color: pink;
+    margin: 10px 0;
+    color: black;
+    text-align: center;
+    margin: 15px;
+}
+
+.container:hover {
+    background-color: crimson;
+}
+
+.container > h2 {
+    background-color: red;
+    color: white;
+    border-radius: 50px;
+}
+
+.button { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: red;
+    border: 5px solid blue;
+    color: white;
+    font-size: 20px;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 25px;
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.button:hover{
+    color: white;
+    border: 5px solid red;
+    background: blue;
+}
+
+#para1, 
+#para2, 
+#para3, 
+#para4, 
+#para5, 
+#para6{
+    animation: ani1 0.5s 10;
+}
+
+@keyframes ani1 {
+    from {
+        text-align: center;
+        border-radius: 20px;
+        background: red;
+        color: white;
+    }
+    to {
+        text-align: center;
+        border-radius: 20px;
+        background: blue;
+        color: white;
+    }
+}

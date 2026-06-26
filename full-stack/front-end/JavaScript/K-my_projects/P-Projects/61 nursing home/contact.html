@@ -1,0 +1,1467 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Serenity Grove Senior Living</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #3a7ca5;
+            --secondary-color: #2f6690;
+            --accent-color: #d9dcd6;
+            --dark-color: #16425b;
+            --light-color: #f8f9fa;
+            --success-color: #28a745;
+            --error-color: #dc3545;
+            --font-main: 'Montserrat', sans-serif;
+            --font-heading: 'Playfair Display', serif;
+            --transition: all 0.3s ease;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-main);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            color: #444;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Navbar Styles */
+        .navbar {
+            background-color: rgba(22, 66, 91, 0.9);
+            transition: all 0.3s ease;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .navbar.scrolled {
+            background-color: var(--dark-color);
+            padding: 10px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .navbar-brand img {
+            transition: all 0.3s ease;
+            height: 50px;
+        }
+        
+        .navbar.scrolled .navbar-brand img {
+            height: 40px;
+        }
+        
+        .navbar-nav {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            margin: 0;
+        }
+        
+        .nav-item {
+            margin: 0 15px;
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover:after,
+        .nav-link.active:after {
+            width: 100%;
+        }
+        
+        .navbar-toggler {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--primary-color);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            cursor: pointer;
+            font-family: var(--font-main);
+        }
+        
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: var(--secondary-color);
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .btn:hover:before {
+            width: 100%;
+        }
+        
+        .btn:hover {
+            border-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Hero Section */
+        .contact-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 10rem 1rem 5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.03" d="M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,218.7C672,224,768,160,864,138.7C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+        
+        .contact-hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInDown 1s ease;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .contact-hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            animation: fadeInUp 1s ease 0.3s forwards;
+            opacity: 0;
+        }
+        
+        .hero-btn {
+            animation: fadeIn 1.5s ease 0.6s forwards, pulse 2s infinite 3s;
+            opacity: 0;
+        }
+        
+        /* Section Styling */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+        
+        section {
+            padding: 6rem 0;
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .contact-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            padding: 1.8rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 0;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            transition: height 0.5s ease;
+        }
+        
+        .contact-card:hover:before {
+            height: 100%;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-card:hover .contact-icon {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .contact-details h3 {
+            margin-bottom: 0.7rem;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .contact-card:hover .contact-details h3 {
+            color: var(--secondary-color);
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 2.8rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-form:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        }
+        
+        .form-group {
+            margin-bottom: 1.8rem;
+            position: relative;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.6rem;
+            font-weight: 500;
+            color: var(--dark-color);
+            transition: var(--transition);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: #f9f9f9;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(58, 124, 165, 0.2);
+            background: white;
+            transform: translateY(-2px);
+        }
+        
+        textarea.form-control {
+            min-height: 160px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 1.2rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.5px;
+            font-family: var(--font-main);
+        }
+        
+        .submit-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .submit-btn:hover:before {
+            left: 100%;
+        }
+        
+        .submit-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+        
+        /* Map Section */
+        .map-section {
+            padding: 0 0 6rem;
+        }
+        
+        .map-container {
+            height: 450px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .map-overlay {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            z-index: 10;
+            animation: bounceIn 1s ease;
+        }
+        
+        .map-overlay a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+        
+        .map-overlay a:hover {
+            color: var(--secondary-color);
+            transform: translateX(5px);
+        }
+        
+        /* Emergency Contact */
+        .emergency-contact {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+            color: white;
+            text-align: center;
+            padding: 3.5rem 2rem;
+            border-radius: 15px;
+            margin-top: 4rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .emergency-contact:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,218.7C672,224,768,160,864,138.7C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            animation: wave 12s linear infinite;
+            z-index: 0;
+        }
+        
+        .emergency-contact h2 {
+            margin-bottom: 1.2rem;
+            font-size: 2.2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .emergency-number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin: 1.2rem 0;
+            display: block;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .emergency-contact p {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--light-color);
+            position: relative;
+        }
+        
+        .faq-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%233a7ca5' fill-opacity='0.03' d='M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,218.7C672,224,768,160,864,138.7C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: bottom;
+        }
+        
+        .faq-container {
+            max-width: 850px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 1.2rem;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .faq-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .faq-question {
+            padding: 1.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            background: rgba(58, 124, 165, 0.05);
+        }
+        
+        .faq-question i {
+            transition: var(--transition);
+        }
+        
+        .faq-answer {
+            padding: 0 1.8rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 1000px;
+            transition: max-height 1s ease-in-out, padding 0.3s ease;
+            padding: 0 1.8rem 1.8rem;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 4rem 0 1.5rem;
+            position: relative;
+        }
+        
+        footer:before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100'%3E%3Cpath fill='%2316425b' d='M0,70L1440,20L1440,0L0,0Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .footer-column h3 {
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent-color);
+        }
+        
+        .footer-column p, 
+        .footer-column li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-column a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+        
+        .footer-column a:hover {
+            color: var(--accent-color);
+            transform: translateX(5px);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 1.5rem;
+        }
+        
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .social-icons a:hover {
+            background: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        .footer-newsletter input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            margin-left: 1.5rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes wave {
+            0% {
+                transform: translateX(0) translateY(0);
+            }
+            50% {
+                transform: translateX(-25%) translateY(-10%);
+            }
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        .float {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        /* Form Validation */
+        .form-group.success .form-control {
+            border-color: var(--success-color);
+        }
+        
+        .form-group.error .form-control {
+            border-color: var(--error-color);
+        }
+        
+        .form-group small {
+            color: var(--error-color);
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            visibility: hidden;
+        }
+        
+        .form-group.error small {
+            visibility: visible;
+        }
+        
+        /* Loading Animation */
+        .submit-btn .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Confirmation Message */
+        .confirmation-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+        
+        .confirmation-message.active {
+            opacity: 1;
+            visibility: visible;
+            animation: bounceIn 0.6s ease;
+        }
+        
+        .confirmation-message i {
+            font-size: 4rem;
+            color: var(--success-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .confirmation-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .confirmation-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .navbar-nav {
+                position: fixed;
+                top: 0;
+                right: -300px;
+                width: 300px;
+                height: 100vh;
+                background: var(--dark-color);
+                padding: 80px 20px 20px;
+                transition: right 0.4s ease;
+                z-index: 999;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .navbar-nav.active {
+                right: 0;
+            }
+            
+            .nav-item {
+                margin: 15px 0;
+            }
+            
+            .navbar-toggler {
+                display: block;
+                z-index: 1000;
+            }
+            
+            .navbar-toggler span {
+                display: block;
+                width: 25px;
+                height: 3px;
+                background: white;
+                margin: 5px 0;
+                transition: var(--transition);
+            }
+            
+            .navbar-toggler.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            
+            .navbar-toggler.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .navbar-toggler.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-hero {
+                padding: 8rem 1rem 4rem;
+            }
+            
+            .contact-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.9rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form {
+                padding: 2rem;
+            }
+            
+            .emergency-number {
+                font-size: 2.2rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .footer-links {
+                display: flex;
+                gap: 1rem;
+            }
+            
+            .footer-links a {
+                margin-left: 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .contact-hero {
+                padding: 7rem 1rem 4rem;
+            }
+            
+            .contact-hero h1 {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 4rem 0;
+            }
+            
+            .contact-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .contact-icon {
+                margin: 0 auto 15px;
+            }
+            
+            .footer-column {
+                text-align: center;
+            }
+            
+            .footer-column h3:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="./l.png" alt="Serenity Gardens">
+            </a>
+            <button class="navbar-toggler" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="/services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="/facilities">Facilities</a></li>
+                <li class="nav-item"><a class="nav-link" href="/staff">Our Staff</a></li>
+                <li class="nav-item"><a class="nav-link" href="/testimonials">Testimonials</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/contact">Contact</a></li>
+            </ul>
+            <a class="btn" href="/contact#schedule-tour">Schedule a Tour</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>We're Here to Help</h1>
+            <p>Reach out to us with any questions about our services, scheduling a tour, or admission process. Our caring team is ready to assist you.</p>
+            <a href="#contact-form" class="btn hero-btn">Send a Message</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-card animate-on-scroll">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Visit Us</h3>
+                            <p>123 Care Avenue, Pleasantville, CA 94567</p>
+                            <small>Free parking available at the main entrance</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card animate-on-scroll">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Call Us</h3>
+                            <p>Main: (555) 123-4567</p>
+                            <p>Admissions: (555) 123-ADMIT</p>
+                            <p>Nurse Station: (555) 123-NURS</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card animate-on-scroll">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email Us</h3>
+                            <p>info@serenitygrove.com</p>
+                            <p>admissions@serenitygrove.com</p>
+                            <p>support@serenitygrove.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card animate-on-scroll">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Visiting Hours</h3>
+                            <p>Monday-Friday: 9am-8pm</p>
+                            <p>Weekends: 10am-6pm</p>
+                            <small>Special arrangements available upon request</small>
+                        </div>
+                    </div>
+
+                    <div class="contact-card animate-on-scroll">
+                        <div class="contact-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Staff Contacts</h3>
+                            <p>Director: Sarah Johnson - ext. 101</p>
+                            <p>Admissions: Michael Lee - ext. 102</p>
+                            <p>Medical: Dr. Emily Chen - ext. 103</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form animate-on-scroll" id="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" class="form-control" placeholder="Your Name" required="">
+                            <small>Error message</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" class="form-control" placeholder="Your Email" required="">
+                            <small>Error message</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Your Phone">
+                            <small>Error message</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" class="form-control" required="">
+                                <option value="">Select a subject</option>
+                                <option value="admission">Admission Inquiry</option>
+                                <option value="tour">Schedule a Tour</option>
+                                <option value="services">Services Information</option>
+                                <option value="employment">Employment Opportunities</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <small>Error message</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" class="form-control" placeholder="How can we help you?" required=""></textarea>
+                            <small>Error message</small>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Send Message</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Our Location</h2>
+            <div class="map-container animate-on-scroll">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50470.028900642!2d-122.461685024414!3d37.757762679275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1685480000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+                <div class="map-overlay">
+                    <a href="https://goo.gl/maps/example" target="_blank">
+                        <i class="fas fa-directions"></i> Get Directions
+                    </a>
+                </div>
+            </div>
+            
+            <div class="emergency-contact animate-on-scroll">
+                <h2><i class="fas fa-exclamation-circle"></i> After-Hours Emergency</h2>
+                <p>For urgent matters outside regular business hours, please call:</p>
+                <span class="emergency-number pulse">(555) 911-SERN</span>
+                <p>Available 24/7 for current residents and their families</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        <span>How do I schedule a tour of the facility?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can schedule a tour by calling our admissions office at (555) 123-ADMIT, filling out the contact form on this page, or emailing tours@serenitygrove.com. We offer tours Monday through Friday from 9am to 5pm, and special weekend appointments can be arranged.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        <span>What are the visiting hours for residents?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our general visiting hours are Monday-Friday from 9am to 8pm and weekends from 10am to 6pm. However, we understand that special circumstances may require flexible arrangements. Please speak with our staff to make special visiting arrangements if needed.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        <span>How do I get information about admission and pricing?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>For detailed information about our admission process and pricing, please contact our admissions department at (555) 123-ADMIT or admissions@serenitygrove.com. We'll provide you with a detailed information packet and schedule a personalized consultation to discuss your specific needs and financial options.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        <span>What COVID-19 safety measures are in place?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We follow all CDC and local health department guidelines to ensure the safety of our residents and staff. Current measures include vaccination requirements for staff, regular testing, enhanced cleaning protocols, and visitor screening. Please contact us for our most current safety protocols.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        <span>What types of care do you provide?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a range of care options including independent living, assisted living, memory care, and respite care. Our team works with each resident to create a personalized care plan that meets their specific needs and preferences.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <img src="./l.png" alt="Serenity Gardens" class="mb-3">
+                    <p>Providing exceptional senior care with compassion and dignity since 1995. Our mission is to enhance the quality of life for our residents through personalized care in a warm, homelike environment.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/facilities">Facilities</a></li>
+                        <li><a href="/staff">Our Staff</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Care Avenue, Serenity, ST 12345</p>
+                    <p><i class="fas fa-phone-alt"></i> <a href="tel:+18005551234">(800) 555-1234</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@serenitygardens.com">info@serenitygardens.com</a></p>
+                    <p><i class="fas fa-clock"></i> Visiting Hours: 8am - 8pm Daily</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for updates and senior care tips.</p>
+                    <div class="footer-newsletter">
+                        <input type="email" placeholder="Your Email">
+                        <button class="btn" style="width: 100%">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2023 Serenity Gardens. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Confirmation Message -->
+    <div class="confirmation-overlay" id="confirmationOverlay"></div>
+    <div class="confirmation-message" id="confirmationMessage">
+        <i class="fas fa-check-circle"></i>
+        <h3>Thank You!</h3>
+        <p>Your message has been sent successfully. We'll contact you shortly.</p>
+        <button class="btn" id="closeConfirmation">OK</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navbar scroll effect
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+            
+            // Mobile menu toggle
+            const menuToggle = document.getElementById('menuToggle');
+            const navbarNav = document.querySelector('.navbar-nav');
+            
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    navbarNav.classList.toggle('active');
+                    menuToggle.classList.toggle('active');
+                });
+            }
+            
+            // Animation on scroll
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            
+            function checkScroll() {
+                animatedElements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.classList.add('visible');
+                    }
+                });
+            }
+            
+            // Check on load and scroll
+            window.addEventListener('load', checkScroll);
+            window.addEventListener('scroll', checkScroll);
+            
+            // Form validation and submission
+            const contactForm = document.getElementById('contactForm');
+            const confirmationMessage = document.getElementById('confirmationMessage');
+            const confirmationOverlay = document.getElementById('confirmationOverlay');
+            const closeConfirmation = document.getElementById('closeConfirmation');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simple validation
+                    let isValid = true;
+                    const requiredFields = contactForm.querySelectorAll('[required]');
+                    
+                    requiredFields.forEach(field => {
+                        const formGroup = field.closest('.form-group');
+                        
+                        if (field.value.trim() === '') {
+                            formGroup.classList.add('error');
+                            formGroup.querySelector('small').textContent = 'This field is required';
+                            isValid = false;
+                        } else {
+                            formGroup.classList.remove('error');
+                            
+                            // Email validation
+                            if (field.type === 'email') {
+                                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                                if (!emailPattern.test(field.value)) {
+                                    formGroup.classList.add('error');
+                                    formGroup.querySelector('small').textContent = 'Please enter a valid email';
+                                    isValid = false;
+                                } else {
+                                    formGroup.classList.remove('error');
+                                }
+                            }
+                        }
+                    });
+                    
+                    if (isValid) {
+                        // Show loading state
+                        const submitBtn = contactForm.querySelector('.submit-btn');
+                        const btnText = submitBtn.querySelector('.btn-text');
+                        btnText.innerHTML = '<span class="loading"></span> Sending...';
+                        
+                        // Simulate form submission
+                        setTimeout(() => {
+                            // Show confirmation message
+                            confirmationMessage.classList.add('active');
+                            confirmationOverlay.classList.add('active');
+                            
+                            // Reset form and button
+                            contactForm.reset();
+                            btnText.textContent = 'Send Message';
+                        }, 2000);
+                    }
+                });
+            }
+            
+            // Close confirmation message
+            if (closeConfirmation) {
+                closeConfirmation.addEventListener('click', function() {
+                    confirmationMessage.classList.remove('active');
+                    confirmationOverlay.classList.remove('active');
+                });
+            }
+            
+            // FAQ functionality
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close other open items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+            
+            // Animate emergency number
+            const emergencyNumber = document.querySelector('.emergency-number');
+            if (emergencyNumber) {
+                setInterval(() => {
+                    emergencyNumber.classList.toggle('pulse');
+                }, 2000);
+            }
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const navbarHeight = navbar.offsetHeight;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (navbarNav.classList.contains('active')) {
+                            navbarNav.classList.remove('active');
+                            menuToggle.classList.remove('active');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+</body></html>

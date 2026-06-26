@@ -1,0 +1,141 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sunrise Hospital</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="sticky-header">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Sunrise Hospital Logo">
+                <h1>Sunrise Hospital</h1>
+            </div>
+            <nav class="navbar">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/departments">Departments</a></li>
+                    <li><a href="/doctors">Doctors</a></li>
+                    <li><a href="/appointments">Appointments</a></li>
+                    <li><a href="/gallery">Gallery</a></li>
+                    <li><a href="/downloads">Downloads</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a class="active" href="/login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="login">
+        <div class="container">
+            <h2 class="section-title">Login to Your Account</h2>
+            <div class="login-tabs">
+                <button class="tab-button active" data-tab="patient">Patient</button>
+                <button class="tab-button" data-tab="staff">Staff</button>
+                <button class="tab-button" data-tab="admin">Admin</button>
+            </div>
+            <div class="tab-content active" id="patient">
+                <form id="patient-login">
+                    <div class="form-group">
+                        <label for="patient-id">Patient ID</label>
+                        <input type="text" id="patient-id" placeholder="Enter Patient ID" required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="patient-password">Password</label>
+                        <input type="password" id="patient-password" placeholder="Enter Password" required="">
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                    <p><a href="#">Forgot Password?</a></p>
+                </form>
+            </div>
+            <div class="tab-content" id="staff">
+                <form id="staff-login">
+                    <div class="form-group">
+                        <label for="staff-id">Staff ID</label>
+                        <input type="text" id="staff-id" placeholder="Enter Staff ID" required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="staff-password">Password</label>
+                        <input type="password" id="staff-password" placeholder="Enter Password" required="">
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                    <p><a href="#">Forgot Password?</a></p>
+                </form>
+            </div>
+            <div class="tab-content" id="admin">
+                <form id="admin-login">
+                    <div class="form-group">
+                        <label for="admin-id">Admin ID</label>
+                        <input type="text" id="admin-id" placeholder="Enter Admin ID" required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="admin-password">Password</label>
+                        <input type="password" id="admin-password" placeholder="Enter Password" required="">
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                    <p><a href="#">Forgot Password?</a></p>
+                </form>
+            </div>
+            <div class="login-info">
+                <h3>Access Your Portal</h3>
+                <p>Log in to manage appointments, view medical records, or access staff/admin dashboards. Contact support for assistance.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Sunrise Road, Health City, India</p>
+                    <p><i class="fas fa-phone"></i> +91-9876543210</p>
+                    <p><i class="fas fa-envelope"></i> info@sunrisehospital.com</p>
+                    <p><i class="fas fa-clock"></i> Open 24/7</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/departments">Departments</a></li>
+                        <li><a href="/doctors">Doctors</a></li>
+                        <li><a href="/appointments">Appointments</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/departments#cardiology">Cardiology</a></li>
+                        <li><a href="/departments#orthopedics">Orthopedics</a></li>
+                        <li><a href="/departments#pediatrics">Pediatrics</a></li>
+                        <li><a href="/appointments">Book Appointment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Sunrise Hospital. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button class="scroll-top"><i class="fas fa-arrow-up"></i></button>
+    <script src="js/script.js"></script>
+
+</body></html>

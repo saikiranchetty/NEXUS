@@ -1,0 +1,705 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Serenity Gardens Senior Care</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+         .page-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('./hero.png') no-repeat center center;
+            background-size: cover;
+            height: 80vh;
+            min-height: 600px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            color: white;
+            overflow: hidden;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(44, 123, 229, 0.3) 0%, rgba(26, 86, 180, 0.7) 100%);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+        
+        .hero-buttons {
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+        
+        .btn-hero-primary {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 126, 95, 0.4);
+        }
+        
+        .btn-hero-primary:hover {
+            background-color: #ff6b4a;
+            border-color: #ff6b4a;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 126, 95, 0.6);
+        }
+        
+        .btn-hero-secondary {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-hero-secondary:hover {
+            background-color: white;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .hero-features {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            right: 0;
+            z-index: 2;
+        }
+        
+        .feature-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 0 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+        
+        /* Animations */
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-hero {
+                height: 70vh;
+                min-height: 500px;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .btn-hero-primary, .btn-hero-secondary {
+                padding: 10px 20px;
+                font-size: 1rem;
+                display: block;
+                width: 80%;
+                margin: 0 auto 10px;
+            }
+            
+            .hero-buttons .d-flex {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .feature-item {
+                margin-bottom: 10px;
+            }
+        }
+        /* Services Page Specific Styles */
+        .services-hero {
+            background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+        }
+        
+        .service-detail img {
+            transition: transform 0.3s ease;
+        }
+        
+        .service-detail img:hover {
+            transform: scale(1.02);
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            color: #2c7be5;
+        }
+        
+        .table th {
+            background-color: #2c7be5;
+            color: white;
+        }
+        
+        .alert-info {
+            border-left: 4px solid #2c7be5;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+       <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="./l.png" alt="Serenity Gardens" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/facilities">Facilities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/staff">Our Staff</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/testimonials">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                </ul>
+                <a class="btn btn-primary ms-lg-3" href="/contact#schedule-tour">Schedule a Tour</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Services Hero -->
+      <header class="page-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 hero-content">
+                    <h1 class="hero-title">Compassionate Care for Your Loved Ones</h1>
+                    <p class="hero-subtitle">Providing exceptional senior living with dignity, respect, and joy since 1995</p>
+                   
+                </div>
+            </div>
+        </div>
+        
+        <div class="container hero-features">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="feature-item text-center">
+                                <div class="feature-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <h5>Compassionate Care</h5>
+                                <p class="mb-0">24/7 personalized attention</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="feature-item text-center">
+                                <div class="feature-icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <h5>Home-like Environment</h5>
+                                <p class="mb-0">Comfortable &amp; welcoming spaces</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-item text-center">
+                                <div class="feature-icon">
+                                    <i class="fas fa-user-md"></i>
+                                </div>
+                                <h5>Medical Excellence</h5>
+                                <p class="mb-0">Expert healthcare professionals</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section py-3 bg-light">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Services</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Services Intro -->
+    <section class="services-intro py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title mb-4">Personalized Care Services</h2>
+                    <p class="lead">At Serenity Gardens, we offer a full continuum of care designed to meet the changing needs of our residents. From assistance with daily activities to specialized medical care, our services are delivered with compassion and respect for each individual's preferences and abilities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assisted Living -->
+    <section id="assisted-living" class="service-detail py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="./assisted.png" alt="Assisted Living" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title mb-4">Assisted Living</h2>
+                    <p>Our assisted living services provide the perfect balance of independence and support for seniors who need help with daily activities but don't require intensive medical care.</p>
+                    <h3 class="h5 mt-4">Services Include:</h3>
+                    <ul class="fa-ul">
+                        <li class="mb-2"><span class="fa-li text-primary"><i class="fas fa-check-circle"></i></span>Personalized care plans</li>
+                        <li class="mb-2"><span class="fa-li text-primary"><i class="fas fa-check-circle"></i></span>Assistance with bathing, dressing, and grooming</li>
+                        <li class="mb-2"><span class="fa-li text-primary"><i class="fas fa-check-circle"></i></span>Medication management</li>
+                        <li class="mb-2"><span class="fa-li text-primary"><i class="fas fa-check-circle"></i></span>Three nutritious meals daily plus snacks</li>
+                        <li class="mb-2"><span class="fa-li text-primary"><i class="fas fa-check-circle"></i></span>Housekeeping and laundry services</li>
+                        <li class="mb-2"><span class="fa-li text-primary"><i class="fas fa-check-circle"></i></span>24-hour staff availability</li>
+                        <li><span class="fa-li text-primary"><i class="fas fa-check-circle"></i></span>Scheduled transportation</li>
+                    </ul>
+                    <a class="btn btn-primary mt-3" href="/contact">Learn More About Assisted Living</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memory Care -->
+    <section id="memory-care" class="service-detail py-5">
+        <div class="container">
+            <div class="row align-items-center flex-lg-row-reverse">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="./memory-care.png" alt="Memory Care" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title mb-4">Memory Care</h2>
+                    <p>Our specialized memory care unit provides a secure, supportive environment for residents with Alzheimer's disease and other forms of dementia.</p>
+                    <h3 class="h5 mt-4">Program Features:</h3>
+                    <ul class="fa-ul">
+                        <li class="mb-2"><span class="fa-li text-primary"><i class="fas fa-check-circle"></i></span>Specially trained staff with dementia expertise</li>
+                        <li class="mb-2"><span class="fa-li text-primary"><i class="fas fa-check-circle"></i></span>Secure environment with monitored exits</li>
+                        <li class="mb-2"><span class="fa-li text-primary"><i class="fas fa-check-circle"></i></span>Structured daily routine to reduce anxiety</li>
+                        <li class="mb-2"><span class="fa-li text-primary"><i class="fas fa-check-circle"></i></span>Cognitive stimulation activities</li>
+                        <li class="mb-2"><span class="fa-li text-primary"><i class="fas fa-check-circle"></i></span>Family support and education programs</li>
+                        <li><span class="fa-li text-primary"><i class="fas fa-check-circle"></i></span>Personalized sensory stimulation</li>
+                    </ul>
+                    <div class="alert alert-info mt-4">
+                        <i class="fas fa-info-circle me-2"></i> Our memory care program follows the latest evidence-based practices in dementia care, focusing on maintaining residents' abilities and quality of life.
+                    </div>
+                    <a class="btn btn-primary mt-2" href="/contact">Learn More About Memory Care</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rehabilitation -->
+    <section id="rehabilitation" class="service-detail py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="./rehab.png" alt="Rehabilitation Services" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title mb-4">Rehabilitation Services</h2>
+                    <p>Our comprehensive rehabilitation program helps residents recover strength, mobility, and independence after illness, injury, or surgery.</p>
+                    <h3 class="h5 mt-4">Therapy Services:</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="fa-ul">
+                                <li class="mb-2"><span class="fa-li text-primary"><i class="fas fa-check-circle"></i></span>Physical Therapy</li>
+                                <li class="mb-2"><span class="fa-li text-primary"><i class="fas fa-check-circle"></i></span>Occupational Therapy</li>
+                                <li><span class="fa-li text-primary"><i class="fas fa-check-circle"></i></span>Speech Therapy</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="fa-ul">
+                                <li class="mb-2"><span class="fa-li text-primary"><i class="fas fa-check-circle"></i></span>Cardiac Rehab</li>
+                                <li class="mb-2"><span class="fa-li text-primary"><i class="fas fa-check-circle"></i></span>Post-Stroke Rehab</li>
+                                <li><span class="fa-li text-primary"><i class="fas fa-check-circle"></i></span>Pain Management</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h3 class="h5 mt-4">Our Approach:</h3>
+                    <p>Our licensed therapists create personalized treatment plans with measurable goals. Therapy sessions are conducted in our state-of-the-art rehab gym or in residents' rooms as needed.</p>
+                    <a class="btn btn-primary mt-3" href="/contact">Learn More About Rehabilitation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Services -->
+    <section class="additional-services py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Additional Services</h2>
+                <p class="section-subtitle">Comprehensive care for all aspects of senior living</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon mb-3">
+                            <i class="fas fa-utensils fa-3x text-primary"></i>
+                        </div>
+                        <h3 class="h5">Nutrition &amp; Dining</h3>
+                        <p>Our chef-prepared meals accommodate special dietary needs and preferences. We offer restaurant-style dining with menu choices at every meal.</p>
+                        <ul class="fa-ul">
+                            <li class="mb-1"><span class="fa-li text-primary"><i class="fas fa-check"></i></span>Three meals plus snacks daily</li>
+                            <li class="mb-1"><span class="fa-li text-primary"><i class="fas fa-check"></i></span>Special diet accommodations</li>
+                            <li><span class="fa-li text-primary"><i class="fas fa-check"></i></span>Nutrition counseling available</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon mb-3">
+                            <i class="fas fa-calendar-alt fa-3x text-primary"></i>
+                        </div>
+                        <h3 class="h5">Activities &amp; Social Programs</h3>
+                        <p>Our full-time activities director plans a diverse calendar of events to keep residents engaged physically, mentally, and socially.</p>
+                        <ul class="fa-ul">
+                            <li class="mb-1"><span class="fa-li text-primary"><i class="fas fa-check"></i></span>Daily exercise classes</li>
+                            <li class="mb-1"><span class="fa-li text-primary"><i class="fas fa-check"></i></span>Arts and crafts</li>
+                            <li><span class="fa-li text-primary"><i class="fas fa-check"></i></span>Outings and entertainment</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon mb-3">
+                            <i class="fas fa-heartbeat fa-3x text-primary"></i>
+                        </div>
+                        <h3 class="h5">Medical Services</h3>
+                        <p>We coordinate with physicians and specialists to provide comprehensive medical care on-site.</p>
+                        <ul class="fa-ul">
+                            <li class="mb-1"><span class="fa-li text-primary"><i class="fas fa-check"></i></span>On-site physician visits</li>
+                            <li class="mb-1"><span class="fa-li text-primary"><i class="fas fa-check"></i></span>Medication management</li>
+                            <li><span class="fa-li text-primary"><i class="fas fa-check"></i></span>24-hour nursing care</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon mb-3">
+                            <i class="fas fa-spa fa-3x text-primary"></i>
+                        </div>
+                        <h3 class="h5">Wellness Programs</h3>
+                        <p>Holistic approaches to maintain health and wellbeing through various therapeutic modalities.</p>
+                        <ul class="fa-ul">
+                            <li class="mb-1"><span class="fa-li text-primary"><i class="fas fa-check"></i></span>Massage therapy</li>
+                            <li class="mb-1"><span class="fa-li text-primary"><i class="fas fa-check"></i></span>Aromatherapy</li>
+                            <li><span class="fa-li text-primary"><i class="fas fa-check"></i></span>Music and pet therapy</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon mb-3">
+                            <i class="fas fa-hands-helping fa-3x text-primary"></i>
+                        </div>
+                        <h3 class="h5">Respite Care</h3>
+                        <p>Short-term stays available to give family caregivers a needed break while ensuring their loved ones receive quality care.</p>
+                        <ul class="fa-ul">
+                            <li class="mb-1"><span class="fa-li text-primary"><i class="fas fa-check"></i></span>Flexible stay durations</li>
+                            <li class="mb-1"><span class="fa-li text-primary"><i class="fas fa-check"></i></span>Full access to amenities</li>
+                            <li><span class="fa-li text-primary"><i class="fas fa-check"></i></span>Same services as long-term residents</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon mb-3">
+                            <i class="fas fa-cross fa-3x text-primary"></i>
+                        </div>
+                        <h3 class="h5">Spiritual Care</h3>
+                        <p>We support residents' spiritual needs through various programs and services.</p>
+                        <ul class="fa-ul">
+                            <li class="mb-1"><span class="fa-li text-primary"><i class="fas fa-check"></i></span>Weekly religious services</li>
+                            <li class="mb-1"><span class="fa-li text-primary"><i class="fas fa-check"></i></span>Pastoral visits</li>
+                            <li><span class="fa-li text-primary"><i class="fas fa-check"></i></span>Meditation and prayer groups</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Levels -->
+    <section class="service-levels py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Levels of Care</h2>
+                <p class="section-subtitle">We adjust services as residents' needs change</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>Service</th>
+                                    <th>Basic Care</th>
+                                    <th>Intermediate Care</th>
+                                    <th>Advanced Care</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Personal Assistance</td>
+                                    <td>1-2 daily activities</td>
+                                    <td>3-4 daily activities</td>
+                                    <td>Extensive assistance</td>
+                                </tr>
+                                <tr>
+                                    <td>Medication Management</td>
+                                    <td>Reminders only</td>
+                                    <td>Partial assistance</td>
+                                    <td>Full administration</td>
+                                </tr>
+                                <tr>
+                                    <td>Mobility Assistance</td>
+                                    <td>Standby assistance</td>
+                                    <td>Limited physical help</td>
+                                    <td>Extensive physical help</td>
+                                </tr>
+                                <tr>
+                                    <td>Specialized Care</td>
+                                    <td>Not included</td>
+                                    <td>Some services</td>
+                                    <td>Comprehensive services</td>
+                                </tr>
+                                <tr>
+                                    <td>Nursing Visits</td>
+                                    <td>Weekly check-ins</td>
+                                    <td>3x weekly</td>
+                                    <td>Daily or more</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="alert alert-info mt-4">
+                        <i class="fas fa-info-circle me-2"></i> Care levels are assessed by our nursing team and adjusted as needed. Additional services can be added à la carte.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4 mb-lg-0">
+                    <h2 class="mb-3">Have Questions About Our Services?</h2>
+                    <p class="lead mb-0">Our care coordinators are available to discuss your loved one's specific needs.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a class="btn btn-light btn-lg px-4" href="/contact">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer class="footer py-5 bg-dark text-white">
+       <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="./l.png" alt="Serenity Gardens" height="50" class="mb-3">
+                    <p>Providing exceptional senior care with compassion and dignity since 1995. Our mission is to enhance the quality of life for our residents through personalized care in a warm, homelike environment.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a class="text-white" href="/">Home</a></li>
+                        <li class="mb-2"><a class="text-white" href="/about">About Us</a></li>
+                        <li class="mb-2"><a class="text-white" href="/services">Services</a></li>
+                        <li class="mb-2"><a class="text-white" href="/facilities">Facilities</a></li>
+                        <li class="mb-2"><a class="text-white" href="/staff">Our Staff</a></li>
+                        <li class="mb-2"><a class="text-white" href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            123 Care Avenue, Serenity, ST 12345
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-phone-alt me-2"></i>
+                            <a href="tel:+18005551234" class="text-white">(800) 555-1234</a>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-envelope me-2"></i>
+                            <a href="mailto:info@serenitygardens.com" class="text-white">info@serenitygardens.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock me-2"></i>
+                            Visiting Hours: 8am - 8pm Daily
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p>Subscribe to our newsletter for updates and senior care tips.</p>
+                    <form class="mt-3">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">© 2023 Serenity Gardens. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white me-3">Privacy Policy</a>
+                    <a href="#" class="text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top btn btn-primary rounded-circle" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+
+</body></html>

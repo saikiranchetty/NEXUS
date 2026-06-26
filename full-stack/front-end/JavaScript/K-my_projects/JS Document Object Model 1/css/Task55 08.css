@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+
+body {
+    background-color: hsl(195, 53%, 79%);
+    color: hsl(0, 0%, 0%);
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1 {
+    border: 5px solid hsl(0, 100%, 50%);
+    border-radius: 50px;
+    text-align: center;
+    background-color: hsl(39, 86%, 51%);
+    color: hsl(244, 89%, 36%);
+}
+
+h2 {
+    border: 3px dashed hsl(240, 100%, 50%);
+    border-radius: 30px;
+    text-align: center;
+    background-color: hsl(0, 0%, 96%);
+    color: hsl(0, 100%, 50%);
+    font-size: 1.5rem;
+    padding: 5px;
+    margin: 5px;
+}
+
+h3{
+    border: 5px double hsl(0, 0%, 0%);
+    border-bottom-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    text-align: center;
+    background-color: hsl(0, 29%, 55%);
+    color: hsl(0, 0%, 100%);
+    font-size: 20px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.container1 {
+    border: 3px solid;
+    border-radius: 30px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: hsl(0, 0%, 100%);
+    padding: 10px;
+    margin: 10px;
+}
+
+
+.container2 {
+    border: 3px solid;
+    border-radius: 30px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: hsl(123, 57%, 60%);
+    padding: 10px;
+    margin: 10px;
+}
+

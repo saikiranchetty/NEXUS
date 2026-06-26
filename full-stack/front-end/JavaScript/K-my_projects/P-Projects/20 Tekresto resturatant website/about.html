@@ -1,0 +1,323 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <title>Restaurant Website</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0e6d9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #ff6600;
+            font-size: 2.5em;
+        }
+        .about-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .about-text {
+            width: 60%;
+        }
+        .chef-logo {
+            width: 30%;
+        }
+        .chef-cards {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .chef-card {
+            width: 22%;
+            background-color: white;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+        .chef-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .story-section {
+            margin-top: 20px;
+        }
+        
+.footer-nav {
+    width: 100%;
+    background-color:rgb(236, 207, 170);
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid #ccc; 
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.footer-section {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-section h6 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.footer-section a {
+    color: #333;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.footer-section:last-child {
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-section:last-child {
+        text-align: center;
+    }}
+
+
+    
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0.7vw;
+    background-color: rgb(248, 232, 217);
+    border-bottom: 2px solid rgb(252, 196, 124);
+    box-shadow: 0 2px 20px rgb(253, 124, 124);
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nav ul {
+    display: flex;
+    align-items: center;
+}
+
+.nav ul li {
+    padding: 0 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    color: blueviolet;
+    text-decoration: underline;
+}
+
+.account ul {
+    display: flex;
+    align-items: center;
+}
+
+.account ul li {
+    padding: 0 15px;
+    font-size: 18px;
+}
+
+.search {
+    display: none;
+    width: 200px;
+    justify-content: center;
+}
+
+.search input {
+    padding: 5px;
+    border: none;
+    border-radius: 40px;
+    width: 100%;
+    outline: none;
+}
+
+.srchicon {
+    background-color: rgb(255, 210, 210);
+    display: block;
+    padding: 4px 5px;
+    cursor: pointer;
+}
+
+.bar {
+    display: none;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    background-color: rgb(252, 231, 216);
+    box-shadow: 0 2px 15px rgb(252, 193, 169);
+}
+
+.dropdown-menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.dropdown-menu li {
+    width: 96vw;
+    margin: 10px 0;
+    padding: 15px 30px;
+    font-size: 15px;
+}
+
+.dropdown-menu a:hover {
+    color: blueviolet;
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+             <div class="logo">
+                 🍕🍟🥪 ᏖᏋᏦᏕ ᏒᏋᏕᏖᎧ 🥙🥡🍖
+             </div>
+             <div class="bar">
+                 <i class="fa-solid fa-bars" id="menu-bar"></i>
+                 <i class="fa-solid fa-xmark" id="menu-close"></i>
+             </div>
+             <div class="nav" id="nav-menu">
+                 <ul>
+                     <li><a href="/" target="_blank">Home</a></li>
+                     <li><a href="#">About</a></li>
+                     <li><a href="/about/fooditems/">Food Menu</a></li>
+                     <li><a href="/book/">Book Table</a></li>
+                 </ul>
+             </div>
+             <div class="account">
+                 <ul>
+                     <li><a href="#"><i class="fa-solid fa-house-chimney"></i></a></li>
+                     <li><a href="#"><i class="fa-solid fa-magnifying-glass searchicon"></i></a></li>
+                     <li>
+                         <div class="search">
+                             <input type="search" id="searchinput1">
+                             <i class="fa-solid fa-magnifying-glass srchicon" id="srchicon1"></i>
+                         </div>
+                     </li>
+                     <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+                 </ul>
+             </div>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu">
+             <ul>
+                 <li><a href="#">Home</a></li>
+                 <li><a href="#">About</a></li>
+                 <li><a href="#">Contact</a></li>
+                 <li><a href="#">Book Table</a></li>
+             </ul>
+         </div>
+     </header>
+    <div class="container">
+        <section class="about-section">
+            <div class="about-text">
+                <h1>About Us</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro repudiandae et quia quisquam esse quos ipsa rem? Impedit itaque magnam laboriosam voluptatem cumque ad iure explicabo. Vero, est nesciunt possimus accusamus pariatur saepe ut perspiciatis ratione dignissimos impedit, rem quaerat veniam consequuntur veritatis culpa sit nam temporibus nostrum corrupti placeat alias tenetur nemo quam.</p>
+            </div>
+            <div class="chef-logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw1dpmF5lGplsOb1w2IzxEYHG4V4glVhJIWVPuuD8iJMSBa12HXxyHXD35cyBfBU4nWME&amp;usqp=CAU" alt="Chef Logo">
+            </div>
+        </section>
+
+        <h1>Our Golden Chefs</h1>
+        <div class="chef-cards">
+            <div class="chef-card">
+                <img src="https://png.pngtree.com/png-clipart/20230824/original/pngtree-cute-little-boy-chef-holding-a-silver-tray-picture-image_8428295.png" alt="Chef 1">
+                <h3>Chef name</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, ducimus!</p>
+            </div>
+            <div class="chef-card">
+                <img src="https://png.pngtree.com/png-clipart/20230824/original/pngtree-cute-little-boy-chef-holding-a-silver-tray-picture-image_8428295.png" alt="Chef 1">
+                <h3>Chef name</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, ducimus!</p>
+            </div>
+            <div class="chef-card">
+                <img src="https://png.pngtree.com/png-clipart/20230824/original/pngtree-cute-little-boy-chef-holding-a-silver-tray-picture-image_8428295.png" alt="Chef 1">
+                <h3>Chef name</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, ducimus!</p>
+            </div>
+            <div class="chef-card">
+                <img src="https://png.pngtree.com/png-clipart/20230824/original/pngtree-cute-little-boy-chef-holding-a-silver-tray-picture-image_8428295.png" alt="Chef 1">
+                <h3>Chef name</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, ducimus!</p>
+            </div>
+            <!-- Repeat for other chef cards -->
+        </div>
+
+        <section class="story-section">
+            <h1>Our Story</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim voluptatem odit a non laborum, possimus, iste quidem sapiente error cupiditate, odio nobis vitae. Eligendi saepe inventore sint, consequuntur corrupti tenetur fugiat id ab, consectetur ut labore tempora numquam omnis nemo illum cumque quidem aliquid quae aut ex iste nihil voluptas? Possimus et consequatur iure quam labore ducimus aliquam natus nobis, veritatis dignissimos nostrum aspernores fuga enim porro atque alias omnis autem praesentium dolorum delectus.Lorem, ipsum dolor sit amet consectetur Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem quod ipsa itaque sunt impedit minus, laudantium fugit dolor aliquam optio. Ipsam necessitatibus aut maiores inventore culpa deserunt labore nam expedita? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi asperiores necessitatibus mollitia rem laborum neque repudiandae magni quos at provident? Illum ex minima quisquam consequuntur non atque distinctio amet assumenda! adipisicing elit. Enim voluptatem odit a non laborum, possimus, iste quidem sapiente error cupiditate, odio nobis vitae. Eligendi saepe inventore sint, consequuntur corrupti tenetur fugiat id ab, consectetur ut labore tempora numquam omnis nemo illum cumque quidem aliquid quae aut ex iste nihil voluptas? Possimus et consequatur iure quam labore ducimus aliquam natus nobis, veritatis dignissimos nostrum aspernores fuga enim porro atque alias omnis autem praesentium dolorum delectus.</p>
+        </section>
+    </div>
+    <footer class="footer-nav">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h6>Teks Resto</h6>
+                <p>Email: <a href="mailto:omgitrewd123@gmail.com">TeksResto@gmail.com</a></p>
+                <p>YouTube: <a href="#">Teks Resto</a></p>
+                <p>Ameerpet,Hyderabad,Telangana,India</p>
+            </div>
+            <div class="footer-section" style="display: flex;
+            align-items: flex-end;">
+                <img src="https://c8.alamy.com/comp/2G7XKPH/tr-logo-with-triangle-shape-and-circle-rounded-design-template-isolated-on-white-background-2G7XKPH.jpg" alt="" style="width: 50px;align-items: center;gap: 10px;">
+                <p>Powered by <strong>Teks Resto</strong></p>
+            </div>
+        </div>
+    </footer>
+    
+
+</body></html>

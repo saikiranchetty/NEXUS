@@ -1,0 +1,1516 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Serenity Gardens Senior Care</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3a7ca5;
+            --secondary-color: #2f6690;
+            --accent-color: #d9dcd6;
+            --dark-color: #16425b;
+            --light-color: #f8f9fa;
+            --font-main: 'Montserrat', sans-serif;
+            --font-heading: 'Playfair Display', serif;
+        }
+        
+        body {
+            font-family: var(--font-main);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+        }
+        
+        .navbar {
+            background-color: rgba(22, 66, 91, 0.9);
+            transition: all 0.3s ease;
+            padding: 15px 0;
+        }
+        
+        .navbar.scrolled {
+            background-color: var(--dark-color);
+            padding: 10px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand img {
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled .navbar-brand img {
+            height: 40px;
+        }
+        
+        .page-hero {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .about-hero {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('./assisted.png');
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(44,95,165,0.3) 0%, rgba(82,171,152,0.3) 100%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .value-card {
+            background: white;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.05);
+            height: 100%;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--light-color), #e9ecef);
+            border-radius: 50%;
+            color: var(--primary-color);
+        }
+        
+        .team-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 100%;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .team-photo {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 5px solid #f8f9fa;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .community-card {
+            background: white;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--primary-color);
+            height: 100%;
+        }
+        
+        .community-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-header {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+            font-weight: 700;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            color: #6c757d;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Enhanced Timeline Styles */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px 0;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 10px;
+        }
+        
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+        }
+        
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            border: 4px solid var(--primary-color);
+            border-radius: 50%;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-container:hover::after {
+            background-color: var(--primary-color);
+            transform: scale(1.2);
+            box-shadow: 0 0 0 8px rgba(44, 95, 165, 0.2);
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::after {
+            right: -20px;
+        }
+        
+        .right::after {
+            left: -20px;
+        }
+        
+        .timeline-content {
+            padding: 25px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-content h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .timeline-content h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+        
+        .timeline-content p {
+            margin-bottom: 0;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+        
+        .left .timeline-content::before {
+            top: 20px;
+            right: -15px;
+            border-width: 10px 0 10px 15px;
+            border-color: transparent transparent transparent white;
+        }
+        
+        .right .timeline-content::before {
+            top: 20px;
+            left: -15px;
+            border-width: 10px 15px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+        
+        /* Decorative elements */
+        .timeline-decoration {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.05;
+        }
+        
+        .decoration-1 {
+            top: 10%;
+            left: 10%;
+            font-size: 120px;
+            color: var(--primary-color);
+        }
+        
+        .decoration-2 {
+            bottom: 10%;
+            right: 10%;
+            font-size: 120px;
+            color: var(--secondary-color);
+        }
+        
+        /* Year badges */
+        .year-badge {
+            position: absolute;
+            top: 15px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .left .year-badge {
+            right: -75px;
+        }
+        
+        .right .year-badge {
+            left: -75px;
+        }
+        
+        /* Responsive adjustments */
+        @media screen and (max-width: 992px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-container::after {
+                left: 15px;
+            }
+            
+            .left::after, .right::after {
+                left: 15px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+            
+            .left .timeline-content::before {
+                top: 20px;
+                right: auto;
+                left: -15px;
+                border-width: 10px 15px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+            
+            .left .year-badge, .right .year-badge {
+                left: -75px;
+                right: auto;
+            }
+        }
+        
+        @media screen and (max-width: 576px) {
+            .timeline-content {
+                padding: 20px;
+            }
+            
+            .timeline-content h3 {
+                font-size: 1.3rem;
+            }
+            
+            .decoration-1, .decoration-2 {
+                display: none;
+            }
+        }
+        
+        /* Animation for timeline items */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .timeline-container {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+        
+        .timeline-container:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-container:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-container:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-container:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-container:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-container:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-container:nth-child(7) { animation-delay: 0.7s; }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 15px;
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: "\201C";
+            font-family: Georgia, serif;
+            font-size: 60px;
+            color: var(--primary-color);
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-container::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+            
+            .left::after, .right::after {
+                left: 15px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+        }
+        
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        .slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Video Modal Styling */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .video-container iframe,
+        .video-container object,
+        .video-container embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: rgba(44, 95, 165, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            z-index: 10;
+        }
+        
+        .play-btn:hover {
+            background: rgba(44, 95, 165, 1);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        
+        .video-thumbnail {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .video-thumbnail:hover {
+            transform: scale(1.02);
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb-section {
+            background-color: #f8f9fa;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            display: none;
+            z-index: 1000;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Hero Scroll Down */
+        .hero-scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+        
+        .hero-scroll-down a {
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        /* Modal Styling */
+        .modal-content {
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        /* Carousel Controls */
+        .carousel-control-prev, .carousel-control-next {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.8;
+        }
+        
+        .carousel-control-prev {
+            left: -25px;
+        }
+        
+        .carousel-control-next {
+            right: -25px;
+        }
+        
+        .carousel-control-prev:hover, 
+        .carousel-control-next:hover {
+            opacity: 1;
+        }
+        
+        /* Accordion Styling */
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(44, 95, 165, 0.1);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(44, 95, 165, 0.25);
+        }
+        
+        .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%232c5fa5'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+        
+        .accordion-button:not(.collapsed)::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%232c5fa5'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+        
+        /* Improved alignment and spacing */
+        .section-padding {
+            padding: 5rem 0;
+        }
+        
+        .content-align {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+        
+        .img-align {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .img-align img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .text-align-center {
+            text-align: center;
+        }
+        
+        .mb-4rem {
+            margin-bottom: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+       <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="./l.png" alt="Serenity Gardens" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link " href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/facilities">Facilities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/staff">Our Staff</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/testimonials">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                </ul>
+                <a class="btn btn-primary ms-lg-3" href="/contact#schedule-tour">Schedule a Tour</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero -->
+    <header class="page-hero about-hero">
+        <div class="hero-overlay"></div>
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 text-center text-white hero-content" data-aos="fade-up" data-aos-duration="1000">
+                    <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">About Serenity Gardens</h1>
+                    <p class="lead fs-4 animate__animated animate__fadeIn animate__delay-1s">Our story, values, and commitment to exceptional senior care</p>
+                    <a href="#our-story" class="btn btn-primary btn-lg mt-4 animate__animated animate__fadeInUp animate__delay-1s">Explore Our Story</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-down animate__animated animate__bounce animate__infinite animate__delay-2s">
+            <a href="#our-story" class="text-white"><i class="fas fa-chevron-down fa-2x"></i></a>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section py-3 bg-light">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">About Us</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section id="our-story" class="section-padding bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0 img-align" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Our History" class="img-fluid rounded shadow-lg">
+                </div>
+                <div class="col-lg-6 content-align" data-aos="fade-left" data-aos-delay="200">
+                    <h2 class="section-title text-start mb-4">Our Story</h2>
+                    <p class="lead">Founded in 1995 by Dr. Eleanor Richards, a geriatric specialist, Serenity Gardens began with a simple mission: to create a senior care community that felt like home while providing exceptional medical care.</p>
+                    <p>Dr. Richards envisioned a place where seniors could maintain their dignity and independence while receiving the support they needed. What started as a 20-bed facility has grown into a 120-resident community with multiple specialized care units, but our core values remain unchanged.</p>
+                    <p>Over the years, we've expanded our services and facilities, but our commitment to personalized, compassionate care has never wavered. We're proud to have served over 2,000 residents and their families throughout our history.</p>
+                    <button class="btn btn-outline-primary mt-3 align-self-start" data-bs-toggle="modal" data-bs-target="#founderModal">Learn About Our Founder</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Modal -->
+    <div class="modal fade" id="founderModal" tabindex="-1" aria-labelledby="founderModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="founderModalLabel">Dr. Eleanor Richards - Our Founder</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4 img-align">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Dr. Eleanor Richards" class="img-fluid rounded mb-3">
+                        </div>
+                        <div class="col-md-8 content-align">
+                            <p>Dr. Eleanor Richards (1945-2018) was a pioneer in geriatric care who dedicated her life to improving the quality of life for seniors. After completing her medical degree at Johns Hopkins University, she specialized in geriatrics at a time when few physicians focused on this growing population.</p>
+                            <p>Her vision for Serenity Gardens came from personal experience caring for her aging parents and seeing the lack of quality options that balanced medical care with a homelike environment. She believed passionately that seniors deserved both excellent healthcare and the dignity of choice in their daily lives.</p>
+                            <p>Even after retiring from active practice in 2010, Dr. Richards remained involved with Serenity Gardens as an advisor until her passing in 2018. Her legacy continues to guide our community today.</p>
+                            <blockquote class="blockquote mt-3">
+                                <p>"Aging is not lost youth but a new stage of opportunity and strength."</p>
+                                <footer class="blockquote-footer">Dr. Eleanor Richards</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Our Timeline -->
+    <section class="timeline-section section-padding bg-light">
+        <div class="container position-relative">
+            <!-- Decorative elements -->
+            <div class="timeline-decoration decoration-1">
+                <i class="fas fa-heart"></i>
+            </div>
+            <div class="timeline-decoration decoration-2">
+                <i class="fas fa-hands-helping"></i>
+            </div>
+            
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Our Journey Through the Years</h2>
+                <p class="section-subtitle">Milestones in our history of senior care excellence</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-container left" data-aos="fade-right">
+                    <div class="year-badge">1995</div>
+                    <div class="timeline-content">
+                        <h3>1995</h3>
+                        <p>Serenity Gardens founded by Dr. Eleanor Richards with a 20-bed facility in downtown Springfield.</p>
+                    </div>
+                </div>
+                <div class="timeline-container right" data-aos="fade-left">
+                    <div class="year-badge">2002</div>
+                    <div class="timeline-content">
+                        <h3>2002</h3>
+                        <p>Expanded to 50 beds with the addition of our first dedicated memory care wing.</p>
+                    </div>
+                </div>
+                <div class="timeline-container left" data-aos="fade-right">
+                    <div class="year-badge">2008</div>
+                    <div class="timeline-content">
+                        <h3>2008</h3>
+                        <p>Moved to our current 5-acre campus with state-of-the-art facilities and beautiful gardens.</p>
+                    </div>
+                </div>
+                <div class="timeline-container right" data-aos="fade-left">
+                    <div class="year-badge">2012</div>
+                    <div class="timeline-content">
+                        <h3>2012</h3>
+                        <p>Received Joint Commission accreditation, recognizing our commitment to quality care standards.</p>
+                    </div>
+                </div>
+                <div class="timeline-container left" data-aos="fade-right">
+                    <div class="year-badge">2016</div>
+                    <div class="timeline-content">
+                        <h3>2016</h3>
+                        <p>Launched our innovative intergenerational program with local schools and colleges.</p>
+                    </div>
+                </div>
+                <div class="timeline-container right" data-aos="fade-left">
+                    <div class="year-badge">2020</div>
+                    <div class="timeline-content">
+                        <h3>2020</h3>
+                        <p>Completed our latest expansion, adding a rehabilitation center and expanded memory care facilities.</p>
+                    </div>
+                </div>
+                <div class="timeline-container left" data-aos="fade-right">
+                    <div class="year-badge">2023</div>
+                    <div class="timeline-content">
+                        <h3>2023</h3>
+                        <p>Celebrated 25 years of serving our community with over 2,000 residents cared for.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section section-padding bg-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <h2 class="section-title mb-4">Experience Serenity Gardens</h2>
+                    <p class="lead mb-5">Take a virtual tour of our facilities and meet some of our residents and staff</p>
+                    
+                    <div class="position-relative video-thumbnail" data-bs-toggle="modal" data-bs-target="#videoModal">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="Video Thumbnail" class="img-fluid rounded shadow-lg">
+                        <div class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <p class="mt-3 text-muted">Click to play our community video</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalLabel">Welcome to Serenity Gardens</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/example" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mission & Values -->
+    <section class="mission-values section-padding bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Our Mission &amp; Values</h2>
+                <p class="section-subtitle">The principles that guide everything we do</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="value-card p-4 text-center h-100">
+                        <div class="value-icon mb-3">
+                            <i class="fas fa-heart fa-3x"></i>
+                        </div>
+                        <h3 class="h5">Compassion</h3>
+                        <p>We treat every resident with the kindness and empathy we would want for our own family members.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="value-card p-4 text-center h-100">
+                        <div class="value-icon mb-3">
+                            <i class="fas fa-star fa-3x"></i>
+                        </div>
+                        <h3 class="h5">Excellence</h3>
+                        <p>We maintain the highest standards of care through continuous staff training and quality improvement.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="value-card p-4 text-center h-100">
+                        <div class="value-icon mb-3">
+                            <i class="fas fa-user-shield fa-3x"></i>
+                        </div>
+                        <h3 class="h5">Dignity</h3>
+                        <p>We respect each resident's individuality and right to make choices about their daily life.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="value-card p-4 text-center h-100">
+                        <div class="value-icon mb-3">
+                            <i class="fas fa-hands-helping fa-3x"></i>
+                        </div>
+                        <h3 class="h5">Community</h3>
+                        <p>We foster meaningful connections between residents, families, and staff to create a true sense of belonging.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto" data-aos="fade-up">
+                    <div class="mission-statement p-4 p-lg-5 bg-white rounded shadow-sm text-center">
+                        <i class="fas fa-quote-left fa-2x text-primary mb-4 opacity-25"></i>
+                        <h3 class="h4 mb-4">Our Mission Statement</h3>
+                        <p class="lead">"To provide exceptional, personalized care that enhances the quality of life for seniors, honoring their life experiences while supporting their current needs in a warm, homelike environment."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- By The Numbers -->
+    <section class="numbers-section section-padding bg-primary text-white">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title text-white">Serenity Gardens By The Numbers</h2>
+                <p class="section-subtitle text-white-50">The impact we've made in our community</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-card">
+                        <div class="stat-number counter" data-target="28">0</div>
+                        <p class="mb-0">Years Serving Seniors</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-card">
+                        <div class="stat-number counter" data-target="2000">0</div>
+                        <p class="mb-0">Residents Cared For</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-card">
+                        <div class="stat-number counter" data-target="120">0</div>
+                        <p class="mb-0">Current Residents</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-card">
+                        <div class="stat-number counter" data-target="85">0</div>
+                        <p class="mb-0">Dedicated Staff Members</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership -->
+    <section class="leadership section-padding bg-white">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Our Leadership Team</h2>
+                <p class="section-subtitle">Experienced professionals dedicated to senior care</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-card text-center">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Dr. Sarah Chen" class="img-fluid rounded-circle mb-3 team-photo">
+                        <h3 class="h5">Dr. Sarah Chen</h3>
+                        <p class="text-muted">Medical Director</p>
+                        <p>Board-certified geriatrician with 20 years of experience in senior care.</p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="text-primary mx-1"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-primary mx-1"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-card text-center">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Michael Rodriguez" class="img-fluid rounded-circle mb-3 team-photo">
+                        <h3 class="h5">Michael Rodriguez</h3>
+                        <p class="text-muted">Administrator</p>
+                        <p>Healthcare management expert with a passion for quality senior living.</p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="text-primary mx-1"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-primary mx-1"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-card text-center">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Janet Williams" class="img-fluid rounded-circle mb-3 team-photo">
+                        <h3 class="h5">Janet Williams</h3>
+                        <p class="text-muted">Director of Nursing</p>
+                        <p>RN with 25 years of nursing experience specializing in geriatric care.</p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="text-primary mx-1"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-primary mx-1"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="team-card text-center">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="David Kim" class="img-fluid rounded-circle mb-3 team-photo">
+                        <h3 class="h5">David Kim</h3>
+                        <p class="text-muted">Activities Director</p>
+                        <p>Creative professional focused on enhancing residents' quality of life.</p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="text-primary mx-1"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-primary mx-1"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a class="btn btn-primary btn-lg" href="/staff">Meet Our Entire Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials section-padding bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">What Families Say</h2>
+                <p class="section-subtitle">Hear from those who have entrusted their loved ones to our care</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="testimonial-card">
+                                    <p>"When we moved my mother to Serenity Gardens, we were nervous about the transition. But from day one, the staff treated her with such kindness and respect. She's made friends, participates in activities, and most importantly, is safe and well cared for. We couldn't ask for more."</p>
+                                    <div class="testimonial-author">
+                                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=200&amp;q=80" alt="Lisa Thompson">
+                                        <div>
+                                            <h4 class="h6 mb-0">Lisa Thompson</h4>
+                                            <small class="text-muted">Daughter of Resident</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-card">
+                                    <p>"The memory care unit at Serenity Gardens has been a godsend for our family. The staff understands the challenges of dementia and has created a safe, stimulating environment for my husband. Their expertise and compassion have made this difficult journey so much easier."</p>
+                                    <div class="testimonial-author">
+                                        <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=200&amp;q=80" alt="Robert Johnson">
+                                        <div>
+                                            <h4 class="h6 mb-0">Robert Johnson</h4>
+                                            <small class="text-muted">Husband of Resident</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-card">
+                                    <p>"After my father's stroke, we needed a place that could provide both rehabilitation and long-term care. Serenity Gardens exceeded our expectations on both counts. The therapists were amazing, and when it became clear he needed to stay permanently, we knew he was in the best possible place."</p>
+                                    <div class="testimonial-author">
+                                        <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db1604?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=200&amp;q=80" alt="Maria Garcia">
+                                        <div>
+                                            <h4 class="h6 mb-0">Maria Garcia</h4>
+                                            <small class="text-muted">Daughter of Resident</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a class="btn btn-outline-primary" href="/testimonials">Read More Testimonials</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accreditation -->
+    <section class="accreditation section-padding bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0 content-align" data-aos="fade-right">
+                    <h2 class="section-title text-start mb-4">Accreditation &amp; Awards</h2>
+                    <p>Serenity Gardens is proud to be accredited by the Joint Commission, meeting the highest national standards for healthcare quality and safety.</p>
+                    <p>We've been recognized with multiple awards for excellence in senior care, including:</p>
+                    <ul class="fa-ul">
+                        <li class="mb-2"><span class="fa-li text-primary"><i class="fas fa-check"></i></span>2022 Excellence in Senior Care Award - State Association</li>
+                        <li class="mb-2"><span class="fa-li text-primary"><i class="fas fa-check"></i></span>2021 Best Nursing Home - Local News Readers' Choice</li>
+                        <li class="mb-2"><span class="fa-li text-primary"><i class="fas fa-check"></i></span>2020 Quality Achievement Award - National Senior Care Network</li>
+                        <li><span class="fa-li text-primary"><i class="fas fa-check"></i></span>5-Star Rating from Centers for Medicare &amp; Medicaid Services</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline-primary mt-3 align-self-start">View Our Certifications</a>
+                </div>
+                <div class="col-lg-6 img-align" data-aos="fade-left">
+                    <div class="accreditation-badges d-flex flex-wrap justify-content-center gap-4">
+                        <div class="text-center">
+                            <img src="https://via.placeholder.com/150x150?text=Joint+Commission" alt="Joint Commission Accredited" class="img-fluid mb-2" style="max-height: 100px;">
+                            <p class="small mb-0">Joint Commission Accredited</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="https://via.placeholder.com/150x150?text=5+Star" alt="5-Star Rating" class="img-fluid mb-2" style="max-height: 100px;">
+                            <p class="small mb-0">5-Star Quality Rating</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="https://via.placeholder.com/150x150?text=Excellence+Award" alt="2022 Excellence Award" class="img-fluid mb-2" style="max-height: 100px;">
+                            <p class="small mb-0">2022 Excellence Award</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Involvement -->
+    <section class="community section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                    <h2 class="section-title mb-4">Community Involvement</h2>
+                    <p class="lead mb-5">At Serenity Gardens, we believe in being active members of our local community.</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="community-card p-4 h-100">
+                        <h3 class="h5 mb-3">Intergenerational Programs</h3>
+                        <p>We partner with local schools for regular visits between students and residents, creating meaningful connections across generations.</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary mt-3">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="community-card p-4 h-100">
+                        <h3 class="h5 mb-3">Alzheimer's Awareness</h3>
+                        <p>Our staff volunteers at local Alzheimer's Association events and we host an annual fundraiser for dementia research.</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary mt-3">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="community-card p-4 h-100">
+                        <h3 class="h5 mb-3">Senior Health Fairs</h3>
+                        <p>We organize free health screenings and educational seminars for seniors throughout our community.</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary mt-3">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-10 mx-auto" data-aos="fade-up">
+                    <div class="partners-section p-4 bg-white rounded shadow-sm">
+                        <h3 class="h4 text-center mb-4">Our Community Partners</h3>
+                        <div class="row align-items-center">
+                            <div class="col-6 col-md-3 text-center mb-4">
+                                <img src="./p1.png" alt="Partner 1" class="img-fluid" style="max-height: 60px;">
+                            </div>
+                            <div class="col-6 col-md-3 text-center mb-4">
+                                <img src="./p2.png" alt="Partner 2" class="img-fluid" style="max-height: 60px;">
+                            </div>
+                            <div class="col-6 col-md-3 text-center mb-4">
+                                <img src="./p3.png" alt="Partner 3" class="img-fluid" style="max-height: 60px;">
+                            </div>
+                            <div class="col-6 col-md-3 text-center mb-4">
+                                <img src="./p4.png" alt="Partner 4" class="img-fluid" style="max-height: 60px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section section-padding bg-white">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Common questions about Serenity Gardens</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                            <h3 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    What types of care do you provide?
+                                </button>
+                            </h3>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We offer a range of care options including assisted living, memory care for those with Alzheimer's and dementia, respite care for short-term stays, and rehabilitation services including physical, occupational, and speech therapy.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                            <h3 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    How do you handle medical emergencies?
+                                </button>
+                            </h3>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our facility is staffed 24/7 with licensed nurses, and we have emergency call systems in every room. We have protocols in place for immediate response to medical emergencies and maintain relationships with local hospitals for quick transfers when necessary.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+                            <h3 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Can residents bring their own furniture?
+                                </button>
+                            </h3>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, we encourage residents to bring their own furniture and personal items to make their space feel like home. We just ask that furniture meets safety requirements and fits within the dimensions of the room.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="400">
+                            <h3 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    What is your staff-to-resident ratio?
+                                </button>
+                            </h3>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We maintain a staff-to-resident ratio that exceeds state requirements. In our assisted living units, we typically have 1 caregiver for every 8 residents during daytime hours, and 1 for every 12 during nighttime. Our memory care unit has a higher ratio of 1 caregiver for every 5 residents.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-5" data-aos="fade-up">
+                        <a href="faq.html" class="btn btn-primary">View All FAQs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section section-padding text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4 mb-lg-0 content-align" data-aos="fade-right">
+                    <h2 class="mb-3">Experience the Serenity Gardens Difference</h2>
+                    <p class="lead mb-0">Schedule a tour to see our community and meet our team in person.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end" data-aos="fade-left">
+                    <a class="btn btn-light btn-lg px-4 me-3" href="/contact#schedule-tour">Schedule a Tour</a>
+                    <a href="tel:+18005551234" class="btn btn-outline-light btn-lg px-4">Call Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+   <footer class="footer py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="./l.png" alt="Serenity Gardens" height="50" class="mb-3">
+                    <p>Providing exceptional senior care with compassion and dignity since 1995. Our mission is to enhance the quality of life for our residents through personalized care in a warm, homelike environment.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a class="text-white" href="/">Home</a></li>
+                        <li class="mb-2"><a class="text-white" href="/about">About Us</a></li>
+                        <li class="mb-2"><a class="text-white" href="/services">Services</a></li>
+                        <li class="mb-2"><a class="text-white" href="/facilities">Facilities</a></li>
+                        <li class="mb-2"><a class="text-white" href="/staff">Our Staff</a></li>
+                        <li class="mb-2"><a class="text-white" href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            123 Care Avenue, Serenity, ST 12345
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-phone-alt me-2"></i>
+                            <a href="tel:+18005551234" class="text-white">(800) 555-1234</a>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-envelope me-2"></i>
+                            <a href="mailto:info@serenitygardens.com" class="text-white">info@serenitygardens.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock me-2"></i>
+                            Visiting Hours: 8am - 8pm Daily
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p>Subscribe to our newsletter for updates and senior care tips.</p>
+                    <form class="mt-3">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">© 2023 Serenity Gardens. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white me-3">Privacy Policy</a>
+                    <a href="#" class="text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top btn btn-primary rounded-circle" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS (Animate On Scroll) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+            
+            // Counter animation for stats
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    
+                    const inc = target / speed;
+                    
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                
+                // Start counter when element is in viewport
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            updateCount();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+                
+                observer.observe(counter);
+            });
+            
+            // Back to top button
+            const backToTopButton = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.style.display = 'block';
+                } else {
+                    backToTopButton.style.display = 'none';
+                }
+            });
+            
+            backToTopButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            // Navbar scroll effect
+            const navbar = document.querySelector('.navbar');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
+
+</body></html>

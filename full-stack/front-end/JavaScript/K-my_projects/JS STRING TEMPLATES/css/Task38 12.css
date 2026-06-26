@@ -1,0 +1,44 @@
+body {
+    background-color: lightblue;
+    color: black;
+    font-family: monospace;
+    font-size: 20px;
+}
+
+h1 {
+    border: 5px solid blue;
+    border-radius: 20px;
+    text-align: center;
+    background-color: darkviolet;
+    color: white;
+}
+
+h2 {
+    border: 3px double;
+    border-radius: 20px;
+    text-align: center;
+    background-color: teal;
+    color: wheat;
+}
+
+h3 {
+    border: 3px double;
+    border-radius: 20px;
+    text-align: center;
+    background-color: wheat;
+}
+
+.container h4 {
+    border-radius: 20px;
+    text-align: center;
+    background-color: red;
+    color: white;
+}
+
+p {
+    background-color: white;
+}
+.a7{
+    border-radius: 20px;
+    text-align: center;
+}

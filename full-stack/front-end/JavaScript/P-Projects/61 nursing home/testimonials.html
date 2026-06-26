@@ -1,0 +1,690 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials | Serenity Gardens Senior Care</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3a7ca5;
+            --secondary-color: #2f6690;
+            --accent-color: #d9dcd6;
+            --dark-color: #16425b;
+            --light-color: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .navbar {
+            background-color: rgba(22, 66, 91, 0.9);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            background-color: var(--dark-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .page-hero {
+            height: 60vh;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonials-hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .featured-testimonial {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .quote-icon {
+            color: var(--primary-color);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            line-height: 1.8;
+        }
+        
+        .rating {
+            color: #ffc107;
+        }
+        
+        .video-placeholder {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .video-placeholder:hover {
+            opacity: 0.9;
+        }
+        
+        .platform-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .submit-testimonial {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: none;
+            z-index: 1000;
+        }
+        
+        .author-image {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+        }
+        
+        .breadcrumb-section {
+            background-color: #f8f9fa !important;
+        }
+        
+        .footer {
+            background-color: var(--dark-color);
+        }
+        
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="./l.png" alt="Serenity Gardens" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/facilities">Facilities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/staff">Our Staff</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/testimonials">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                </ul>
+                <a class="btn btn-primary ms-lg-3" href="/contact#schedule-tour">Schedule a Tour</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Testimonials Hero -->
+    <header class="page-hero testimonials-hero">
+        <div class="hero-overlay"></div>
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 text-center text-white">
+                    <h1 class="display-3 fw-bold mb-4">Testimonials</h1>
+                    <p class="lead">Hear from families who have chosen Serenity Gardens for their loved ones</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section py-3 bg-light">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Testimonials</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Testimonials Intro -->
+    <section class="testimonials-intro py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title mb-4">Real Stories from Our Community</h2>
+                    <p class="lead">Nothing speaks louder than the experiences of residents and their families. Read their stories to learn why Serenity Gardens has become a trusted choice for senior care in our community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Testimonials -->
+    <section class="featured-testimonials py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Featured Testimonials</h2>
+                <p class="section-subtitle">Hear from those who know us best</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div id="featuredTestimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="testimonial-card featured-testimonial p-4 p-lg-5">
+                                    <div class="quote-icon mb-4">
+                                        <i class="fas fa-quote-left fa-2x text-primary"></i>
+                                    </div>
+                                    <p class="testimonial-text mb-4">"After my father's stroke, we knew he needed professional care but wanted to find a place that would treat him with dignity and respect. Serenity Gardens exceeded our expectations. The rehabilitation team worked miracles, and the nursing staff became like family. Dad has not only recovered but has thrived in their care."</p>
+                                    <div class="testimonial-author d-flex align-items-center">
+                                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=96&amp;q=80" alt="Jennifer Miller" class="author-image rounded-circle me-3">
+                                        <div>
+                                            <h5 class="mb-1">Jennifer Miller</h5>
+                                            <p class="text-muted mb-0">Daughter of Resident</p>
+                                            <div class="rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-card featured-testimonial p-4 p-lg-5">
+                                    <div class="quote-icon mb-4">
+                                        <i class="fas fa-quote-left fa-2x text-primary"></i>
+                                    </div>
+                                    <p class="testimonial-text mb-4">"The memory care unit at Serenity Gardens has been a godsend for our family. My mother has Alzheimer's, and the specialized care she receives is exceptional. The staff understands her unique needs and behaviors, and the secure environment gives us peace of mind. We're grateful for the compassion they show her every day."</p>
+                                    <div class="testimonial-author d-flex align-items-center">
+                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=96&amp;q=80" alt="Robert Johnson" class="author-image rounded-circle me-3">
+                                        <div>
+                                            <h5 class="mb-1">Robert Johnson</h5>
+                                            <p class="text-muted mb-0">Son of Resident</p>
+                                            <div class="rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#featuredTestimonialCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#featuredTestimonialCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resident Testimonials -->
+    <section class="resident-testimonials py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Resident Stories</h2>
+                <p class="section-subtitle">Hear directly from those who call Serenity Gardens home</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="testimonial-card h-100">
+                        <div class="testimonial-content">
+                            <div class="quote-icon mb-3">
+                                <i class="fas fa-quote-left text-primary"></i>
+                            </div>
+                            <p class="testimonial-text">"I've been here for three years, and it truly feels like home. The staff remembers my preferences, the food is excellent, and I've made wonderful friends. I never thought I'd enjoy living in a senior community this much!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=96&amp;q=80" alt="Eleanor Williams" class="author-image rounded-circle me-3">
+                                <div>
+                                    <h5 class="mb-1">Eleanor Williams</h5>
+                                    <p class="text-muted mb-0">Resident since 2020</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="testimonial-card h-100">
+                        <div class="testimonial-content">
+                            <div class="quote-icon mb-3">
+                                <i class="fas fa-quote-left text-primary"></i>
+                            </div>
+                            <p class="testimonial-text">"After my hip replacement, the therapy team helped me regain my mobility and confidence. I'm back to walking without assistance and even participating in exercise classes. The care here is exceptional."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=96&amp;q=80" alt="Harold Jenkins" class="author-image rounded-circle me-3">
+                                <div>
+                                    <h5 class="mb-1">Harold Jenkins</h5>
+                                    <p class="text-muted mb-0">Resident since 2021</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="testimonial-card h-100">
+                        <div class="testimonial-content">
+                            <div class="quote-icon mb-3">
+                                <i class="fas fa-quote-left text-primary"></i>
+                            </div>
+                            <p class="testimonial-text">"What I appreciate most is that I still feel independent. The staff is here when I need help, but they also respect my privacy and choices. It's the perfect balance of support and freedom."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=96&amp;q=80" alt="Margaret Thompson" class="author-image rounded-circle me-3">
+                                <div>
+                                    <h5 class="mb-1">Margaret Thompson</h5>
+                                    <p class="text-muted mb-0">Resident since 2019</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Family Testimonials -->
+    <section class="family-testimonials py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Family Experiences</h2>
+                <p class="section-subtitle">Peace of mind for those who entrust us with their loved ones</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon mb-3">
+                                <i class="fas fa-quote-left text-primary"></i>
+                            </div>
+                            <p class="testimonial-text">"Making the decision to move my mother into assisted living was difficult, but Serenity Gardens made the transition smooth. They handled everything with sensitivity and professionalism. Now I sleep better knowing she's safe and well-cared for."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=96&amp;q=80" alt="Susan Davis" class="author-image rounded-circle me-3">
+                                <div>
+                                    <h5 class="mb-1">Susan Davis</h5>
+                                    <p class="text-muted mb-0">Daughter of Resident</p>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon mb-3">
+                                <i class="fas fa-quote-left text-primary"></i>
+                            </div>
+                            <p class="testimonial-text">"The communication from the staff is outstanding. I receive regular updates about my husband's care and am always welcome to visit. They've become an extension of our family, and I'm forever grateful for their compassion."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=96&amp;q=80" alt="Barbara Wilson" class="author-image rounded-circle me-3">
+                                <div>
+                                    <h5 class="mb-1">Barbara Wilson</h5>
+                                    <p class="text-muted mb-0">Wife of Resident</p>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Testimonials -->
+    <section class="video-testimonials py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Video Testimonials</h2>
+                <p class="section-subtitle">See and hear from our community members</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="video-card">
+                        <div class="ratio ratio-16x9 mb-3">
+                            <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Family testimonial" class="img-fluid rounded">
+                            <div class="video-placeholder position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                <i class="fas fa-play fa-3x text-white"></i>
+                            </div>
+                        </div>
+                        <div class="video-caption">
+                            <h5 class="mb-1">The Johnson Family Story</h5>
+                            <p class="text-muted mb-0">Hear about their experience with memory care</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="video-card">
+                        <div class="ratio ratio-16x9 mb-3">
+                            <img src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Resident spotlight" class="img-fluid rounded">
+                            <div class="video-placeholder position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                <i class="fas fa-play fa-3x text-white"></i>
+                            </div>
+                        </div>
+                        <div class="video-caption">
+                            <h5 class="mb-1">Resident Spotlight: Eleanor</h5>
+                            <p class="text-muted mb-0">A day in the life at Serenity Gardens</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review Platforms -->
+    <section class="review-platforms py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Reviews Across Platforms</h2>
+                <p class="section-subtitle">See what others are saying about us online</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="platform-card text-center p-4">
+                        <div class="platform-icon mb-3">
+                            <i class="fab fa-google fa-3x text-primary"></i>
+                        </div>
+                        <h3>Google Reviews</h3>
+                        <div class="rating mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <span class="ms-2">4.9/5</span>
+                        </div>
+                        <p class="mb-3">Based on 127 reviews</p>
+                        <a href="#" class="btn btn-outline-primary">Read Google Reviews</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="platform-card text-center p-4">
+                        <div class="platform-icon mb-3">
+                            <i class="fab fa-facebook fa-3x text-primary"></i>
+                        </div>
+                        <h3>Facebook Reviews</h3>
+                        <div class="rating mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <span class="ms-2">5.0/5</span>
+                        </div>
+                        <p class="mb-3">Based on 89 reviews</p>
+                        <a href="#" class="btn btn-outline-primary">Read Facebook Reviews</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="platform-card text-center p-4">
+                        <div class="platform-icon mb-3">
+                            <i class="fas fa-star fa-3x text-primary"></i>
+                        </div>
+                        <h3>SeniorAdvisor.com</h3>
+                        <div class="rating mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <span class="ms-2">5.0/5</span>
+                        </div>
+                        <p class="mb-3">2023 Award Winner</p>
+                        <a href="#" class="btn btn-outline-primary">View Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Submit Testimonial -->
+    <section class="submit-testimonial py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4 mb-lg-0">
+                    <h2 class="mb-3">Share Your Experience</h2>
+                    <p class="lead mb-0">Have a story about your experience with Serenity Gardens? We'd love to hear it!</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a class="btn btn-light btn-lg px-4" href="/contact">Submit Testimonial</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4 mb-lg-0">
+                    <h2 class="mb-3">Ready to Experience Our Care?</h2>
+                    <p class="lead mb-0">Schedule a tour to see why families choose Serenity Gardens.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a class="btn btn-primary btn-lg px-4" href="/contact#schedule-tour">Schedule a Tour</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="./l.png" alt="Serenity Gardens" height="50" class="mb-3">
+                    <p>Providing exceptional senior care with compassion and dignity since 1995. Our mission is to enhance the quality of life for our residents through personalized care in a warm, homelike environment.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a class="text-white" href="/">Home</a></li>
+                        <li class="mb-2"><a class="text-white" href="/about">About Us</a></li>
+                        <li class="mb-2"><a class="text-white" href="/services">Services</a></li>
+                        <li class="mb-2"><a class="text-white" href="/facilities">Facilities</a></li>
+                        <li class="mb-2"><a class="text-white" href="/staff">Our Staff</a></li>
+                        <li class="mb-2"><a class="text-white" href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            123 Care Avenue, Serenity, ST 12345
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-phone-alt me-2"></i>
+                            <a href="tel:+18005551234" class="text-white">(800) 555-1234</a>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-envelope me-2"></i>
+                            <a href="mailto:info@serenitygardens.com" class="text-white">info@serenitygardens.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock me-2"></i>
+                            Visiting Hours: 8am - 8pm Daily
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p>Subscribe to our newsletter for updates and senior care tips.</p>
+                    <form class="mt-3">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">© 2023 Serenity Gardens. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white me-3">Privacy Policy</a>
+                    <a href="#" class="text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top btn btn-primary rounded-circle" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+
+</body></html>

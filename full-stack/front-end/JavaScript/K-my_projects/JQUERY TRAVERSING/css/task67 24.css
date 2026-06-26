@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+* {
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: hsl(195, 53%, 79%);
+    color: hsl(0, 0%, 0%);
+}
+
+.head {
+    border: 5px solid hsl(0, 100%, 50%);
+    border-radius: 50px;
+    text-align: center;
+    background-color: hsl(108, 78%, 39%);
+    color: hsl(246, 78%, 48%);
+}
+
+
+.container1 {
+    background-color: hsl(195, 53%, 79%);
+    border-radius: 10px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    text-align: center;
+    background-color: hsl(228, 21%, 14%);
+    color: hsl(0, 0%, 100%);
+    margin: 0 auto;
+    padding: 2em;
+    width: 700px;
+    position: relative;
+    gap: 20px;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+.container1::after,
+.container1::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: conic-gradient(from var(--angle), violet, indigo, blue, green, yellow, orange, red);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 5px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+}
+
+.container1::before {
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+    }
+}
+.container2 {
+    background-color: hsl(195, 53%, 79%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    text-align: center;
+    background-color: hsl(228, 21%, 14%);
+    color: hsl(0, 0%, 100%);
+    margin: 0 auto;
+    padding: 2em;
+    width: 700px;
+    position: relative;
+    gap: 20px;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+.container2::after,
+.container2::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: conic-gradient(from var(--angle), violet, indigo, blue, green, yellow, orange, red);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 5px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+}
+
+.container2::before {
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+    }
+}
+
+button{
+    border: 3px solid hsl(240, 100%, 50%);
+    border-radius: 30px;
+    background-color: hsl(0, 100%, 50%);
+    color: hsl(0, 0%, 100%);
+    padding: 10px;
+    margin: 10px;
+    width: 150px;
+}
+
+li{
+    list-style: none;
+}
+
+.ans *{
+    border: 3px solid hsl(0, 0%, 100%);
+    padding: 20px;
+    margin: 20px;
+    display: block;
+}

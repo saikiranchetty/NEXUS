@@ -1,0 +1,387 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRONTEND</title>
+    <style>
+        /* Form1 */
+        #Form1 {
+            background: linear-gradient(to right, RED, blue);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            margin: 20px auto;
+            width: 80%;
+        }
+
+        #Form2 {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            margin: 20px auto;
+            width: 80%;
+            justify-content: left;
+        }
+
+        h1 {
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="date"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        #Form2 p {
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+            color: gray;
+        }
+
+        /* Form2 */
+        .F2-box {
+            padding: 100px;
+            border: 2px solid;
+            background-color: blue;
+        }
+
+        .form2-box {
+            background-color: white;
+            width: 900px;
+            justify-self: center;
+        }
+
+        .form2-box table,
+        tr,
+        th,
+        td {
+            padding: 5px;
+        }
+
+        .form2-box p {
+            color: gray;
+            font-family: Poppins;
+        }
+
+        .form2-box td {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .form2-box th {
+            text-align: left;
+        }
+
+        .form2-box td {
+            border-radius: 3px solid;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        /* Form3 */
+        .F3-box {
+            margin-inline: 120px;
+            margin-block: 40px;
+            display: grid;
+            justify-content: center;
+        }
+
+        .form-table {
+            border-collapse: collapse;
+            height: 350px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+            border-radius: 20px;
+            margin-block: 20px;
+        }
+
+        .F3-head1 {
+            text-align: left;
+            font-size: larger;
+            color: rgb(64, 177, 214);
+        }
+
+        .F3-head2 {
+            text-align: left;
+            font-size: larger;
+            color: white;
+        }
+
+        .F3-form1 {
+            padding: 25px;
+            margin: 15px;
+            padding-bottom: 12%;
+            background-color: white;
+            border-bottom-left-radius: 20px;
+            border-top-left-radius: 20px;
+            width: 50%;
+        }
+
+        .F3-form2 {
+            padding: 25px;
+            margin: 15px;
+            background-color: rgb(88, 88, 255);
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            width: 50%;
+        }
+
+        input,
+        select {
+            padding: 5px;
+            margin-bottom: 20px;
+            border: none;
+            border-bottom: 1px solid lightgray;
+            cursor: pointer;
+
+        }
+
+        input.myinput::placeholder {
+            color: rgb(163, 163, 163);
+            text-align: left;
+        }
+
+        input::placeholder {
+            color: rgb(163, 163, 163);
+        }
+
+        option:focus {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body style="background-color: lightblue; font-family: Arial, sans-serif;">
+
+    <!--Day 12 Task 12 02-05-2025-->
+    <h1>FORMS</h1>
+    <div id="Form1">
+        <fieldset>
+            <legend style="font-size: 20px; font-weight: bold;text-align: center;">Registration Form</legend>
+            <form action="">
+                <label for="">First Name:-</label>
+                <input type="text" placeholder="Enter your first name" required=""> <br><br>
+                <label for="">Last Name:-</label>
+                <input type="text" placeholder="Enter your last name" required=""> <br><br>
+                <label for="">Email:-</label>
+                <input type="email" placeholder="Enter your email" required=""> <br><br>
+                <label for="">Password:-</label>
+                <input type="password" placeholder="Enter your password" required=""> <br><br>
+                <label for="">Phone Number:-</label>
+                <input type="tel" placeholder="Enter your phone number" required=""> <br><br>
+                <label for="">Date of Birth:-</label>
+                <input type="date" required=""> <br><br>
+                <label for="">Languages:-</label>
+                <input type="checkbox" name="" id=""> Telugu
+                <input type="checkbox" name="" id=""> Hindi
+                <input type="checkbox" name="" id=""> English
+                <input type="checkbox" name="" id=""> Tamil <br><br>
+                <label for="">Gender:-</label>
+                <input type="radio">Male
+                <input type="radio">Female
+                <input type="radio">Other <br><br>
+                <label for="">Color Picker:-</label>
+                <input type="color" name="" id=""> <br><br>
+                <label for="">Hobbies:-</label>
+                <input type="checkbox" name="" id=""> Reading
+                <input type="checkbox" name="" id=""> Writing
+                <input type="checkbox" name="" id=""> Traveling
+                <input type="checkbox" name="" id=""> Cooking <br><br>
+                <label for="">Address:-</label>
+                <input type="text" placeholder="Enter your address" required=""> <br><br>
+                <label for="">City:-</label>
+                <input type="text" placeholder="Enter your city" required=""> <br><br>
+                <label for="">State:-</label>
+                <input type="text" placeholder="Enter your state" required=""> <br><br>
+                <label for="">Country:-</label>
+                <input type="text" placeholder="Enter your country" required=""> <br><br>
+                <label for="">Zip Code:-</label>
+                <input type="text" placeholder="Enter your zip code" required=""> <br><br>
+                <label for="">ChooseFile:-</label>
+                <input type="file" name="" id=""> <br><br>
+                <input type="button" value="REGISTER" style="background-color: blue; color: white; padding: 10px; border-radius: 5px; cursor: pointer;margin-right: 10px;">
+                <input type="reset" value="RESET" style="background-color: red; color: white; padding: 10px; border-radius: 5px; cursor: pointer; margin-right: 10px;">
+                <input type="submit" value="SUBMIT" style="background-color: green; color: white; padding: 10px; border-radius: 5px; cursor: pointer;">
+            </form>
+        </fieldset>
+    </div>
+    <br><br>
+    <div class="F2" id="Form2">
+        <div class="F2-box">
+            <fieldset class="form2-box">
+                <h2 style=" font-family: Poppins; text-align: left;">Registration</h2>
+                <p>Personal Details</p>
+                <table>
+                    <tbody><tr>
+                        <th>Full Name</th>
+                        <th>Date of Birth</th>
+                        <th>Email</th>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <input placeholder="Enter Your Name" type="text">
+                        </td>
+                        <td>
+                            <input placeholder="Enter birth date" type="text">
+                        </td>
+                        <td>
+                            <input placeholder="Enter your email" type="email">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Mobile number</th>
+                        <th>Gender</th>
+                        <th>Occupation</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input placeholder="Enter mobile number" type="tel">
+                        </td>
+                        <td>
+                            <input placeholder="Enter your gender" type="text">
+                        </td>
+
+                        <td>
+                            <input placeholder="Enter occupation" type="text">
+
+                        </td>
+                    </tr>
+                </tbody></table>
+                <p>Identity Details</p>
+                <table>
+                    <tbody><tr>
+                        <th>ID</th>
+                        <th>ID Number</th>
+                        <th>Issue Authority</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input placeholder="Enter ID type" type="text">
+                        </td>
+                        <td>
+                            <input placeholder="Enter ID number" type="text">
+                        </td>
+
+                        <td>
+                            <input placeholder="Enter issue department" type="text">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Issue Date</th>
+                        <th>Issue State</th>
+                        <th>Expiry Date</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input placeholder="Enter ID issue date" type="text">
+                        </td>
+                        <td>
+                            <input placeholder="Enter ID issue State" type="text">
+                        </td>
+
+                        <td>
+                            <input placeholder="Enter ID expiry date" type="text">
+
+                        </td>
+                    </tr>
+                </tbody></table>
+                <button type="submit" style="background-color: blue; color: white; padding: 15px; width: 250px; border-radius: 5px; cursor: pointer;">Next
+                    → </button>
+            </fieldset>
+        </div>
+    </div>
+    <br><br>
+    <div class="F3" id="Form3">
+        <div class="F3-box">
+            <table>
+                <tbody><tr>
+                    <td class="F3-form1">
+                        <h2 class="F3-head1">General Information</h2>
+                        <form>
+                            <select style="width: 100%;">
+                                <option value="" style="color: lightgray;">Title</option>
+                                <option value="">Mr.</option>
+                                <option value="">Mrs.</option>
+                            </select> <br>
+                            <input type="text" placeholder="First Name" style="width: 49%">
+                            <input type="text" placeholder="Last Name" style="width: 50%;"> <br>
+                            <select style="width: 100%;">
+                                <option value="Position" style="color:lightgray">Position</option>
+                                <option value="Analyst">Analyst</option>
+                                <option value="Sr. Analyst">Sr. Analyst</option>
+                                <option value="Team Lead">Team Lead</option>
+                                <option value="Asst. Manager">Asst. Manager</option>
+                                <option value="Manager">Manager</option>
+                                <option value="Senior Manager">Senior Manager</option>
+                                <option value="Managing Director">Managing Director</option>
+                            </select>
+                            <input type="text" placeholder="Company" style="width: 100%;"><br>
+                            <input type="text" placeholder="Business Arena" style="width: 100%;">
+                            <select style="width:100%;">
+                                <option value="">Employees</option>
+                                <option value="">&lt; 50</option>
+                                <option value=""> 50 to 1000</option>
+                                <option value=""> 1001 to 5000</option>
+                                <option value=""> 5001 to 10,000</option>
+                                <option value=""> &gt; 10,000</option>
+                            </select>
+                        </form>
+                    </td>
+                    <td class="F3-form2">
+                        <h2 class="F3-head2">Contact Details</h2>
+                        <form>
+                            <input class="myinput" type="text" color:white="" placeholder="Street + Nr" style="width: 100%;background-color: rgb(88, 88, 255);"><br>
+                            <input class="myinput" type="text" placeholder="Additional Information" style="width: 100%;background-color: rgb(88, 88, 255);"><br>
+                            <input class="myinput" type="text" placeholder="Zip Code" style="background-color: rgb(88, 88, 255); width: 49%;">
+                            <select style="width: 50%; background-color: rgb(88, 88, 255); color: white" class="myinput">
+                                <option value="">Place</option>
+                                <option value="">Hyderabad</option>
+                                <option value="">Bangalore</option>
+                                <option value="">Chennai</option>
+                                <option value="">Mumbai</option>
+                                <option value="">New Delhi</option>
+                            </select>
+                            <br>
+                            <select style="width: 100%; background-color: rgb(88, 88, 255); color: white;" class="myinput">
+                                <option value="">Country</option>
+                                <option value="">India</option>
+                                <option value="">USA</option>
+                                <option value="">UK</option>
+                                <option value="">Australia</option>
+                            </select>
+                            <br>
+                            <input class="myinput" type="number" placeholder="Code+" style="width: 25%;background-color: rgb(88, 88, 255);">
+                            <input class="myinput" type="tel" placeholder="Phone Number" style="width: 74%;background-color: rgb(88, 88, 255);">
+                            <input class="myinput" type="email" placeholder="Your Email" style="width: 100%;background-color: rgb(88, 88, 255);"><br>
+                            <input type="checkbox">
+                            <label for="" style="font-size: small; color:lightgray;">I
+                                do accept the <a href="#terms" style="color: white;">Terms and Conditions</a> of your
+                                site.</label> <br>
+                            <div style="text-align: left;">
+                                <input type="submit" value="Register Badge" style="margin-top:10px;border-radius: 20px; padding: 10px; margin: 10px;">
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+    </div>
+
+
+
+</body></html>

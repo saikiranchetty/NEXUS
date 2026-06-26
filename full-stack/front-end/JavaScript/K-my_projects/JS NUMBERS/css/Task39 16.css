@@ -1,0 +1,42 @@
+body {
+    background-color: lightblue;
+    color: black;
+    font-family: monospace;
+    font-size: 20px;
+}
+
+h1 {
+    border: 5px solid sienna;
+    border-radius: 10px;
+    text-align: center;
+    background-color: violet;
+    color: white;
+}
+
+h2 {
+    border: 3px double;
+    border-radius: 10px;
+    text-align: center;
+    background-color: teal;
+    color: wheat;
+}
+
+h3 {
+    border: 3px double;
+    border-radius: 10px;
+    text-align: center;
+    background-color: wheat;
+}
+
+.container h4 {
+    border-radius: 10px;
+    text-align: center;
+    background-color: red;
+    color: white;
+}
+
+.text{
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+}

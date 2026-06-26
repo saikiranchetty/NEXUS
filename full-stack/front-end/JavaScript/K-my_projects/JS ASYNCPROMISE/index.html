@@ -1,0 +1,223 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRONTEND</title>
+    <link rel="stylesheet" href="css/Task62%2017.css">
+
+</head>
+
+<body>
+    <!--Day62  Task62 17-07-2025-->
+
+    <h1>
+        JS CONSTRUCTOR
+    </h1>
+
+    <br>
+    <div class="container1">
+        <h2>constructor</h2> 
+        <h2>className</h2> 
+        <h2>functionName</h2>
+        <h2>this keyword</h2>
+        <h2>super keyword</h2>
+        <h2>static</h2>
+    </div>
+    <br><br>
+    <div class="container1">
+        <h3>
+            <i class="fa fa-arrow-down"></i>Constructor Syntax<i class="fa fa-arrow-down"></i>
+        </h3>
+       <div class="container1">
+        Class className{ <br>
+            constructor(){ <br>
+                ... <br>
+            } <br>
+        } <br>
+       </div>
+    </div> 
+    <br> <br>
+    <div class="container1">
+        <h3>
+            <i class="fa fa-arrow-down"></i>Inheritance Syntax<i class="fa fa-arrow-down"></i>
+        </h3>
+        <div class="container1">
+            Class className{ <br>
+                constructor(){ <br>
+                    ... <br>
+                } <br>
+                functionName(){ <br>
+                    ... <br>
+                } <br>
+            } <br><br>
+            class className extends previousclassName{ <br>
+                constructor(){ <br>
+                    super(); <br>
+                    ... <br>
+                } <br>
+                functionName(){ <br>
+                    ... <br>
+                } <br>
+            } <br>
+        </div>
+    </div>
+    <br><br>
+    <div class="container1">
+        <h3>
+            <i class="fa fa-arrow-down"></i>Static Syntax<i class="fa fa-arrow-down"></i>
+        </h3>
+        <div class="container1">
+            Class className{ <br>
+                constructor(){ <br>
+                    ... <br>
+                } <br>
+                static functionName(){ <br>
+                    ... <br>
+                } <br>
+            } <br><br>
+        </div>
+    </div>
+    <br><br>
+    <div class="container1">
+        <h3>
+            <i class="fa fa-arrow-down"></i>Callback function Syntax<i class="fa fa-arrow-down"></i>
+        </h3>
+        <div class="container1">
+            function oup() { <br>
+                ... <br>
+            } <br>
+            
+            function f1() { <br>
+                ... <br>
+            }
+            function f2() { <br>
+                ... <br>
+            } <br>
+            function f3() { <br>
+                ... <br>
+            } <br>
+            f1(); <br>
+            f2(); <br>
+            f3(); <br>
+        </div>
+    </div>
+    <br><br>
+    <div class="container1">
+        <h3>
+            <i class="fa fa-arrow-down"></i>Async Syntax<i class="fa fa-arrow-down"></i>
+        </h3>
+        <div class="container1">
+            //async --i will finish later setTimeout(f4, 4000); <br><br>
+            function f4() { <br>
+            document.getElementById('a6').innerHTML = <br> 'Async Funtion Executed  successfully' <br>
+            } <br> <br>
+            //async --i will finish later setInterval(f5, 4000); <br><br>
+            function f5() { <br>
+            let d = new Date(); <br>
+            document.getElementById('a7').innerHTML = <br> 'Async setInterval Executed successfully'; <br>
+            document.getElementById('a8').innerHTML = <br> d.getHours() + ':' + d.getMinutes()+ ':' + d.getSeconds(); <br>
+            } <br>
+        </div>
+    </div>
+    <br><br>
+    <div class="container1">
+        <h3>
+            <i class="fa fa-arrow-down"></i>CONSTRUCTOR EXAMPLE<i class="fa fa-arrow-down"></i>
+        </h3>
+        class Stud{ <br>
+        constructor(name,course,year){ <br>
+        this.name=name; <br>
+        this.course=course; <br>
+        this.year=year; <br>
+        } <br>
+        age(){ <br>
+        const date = new Date(); <br>
+        return date.getFullYear()-this.year; <br>
+        } <br>
+        } <br>
+        const stud1=new Stud('suman','full-stack python',2002); <br>
+        const stud2=new Stud('rabi','full-stack java',2004); <br>
+        
+        const b1 = document.getElementById('a1'); <br>
+        b1.innerHTML=stud1.name+'<br><br>'+stud1.course+'<br><br>'+stud1.age(); <br>
+        const b2 = document.getElementById('a2'); <br>
+        b2.innerHTML=stud2.name+'<br><br>'+stud2.course+'<br><br>'+stud2.age(); <br>
+        <br>
+        <h3>
+            <i class="fa fa-arrow-down"></i>INHERITANCE EXAMPLE<i class="fa fa-arrow-down"></i>
+        </h3>
+        class Bike{ <br>
+        constructor(brand){ <br>
+        this.carnm=brand; <br>
+        } <br>
+        pres(){ <br>
+        return 'i have '+this.carnm; <br>
+        } <br>
+        } <br>
+        class Model extends Bike{ <br>
+        constructor(brand,mod){ <br>
+        super(brand); <br>
+        this.model=mod; <br>
+        } <br>
+        outp(){ <br>
+        return this.pres()+' it is a '+this.model; <br>
+        } <br>
+        } <br>
+        const bike1=new Model('BMW','maybach'); <br>
+        document.getElementById('a3').innerHTML = bike1.outp(); <br>
+        <br>
+        <h3>
+            <i class="fa fa-arrow-down"></i>STATIC EXAMPLE<i class="fa fa-arrow-down"></i>
+        </h3>
+        class Fam{ <br>
+        constructor(name){ <br>
+        this.name=name; <br>
+        } <br>
+        static nm1(b){ <br>
+        return 'Welcome Family '+ b.name; <br>
+        } <br>
+        } <br>
+        const fam1=new Fam('First family'); <br>
+        document.getElementById('a4').innerHTML = Fam.nm1(fam1);
+        <br>
+        <h3>
+            <i class="fa fa-arrow-down"></i>CALLBACK FUNCTION EXAMPLE<i class="fa fa-arrow-down"></i>
+        </h3>
+        function oup(pr) { <br>
+        document.getElementById('a5').innerHTML=pr; <br>
+        } <br>
+        
+        function f1() { <br>
+        oup('Teks Academy'); <br>
+        }
+        function f2() { <br>
+        oup('Full Stack developers') <br>
+        } <br>
+        function f3() { <br>
+        oup('Front end Stack developers') <br>
+        } <br>
+        f1(); <br>
+        f2(); <br>
+        f3(); <br>
+    </div>
+    <br> <br>
+    <div class="container1">
+        <h4 id="a1"></h4>
+        <h4 id="a2"></h4>
+        <h4 id="a3"></h4>
+        <h4 id="a4"></h4>
+        <h4 id="a5"></h4>
+        <h4 id="a6"></h4>
+        <h4 id="a7"></h4>
+        <h4 id="a8"></h4>
+        <h4 id="a9"></h4>
+        <h4 id="a10"></h4>
+        <h4 id="a11"></h4>
+        <h4 id="a12"></h4>
+        <h4 id="a13"></h4>
+    </div>
+    
+    <script src="js/Task62%2017.js"></script>
+    <script src="js/0e24bfa3ea.js" crossorigin="anonymous"></script>
+
+
+</body></html>

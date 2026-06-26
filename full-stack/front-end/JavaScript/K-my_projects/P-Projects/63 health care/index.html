@@ -1,0 +1,1202 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Healthcare Dashboard</title>
+  <link rel="stylesheet" href="css/all.min.css">
+  <style>
+    /* Global Styles */
+    :root {
+      --white: #ffffff;
+      --sidebar-bg: #f8f9fa;
+      --header-bg: #ffffff;
+      --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      --text-primary: #333333;
+      --text-secondary: #555555;
+      --text-tertiary: #777777;
+      --primary: #4e73df;
+      --primary-light: #e0e6ff;
+      --success: #28a745;
+      --warning: #dc3545;
+      --border: #e0e0e0;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f7fa;
+      margin: 0;
+      padding: 0;
+      transition: margin-left 0.3s ease;
+    }
+    
+    /* Sidebar Styles */
+    .sidebar {
+      width: 250px;
+      height: 100vh;
+      background-color: var(--sidebar-bg);
+      box-shadow: var(--shadow);
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 100;
+      transition: transform 0.3s ease;
+      overflow-y: auto;
+    }
+    
+    .sidebarContent {
+      padding: 1.5rem 1rem;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 2rem;
+      padding-left: 0.75rem;
+    }
+    
+    .sidebarTitle {
+      color: var(--text-tertiary);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.5rem;
+      padding-left: 0.75rem;
+    }
+    
+    .navList {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .navItem {
+      width: 100%;
+    }
+    
+    .navLink {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    
+    .navLink:hover {
+      background-color: var(--primary-light);
+      color: var(--primary);
+    }
+    
+    .navIcon {
+      font-size: 1.2rem;
+    }
+    
+    .navItem.active .navLink {
+      background-color: var(--primary-light);
+      color: var(--primary);
+    }
+    
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 99;
+      display: none;
+    }
+    
+    /* Header Styles */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: var(--header-bg);
+      box-shadow: var(--shadow);
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 250px;
+      z-index: 10;
+      transition: left 0.3s ease;
+    }
+    
+    .leftSection {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .menuButton {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    .searchContainer {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    
+    .searchIcon {
+      position: absolute;
+      left: 1rem;
+      color: var(--text-tertiary);
+    }
+    
+    .searchInput {
+      padding: 0.75rem 1rem 0.75rem 3rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+      background-color: var(--white);
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      min-width: 300px;
+    }
+    
+    .searchInput:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+    
+    .rightSection {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    
+    .addButton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background-color: var(--primary);
+      color: var(--white);
+      border: none;
+      cursor: pointer;
+    }
+    
+    .plusIcon {
+      font-size: 1.2rem;
+    }
+    
+    .notification {
+      position: relative;
+      cursor: pointer;
+    }
+    
+    .bellIcon {
+      font-size: 1.5rem;
+      color: var(--text-secondary);
+    }
+    
+    .notificationBadge {
+      position: absolute;
+      top: -0.5rem;
+      right: -0.5rem;
+      background-color: var(--warning);
+      color: var(--white);
+      border-radius: 50%;
+      width: 1.2rem;
+      height: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+    
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .avatar {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    .userName {
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    
+    /* Main Content Styles */
+    .mainContent {
+      margin-left: 250px;
+      margin-top: 70px;
+      padding: 1.5rem;
+      transition: margin-left 0.3s ease;
+    }
+    
+    .contentGrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    
+    .leftColumn {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .rightColumn {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    /* Anatomy Section */
+    .anatomySection {
+      background-color: var(--white);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    
+    .sectionTitle {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+    }
+    
+    .anatomyContainer {
+      display: flex;
+      gap: 2rem;
+    }
+    
+    .anatomyImageWrapper {
+      flex: 1;
+      max-width: 300px;
+    }
+    
+    .anatomyImage {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0.5rem;
+    }
+    
+    .statusCards {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+    
+    .statusCard {
+      background-color: #f9f9f9;
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .statusHeader {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    
+    .teethIcon {
+      font-size: 1.8rem;
+    }
+    
+    .organIcon {
+      font-size: 1.8rem;
+    }
+    
+    .lungsIcon {
+      color: red;
+    }
+    
+    .statusDate {
+      font-size: 0.85rem;
+      color: gray;
+      margin-top: 0.2rem;
+      margin-bottom: 0.8rem;
+    }
+    
+    .progressBar {
+      height: 8px;
+      background-color: #f0f0f0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .progressFill {
+      height: 100%;
+      border-radius: 4px;
+    }
+    
+    .teeth {
+      background-color: green;
+    }
+    
+    .lungs {
+      background-color: red;
+    }
+    
+    .bones {
+      background-color: orange;
+    }
+    
+    /* Activity Feed */
+    .activityFeed {
+      background-color: var(--white);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    
+    .activityTitle {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .activityText {
+      font-size: 0.9rem;
+      color: var(--text-tertiary);
+      margin-bottom: 1rem;
+    }
+    
+    .activityChart {
+      display: flex;
+      align-items: flex-end;
+      gap: 0.5rem;
+      height: 120px;
+      padding-top: 1rem;
+    }
+    
+    .chartColumn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+    }
+    
+    .chartBar {
+      width: 100%;
+      background-color: #e0e0e0;
+      border-radius: 0.25rem;
+      min-width: 10px;
+      transition: height 0.3s ease;
+    }
+    
+    .chartBar.activeBar {
+      background-color: var(--primary);
+    }
+    
+    .chartLabel {
+      font-size: 0.7rem;
+      color: var(--text-tertiary);
+      margin-top: 0.5rem;
+    }
+    
+    /* Simple Appointment */
+    .simpleAppointment {
+      padding: 2rem;
+      background-color: #f5f5f5;
+      border-radius: 1rem;
+    }
+    
+    .scheduleContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    .dayColumn {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .dayTitle {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    
+    .cardRow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    
+    .appointmentCard {
+      display: flex;
+      align-items: center;
+      background-color: #e0f7fa;
+      border-radius: 0.75rem;
+      padding: 1rem;
+      gap: 1rem;
+      min-width: 220px;
+      flex: 1 1 auto;
+      transition: all 0.3s ease;
+    }
+    
+    .emoji {
+      font-size: 2rem;
+    }
+    
+    .info {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .appointmentTitle {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    
+    .appointmentTime {
+      font-size: 0.9rem;
+      color: #555;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 1200px) {
+      .contentGrid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 992px) {
+      .sidebar {
+        transform: translateX(-100%);
+      }
+      
+      .sidebar.open {
+        transform: translateX(0);
+      }
+      
+      .header {
+        left: 0;
+      }
+      
+      .mainContent {
+        margin-left: 0;
+      }
+      
+      .menuButton {
+        display: block;
+      }
+      
+      .overlay {
+        display: block;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+      
+      .sidebar.open + .overlay {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      
+      .searchInput {
+        min-width: 200px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .mainContent {
+        padding: 1rem;
+      }
+      
+      .anatomyContainer {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .anatomyImageWrapper {
+        max-width: 100%;
+      }
+      
+      .statusCards {
+        justify-content: center;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .header {
+        padding: 1rem;
+      }
+      
+      .addButton {
+        display: none;
+      }
+      
+      .userName {
+        display: none;
+      }
+    }
+     .calendarView {
+            background-color: var(--white);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .sectionTitle {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .calendarGrid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .weekdayHeader {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-align: center;
+            padding: 0.5rem 0;
+        }
+
+        .calendarDate {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-align: center;
+            padding: 0.5rem 0;
+        }
+
+        .appointmentTime {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-align: center;
+            padding: 0.25rem 0;
+            border-radius: 0.25rem;
+            background-color: var(--primary-light);
+        }
+
+        .appointmentCards {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+        }
+
+        .appointmentCard {
+            background-color: var(--primary-light);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            transition: all 0.3s ease;
+            flex: 1;
+        }
+
+        .appointmentCard:hover {
+            background-color: var(--primary);
+        }
+
+        .appointmentCard:hover .appointmentTitle,
+        .appointmentCard:hover .appointmentTime,
+        .appointmentCard:hover .appointmentDoctor {
+            color: var(--white);
+        }
+
+        .appointmentTitle {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+            transition: color 0.3s ease;
+        }
+
+        .appointmentTime {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.25rem;
+            transition: color 0.3s ease;
+            background-color: transparent;
+            text-align: left;
+            padding: 0;
+        }
+
+        .appointmentDoctor {
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+            transition: color 0.3s ease;
+        }
+
+        .highlight {
+            background-color: #8a2be2; /* Violet */
+            color: white;
+        }
+
+        .lightHighlight {
+            background-color: #e6e6fa; /* Light violet */
+        }
+
+        @media (max-width: 768px) {
+            .calendarGrid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .appointmentCards {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .calendarGrid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+         .upcomingSchedule {
+      background-color: var(--white);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      margin-top: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .sectionTitle {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .scheduleContainer {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .dayColumn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .dayTitle {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .appointmentCard {
+      background-color: var(--primary-light);
+      border-radius: 0.75rem;
+      padding: 1rem;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+    }
+
+    .appointmentCard:hover {
+      background-color: var(--primary);
+    }
+
+    .appointmentCard:hover .appointmentTitle,
+    .appointmentCard:hover .appointmentTime {
+      color: var(--white);
+    }
+
+    .emoji {
+      font-size: 1.5rem;
+    }
+
+    .appointmentTitle {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+      transition: color 0.3s ease;
+    }
+
+    .appointmentTime {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      transition: color 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .scheduleContainer {
+        flex-direction: column;
+      }
+    }
+    .chart-container {
+      width: 600px;
+      height: 300px;
+      border: 1px solid #ddd;
+      padding: 20px;
+      position: relative;
+    }
+    .chart-title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .chart {
+      display: flex;
+      height: 200px;
+      align-items: flex-end;
+      justify-content: space-around;
+      border-bottom: 1px solid #333;
+      border-left: 1px solid #333;
+      padding-top: 20px;
+    }
+    .bar {
+      width: 40px;
+      background-color: #4CAF50;
+      margin: 0 10px;
+      position: relative;
+      transition: height 0.5s ease;
+    }
+    .bar:hover {
+      opacity: 0.8;
+    }
+    .bar-label {
+      text-align: center;
+      margin-top: 5px;
+    }
+    .value-label {
+      position: absolute;
+      top: -20px;
+      width: 100%;
+      text-align: center;
+    }
+    .y-axis {
+      position: absolute;
+      left: 30px;
+      top: 40px;
+      bottom: 20px;
+      width: 1px;
+      background-color: #333;
+    }
+    .x-axis {
+      position: absolute;
+      left: 30px;
+      right: 20px;
+      bottom: 40px;
+      height: 1px;
+      background-color: #333;
+    }
+ 
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebarContent">
+      <h1 class="logo">Healthcare.</h1>
+      <h3 class="sidebarTitle">General</h3>
+      <nav>
+        <ul class="navList">
+          <li class="navItem active">
+            <a href="#" class="navLink">
+              <i class="fas fa-th navIcon"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="navItem">
+            <a href="#" class="navLink">
+              <i class="far fa-clock navIcon"></i>
+              <span>Appointments</span>
+            </a>
+          </li>
+          <li class="navItem">
+            <a href="#" class="navLink">
+              <i class="far fa-calendar navIcon"></i>
+              <span>Calendar</span>
+            </a>
+          </li>
+          <li class="navItem">
+            <a href="#" class="navLink">
+              <i class="far fa-clipboard navIcon"></i>
+              <span>Reports</span>
+            </a>
+          </li>
+          <li class="navItem">
+            <a href="#" class="navLink">
+              <i class="fas fa-chart-bar navIcon"></i>
+              <span>Statistics</span>
+            </a>
+          </li>
+          <li class="navItem">
+            <a href="#" class="navLink">
+              <i class="fas fa-chart-line navIcon"></i>
+              <span>Activity</span>
+            </a>
+          </li>
+          <li class="navItem">
+            <a href="#" class="navLink">
+              <i class="far fa-comment navIcon"></i>
+              <span>Messages</span>
+            </a>
+          </li>
+          <li class="navItem">
+            <a href="#" class="navLink">
+              <i class="far fa-question-circle navIcon"></i>
+              <span>Help</span>
+            </a>
+          </li>
+          <li class="navItem">
+            <a href="#" class="navLink">
+              <i class="fas fa-cog navIcon"></i>
+              <span>Settings</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+  
+  <div class="overlay"></div>
+  
+  <!-- Header -->
+  <header class="header">
+    <div class="leftSection">
+      <button class="menuButton">
+        <i class="fas fa-bars menuIcon"></i>
+      </button>
+      <div class="searchContainer">
+        <i class="fas fa-search searchIcon"></i>
+        <input type="text" placeholder="Search..." class="searchInput">
+      </div>
+    </div>
+    <div class="rightSection">
+      <button class="addButton">
+        <i class="fas fa-plus plusIcon"></i>
+      </button>
+      <div class="notification">
+        <i class="far fa-bell bellIcon"></i>
+        <span class="notificationBadge">3</span>
+      </div>
+      <div class="profile">
+        <img src="images/avatar.png" alt="User" class="avatar">
+        <span class="userName">John Doe</span>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Main Content -->
+  <main class="mainContent">
+    <div class="contentGrid">
+      <div class="leftColumn">
+        <!-- Anatomy Section -->
+        <div class="anatomySection">
+          <h2 class="sectionTitle">Health Status</h2>
+          <div class="anatomyContainer">
+            <div class="anatomyImageWrapper">
+              <img src="images/anatomy.png" alt="Human anatomy" class="anatomyImage">
+            </div>
+            
+            <div class="statusCards">
+              <div class="statusCard">
+                <div class="statusHeader">
+                  <span class="teethIcon">🦷</span>
+                  <span class="statusName">Teeth</span>
+                </div>
+                <p class="statusDate">Last check: 2 weeks ago</p>
+                <div class="progressBar">
+                  <div class="progressFill teeth" style="width: 85%"></div>
+                </div>
+              </div>
+              
+              <div class="statusCard">
+                <div class="statusHeader">
+                  <span class="organIcon lungsIcon">🫁</span>
+                  <span class="statusName">Lungs</span>
+                </div>
+                <p class="statusDate">Last check: 1 month ago</p>
+                <div class="progressBar">
+                  <div class="progressFill lungs" style="width: 65%"></div>
+                </div>
+              </div>
+              
+              <div class="statusCard">
+                <div class="statusHeader">
+                  <span class="organIcon bonesIcon">🦴</span>
+                  <span class="statusName">Bones</span>
+                </div>
+                <p class="statusDate">Last check: 3 months ago</p>
+                <div class="progressBar">
+                  <div class="progressFill bones" style="width: 75%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Activity Feed -->
+          <div class="chart-container">
+    <h2 class="chart-title">Weekly Activity</h2>
+    <div class="y-axis"></div>
+    <div class="x-axis"></div>
+    <div class="chart" id="chart"></div>
+  </div>
+      </div>
+      
+      <div class="rightColumn">
+        <!-- Calendar View (Placeholder) -->
+         <div class="calendarView">
+        <h2 class="sectionTitle">October 2021</h2>
+        <div class="calendarGrid">
+            <!-- Weekday headers -->
+            <div class="weekdayHeader">Mon</div>
+            <div class="weekdayHeader">Tue</div>
+            <div class="weekdayHeader">Wed</div>
+            <div class="weekdayHeader">Thurs</div>
+            <div class="weekdayHeader">Fri</div>
+            <div class="weekdayHeader">Sat</div>
+            <div class="weekdayHeader">Sun</div>
+
+            <!-- Dates -->
+            <div class="calendarDate">25</div>
+            <div class="calendarDate">26</div>
+            <div class="calendarDate">27</div>
+            <div class="calendarDate">28</div>
+            <div class="calendarDate">29</div>
+            <div class="calendarDate">30</div>
+            <div class="calendarDate">31</div>
+
+            <!-- Appointment times - Row 1 -->
+            <div class="appointmentTime lightHighlight">08:00</div>
+            <div class="appointmentTime highlight">09:00</div>
+            <div class="appointmentTime">12:00</div>
+            <div class="appointmentTime lightHighlight">10:00</div>
+            <div class="appointmentTime">—</div>
+            <div class="appointmentTime lightHighlight">12:00</div>
+            <div class="appointmentTime highlight">09:00</div>
+
+            <!-- Appointment times - Row 2 -->
+            <div class="appointmentTime">11:00</div>
+            <div class="appointmentTime lightHighlight">10:00</div>
+            <div class="appointmentTime">—</div>
+            <div class="appointmentTime lightHighlight">11:00</div>
+            <div class="appointmentTime">14:00</div>
+            <div class="appointmentTime lightHighlight">14:00</div>
+            <div class="appointmentTime lightHighlight">10:00</div>
+
+            <!-- Appointment times - Row 3 -->
+            <div class="appointmentTime">12:00</div>
+            <div class="appointmentTime">13:00</div>
+            <div class="appointmentTime">—</div>
+            <div class="appointmentTime">16:00</div>
+            <div class="appointmentTime lightHighlight">15:00</div>
+            <div class="appointmentTime lightHighlight">11:00</div>
+        </div>
+
+        <div class="appointmentCards">
+            <div class="appointmentCard">
+                <h4 class="appointmentTitle">Dentist</h4>
+                <p class="appointmentTime">09:00-11:00</p>
+                <p class="appointmentDoctor">Dr. Cameron Williamson</p>
+            </div>
+            <div class="appointmentCard">
+                <h4 class="appointmentTitle">Physiotherapy Appointment</h4>
+                <p class="appointmentTime">11:00-12:00</p>
+                <p class="appointmentDoctor">Dr. Kevin Djones</p>
+            </div>
+        </div>
+    </div>
+      <div class="upcomingSchedule">
+    <h2 class="sectionTitle">The Upcoming Schedule</h2>
+
+    <div style="display: flex;flex-direction: row;" class="scheduleContainer">
+      <div class="dayColumn">
+        <h3 class="dayTitle">On Thursday</h3>
+        <div class="appointmentCard">
+          <span class="emoji">💉</span>
+          <div class="info">
+            <div class="appointmentTitle">Health checkup complete</div>
+            <div class="appointmentTime">11:00 AM</div>
+          </div>
+        </div>
+        <div class="appointmentCard">
+          <span class="emoji">👁️</span>
+          <div class="info">
+            <div class="appointmentTitle">Ophthalmologist</div>
+            <div class="appointmentTime">14:00 PM</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dayColumn">
+        <h3 class="dayTitle">On Saturday</h3>
+        <div class="appointmentCard">
+          <span class="emoji">❤️</span>
+          <div class="info">
+            <div class="appointmentTitle">Cardiologist</div>
+            <div class="appointmentTime">12:00 PM</div>
+          </div>
+        </div>
+        <div class="appointmentCard">
+          <span class="emoji">🧠</span>
+          <div class="info">
+            <div class="appointmentTitle">Neurologist</div>
+            <div class="appointmentTime">16:00 PM</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+        </div>
+        
+        <!-- Simple Appointment -->
+        
+      </div>
+    
+  </main>
+    <script>
+    // Sample data
+    const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+    const values = [30, 45, 60, 35, 70, 50, 25];
+    
+    const chart = document.getElementById('chart');
+    
+    // Create bars for each day
+    days.forEach((day, index) => {
+      const barContainer = document.createElement('div');
+      barContainer.style.display = 'flex';
+      barContainer.style.flexDirection = 'column';
+      barContainer.style.alignItems = 'center';
+      
+      const bar = document.createElement('div');
+      bar.className = 'bar';
+      bar.style.height = `${values[index]}%`;
+      
+      // Show value on hover
+      bar.setAttribute('title', `${values[index]}`);
+      
+      // Value label
+      const valueLabel = document.createElement('div');
+      valueLabel.className = 'value-label';
+      valueLabel.textContent = values[index];
+      
+      // Day label
+      const dayLabel = document.createElement('div');
+      dayLabel.className = 'bar-label';
+      dayLabel.textContent = day;
+      
+      barContainer.appendChild(valueLabel);
+      barContainer.appendChild(bar);
+      barContainer.appendChild(dayLabel);
+      chart.appendChild(barContainer);
+    });
+  </script>
+
+  <script>
+    
+    // Toggle sidebar on mobile
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuButton = document.querySelector('.menuButton');
+      const sidebar = document.querySelector('.sidebar');
+      const overlay = document.querySelector('.overlay');
+      
+      menuButton.addEventListener('click', function() {
+        sidebar.classList.toggle('open');
+      });
+      
+      overlay.addEventListener('click', function() {
+        sidebar.classList.remove('open');
+      });
+      
+      // Set active nav item
+      const navItems = document.querySelectorAll('.navItem');
+      navItems.forEach(item => {
+        item.addEventListener('click', function() {
+          navItems.forEach(i => i.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+    });
+    
+    // JavaScript for additional functionality if needed
+    document.addEventListener('DOMContentLoaded', function() {
+      const appointmentCards = document.querySelectorAll('.appointmentCard');
+      
+      appointmentCards.forEach(card => {
+        card.addEventListener('click', function() {
+          const title = this.querySelector('.appointmentTitle').textContent;
+          const time = this.querySelector('.appointmentTime').textContent;
+          alert(`Appointment: ${title}\nTime: ${time}`);
+        });
+      });
+    });
+
+    // Appointments data
+    const appointments = [
+      {
+        id: 1,
+        title: 'Annual Physical Exam',
+        date: '26 Oct 2021',
+        time: '10:00 AM - 11:00 AM',
+        doctor: 'Sarah Johnson',
+        status: 'confirmed'
+      },
+      {
+        id: 2,
+        title: 'Dental Cleaning',
+        date: '28 Oct 2021',
+        time: '02:00 PM - 03:00 PM',
+        doctor: 'Michael Chen',
+        status: 'confirmed'
+      },
+      {
+        id: 3,
+        title: 'Cardiology Consultation',
+        date: '2 Nov 2021',
+        time: '09:00 AM - 10:00 AM',
+        doctor: 'Robert Williams',
+        status: 'pending'
+      },
+      {
+        id: 4,
+        title: 'Blood Test',
+        date: '5 Nov 2021',
+        time: '08:00 AM - 08:30 AM',
+        doctor: 'Emily Davis',
+        status: 'confirmed'
+      }
+    ];
+  </script>
+  
+
+</body></html>

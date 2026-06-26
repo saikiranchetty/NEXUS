@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&amp;display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 40px 35px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+      animation: fadeIn 1.5s ease;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 28px;
+      color: #00e5ff;
+      text-shadow: 0 0 10px #00e5ff;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 15px;
+      margin: 12px 0;
+      border: none;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 16px;
+      box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.2);
+      transition: 0.3s ease;
+    }
+
+    input:focus {
+      outline: none;
+      background: rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 10px #00ffe1;
+    }
+
+    button.btn {
+      width: 100%;
+      padding: 14px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #00ffe1, #00b3ff);
+      color: #000;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 15px #00ffe1;
+      transition: 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    button.btn:hover {
+      background: linear-gradient(135deg, #00ff99, #00d4ff);
+      box-shadow: 0 0 25px #00ffe1;
+    }
+
+    .redirect {
+      margin-top: 20px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .redirect a {
+      color: #00ffe1;
+      text-decoration: none;
+    }
+
+    .redirect a:hover {
+      text-decoration: underline;
+    }
+
+    #message {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #ff5b5b;
+      text-align: center;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 10px #00ffe1;
+      }
+      50% {
+        box-shadow: 0 0 20px #00ffe1;
+      }
+      100% {
+        box-shadow: 0 0 10px #00ffe1;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .form-container {
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+      <input type="text" id="username" placeholder="Username" required="">
+      <input type="email" id="email" placeholder="Email" required="">
+      <input type="password" id="password" placeholder="Password" required="">
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required="">
+      <button type="submit" class="btn">Register</button>
+      <p id="message"></p>
+    </form>
+    <p class="redirect">Already have an account? <a href="/login">Login</a></p>
+  </div>
+
+  <script>
+    document.getElementById('signupForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const username = document.getElementById('username').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+
+      const message = document.getElementById('message');
+
+      if (password !== confirmPassword) {
+        message.style.color = "#ff5b5b";
+        message.textContent = "❌ Passwords do not match!";
+        return;
+      }
+
+      const newUser = { username, email, password };
+      let users = JSON.parse(localStorage.getItem('users')) || [];
+      users.push(newUser);
+      localStorage.setItem('users', JSON.stringify(users));
+
+      message.style.color = "#00ff99";
+      message.textContent = "✅ Registration successful! Redirecting...";
+
+      setTimeout(() => {
+        window.location.href = "login.html";
+      }, 2000);
+    });
+  </script>
+
+
+</body></html>

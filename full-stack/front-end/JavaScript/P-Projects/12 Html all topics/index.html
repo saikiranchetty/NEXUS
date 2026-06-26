@@ -1,0 +1,2313 @@
+<!DOCTYPE html><html lang="en"><head><link rel="stylesheet" href="css/intro.css">
+    <link rel="shortcut icon" href="images_3" type="image/x-icon">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <style>
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.floating-button {
+    position: fixed;
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    background-color: #ff6f61; /* Button color */
+    color: white; /* Text color */
+    padding: 15px 20px; /* Padding */
+    border-radius: 50px; /* Rounded button */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow */
+    text-decoration: none; 
+    font-size: 16px; 
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.floating-button:hover {
+    background-color: #ff3b30; 
+    transform: scale(1.05);
+}
+
+         .block {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            color: rgb(246, 251, 252);
+        }
+        .block h3 {
+            margin-top: 0;
+            color: #80e5f1;
+        }
+        .tag {
+            margin-bottom: 5px;
+            font-family: Arial, sans-serif;}
+         body{
+            background-image: url(images/logo.png);
+         
+            background-repeat: no-repeat;
+           background-attachment: fixed;
+           background-size: cover;
+           color:#fafcfb;
+           box-shadow: 0 0 20px red, 0 0 40px yellow;
+           
+          
+           
+         
+          
+        }
+      
+        .navbar {
+            overflow: hidden;
+            background: linear-gradient(45deg,  #FF00FF,#00FFFF);
+            box-shadow: 0 0 20px #00FFFF, 0 0 40px #FF00FF;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .navbar .menu-btn {
+            float: left;
+        }
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            
+            top: 0;
+            left: 0;
+            background-color: #0a0a0a;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            z-index: 1001;
+        }
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+        .sidenav a:hover {
+            background-color: #575757;
+            color: white;
+        }
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        .main {
+            transition: margin-left 0.5s;
+            padding: 16px;
+            padding-top: 60px;
+        }
+      
+        .heading-icon {
+            display: inline-flex;
+            align-items: center;
+        }
+        .heading-icon i {
+            margin-right: 10px;
+        }
+
+        
+        h2 a {
+            text-decoration: none;
+            color: #000;
+            transition: color 0.3s, background-color 0.3s;
+        }
+        h2 a:link {
+            color: #000;
+        }
+        h2 a:visited {
+            color: #6a1b9a;
+        }
+        h2 a:hover {
+            color: #f44336;
+            background-color: #e0e0e0;
+        }
+        h2 a:active {
+            color: #3f51b5;
+        }
+        i {
+            margin-right: 8px;
+        }
+       
+        form{
+            
+            
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid ;
+            border-radius: 10px;
+            background: linear-gradient(rgb(227, 125, 125),rgb(131, 131, 244));
+            
+            
+        }
+        .form group{
+            display: flex;
+            justify-content:space-between ;
+            align-items: center;
+            margin-bottom: 15px;
+
+        }
+        .form-group label{
+            flex: 1;
+            margin-right: 10px;
+            display: block;
+
+        }
+         .container {
+            
+            padding: 10px;
+            
+            gap: 20px;
+            border-radius: 50px;
+            
+            margin: 20px left;
+            text-align: center;
+           
+        }
+        table {
+            border-collapse: flex;
+            
+            display: flex;
+        }
+        tr{
+            color: burlywood;
+        }
+        th, td {
+            border: none;
+            padding: 8px;
+            text-align: left;}
+        tr, th, td {
+        border-style:groove;
+            border: 1px solid;
+            padding: 10px;
+            width: 400px;
+            height: 10px;
+            text-align:justify;
+            border-collapse: collapse;
+            color: rgb(250, 248, 247);
+    }
+    @media  screen and  (min-width: 768px) {
+        tr,th,td{
+            font-size: 12px;
+        }
+        
+    }
+    table {
+        border-radius:collapse;
+        width: 100%;
+        color: #fbf8f8;
+    }
+        
+        
+        .a{
+            background-color: yellow;
+        }
+        
+       .b{
+        background-color:rgb(85, 221, 140) ;}
+        .c{
+        display: flex;
+        color: #000;
+        border: 4px solid orangered;
+        background: linear-gradient( to right,blue,rgba(5, 110, 5, 0.721));
+        padding: 25px;}
+        .content {
+    padding-top: 5rem;
+}
+    
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalhtml </title>
+</head>
+<body style="padding: top 60px;z-index: 1000; ;"><div class="navbar">
+    <a href="javascript:void(0)" class="menu-btn" onclick="openNav()">☰ </a>
+    <a href="#aa">Heading</a>
+    <a href="#bb">Paragraph tag</a>
+    <a href="#cc">YouTube</a>
+    <a href="#dd">Map</a>
+    <a href="#ee">Pre tag</a>
+    <a href="#ff">Marquee</a>
+    <a href="#gg">Link</a>
+    <a href="#hh">List</a>
+    <a href="#ii">Formating &amp; Quotation</a>
+    <a href="#jj">Table</a>
+    <a href="#kk">Colors</a>
+    <a href="#ll">Picture</a>
+    <a href="#mm">BackGround Image</a>
+    <a href="#nn">Html Tags</a>
+    <a href="#oo">Forms</a>
+    <a href="#pp">Entities &amp; Symbols</a>
+    <a href="#qq">Emojies</a>
+    <a href="#0418">Iframes</a>
+
+    <a href="#rr">Audio Tag</a>
+    <a href="#ss">Video Tag</a>
+    <a href="#tt">SVG</a>
+    <a href="#uu">Canvas</a>
+   
+    
+</div>
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="#aa"><i class="fas fa-heading"></i> Heading
+    </a>
+    <a href="#bb"><i class="fas fa-paragraph"></i> Para
+    </a>
+    <a href="#cc"><i class="fab fa-youtube icon"></i> YouTube
+    </a>
+    <a href="#dd"><i class="fas fa-map icon"></i> Map</a>
+    <a href="#ee"><i class="fas fa-code icon"></i> Pre tag</a>
+    <a href="#ff"><i class="fas fa-arrows-alt-h icon"></i> Marquee</a>
+    <a href="#gg"><i class="fas fa-link icon"></i> Link</a>
+    <a href="#hh"><i class="fas fa-list icon"></i> List</a>
+    <a href="#ii"><i class="fas fa-text-width icon"></i> Formating &amp; Quotation</a>
+    <a href="#jj"><i class="fas fa-table icon"> Table</i></a>
+    <a href="#kk"> <i class="fas fa-palette icon"></i> Colors</a>
+    <a href="#ll"> <i class="fas fa-image icon"></i> Picture</a>
+    <a href="#mm"><i class="fas fa-images icon"></i> BackGround Image</a>
+    <a href="#nn"> <i class="fas fa-code icon"></i> Html tags</a>
+    <a href="#oo"> <i class="fas fa-file-alt icon"></i> Forms</a>
+    <a href="#pp"><i class="fas fa-check icon"></i>Entities &amp; Symbols</a>
+    <a href="#qq"><i class="fas fa-smile icon"></i>  Emojies</a>
+    <a href="#0418"><i class="fas fa-file icon"></i>Iframes</a>
+
+    <a href="#rr"><i class="fas fa-music icon"></i>   Audio Tag</a>
+    <a href="#ss"><i class="fas fa-video icon"></i>  Video Tag</a>
+    <a href="#tt"> <i class="fas fa-vector-square icon"></i> SVG</a>
+    <a href="#uu"><i class="fas fa-draw-polygon icon"></i> Canvas</a>
+   
+    
+</div>
+
+
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+    }
+</script>
+<pre>    . 
+
+    . 
+
+
+</pre>
+
+<!-------------- heading tag---------- -->
+
+<a href="index_5.html" class="floating-button" target="_blank">+</a>
+<div class="butterflies">
+    
+</div>
+
+<style>
+    
+    .butterfly {
+            position: absolute; 
+            width: 70px; 
+            height: auto;
+            transition: transform 0.5s ease;
+            
+        }
+
+
+
+</style>
+<script>
+    function createButterfly() {
+            const butterfly = document.createElement('img');
+            butterfly.src = 'https://www.gifs.cc/butterfly/butterfly-blue-pink-animation-2018.gif';
+            butterfly.classList.add('butterfly');
+
+           
+            const windowHeight = window.innerHeight;
+            const windowWidth = window.innerWidth;
+
+          
+            const startPosition = Math.random() < 0.5 ? 'bottom-left' : 'bottom-right';
+            const randomY = Math.random() * (windowHeight - 100); 
+            
+            if (startPosition === 'bottom-left') {
+                butterfly.style.left = `0px`;
+                butterfly.style.top = `${randomY}px`;
+            } else {
+                butterfly.style.left = `${windowWidth - 70}px`;
+                butterfly.style.top = `${randomY}px`; 
+            }
+
+            document.body.appendChild(butterfly);
+
+           
+            let posX = startPosition === 'bottom-left' ? 0 : windowWidth - 70;
+            let posY = randomY;
+
+            const moveButterfly = () => {
+                posX += startPosition === 'bottom-left' ? 2 : -2; 
+                posY -= 1; 
+
+                butterfly.style.transform = `translate(${posX}px, ${posY}px)`; 
+
+                if (posY < -70 || posX < -70 || posX > windowWidth) {
+                    butterfly.remove(); 
+                } else {
+                    requestAnimationFrame(moveButterfly);
+                }
+            };
+
+            moveButterfly();
+
+           
+            setTimeout(() => {
+                butterfly.remove();
+            }, 10000);
+        }
+
+       
+        setInterval(createButterfly, 1000);
+</script>
+<!--heading tag----------------------------->
+
+<h2 style="text-decoration: underline; color:white; font-size: xx-large;margin-top: 100px; padding: 20px; background:linear-gradient(45deg,   #00FFFF, #9400D3);border-radius: 15px;text-shadow: 0 0 10px #00FFFF, 0 0 20px #9400D3, 0 0 30px #00FFFF, 0 0 40px #9400D3;box-shadow: 0 0 20px #00FFFF, 0 0 40px #9400D3;font-family: Arial, sans-serif;text-align: center;" id="aa">Heading Tag</h2>
+
+<div class="containerh">
+    <div class="box">
+        <h1><center> H1 TAG</center></h1>
+        <hr>
+        <h1>Origins (1989-1991)</h1>
+        <h1>1989: Tim Berners-Lee, a British scientist at CERN, proposed a new project that would facilitate sharing information among researchers.<br>
+        </h1>
+    </div>
+
+    <div class="box">
+        <h2><center> H2 TAG</center></h2>
+        <hr>
+        <h2>Development and Adoption (1992-1995)</h2>
+        <h2>1989: Tim Berners-Lee, a British scientist at CERN, proposed a new project that would facilitate sharing information among researchers.<br>
+       </h2>
+    </div>
+
+    <div class="box">
+        <h3><center>H3 TAG</center></h3>
+        <hr>
+        <h3>Standardization and Evolution (1995-1999)</h3>
+        <h3>1989: Tim Berners-Lee, a British scientist at CERN, proposed a new project that would facilitate sharing information among researchers.<br>
+        </h3>
+    </div>
+</div>
+
+<div class="containerh">
+    <div class="box">
+        <h4><center>H4 TAG</center></h4>
+        <hr>
+        <h4>The Rise of XHTML (2000-2010)</h4>
+        <h4>1989: Tim Berners-Lee, a British scientist at CERN, proposed a new project that would facilitate sharing information among researchers.<br>
+        1991: The first website was created, and Berners-Lee published a document called "HTML Tags," which is considered the first HTML specification. It contained 18 tags, many of which are still in use today.</h4>
+    </div>
+
+    <div class="box">
+        <h5><center>H5 TAG</center></h5>
+        <hr>
+        <h5>HTML5 and Modern Web (2010-Present)</h5>
+        <h5>1989: Tim Berners-Lee, a British scientist at CERN, proposed a new project that would facilitate sharing information among researchers.<br>
+        1991: The first website was created, and Berners-Lee published a document called "HTML Tags," which is considered the first HTML specification. It contained 18 tags, many of which are still in use today.</h5>
+    </div>
+
+    <div class="box">
+        <h6><center>H6 TAG</center></h6>
+        <hr>
+        <h6>HTML5 and Modern Web (2010-Present)</h6>
+        <h6>1989: Tim Berners-Lee, a British scientist at CERN, proposed a new project that would facilitate sharing information among researchers.<br>
+        1991: The first website was created, and Berners-Lee published a document called "HTML Tags," which is considered the first HTML specification. It contained 18 tags, many of which are still in use today.</h6>
+    </div>
+</div>
+
+<style>
+    .containerh {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+        margin: 20px;
+        gap: 20px;
+       
+        justify-content: center;
+    }
+
+    .box {
+        border: 4px solid;
+        width: 100%;
+        max-width: 500px;
+        border-radius: 50px;
+        background: linear-gradient(green, blue);
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    @media (min-width: 768px) {
+        .box {
+            width: 45%;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .box {
+            width: 30%;
+        }
+    }
+</style>
+
+    <!-- -------------paragraph--------------------->
+    <h2 style="text-decoration: underline; color:white; font-size: xx-large;margin-top: 100px; padding: 20px; background:linear-gradient(45deg,   #00FFFF, #9400D3);border-radius: 15px;text-shadow: 0 0 10px #00FFFF, 0 0 20px #9400D3, 0 0 30px #00FFFF, 0 0 40px #9400D3;box-shadow: 0 0 20px #00FFFF, 0 0 40px #9400D3;font-family: Arial, sans-serif;text-align: center;margin-bottom: 40px;" id="bb">Paragraph</h2>
+
+<div class="responsive-container">
+    <img src="images/Madhavi-Gaur.png" alt="" class="responsive-image">
+    
+    <div class="text-content">
+        <p>The Taj Mahal ('Crown of the Palace') is an ivory-white marble mausoleum on the right bank of the river Yamuna in Agra, Uttar Pradesh, India.<br> 
+        It was commissioned in 1631 by the fifth Mughal emperor, Shah Jahan (1628-1658) to house the tomb of his beloved wife, Mumtaz Mahal; <br> 
+        it also houses the tomb of Shah Jahan himself. The tomb is the centrepiece of a 17-hectare (42-acre) complex,<br> 
+        which includes a mosque and a guest house, and is set in formal gardens bounded on three sides by a crenellated wall.</p>
+
+        <p>Construction of the mausoleum was completed in 1648, but work continued on other phases of the project for another five years.<br> 
+        The first ceremony held at the mausoleum was an observance by Shah Jahan, on 6 February 1643, of the 12th anniversary of the death of Mumtaz Mahal.<br> 
+        The Taj Mahal complex is believed to have been completed in its entirety in 1653 at a cost estimated at the time to be around ₹5 million,<br> 
+        which in 2023 would be approximately ₹35 billion (US$77.8 million).</p>
+
+        <p>The Taj Mahal was designated as a UNESCO World Heritage Site in 1983 for being "the jewel of Islamic art in India and one of the universally admired masterpieces of the world's heritage".<br> 
+        It is regarded as one of the best examples of Mughal architecture and a symbol of Indian history. The Taj Mahal is a major tourist attraction and attracts more than five million visitors a year. <br> 
+        In 2007, it was declared a winner of the New 7 Wonders of the World initiative.</p>
+    </div>
+</div>
+
+<style>
+    .responsive-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        padding: 20px;
+        border: 1px solid;
+        background: linear-gradient(to bottom right, #5d5e5e, #f4f6f8, #4b4c4c);
+        border-radius: 40px;
+        font-size: x-large;
+        color: #000;
+        opacity: 0.8;
+        height: auto;
+        box-sizing: border-box;
+    }
+
+    .responsive-image {
+        width: 200px;
+        height: 200px;
+        padding-right: 20px;
+        padding-bottom: 10px;
+        flex-shrink: 0;
+        align-self: flex-start;
+    }
+
+    .text-content {
+        max-width: calc(100% - 240px); /* Subtract image width + padding */
+        text-align: justify;
+    }
+
+    @media (max-width: 768px) {
+        .responsive-container {
+            padding: 10px;
+        }
+
+        .text-content {
+            max-width: 100%;
+            padding-top: 20px;
+        }
+
+        .responsive-image {
+            padding-right: 0;
+            margin-bottom: 20px;
+            width: 150px;
+            height: 150px;
+        }
+
+        h2 {
+            font-size: large;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .text-content {
+            font-size: medium;
+        }
+
+        .responsive-image {
+            width: 120px;
+            height: 120px;
+        }
+    }
+</style>
+
+
+    <!-- --------youtube---------------- -->
+    <h2 style="text-decoration: underline; color:white; font-size: xx-large;margin-top: 100px; padding: 20px; background:linear-gradient(45deg,   #00FFFF, #9400D3);border-radius: 15px;text-shadow: 0 0 10px #00FFFF, 0 0 20px #9400D3, 0 0 30px #00FFFF, 0 0 40px #9400D3;box-shadow: 0 0 20px #00FFFF, 0 0 40px #9400D3;font-family: Arial, sans-serif;text-align: center;margin-bottom: 40px;" id="cc">YouTube</h2>
+
+    <div class="responsive-containery">
+        <div class="video-description">
+            <iframe src="CysR4k67dro.html" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+    
+            <div class="description-contenty">
+                <p>Kalki 2898 AD is a 2024 Indian Telugu-language epic science fiction film directed by Nag Ashwin and produced by Vyjayanthi Movies. The film stars Amitabh Bachchan, Kamal Haasan, Prabhas, Deepika Padukone, and Disha Patani. Inspired by Hindu scriptures, it is the first installment in a planned Kalki Cinematic Universe. Set in a post-apocalyptic world in the year 2898 AD, the film follows a select group on a mission to save Kalki, the unborn child of SUM-80, a lab subject.
+                <br><br>
+                The film was officially announced in February 2020 under the tentative title Prabhas 21, as it is the actor's 21st film in the lead role and was later changed to working title Project K. Principal photography commenced a year later in July 2021 due to the COVID-19 pandemic. It was shot sporadically in several legs over the next three years, and wrapped by late-May 2024. The official title was announced in July 2023.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        .head{
+            text-decoration: underline; color:white; font-size: xx-large;margin-top: 100px; padding: 20px; background:linear-gradient(45deg,   #00FFFF, #9400D3);border-radius: 15px;text-shadow: 0 0 10px #00FFFF, 0 0 20px #9400D3, 0 0 30px #00FFFF, 0 0 40px #9400D3;box-shadow: 0 0 20px #00FFFF, 0 0 40px #9400D3;font-family: Arial, sans-serif;text-align: center;
+        }
+        .responsive-containery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+    
+        .video-description {
+            display: flex;
+            flex-wrap: wrap;
+            color: #311736;
+            background: linear-gradient(to bottom right, #2a2f2fc4, #f4f6f8f1, #323939d8);
+            border: 5px solid red;
+            width: 1000px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+    
+        iframe {
+            width: 560px;
+            height: 315px;
+            flex-shrink: 0;
+        }
+    
+        .description-contenty {
+            flex: 1;
+            padding-left: 20px;
+            font-size: large;
+        }
+    
+        @media (max-width: 1200px) {
+            .responsive-containery {
+                padding-left: 50px;
+            }
+    
+            .video-description {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+    
+            iframe {
+                width: 100%;
+                height: auto;
+            }
+    
+            .description-contenty {
+                padding: 20px 0 0;
+                text-align: justify;
+            }
+        }
+    
+        @media (max-width: 768px) {
+            .responsive-containery {
+                padding-left: 0;
+            }
+    
+            .video-description {
+                padding: 10px;
+            }
+    
+            .description-contenty{
+                font-size: medium;
+            }
+        }
+    
+        @media (max-width: 480px) {
+            .description-contenty {
+                font-size: small;
+            }
+        }
+    </style>
+    
+
+    
+   <!-----------------map----------------- -->
+    <h2 style="text-decoration: underline; color:white; font-size: xx-large;margin-top: 100px; padding: 20px; background:linear-gradient(45deg,   #00FFFF, #9400D3);border-radius: 15px;text-shadow: 0 0 10px #00FFFF, 0 0 20px #9400D3, 0 0 30px #00FFFF, 0 0 40px #9400D3;box-shadow: 0 0 20px #00FFFF, 0 0 40px #9400D3;font-family: Arial, sans-serif;text-align: center;margin-bottom: 50px;" id="dd">Map</h2>
+    <div class="responsive-containermm">
+        <iframe src="embed_2.html" class="map-iframe" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
+        <p class="description-textmm">The Red Fort Complex was built as the palace fort of Shahjahanabad - the new capital of the fifth Mughal Emperor of India, Shah Jahan. Named for its massive enclosing walls of red sandstone, it is adjacent to an older fort, the Salimgarh, built by Islam Shah Suri in 1546, with which it forms the Red Fort Complex. The private apartments consist of a row of pavilions connected by a continuous water channel, known as the Nahr-i-Behisht (Stream of Paradise). The Red Fort is considered to represent the zenith of Mughal creativity which, under the Shah Jahan, was brought to a new level of refinement...
+        </p>
+    </div>
+    
+    <style>
+        .responsive-containermm {
+            display: flex;
+            flex-wrap: wrap;
+            color: #311736;
+            border: 5px solid red;
+            background: linear-gradient(#7F8C8D, #f4f6f8, #7F8C8D);
+            width: 100%;
+            max-width: 1000px;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            min-height: 60vh;
+            padding: 10px 0; /* Reduced top and bottom padding */
+        }
+    
+        .map-iframe {
+            flex: 1;
+            min-width: 300px;
+            height: 350px;
+            border: 0;
+        }
+    
+        .description-textmm {
+            flex: 1;
+            padding-left: 20px;
+            font-size: large;
+        }
+    
+        @media (max-width: 768px) {
+            .responsive-containermm {
+                flex-direction: column;
+                align-items: center;
+            }
+    
+            .map-iframe {
+                width: 100%;
+                height: auto;
+            }
+    
+            .description-textmm {
+                font-size: medium;
+                text-align: justify;
+            }
+        }
+    
+        @media (max-width: 480px) {
+            .description-textmm {
+                font-size: small;
+            }
+        }
+    </style>
+    
+    
+    <!-- ----------pre tag------------ -->
+    
+    <h2 class="head" id="ee">Pre tag</h2>
+    <div style="text-align: center; display: flex;align-items: center;margin-top: 50px;
+    justify-content: center;" id="ee">
+        <div style="width: fit-content;margin-bottom: 80px;"><pre style="padding: 20px;text-align: left;background:linear-gradient(to bottom right,rgb(253, 3, 45),blue);border-radius: 20px;"><h2>                 Sonnet 18</h2>
+        
+            Shall I compare thee to a summer’s day?
+
+            Thou art more lovely and more temperate:
+
+            Rough winds do shake the darling buds of May,
+
+            And summer’s lease hath all too short a date;
+
+            Sometime too hot the eye of heaven shines,
+
+            And often is his gold complexion dimm'd;
+
+            And every fair from fair sometime declines,
+
+            By chance or nature’s changing course untrimm'd;
+
+            But thy eternal summer shall not fade,
+
+            Nor lose possession of that fair thou ow’st;
+
+            Nor shall death brag thou wander’st in his shade,
+
+            When in eternal lines to time thou grow’st:
+
+            So long as men can breathe or eyes can see,
+
+            So long lives this, and this gives life to thee.
+        </pre></div>
+        
+        
+
+    </div><br>
+
+    <!-------------marquee----------------->
+    <h2 class="head" style="margin: 20px 0;" id="ff">Marquee</h2>
+    <div style="text-align: center;">
+        <marquee behavior="" direction="right" class="marquee">
+            <p style=" font-size: 14px;
+            font-weight: 400;">This is Marquee to right direction</p>
+        </marquee>
+        <marquee behavior="" direction="left" class="marquee">
+            <p style=" font-size: 14px;
+            font-weight: 400;">This is Marquee to left direction</p>
+        </marquee><br>
+        <marquee behavior="" direction="up" class="marquee"><p style=" font-size: 14px;
+            font-weight: 400;">
+            This is Marquee to up direction</p>
+        </marquee>
+        <marquee behavior="" direction="down" class="marquee">
+            <p style=" font-size: 14px;
+            font-weight: 400;">This is Marquee to down direction</p>
+        </marquee><br>
+    </div>
+
+    
+    <style>
+        .marquee {
+            border: 1px solid;
+            border-radius: 40px;
+            height: 40px;
+            background: linear-gradient(to right, rgba(236, 4, 4, 0.979), yellow, rgb(9, 208, 243), rgba(7, 90, 21, 0.989), rgba(17, 108, 114, 0.776));
+            color: rgb(8, 0, 0);
+            width: 90%; 
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+           
+        }
+    
+        @media (max-width: 768px) {
+            .marquee {
+                height: 30px;
+            }
+        }
+    
+        @media (max-width: 480px) {
+            .marquee {
+                height: 25px; 
+            }
+        }
+    </style>
+    
+
+
+
+
+<!-- ----------------links------------- -->
+    
+        <h3 id="gg" class="head">LINKS</h3>
+      
+        <div class="responsive-containerl">
+            <div class="main content">
+                <h2><a href="index_1.html" target="_blank"><i class="fas fa-g"></i> GOOGLE</a></h2>
+                <h2><a href="index_3.html" target="_parent"><i class="fa fa-facebook"></i> FACEBOOK</a></h2>
+                <h2><a href="index_2.html" target="_self"><i class="fab fa-youtube icon"></i> YOUTUBE</a></h2>
+                <h2><a href="index_4.html" target="_blank"><i class="fab fa-whatsapp"></i> WHATSAPP</a></h2>
+            </div>
+        </div>
+        
+        <style>
+            .responsive-containerl {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+        
+            .main.content {
+                border: 1px solid;
+                border-radius: 80px;
+                background: linear-gradient(to bottom right, rgba(236, 4, 4, 0.979), yellow, rgb(9, 208, 243), rgba(58, 7, 241, 0.989), rgba(5, 224, 12, 0.776));
+                font-size: large;
+                display: flex;
+                flex-wrap: wrap; 
+                justify-content: center;
+                max-width: 1000px; 
+                width: 100%;
+                padding: 40px 30px; 
+            }
+        
+            h2 {
+                margin: 0 15px;
+            }
+        
+            @media (max-width: 768px) {
+                .main.content {
+                    flex-direction: column; 
+                    align-items: center; 
+                }
+        
+                h2 {
+                    margin: 10px 0; 
+                }
+            }
+        </style>
+        
+        
+<!-- ------------list---------- -->
+<h3 id="hh" class="head">LIST</h3>
+
+<div style="display: flex;border: 1px solid;width: 100%;background:linear-gradient(yellow,red); border-radius: 50px;text-align: center;justify-content: center;align-items: center;">
+    <h4>ORDERD LIST:-</h4>
+    <div><ol type="1">
+        
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+      </ol>
+
+    </div><div>
+    <ol type="a">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+      </ol></div><div>
+      <ol type="A">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+      </ol></div><div>
+      <ol type="I">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+      </ol></div><div>
+      <ol type="i">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+      </ol></div><br>
+</div><br><div style="display: flex;border: 1px solid;width: 100%;background:linear-gradient(red,green); border-radius: 50px;text-align: center;justify-content: center;"><div style="display: flex;">
+      <h4>UNORDERD LIST:-</h4><div>
+      <ul style="list-style-type:disc;">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+      </ul></div><div>
+      <ul style="list-style-type:square;">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+      </ul></div><div>
+      <ul style="list-style-type:circle;">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+      </ul></div><div>
+      <ul style="list-style-type:none;">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+      </ul></div><br></div><br>
+</div><br>
+<div style="display: flex;border: 1px solid;width: 100%;background:linear-gradient(green,blue); border-radius: 50px;text-align: center;justify-content: center;
+">     
+    <h3>DESCRIPTION LIST:
+        -</h3>
+    <dl>
+      <dt>Coffee</dt>
+      <dd>- black hot drink</dd>
+      <dt>Milk</dt>
+      <dd>- white cold drink</dd>
+    </dl></div><br>
+
+    <!-------------Formating & Quatation---------------->
+  
+
+    <div class="container">
+        <h2 id="ii" class="head" style="margin-bottom: 40px;">Formating &amp; Quatation</h2>
+        <div style="display: flex;justify-content: center;align-items: center;">
+            <div style="border: 1px solid ;text-align: left;list-style-type: none;width: 200px;height: 600px;padding: 50px;background: linear-gradient(to top left,red,blue);font-size: x-large;border-radius: 100px;">
+                <h4>Formating tags</h4>
+              <li>&lt; b&gt; - Bold text</li>
+              <li>&lt; strong&gt; - Important text </li>
+              <li>&lt; i&gt; - Italic text</li>
+              <li> &lt; em&gt; - Emphasized text</li>
+              <li> &lt; mark&gt; - Marked text</li>
+              <li> &lt; small&gt; - Smaller text</li>
+              <li> &lt; del&gt; - Deleted text</li>
+              <li> &lt; ins&gt; - Inserted text</li>
+              <li> &lt; sub&gt; - Subscript text</li></div> <br>&nbsp;&nbsp;&nbsp;<div style="border: 1px solid ;text-align: left;list-style-type: none;width: 200px;height: 600px;padding: 50px;background: linear-gradient(to  bottom right, red,blue);font-size: x-large;border-radius: 100px; ">
+                <h4>Quotation tags</h4>
+              <li> &lt; u&gt;-Underlined Text </li>
+              <li>&lt; s&gt;-Strikethrough Text </li>
+              <li> &lt; blockquote&gt;-quoted Text</li>
+              <li>&lt; pre&gt;- preforatted text</li>
+              <li> &lt; ol&gt;- ordered list </li>
+              <li> &lt; ul&gt; - unordered list</li>
+              <li>&lt; a href=""&gt;- anchor tag</li>
+              <li>&lt; img src="" alt=""&gt;-img tag</li>
+              <li> &lt; table&gt;-tables</li> 
+                
+                
+               
+                
+              
+            
+                 </div>
+
+        </div>
+       
+
+    </div>
+
+    <!---------------table-------------------->
+    <h2 id="jj" class="head" style="margin-bottom: 40px;">Table</h2>
+   
+   
+    <div class="c" style="padding-left: 200px; color: #000;">
+            
+        
+        <table style="padding-right: 25px; border-collapse: collapse;">
+            <tbody><tr><th>Header Column 1</th>
+            <th>Header Column 2</th>
+            <th>Header Column 3</th>
+            <th>Header Column 4</th>
+    
+            </tr>
+            <tr>
+                <td>Row 2 - Item 1</td>
+                <td>Row 2 - Item 2</td>
+                <td rowspan="2">Row 2 - Nested Table1
+                    <table>
+                        <tbody><tr>
+                            <td>Row 1 Header</td>
+                            <td>item</td>
+                        </tr>
+                        <tr>
+                            <td>Row 1 Header</td>
+                            <td>item</td>
+                        </tr>
+                    </tbody></table>
+                    
+                </td>
+                <td>Row 2 - Item 3</td>
+    
+            </tr>
+            <tr><td>Row 3 - Nested Table 2
+                <table>
+                    <tbody><tr>
+                        <td>Row 1 Header</td>
+                        <td>item</td>
+                    </tr>
+                    <tr>
+                        <td>Row 1 Header</td>
+                        <td>item</td>
+                    </tr>
+                </tbody></table>
+                
+            </td>
+            
+                <td>Row 3 - Item 2</td>
+                
+                <td rowspan="2">Row 3 - Item 3</td>
+    
+            </tr>
+            <tr><td>Row 4 - Item 1</td>
+                <td>Row 4 - Item 2</td>
+                <td>Row 4 - Item 3 </td>
+                
+    
+            </tr>
+            <tr>
+                <td colspan="4">Row 5 last of outer table</td>
+            </tr>
+                    
+                
+                
+            
+        </tbody></table><br><br><br><br><br>
+        
+        <div>
+        <table border="1" style="padding: 25px;padding-right: 25px; margin: 20px; border-collapse: collapse;background: linear-gradient(blue,green);">
+            <tbody><tr>
+                <td class="a">ACC</td>
+                <td class="a"></td>
+                <td class="b">Column header 1a</td>
+                <td class="b">Column header 1b</td>
+                <td class="b">Column header 1c</td>
+                <td class="b">Column header 1d</td>
+    
+            </tr>
+            <tr>
+                <td class="a"></td>
+                <td class="a"></td>
+                <td class="b">Column header 2a</td>
+                <td class="b">Column header 2b</td>
+                <td class="b">Column header 2c</td>
+                <td class="b">Column header 2d</td>
+            </tr>
+            <tr>
+                <td class="a">Row header 1a</td>
+                <td class="a">Row header 2a</td>
+                <td class="b"> Data col 1 row 1</td>
+                <td class="b">Data col 2 row 1</td>
+                <td class="b">Data col 3 row 1</td>
+                <td class="b">Data col 4 row 1</td>
+            </tr>
+            <tr>
+                <td class="a"></td>
+                <td class="a">Row header 2b</td>
+                <td class="b">Data col 1 row 2</td>
+                <td class="b">Data col 2 row 2</td>
+                <td class="b">Data col 3 row 2</td>
+                <td class="b">Data col 4 row 2</td>
+            </tr>
+            <tr>
+                <td class="a"></td>
+                <td class="a">Row header 2c</td>
+                <td class="b">Data col 1 row 3</td>
+                <td class="b">Data col 2 row 3</td>
+                <td class="b">Data col 3 row 3</td>
+                <td class="b">Data col 4 row 3</td>
+            </tr>
+            <tr>
+                <td class="a"></td>
+                <td colspan="3" class="a">Summary Sub-Total</td>
+                
+                <td class="b">total 1a</td>
+                <td class="b">total 2a</td>
+            </tr>
+            <tr>
+                <td class="a"></td>
+                <td class="a">Row header 2d</td>
+                <td class="b">Data col 1 row 1</td>
+                <td class="b">Data col 2 row 1</td>
+                <td class="b">Data col 3 row 1</td>
+                <td class="b">Data col 4 row 1</td>
+            </tr>
+            <tr>
+                <td class="a"></td>
+                <td class="a">Row header 2e</td>
+                <td class="b">Data col 1 row 2</td>
+                <td class="b">Data col 2 row 2</td>
+                <td class="b">Data col 3 row 2</td>
+                <td class="b">Data col 4 row 2</td>
+            </tr>
+            <tr>
+                <td class="a"></td>
+                <td colspan="3" class="a">Summary Sub_Total</td>
+                
+                <td class="b">total 1b</td>
+                <td class="b">total 2b</td>
+            </tr>
+            <tr>
+                <td colspan="4" class="a">Grand Total</td>
+                
+                <td class="b">Grand Total</td>
+                <td class="b">Grand Total</td>
+            </tr>
+        </tbody></table>
+        </div>
+
+    </div>
+    <br>
+    
+       
+    <!-- -------------colors------------ -->
+    <h2 id="kk" class="head" style="margin-bottom: 40px;">Colors</h2>
+        
+            <div style="display: flex;width: 100%; ">
+                <div><h4 style="color: #000;"><center>RGB</center></h4><table style="width: 100%;"><tbody><tr></tr>
+                   <tr> <td style="background-color: rb(255, 0, 0);">rgb(255, 0, 0)</td></tr>
+                   <tr><td style="background-color: rgb(0, 0, 255);">rgb(0, 0, 255)</td></tr>
+                   <tr><td style="background-color: rgb(0,255,  0);">rgb(0,255,  0)</td></tr>
+                   <tr><td style="background-color: rgb(255, 255, 0);">rgb(255, 255, 0)</td></tr>
+                   <tr><td style="background-color: rgb(255, 0, 255);">rgb(255, 0, 255)</td></tr>
+                   <tr><td style="background-color: rgb(0, 255, 255);">rgb(0, 255, 255)</td></tr>
+                   <tr><td style="background-color: rgb(255, 0, 150);">rgb(255, 0, 150)</td></tr>
+                   <tr><td style="background-color: rgb(255, 150, 0);">rgb(255, 150, 0)</td></tr>
+                   <tr><td style="background-color: rgb(150, 255, 0);">rgb(150, 255, 0)</td></tr>
+                   <tr><td style="background-color: rgb(150, 0, 255);">rgb(150, 0, 255)</td></tr>
+                </tbody></table></div>
+                
+                <div><h4 style="color: #000;"><center>RGBA</center></h4><table style="width: 100%;"><tbody><tr></tr>
+                    <tr><td style="background-color: rgba(255, 0, 0, 1);">rgba(255, 0, 0,1)</td></tr>
+                    <tr><td style="background-color: rgba(0, 0, 255, 0.6);">rgba(0, 0, 255, 0.6)</td></tr>
+                    <tr><td style="background-color: rgba(0, 255, 0, 0.2);">rgba(0, 255, 0, 0.2)</td></tr>
+                    <tr><td style="background-color: rgba(255, 255, 0, 0.7);">rgba(255, 255, 0, 0.7)</td></tr>
+                    <tr><td style="background-color: rgba(255, 0, 255, 0.3);">rgba(255, 0, 255, 0.3)</td></tr>
+                    <tr><td style="background-color: rgba(0, 255, 255, 0.3);">rgba(0, 255, 255, 0.3)</td></tr>
+                    <tr><td style="background-color: rgba(255, 0, 150, 0.4);">rgba(255, 0, 150, 0.4)</td></tr>
+                    <tr><td style="background-color: rgba(255, 150, 0, 0.7);">rgba(255, 150, 0, 0.7)</td></tr>
+                    <tr><td style="background-color: rgba(150, 255, 0, 0.8);">rgba(150, 255, 0, 0.8)</td></tr>
+                    <tr><td style="background-color: rgba(150, 0, 255, 0.9);">rgba(150, 0, 255, 0.9)</td></tr>
+               </tbody></table></div>
+        
+               <div><h4 style="color: #000;"><center>SHADES OF GREY</center></h4><table style="width: 100%;"><tbody><tr></tr>
+                    <tr><td style="background-color: rgb(0, 0, 0);">rgb(0, 0, 0)</td></tr>
+                    <tr><td style="background-color: rgb(24,24,24);">rgb(24,24,24)</td></tr>
+                    <tr><td style="background-color: rgb(64,64,64);">rgb(64,64,64)</td></tr>
+                    <tr><td style="background-color: rgb(80,80,80);">rgb(80,80,80)</td></tr>
+                    <tr><td style="background-color: rgb(104,104,104);">rgb(104,104,104)</td></tr>
+                    <tr><td style="background-color: rgb(112,112,112);">rgb(112,112,112)</td></tr>
+                    <tr><td style="background-color: rgb(169,169,169);">rgb(169,169,169)</td></tr>
+                    <tr><td style="background-color: rgb(190,190,190);">rgb(190,190,190)</td></tr>
+                    <tr><td style="background-color: rgb(232,232,232);">rgb(255, 255, 170)</td></tr>
+                    <tr><td style="background-color: rgb(255, 255, 255);">rgb(255, 255, 255)</td></tr></tbody></table>
+                </div>
+            </div>
+            <br>
+            <div style="display: flex;">
+                <div><h4 style="color: #000;"><center>HEX</center></h4><table style="width: 100%;"><tbody><tr></tr>
+                   <tr> <td style="background-color: #ff0000;">#ff0000</td></tr>
+                   <tr> <td style="background-color: #0000ff;">#0000ff</td></tr>
+                   <tr><td style="background-color: #00ff00;">#00ff00</td></tr>
+                   <tr><td style="background-color: #ffff00;">#ffff00</td></tr>
+                   <tr><td style="background-color: #ff00ff;">#ff00ff</td></tr>
+                   <tr><td style="background-color: #00ffff;">#00ffff</td></tr>
+                   <tr><td style="background-color: #ff0096;">#ff0096</td></tr>
+                   <tr><td style="background-color: #ff9600;">#ff9600</td></tr>
+                   <tr><td style="background-color: #96ff00;">#96ff00</td></tr>
+                   <tr><td style="background-color: #9600ff;">#9600ff</td></tr></tbody></table>
+                </div>
+                
+                <div><h4 style="color: #000;"><center>SHADES OF GREY</center></h4><table style="width: 100%;"><tbody><tr></tr>
+                    <tr><td style="background-color: #000000;">#000000</td></tr>
+                    <tr><td style="background-color: #181818;">#181818</td></tr>
+                    <tr><td style="background-color: #404040;">#404040</td></tr>
+                    <tr><td style="background-color: #505050;">#505050</td></tr>
+                    <tr><td style="background-color: #686868;">#686868</td></tr>
+                    <tr><td style="background-color: #707070;">#707070</td></tr>
+                    <tr><td style="background-color: #a9a9a9;">#a9a9a9</td></tr>
+                    <tr><td style="background-color: #bebebe;">#bebebe</td></tr>
+                    <tr><td style="background-color: #e8e8e8;">#e8e8e8</td></tr>
+                    <tr><td style="background-color: #ffffff;">#ffffff</td></tr></tbody></table>
+                </div>
+            </div>
+            
+            <div style="display: flex; ">
+                <div><h4 style="color: #000;"><center>HSL</center></h4><table style="width: 100%;"><tbody><tr></tr>
+                   <tr> <td style="background-color: hsl(0, 100%, 50%);">hsl(0, 100%, 50%)</td></tr>
+                   <tr><td style="background-color: hsl(240, 100%, 50%);">hsl(240, 100%, 50%)</td></tr>
+                   <tr><td style="background-color: hsl(120, 100%, 50%);">hsl(120, 100%, 50%)</td></tr>
+                   <tr><td style="background-color: hsl(60, 100%, 50%);">hsl(60, 100%, 50%)</td></tr>
+                   <tr><td style="background-color: hsl(300, 100%, 50%);">hsl(300, 100%, 50%)</td></tr>
+                   <tr><td style="background-color: hsl(180, 100%, 50%);">hsl(180, 100%, 50%)</td></tr>
+                   <tr><td style="background-color: hsl(325, 100%, 50%);">hsl(325, 100%, 50%)</td></tr>
+                   <tr><td style="background-color: hsl(35, 100%, 50%);">hsl(35, 100%, 50%)</td></tr>
+                   <tr><td style="background-color: hsl(85, 100%, 50%);">hsl(85, 100%, 50%)</td></tr>
+                   <tr><td style="background-color: hsl(275, 100%, 50%);">hsl(275, 100%, 50%)</td></tr></tbody></table>
+                </div><br>
+                
+                <div><h4 style="color: #000;"><center>HSLA</center></h4><table style="width: 100%;"><tbody><tr></tr>
+                    <tr><td style="background-color: hsla(0, 100%, 50%, 1);">hsla(0,100%,50%,1)</td></tr>
+                    <tr><td style="background-color: hsla(240, 100%, 50%, 0.6);">hsla(240,100%,50%,0.6)</td></tr>
+                    <tr><td style="background-color: hsla(120, 100%, 50%, 0.2);">hsla(120,100%,50%,0.2)</td></tr>
+                    <tr><td style="background-color: hsla(60, 100%, 50%, 0.7);">hsla(60,100%,50%,0.7)</td></tr>
+                    <tr><td style="background-color: hsla(300, 100%, 50%, 0.3);">hsla(300,100%,50%, 0.3)</td></tr>
+                    <tr><td style="background-color: hsla(180, 100%, 50%, 0.3);">hsla(180,100%,50%,0.3)</td></tr>
+                    <tr><td style="background-color: hsla(325, 100%, 50%, 0.4);">hsla(325,100%,50%,0.4)</td></tr>
+                    <tr><td style="background-color: hsla(35, 100%, 50%, 0.7);">hsla(35,100%,50%,0.7)</td></tr>
+                    <tr><td style="background-color: hsla(85, 100%, 50%, 0.8);">hsla(85,100%,50%,0.8)</td></tr>
+                    <tr><td style="background-color: hsla(275, 100%, 50%, 0.9);">hsla(275,100%,50%,0.9)</td></tr></tbody></table>
+                </div>
+              
+                <div><h4 style="color: #000;"><center>SHADES OF GREY</center></h4><table style="width: 100%;"><tbody><tr></tr>
+                   <tr> <td style="background-color: hsl(0, 0%, 0%);">hsl(0, 0%, 0%)</td></tr>
+                   <tr><td style="background-color: hsl(0, 0%, 9%);">hsl(0, 0%, 9%)</td></tr>
+                   <tr><td style="background-color: hsl(0, 0%, 25%);">hsl(0, 0%, 25%)</td></tr>
+                   <tr><td style="background-color: hsl(0, 0%, 31%);">hsl(0, 0%, 31%)</td></tr>
+                   <tr><td style="background-color: hsl(0, 0%, 41%);">hsl(0, 0%, 41%)</td></tr>
+                   <tr><td style="background-color: hsl(0, 0%, 44%);">hsl(0, 0%, 44%)</td></tr>
+                   <tr><td style="background-color: hsl(0, 0%, 66%);">hsl(0, 0%, 66%)</td></tr>
+                   <tr><td style="background-color: hsl(0, 0%, 75%);">hsl(0, 0%, 75%)</td></tr>
+                   <tr><td style="background-color: hsl(0, 0%, 91%);">hsl(0, 0%, 91%)</td></tr>
+                   <tr><td style="background-color: hsl(0, 0%, 100%);">hsl(0, 0%, 100%)</td></tr></tbody></table>
+                </div><br>
+            </div><br>
+            <!------------picture-------------->
+            <h2 id="ll" class="head" style="margin-bottom: 40px;">Picture</h2>
+       
+            <div style="display: flex; gap: 80px; border: 4px solid brown; background: linear-gradient(to bottom right, coral, hsl(0, 0%, 16%), coral); padding: 60px; border-radius: 200px; flex-wrap: wrap;">
+
+                <div style="flex: 1 1 300px; max-width: 400px;">
+                    <h3><center>Picture</center></h3>
+                    <picture>
+                        <source media="(min-width:900px)" srcset="images_4">
+                        <source media="(min-width: 500px)" srcset="images_5">
+                        <img src="images_2" alt="myth" style="max-width: 100%; height: auto;">
+                    </picture><br>
+                </div>
+            
+                <div style="flex: 1 1 300px; max-width: 400px;">
+                    <h3><center>Image Mapping</center></h3>
+                    <img src="images/small-poster-bahubali-part-2-baahubali-2-first-look-bahubali-the-original-imagdtv9fk6us8f3.jpeg" usemap="#image-map" style="max-width: 100%; height: auto;">
+                    <map name="image-map">
+                        <area target="_blank" alt="Sathya Raj" title="Sathya Raj" href="https://www.google.com/search?q=sathyaraj+kattappa" coords="177,323,173,310,169,290,163,279,166,268,163,252,152,243,158,230,168,227,170,214,179,196,186,194,192,196,195,201,197,205,199,211,199,218,201,227,207,231,214,235,222,244,233,264,235,274,239,284,245,288,250,293,254,301,255,312,248,316,242,319,239,326,231,330,222,337,210,326,209,315,209,305,193,305,183,301" shape="poly">
+                        <area target="_parent" alt="Rana" title="Rana" href="https://www.google.com/search?q=rana+daggubati" coords="238,270,254,246,247,195,233,165,219,159,201,156,203,123,209,108,191,92,174,95,163,107,163,121,167,136,167,148,158,158,138,166,123,174,113,198,111,205,115,212,121,219,124,225,128,233,138,227,138,218,141,203,145,215,145,228,145,236,153,234,163,227,168,215,174,202,182,193,191,194,197,201,200,208,201,215,202,223,211,230,221,237" shape="poly">
+                        <area target="_self" alt="Prabhas" title="Prabhas" href="https://www.google.com/search?q=prabhas+photos+4k" coords="53,288,56,278,61,231,57,187,64,160,80,134,91,123,78,118,69,98,68,86,63,68,59,57,57,40,65,26,77,19,85,17,109,14,123,23,141,34,149,44,152,51,158,63,155,75,156,82,165,93,159,107,155,112,160,121,163,132,163,145,153,153,137,157,126,161,117,175,107,173,99,165,88,161,81,172,76,192,75,210,79,229,76,243,72,261,73,284,60,292" shape="poly">
+                        <area target="_top" alt="Anushka" title="Anushka" href="https://www.google.com/search?q=anushka+shetty" coords="131,251,126,243,123,230,115,217,108,206,108,196,110,184,101,177,91,166,83,179,79,190,77,202,77,214,81,225,84,230,87,237,82,244,76,256,74,266,73,277,74,284,66,293,56,298,49,295,44,279,43,267,37,259,32,263,33,269,36,274,42,297,46,311,53,331,58,326,53,309,74,300,72,321,125,291,132,281" shape="poly">
+                        <area target="" alt="Tammana" title="Tammana" href="https://www.google.com/search?q=tammana" coords="125,367,127,333,119,314,98,325,63,340,45,350,31,346,47,336,63,327,76,321,84,317,105,303,118,296,134,289,137,279,132,264,139,247,149,247,160,253,162,261,162,270,160,280,159,289,163,297,171,300,171,305,173,314,174,319,175,324,179,328,187,332,197,335,204,339,201,343,190,341,178,339,172,333,173,346,174,357,175,362,175,367" shape="poly">
+                    </map>
+                </div>
+            
+                <div style="flex: 1 1 300px; max-width: 400px; opacity: 0.4;">
+                    <h3><center>Opacity</center></h3>
+                    <img src="images/prabhas-actor-baahubali-tamil-wallpaer-poster-1-vp-010122-607-original-imaga7vxbkbwxe83.jpeg" usemap="#image-map" style="max-width: 100%; height: auto;">
+                </div>
+            
+            </div>
+            
+            <style>
+                @media (max-width: 900px) {
+                    div[style*="gap: 80px"] {
+                        gap: 40px; /* Reduce gap on smaller screens */
+                        padding: 30px; /* Reduce padding */
+                    }
+                }
+                
+                @media (max-width: 600px) {
+                    div[style*="gap: 80px"] {
+                        gap: 20px; /* Further reduce gap */
+                        padding: 20px; /* Further reduce padding */
+                    }
+                }
+            
+                @media (max-width: 400px) {
+                    div[style*="gap: 80px"] {
+                        gap: 10px; /* Minimal gap for very small screens */
+                        padding: 15px; /* Minimal padding for very small screens */
+                    }
+                }
+            </style>
+            
+
+
+
+
+
+
+
+
+
+<!-- --------background images------- -->
+
+    <h2 id="mm" class="head" style="margin-bottom: 40px;">BackGround Image</h2>
+
+    <div>
+        <div style="border: 1px solid;">
+        <h4 style="color:RED;text-decoration: underline;text-align: center;">repeated image</h4>
+
+        <p style="background-image: url(images_1);" title="with repeated iamge">Himalayas, great mountain system of Asia forming a barrier between the Plateau of Tibet to the north and the alluvial plains of the Indian subcontinent to the south. The Himalayas include the highest mountains in the world, with more than 110 peaks rising to elevations of 24,000 feet (7,300 metres) or more above sea level. One of those peaks is Mount Everest (Tibetan: Chomolungma; Chinese: Qomolangma Feng; Nepali: Sagarmatha), the world’s highest, with an elevation of 29,032 feet (8,849 metres); see Researcher’s Note: Height of Mount Everest. The mountains’ high peaks rise into the zone of perpetual snow.
+
+
+            Mount Everest
+            North Face of Mount Everest, above the Tibet Autonomous Region of China.
+            For thousands of years the Himalayas have held a profound significance for the peoples of South Asia, as their literature, mythologies, and religions reflect. Since ancient times the vast glaciated heights have attracted the attention of the pilgrim mountaineers of India, who coined the Sanskrit name Himalaya—from hima (“snow”) and alaya (“abode”)—for that great mountain system. In contemporary times the Himalayas have offered the greatest attraction and the greatest challenge to mountaineers throughout the world.
+            
+            
+            Nanga Parbat
+            
+            Himalayas
+            Forested slopes of the foothills of the Himalayan mountains near Kalimpong, northern West Bengal, India.
+            The ranges, which form the northern border of the Indian subcontinent and an almost impassable barrier between it and the lands to the north, are part of a vast mountain belt that stretches halfway around the world from North Africa to the Pacific Ocean coast of Southeast Asia. The Himalayas themselves stretch uninterruptedly for about 1,550 miles (2,500 km) from west to east between Nanga Parbat (26,660 feet [8,126 metres]), in the Pakistani-administered portion of the Kashmir region, and Namjagbarwa (Namcha Barwa) Peak (25,445 feet [7,756 metres]), in the Tibet Autonomous Region of China. Between those western and eastern extremities lie the two Himalayan countries of Nepal and Bhutan. The Himalayas are bordered to the northwest by the mountain ranges of the Hindu Kush and the Karakoram and to the north by the high and vast Plateau of Tibet. The width of the Himalayas from south to north varies between 125 and 250 miles (200 and 400 km). Their total area amounts to about 230,000 square miles (595,000 square km).
+            
+            Though India, Nepal, and Bhutan have sovereignty over most of the Himalayas, Pakistan and China also occupy parts of them. In the disputed Kashmir region, Pakistan has administrative control of some 32,400 square miles (83,900 square km) of the range lying north and west of the “line of control” established between India and Pakistan in 1972. China administers some 14,000 square miles (36,000 square km) in the Ladakh region and has claimed territory at the eastern end of the Himalayas within the Indian state of Arunachal Pradesh. Those disputes accentuate the boundary problems faced by India and its neighbours in the Himalayan region.
+            
+            </p></div><br><div style="border: 1px solid;">
+            <h4 style="color: red;text-decoration: underline;text-align: center;"> no-repeated image</h4>
+
+            <p style="background-image: url(images_1);background-repeat: no-repeat;" title="with no-repeat iamge">Himalayas, great mountain system of Asia forming a barrier between the Plateau of Tibet to the north and the alluvial plains of the Indian subcontinent to the south. The Himalayas include the highest mountains in the world, with more than 110 peaks rising to elevations of 24,000 feet (7,300 metres) or more above sea level. One of those peaks is Mount Everest (Tibetan: Chomolungma; Chinese: Qomolangma Feng; Nepali: Sagarmatha), the world’s highest, with an elevation of 29,032 feet 8,849 metres; see Researcher’s Note: Height of Mount Everest. The mountains’ high peaks rise into the zone of perpetual snow.
+    
+    
+                Mount Everest
+                North Face of Mount Everest, above the Tibet Autonomous Region of China.
+                For thousands of years the Himalayas have held a profound significance for the peoples of South Asia, as their literature, mythologies, and religions reflect. Since ancient times the vast glaciated heights have attracted the attention of the pilgrim mountaineers of India, who coined the Sanskrit name Himalaya—from hima (“snow”) and alaya (“abode”)—for that great mountain system. In contemporary times the Himalayas have offered the greatest attraction and the greatest challenge to mountaineers throughout the world.
+                
+                
+                Nanga Parbat
+                
+                Himalayas
+                Forested slopes of the foothills of the Himalayan mountains near Kalimpong, northern West Bengal, India.
+                The ranges, which form the northern border of the Indian subcontinent and an almost impassable barrier between it and the lands to the north, are part of a vast mountain belt that stretches halfway around the world from North Africa to the Pacific Ocean coast of Southeast Asia. The Himalayas themselves stretch uninterruptedly for about 1,550 miles (2,500 km) from west to east between Nanga Parbat (26,660 feet [8,126 metres]), in the Pakistani-administered portion of the Kashmir region, and Namjagbarwa (Namcha Barwa) Peak (25,445 feet [7,756 metres]), in the Tibet Autonomous Region of China. Between those western and eastern extremities lie the two Himalayan countries of Nepal and Bhutan. The Himalayas are bordered to the northwest by the mountain ranges of the Hindu Kush and the Karakoram and to the north by the high and vast Plateau of Tibet. The width of the Himalayas from south to north varies between 125 and 250 miles (200 and 400 km). Their total area amounts to about 230,000 square miles (595,000 square km).
+                
+                Though India, Nepal, and Bhutan have sovereignty over most of the Himalayas, Pakistan and China also occupy parts of them. In the disputed Kashmir region, Pakistan has administrative control of some 32,400 square miles (83,900 square km) of the range lying north and west of the “line of control” established between India and Pakistan in 1972. China administers some 14,000 square miles (36,000 square km) in the Ladakh region and has claimed territory at the eastern end of the Himalayas within the Indian state of Arunachal Pradesh. Those disputes accentuate the boundary problems faced by India and its neighbours in the Himalayan region.
+                
+                </p></div><br><div style="border: 1px solid;">
+                <h4 style="color:red;text-decoration: underline; text-align: center;">repeat-x image</h4>
+
+                <p style="background-image: url(images_1);background-repeat: repeat-x;" title="with repeat-x iamge">Himalayas, great mountain system of Asia forming a barrier between the Plateau of Tibet to the north and the alluvial plains of the Indian subcontinent to the south. The Himalayas include the highest mountains in the world, with more than 110 peaks rising to elevations of 24,000 feet (7,300 metres) or more above sea level. One of those peaks is Mount Everest (Tibetan: Chomolungma; Chinese: Qomolangma Feng; Nepali: Sagarmatha), the world’s highest, with an elevation of 29,032 feet 8,849 metres; see Researcher’s Note: Height of Mount Everest. The mountains’ high peaks rise into the zone of perpetual snow.
+        
+        
+                    Mount Everest
+                    North Face of Mount Everest, above the Tibet Autonomous Region of China.
+                    For thousands of years the Himalayas have held a profound significance for the peoples of South Asia, as their literature, mythologies, and religions reflect. Since ancient times the vast glaciated heights have attracted the attention of the pilgrim mountaineers of India, who coined the Sanskrit name Himalaya—from hima (“snow”) and alaya (“abode”)—for that great mountain system. In contemporary times the Himalayas have offered the greatest attraction and the greatest challenge to mountaineers throughout the world.
+                    
+                    
+                    Nanga Parbat
+                    
+                    Himalayas
+                    Forested slopes of the foothills of the Himalayan mountains near Kalimpong, northern West Bengal, India.
+                    The ranges, which form the northern border of the Indian subcontinent and an almost impassable barrier between it and the lands to the north, are part of a vast mountain belt that stretches halfway around the world from North Africa to the Pacific Ocean coast of Southeast Asia. The Himalayas themselves stretch uninterruptedly for about 1,550 miles (2,500 km) from west to east between Nanga Parbat (26,660 feet [8,126 metres]), in the Pakistani-administered portion of the Kashmir region, and Namjagbarwa (Namcha Barwa) Peak (25,445 feet [7,756 metres]), in the Tibet Autonomous Region of China. Between those western and eastern extremities lie the two Himalayan countries of Nepal and Bhutan. The Himalayas are bordered to the northwest by the mountain ranges of the Hindu Kush and the Karakoram and to the north by the high and vast Plateau of Tibet. The width of the Himalayas from south to north varies between 125 and 250 miles (200 and 400 km). Their total area amounts to about 230,000 square miles (595,000 square km).
+                    
+                    Though India, Nepal, and Bhutan have sovereignty over most of the Himalayas, Pakistan and China also occupy parts of them. In the disputed Kashmir region, Pakistan has administrative control of some 32,400 square miles (83,900 square km) of the range lying north and west of the “line of control” established between India and Pakistan in 1972. China administers some 14,000 square miles (36,000 square km) in the Ladakh region and has claimed territory at the eastern end of the Himalayas within the Indian state of Arunachal Pradesh. Those disputes accentuate the boundary problems faced by India and its neighbours in the Himalayan region.
+                    
+                    </p></div>
+                    <br><div style="border: 1px solid;">
+                    <h4 style="color:red;text-decoration: underline; text-align: center;">repeat-y image</h4>
+
+                    <p style="background-image: url(images_1); background-repeat: repeat-y" title="with repeat-y iamge">Himalayas, great mountain system of Asia forming a barrier between the Plateau of Tibet to the north and the alluvial plains of the Indian subcontinent to the south. The Himalayas include the highest mountains in the world, with more than 110 peaks rising to elevations of 24,000 feet (7,300 metres) or more above sea level. One of those peaks is Mount Everest (Tibetan: Chomolungma; Chinese: Qomolangma Feng; Nepali: Sagarmatha), the world’s highest, with an elevation of 29,032 feet 8,849 metres; see Researcher’s Note: Height of Mount Everest. The mountains’ high peaks rise into the zone of perpetual snow.
+            
+            
+                        Mount Everest
+                        North Face of Mount Everest, above the Tibet Autonomous Region of China.
+                        For thousands of years the Himalayas have held a profound significance for the peoples of South Asia, as their literature, mythologies, and religions reflect. Since ancient times the vast glaciated heights have attracted the attention of the pilgrim mountaineers of India, who coined the Sanskrit name Himalaya—from hima (“snow”) and alaya (“abode”)—for that great mountain system. In contemporary times the Himalayas have offered the greatest attraction and the greatest challenge to mountaineers throughout the world.
+                        
+                        
+                        Nanga Parbat
+                        
+                        Himalayas
+                        Forested slopes of the foothills of the Himalayan mountains near Kalimpong, northern West Bengal, India.
+                        The ranges, which form the northern border of the Indian subcontinent and an almost impassable barrier between it and the lands to the north, are part of a vast mountain belt that stretches halfway around the world from North Africa to the Pacific Ocean coast of Southeast Asia. The Himalayas themselves stretch uninterruptedly for about 1,550 miles (2,500 km) from west to east between Nanga Parbat (26,660 feet [8,126 metres]), in the Pakistani-administered portion of the Kashmir region, and Namjagbarwa (Namcha Barwa) Peak (25,445 feet [7,756 metres]), in the Tibet Autonomous Region of China. Between those western and eastern extremities lie the two Himalayan countries of Nepal and Bhutan. The Himalayas are bordered to the northwest by the mountain ranges of the Hindu Kush and the Karakoram and to the north by the high and vast Plateau of Tibet. The width of the Himalayas from south to north varies between 125 and 250 miles (200 and 400 km). Their total area amounts to about 230,000 square miles (595,000 square km).
+                        
+                        Though India, Nepal, and Bhutan have sovereignty over most of the Himalayas, Pakistan and China also occupy parts of them. In the disputed Kashmir region, Pakistan has administrative control of some 32,400 square miles (83,900 square km) of the range lying north and west of the “line of control” established between India and Pakistan in 1972. China administers some 14,000 square miles (36,000 square km) in the Ladakh region and has claimed territory at the eastern end of the Himalayas within the Indian state of Arunachal Pradesh. Those disputes accentuate the boundary problems faced by India and its neighbours in the Himalayan region.
+                        
+                        </p></div><br><div style="border: 1px solid;">
+                        <h4 style="color:red;text-decoration: underline; text-align: center;">repeat-round image</h4>
+
+                        <p style="background-image: url(images_1);background-repeat: round;" title="with repeat-round iamge">Himalayas, great mountain system of Asia forming a barrier between the Plateau of Tibet to the north and the alluvial plains of the Indian subcontinent to the south. The Himalayas include the highest mountains in the world, with more than 110 peaks rising to elevations of 24,000 feet (7,300 metres) or more above sea level. One of those peaks is Mount Everest (Tibetan: Chomolungma; Chinese: Qomolangma Feng; Nepali: Sagarmatha), the world’s highest, with an elevation of 29,032 feet 8,849 metres; see Researcher’s Note: Height of Mount Everest. The mountains’ high peaks rise into the zone of perpetual snow.
+                
+                
+                            Mount Everest
+                            North Face of Mount Everest, above the Tibet Autonomous Region of China.
+                            For thousands of years the Himalayas have held a profound significance for the peoples of South Asia, as their literature, mythologies, and religions reflect. Since ancient times the vast glaciated heights have attracted the attention of the pilgrim mountaineers of India, who coined the Sanskrit name Himalaya—from hima (“snow”) and alaya (“abode”)—for that great mountain system. In contemporary times the Himalayas have offered the greatest attraction and the greatest challenge to mountaineers throughout the world.
+                            
+                            
+                            Nanga Parbat
+                            
+                            Himalayas
+                            Forested slopes of the foothills of the Himalayan mountains near Kalimpong, northern West Bengal, India.
+                            The ranges, which form the northern border of the Indian subcontinent and an almost impassable barrier between it and the lands to the north, are part of a vast mountain belt that stretches halfway around the world from North Africa to the Pacific Ocean coast of Southeast Asia. The Himalayas themselves stretch uninterruptedly for about 1,550 miles (2,500 km) from west to east between Nanga Parbat (26,660 feet [8,126 metres]), in the Pakistani-administered portion of the Kashmir region, and Namjagbarwa (Namcha Barwa) Peak (25,445 feet [7,756 metres]), in the Tibet Autonomous Region of China. Between those western and eastern extremities lie the two Himalayan countries of Nepal and Bhutan. The Himalayas are bordered to the northwest by the mountain ranges of the Hindu Kush and the Karakoram and to the north by the high and vast Plateau of Tibet. The width of the Himalayas from south to north varies between 125 and 250 miles (200 and 400 km). Their total area amounts to about 230,000 square miles (595,000 square km).
+                            
+                            Though India, Nepal, and Bhutan have sovereignty over most of the Himalayas, Pakistan and China also occupy parts of them. In the disputed Kashmir region, Pakistan has administrative control of some 32,400 square miles (83,900 square km) of the range lying north and west of the “line of control” established between India and Pakistan in 1972. China administers some 14,000 square miles (36,000 square km) in the Ladakh region and has claimed territory at the eastern end of the Himalayas within the Indian state of Arunachal Pradesh. Those disputes accentuate the boundary problems faced by India and its neighbours in the Himalayan region.
+                            
+                            </p></div><br><div style="border: 1px solid;">
+                            <h4 style="color: red;text-decoration: underline; text-align: center;">repeat-space image</h4>
+
+                            <p style="background-image: url(images_1); background-repeat: space;" title="with repeat-space iamge">Himalayas, great mountain system of Asia forming a barrier between the Plateau of Tibet to the north and the alluvial plains of the Indian subcontinent to the south. The Himalayas include the highest mountains in the world, with more than 110 peaks rising to elevations of 24,000 feet (7,300 metres) or more above sea level. One of those peaks is Mount Everest (Tibetan: Chomolungma; Chinese: Qomolangma Feng; Nepali: Sagarmatha), the world’s highest, with an elevation of 29,032 feet 8,849 metres; see Researcher’s Note: Height of Mount Everest. The mountains’ high peaks rise into the zone of perpetual snow.
+                    
+                    
+                                Mount Everest
+                                North Face of Mount Everest, above the Tibet Autonomous Region of China.
+                                For thousands of years the Himalayas have held a profound significance for the peoples of South Asia, as their literature, mythologies, and religions reflect. Since ancient times the vast glaciated heights have attracted the attention of the pilgrim mountaineers of India, who coined the Sanskrit name Himalaya—from hima (“snow”) and alaya (“abode”)—for that great mountain system. In contemporary times the Himalayas have offered the greatest attraction and the greatest challenge to mountaineers throughout the world.
+                                
+                                
+                                Nanga Parbat
+                                
+                                Himalayas
+                                Forested slopes of the foothills of the Himalayan mountains near Kalimpong, northern West Bengal, India.
+                                The ranges, which form the northern border of the Indian subcontinent and an almost impassable barrier between it and the lands to the north, are part of a vast mountain belt that stretches halfway around the world from North Africa to the Pacific Ocean coast of Southeast Asia. The Himalayas themselves stretch uninterruptedly for about 1,550 miles (2,500 km) from west to east between Nanga Parbat (26,660 feet [8,126 metres]), in the Pakistani-administered portion of the Kashmir region, and Namjagbarwa (Namcha Barwa) Peak (25,445 feet [7,756 metres]), in the Tibet Autonomous Region of China. Between those western and eastern extremities lie the two Himalayan countries of Nepal and Bhutan. The Himalayas are bordered to the northwest by the mountain ranges of the Hindu Kush and the Karakoram and to the north by the high and vast Plateau of Tibet. The width of the Himalayas from south to north varies between 125 and 250 miles (200 and 400 km). Their total area amounts to about 230,000 square miles (595,000 square km).
+                                
+                                Though India, Nepal, and Bhutan have sovereignty over most of the Himalayas, Pakistan and China also occupy parts of them. In the disputed Kashmir region, Pakistan has administrative control of some 32,400 square miles (83,900 square km) of the range lying north and west of the “line of control” established between India and Pakistan in 1972. China administers some 14,000 square miles (36,000 square km) in the Ladakh region and has claimed territory at the eastern end of the Himalayas within the Indian state of Arunachal Pradesh. Those disputes accentuate the boundary problems faced by India and its neighbours in the Himalayan region.
+                                
+                                </p></div><br>
+                                <div style="border: 1px solid;">
+                                <h4 style="color: red;text-decoration: underline; text-align: center;">repeat-unset image</h4>
+
+                                <p style="background-image: url(images_1); background-repeat: unset;" title="with repeat-unset iamge">Himalayas, great mountain system of Asia forming a barrier between the Plateau of Tibet to the north and the alluvial plains of the Indian subcontinent to the south. The Himalayas include the highest mountains in the world, with more than 110 peaks rising to elevations of 24,000 feet (7,300 metres) or more above sea level. One of those peaks is Mount Everest (Tibetan: Chomolungma; Chinese: Qomolangma Feng; Nepali: Sagarmatha), the world’s highest, with an elevation of 29,032 feet 8,849 metres; see Researcher’s Note: Height of Mount Everest. The mountains’ high peaks rise into the zone of perpetual snow.
+                        
+                        
+                                    Mount Everest
+                                    North Face of Mount Everest, above the Tibet Autonomous Region of China.
+                                    For thousands of years the Himalayas have held a profound significance for the peoples of South Asia, as their literature, mythologies, and religions reflect. Since ancient times the vast glaciated heights have attracted the attention of the pilgrim mountaineers of India, who coined the Sanskrit name Himalaya—from hima (“snow”) and alaya (“abode”)—for that great mountain system. In contemporary times the Himalayas have offered the greatest attraction and the greatest challenge to mountaineers throughout the world.
+                                    
+                                    
+                                    Nanga Parbat
+                                    
+                                    Himalayas
+                                    Forested slopes of the foothills of the Himalayan mountains near Kalimpong, northern West Bengal, India.
+                                    The ranges, which form the northern border of the Indian subcontinent and an almost impassable barrier between it and the lands to the north, are part of a vast mountain belt that stretches halfway around the world from North Africa to the Pacific Ocean coast of Southeast Asia. The Himalayas themselves stretch uninterruptedly for about 1,550 miles (2,500 km) from west to east between Nanga Parbat (26,660 feet [8,126 metres]), in the Pakistani-administered portion of the Kashmir region, and Namjagbarwa (Namcha Barwa) Peak (25,445 feet [7,756 metres]), in the Tibet Autonomous Region of China. Between those western and eastern extremities lie the two Himalayan countries of Nepal and Bhutan. The Himalayas are bordered to the northwest by the mountain ranges of the Hindu Kush and the Karakoram and to the north by the high and vast Plateau of Tibet. The width of the Himalayas from south to north varies between 125 and 250 miles (200 and 400 km). Their total area amounts to about 230,000 square miles (595,000 square km).
+                                    
+                                    Though India, Nepal, and Bhutan have sovereignty over most of the Himalayas, Pakistan and China also occupy parts of them. In the disputed Kashmir region, Pakistan has administrative control of some 32,400 square miles (83,900 square km) of the range lying north and west of the “line of control” established between India and Pakistan in 1972. China administers some 14,000 square miles (36,000 square km) in the Ladakh region and has claimed territory at the eastern end of the Himalayas within the Indian state of Arunachal Pradesh. Those disputes accentuate the boundary problems faced by India and its neighbours in the Himalayan region.
+                                    
+                                    </p></div>
+    </div><br>
+
+    <!--------------html tags---------------->
+    <h2 id="nn" class="head">Html Tags</h2>
+        
+      <div style="display: flex; gap: 20px;flex-wrap: wrap;justify-content: center;padding: 50px;">
+      <div class="block" style="background: linear-gradient(red,blue,red);border-radius: 20px;">
+       
+        <div class="tag">&lt;h1&gt;Heading 1&lt;/h1&gt;</div>
+        <div class="tag">&lt;p&gt;Paragraph&lt;/p&gt;</div>
+        <div class="tag">&lt;a href="#"&gt;Link&lt;/a&gt;</div>
+        <div class="tag">&lt;img src="image.jpg" alt="Image"&gt;</div>
+        <div class="tag">&lt;ul&gt;&lt;li&gt;List item 1&lt;/li&gt;&lt;/ul&gt;</div>
+        <div class="tag">&lt;ol&gt;&lt;li&gt;List item 1&lt;/li&gt;&lt;/ol&gt;</div>
+        <div class="tag">&lt;table&gt;&lt;tr&gt;&lt;td&gt;Table data&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</div>
+        <div class="tag">&lt;form action="#" method="post"&gt;&lt;input type="text" name="name"&gt;&lt;/form&gt;</div>
+        <div class="tag">&lt;div&gt;Division&lt;/div&gt;</div>
+        <div class="tag">&lt;span&gt;Span&lt;/span&gt;</div>
+    
+        <div class="tag">&lt;h2&gt;Heading 2&lt;/h2&gt;</div>
+        <div class="tag">&lt;strong&gt;Strong text&lt;/strong&gt;</div>
+        <div class="tag">&lt;em&gt;Emphasized text&lt;/em&gt;</div>
+        <div class="tag">&lt;input type="checkbox" name="checkbox"&gt; Checkbox</div>
+        <div class="tag">&lt;textarea rows="4" cols="40"&gt;&lt;/textarea&gt;</div>
+        <div class="tag">&lt;button&gt;Button&lt;/button&gt;</div>
+        <div class="tag">&lt;iframe src="https://www.example.com"&gt;&lt;/iframe&gt;</div>
+        <div class="tag">&lt;label for="input"&gt;Label&lt;/label&gt;</div>
+        <div class="tag">&lt;header&gt;Header&lt;/header&gt;</div>
+        <div class="tag">&lt;footer&gt;Footer&lt;/footer&gt;</div>
+   
+        <div class="tag">&lt;nav&gt;Navigation&lt;/nav&gt;</div>
+        <div class="tag">&lt;section&gt;Section&lt;/section&gt;</div>
+        <div class="tag">&lt;article&gt;Article&lt;/article&gt;</div>
+        <div class="tag">&lt;aside&gt;Aside&lt;/aside&gt;</div>
+        <div class="tag">&lt;main&gt;Main content&lt;/main&gt;</div>
+        <div class="tag">&lt;details&gt;&lt;summary&gt;Details&lt;/summary&gt;&lt;p&gt;Details content&lt;/p&gt;&lt;/details&gt;</div>
+        <div class="tag">&lt;abbr title="Abbreviation"&gt;ABBR&lt;/abbr&gt;</div>
+        <div class="tag">&lt;blockquote&gt;Blockquote&lt;/blockquote&gt;</div>
+        <div class="tag">&lt;code&gt;Code&lt;/code&gt;</div>
+        <div class="tag">&lt;time datetime="2023-07-01"&gt;July 1, 2023&lt;/time&gt;</div>
+   
+        <div class="tag">&lt;cite&gt;Citation&lt;/cite&gt;</div>
+        <div class="tag">&lt;del&gt;Deleted text&lt;/del&gt;</div>
+        <div class="tag">&lt;ins&gt;Inserted text&lt;/ins&gt;</div>
+        <div class="tag">&lt;mark&gt;Highlighted text&lt;/mark&gt;</div>
+        <div class="tag">&lt;s&gt;Strikethrough text&lt;/s&gt;</div>
+        <div class="tag">&lt;u&gt;Underlined text&lt;/u&gt;</div>
+        <div class="tag">&lt;q&gt;Inline quote&lt;/q&gt;</div>
+        <div class="tag">&lt;pre&gt;Preformatted text&lt;/pre&gt;</div>
+        <div class="tag">&lt;small&gt;Small text&lt;/small&gt;</div>
+        <div class="tag">&lt;sub&gt;Subscript&lt;/sub&gt;</div>
+    </div>
+
+    <div class="block" style="background: linear-gradient(red,blue,red);border-radius: 20px;">
+        
+        <div class="tag">&lt;sup&gt;Superscript&lt;/sup&gt;</div>
+        <div class="tag">&lt;b&gt;Bold text&lt;/b&gt;</div>
+        <div class="tag">&lt;i&gt;Italic text&lt;/i&gt;</div>
+        <div class="tag">&lt;hr&gt;Horizontal rule&lt;/hr&gt;</div>
+        <div class="tag">&lt;fieldset&gt;&lt;legend&gt;Fieldset&lt;/legend&gt;&lt;input type="text"&gt;&lt;/fieldset&gt;</div>
+        <div class="tag">&lt;optgroup label="Group"&gt;&lt;option&gt;Option&lt;/option&gt;&lt;/optgroup&gt;</div>
+        <div class="tag">&lt;select&gt;&lt;option&gt;Option&lt;/option&gt;&lt;/select&gt;</div>
+        <div class="tag">&lt;progress value="70" max="100"&gt;70%&lt;/progress&gt;</div>
+        <div class="tag">&lt;meter value="4" min="0" max="10"&gt;4 out of 10&lt;/meter&gt;</div>
+        <div class="tag">&lt;figcaption&gt;Figure caption&lt;/figcaption&gt;</div>
+   
+        
+        <div class="tag">&lt;figure&gt;&lt;img src="image.jpg" alt="Image"&gt;&lt;<br>figcaption&gt;Caption&lt;/figcaption&gt;&lt;/figure&gt;</div>
+        <div class="tag">&lt;picture&gt;&lt;source srcset="image.webp" type="image/webp"&gt;&lt;<br>img src="image.jpg" alt="Image"&gt;&lt;/picture&gt;</div>
+        <div class="tag">&lt;dialog open&gt;Dialog&lt;/dialog&gt;</div>
+        <div class="tag">&lt;template&gt;&lt;p&gt;Template content&lt;/p&gt;&lt;/template&gt;</div>
+        <div class="tag">&lt;slot&gt;Slot content&lt;/slot&gt;</div>
+        <div class="tag">&lt;script&gt;console.log('Script')&lt;/script&gt;</div>
+        <div class="tag">&lt;style&gt;body { background-color: #f0f0f0; }&lt;/style&gt;</div>
+        <div class="tag">&lt;meta charset="UTF-8"&gt;</div>
+        <div class="tag">&lt;base href="https://www.example.com/"&gt;</div>
+        <div class="tag">&lt;title&gt;Page title&lt;/title&gt;</div>
+        <div class="tag">&lt;link rel="stylesheet" href="styles.css"&gt;</div>
+   
+        <div class="tag">&lt;meta name="description" content="Page description"&gt;</div>
+        <div class="tag">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</div>
+        <div class="tag">&lt;!-- Comment --&gt;</div>
+        <div class="tag">&lt;!DOCTYPE html&gt;</div>
+        <div class="tag">&lt;html lang="en"&gt;&lt;/html&gt;</div>
+        <div class="tag">&lt;head&gt;&lt;/head&gt;</div>
+        <div class="tag">&lt;body&gt;&lt;/body&gt;</div>
+        <div class="tag">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;</div>
+        <div class="tag">&lt;audio controls&gt;&lt;source src="audio.mp3" type="audio/mpeg"&gt;&lt;/audio&gt;</div>
+        <div class="tag">&lt;video controls&gt;&lt;source src="video.mp4" type="video/mp4"&gt;&lt;/video&gt;</div>
+        <div class="tag">&lt;canvas&gt;&lt;/canvas&gt;</div>
+   
+        <div class="tag">&lt;svg width="100" height="100"&gt;&lt;<br> circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" /&gt;&lt;/svg&gt;</div>
+        <div class="tag">&lt;embed src="file.pdf" type="application/pdf"&gt;</div>
+        <div class="tag">&lt;object data="file.pdf" type="application/pdf"&gt;&lt;/object&gt;</div>
+        <div class="tag">&lt;param name="autoplay" value="true"&gt;</div>
+        <div class="tag">&lt;wbr&gt;</div>
+        <div class="tag">&lt;bdo dir="rtl"&gt;This text will go right-to-left.&lt;/bdo&gt;</div>
+        <div class="tag">&lt;kbd&gt;Ctrl + C&lt;/kbd&gt;</div>
+        <div class="tag">&lt;output name="result"&gt;42&lt;/output&gt;</div>
+        <div class="tag">&lt;datalist id="browsers"&gt;&lt;option value="Chrome"&gt;&lt;/datalist&gt;</div>
+        <div class="tag">&lt;fieldset&gt;&lt;legend&gt;Personal Information&lt; <br>/legend&gt;&lt;label for="name"&gt;<br>Name:&lt;/label&gt;&lt;input type="text" id="name" name="name"&gt;&lt;/fieldset&gt;</div>
+    </div>
+
+    </div><br>
+
+    <!-----------forms--------------------- -->
+      
+  
+    <h2 id="oo" class="head">Forms</h2>
+    <div style="display:flex ;flex-wrap: wrap; align-items: center;justify-content: center;">
+        <div>
+            
+            <form action="" style="width: 100%;">
+                <fieldset>
+                    <legend style="color: blue;">Student Registration Form</legend>
+                <br><table cellpadding="5" cellspacing="5" style="background: linear-gradient(rgb(227, 125, 125),rgb(131, 131, 244)); justify-content: space-between;border: none;">
+                    <tbody><tr><td>FIRST NAME: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="" id="" placeholder="enter the first name">( Max  50 characters allowed)</td></tr>    
+                    <tr><td>LAST NAME:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="" id="" placeholder="enter the last name">( Max  50 characters allowed)</td></tr>    
+                    <tr><td>EMAIL:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" name="" id="" placeholder="enter email"></td></tr>
+                    <tr><td>MOBILE NUMBER: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="" id="" placeholder="enter the number"></td></tr>
+                    <tr><td>GENDER:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="" id="">Male <input type="radio" name="" id="">Female</td></tr>
+                    <tr><td>DATA OF BIRTH:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" name="" id=""></td></tr>
+                    <tr><td>ADDRESS: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <textarea name="" id="" style="height: 100px;" value="enter the address" placeholder="enter the address"></textarea></td></tr>
+                    
+                    <tr><td>CITY: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="" id="" placeholder="enter the city">( Max  50 characters allowed)</td></tr>
+                    <tr><td>PIN CODE: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="" id="" placeholder="enter the pincode">( Max  50 characters allowed)</td></tr>
+                    <tr><td>STATE: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=" name=" id="" placeholder="enter State name">( Max  50 characters allowed)</td></tr>
+                    <tr><td>COUNTRY: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="" id="" placeholder="enter the country"></td></tr>
+                    <tr><td>HOBBIES: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="" id="">Singing <input type="checkbox" name="" id="">Dancing <input type="checkbox" name="" id="">Drawing <input type="checkbox" name="" id="">Sketching <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="" id="">others <input type="text" name="" id=""></td></tr>
+                    <tr><td>QULAIFICATION: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="" id="">High School <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="" id="">Higher School <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="" id=""> Graduation <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="" id="">Post-Graduation <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="" id="">Phd </td></tr>
+        
+                    <tr><td>COURSES: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="" id="">BCA(Bachelor of Computer Application) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="" id="">B.COM(Bachelor of Commerce) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="" id="">B.SC(Bachelor of Science) <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="" id="">BA(Bachelor of Arts) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="" id="">MCA(Masters of Computer Application) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="" id="">M.COM(Masters of Commerce) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="" id="">M.SC(Masters of Science) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="" id="">MA(Masters of Arts) </td></tr>
+                    <tr><td colspan="2" align="center"><input type="submit" value="Submit"><input type="reset" value="Reset"></td>
+        
+                   
+        
+                </tr></tbody></table>
+                </fieldset>
+            </form>
+
+        </div>
+        <div style="width: 100%;">
+            <form action="">
+                <fieldset style="background-color: white; padding: 20px; max-width: 900px; margin: auto;">
+                    <legend style="color: blue;">Registration</legend>
+                    
+                    <!-- Personal Details Section -->
+                    <div class="form-section">
+                        <h3>Personal Details</h3>
+                        <hr>
+                        <div class="form-row">
+                            <label>Full Name
+                                <input type="text" placeholder="Enter your name">
+                            </label>
+                            <label>Date of Birth
+                                <input type="date">
+                            </label>
+                            <label>Email
+                                <input type="email" placeholder="Enter your email">
+                            </label>
+                        </div>
+                        <div class="form-row">
+                            <label>Mobile number
+                                <input type="tel" placeholder="Enter your number">
+                            </label>
+                            <label>Gender
+                                <input type="text" placeholder="Enter your Gender">
+                            </label>
+                            <label>Occupation
+                                <input type="text" placeholder="Enter your Occupation">
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Identity Details Section -->
+                    <div class="form-section">
+                        <h3>Identity Details</h3>
+                        <hr>
+                        <div class="form-row">
+                            <label>ID type
+                                <input type="text" placeholder="Enter your ID type">
+                            </label>
+                            <label>ID number
+                                <input type="text" placeholder="Enter your ID number">
+                            </label>
+                            <label>Issue Authority
+                                <input type="text" placeholder="Enter your Issue Authority">
+                            </label>
+                        </div>
+                        <div class="form-row">
+                            <label>Issue Date
+                                <input type="date">
+                            </label>
+                            <label>Issue State
+                                <input type="text" placeholder="Enter your issued state">
+                            </label>
+                            <label>Expiry Date
+                                <input type="date">
+                            </label>
+                        </div>
+                    </div>
+        
+                    <input type="button" value="Next →" style="background-color: blue; color: antiquewhite; width: 100%; padding: 10px; font-size: 16px;">
+                </fieldset>
+            </form>
+        </div>
+        
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+        
+            fieldset {
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+        
+            .form-section {
+                margin-bottom: 20px;
+            }
+        
+            .form-section h3 {
+                color: blue;
+                font-size: 18px;
+                margin: 0;
+            }
+        
+            .form-row {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+        
+            .form-row label {
+                flex: 1 1 30%; /* Adjust width per label */
+                display: flex;
+                flex-direction: column;
+                font-size: 14px;
+            }
+        
+            input[type="text"],
+            input[type="date"],
+            input[type="email"],
+            input[type="tel"] {
+                padding: 8px;
+                width: 100%;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+        
+            /* Responsive adjustments */
+            @media (max-width: 768px) {
+                .form-row {
+                    flex-direction: column;
+                }
+                input[type="button"] {
+                    width: 100%;
+                }
+            }
+        </style>
+        
+            <form action="" style="background:linear-gradient( rgb(80, 80, 217),red);width: 600px;">
+                <legend style="font-size: x-large;"><center> <b>XYZ College /School</b> <br>Student Registration Form </center> </legend>
+                <fieldset><div><label for="image-upload"> Student Image</label>
+                    <input type="file" name="" id="image-upload" accept="image-upload">( less than 5MB) <br><br>
+                    <label for=""> Student Name :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="" id="" placeholder=" Student name" size="60px"><br><br>
+                    <label for=""> Father Name :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="" id="" placeholder=" Father name" size="60px"><br><br>
+                    <label for=""> Mother Name:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="" id="" placeholder=" Mother Name" size="60px"><br><br> 
+                    <label for=""> Gender:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="" id=""> Male
+                    <input type="radio" name="" id=""> female
+                    <input type="radio" name="" id=""> others <br><br>
+                    <label for=""> DateofBirth:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="date" name="" id="" size="60px"><br><br>
+                    <label for=""> E-Mail:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="email" name="" id="" size="60px" placeholder="enter email@"><br><br>
+                    <label for="school-level">Level:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    
+                    <select id="school-level" name="school-level">
+                        <option value="high-school">High School</option>
+                        <option value="higher-school">Higher School</option>
+                        <option value="graduate">Graduate</option>
+                        <option value="post-graduate">Post-Graduate</option>
+                    </select><br><br>
+                     <label for="btech-department">Department:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <select id="btech-department" name="btech-department">
+                        <option value="computer-science">Computer Science and Engineering</option>
+                        <option value="information-technology">Information Technology</option>
+                        <option value="mechanical-engineering">Mechanical Engineering</option>
+                        <option value="electrical-engineering">Electrical Engineering</option>
+                        <option value="civil-engineering">Civil Engineering</option>
+                        <option value="electronics-communication">Electronics and Communication Engineering</option>
+                        <option value="chemical-engineering">Chemical Engineering</option>
+                        <option value="biotechnology">Biotechnology</option>
+                        <option value="aerospace-engineering">Aerospace Engineering</option>
+                        <option value="automobile-engineering">Automobile Engineering</option>
+                        &nbsp;&nbsp;</select><br><br>
+                    <label for="">Mobile:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="number" size="60px"><br><br>
+                    <hr>
+                    <legend><center>Premanent Address</center></legend><br>
+                    <label for="">State:</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="" id="" placeholder="State" size="60px"><br><br>
+                    <label for="">City:</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="" id="" placeholder="City" size="60px"><br><br>
+                    <label for="">Zip Code:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="" id="" placeholder="Zip Code" size="60px"><br><br>
+                    <label for="">Mobile Number:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="" id="" placeholder="Mobile Number" size="60px"><br><hr>
+                    <legend><center>Temporary Address</center></legend>
+                    <label for=""> Set as Premanent Address</label>
+                    <input type="checkbox" name="" id=""><br>
+                    <label for="">State:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="" id="" placeholder="State" size="60px"><br><br>
+                    <label for="">City :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="" id="" placeholder="City" size="60px"><br><br>
+                    <label for="">Zip Code :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="number" name="" id="" placeholder="Zip Code" size="60px"><br><br>
+                    <label for="">Mobile Number:</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="tel" name="" id="" placeholder="Mobile Number" size="60px"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+                    <button style="padding: 0; background-color: blue;color: white; size: 60px; width: 100px;height: 40px;">Register</button>
+        
+        
+        
+        
+        
+                </div>
+        
+                      
+        
+                </fieldset>
+            </form>
+            </div>
+
+        
+        
+    <hr>
+    <div>
+        <div>
+            <form action="" style="background: linear-gradient(rgb(201, 129, 174),coral,rgb(80, 80, 160))">
+                <legend style="color:aqua;font-size: x-large;"> <center>Student Registration form</center></legend>
+                <fieldset><div style="align-items: center;justify-content: center;">
+                    <label for="">Firstname:</label><br>
+                    <input type="text" name="" id="" size="70px" placeholder="Firstname"><br><br>
+                    <label for="">Middlename:</label><br>
+                    <input type="text" name="" id="" placeholder="Middlename" size="70px"><br><br><label for="">Lastname:</label><br>
+                    <input type="text" name="" id="" size="70px" placeholder="Lastname"><br><br>
+                    <label for="">Course:</label><br>
+                    <select id="btech-department" name="btech-department">
+                        <option value="computer-science">Computer Science and Engineering</option>
+                        <option value="information-technology">Information Technology</option>
+                        <option value="mechanical-engineering">Mechanical Engineering</option>
+                        <option value="electrical-engineering">Electrical Engineering</option>
+                        <option value="civil-engineering">Civil Engineering</option>
+                        <option value="electronics-communication">Electronics and Communication Engineering</option>
+                        <option value="chemical-engineering">Chemical Engineering</option>
+                        <option value="biotechnology">Biotechnology</option>
+                        <option value="aerospace-engineering">Aerospace Engineering</option>
+                        <option value="automobile-engineering">Automobile Engineering</option>
+                        &nbsp;&nbsp;</select><br>
+                    
+                    <label for="">Phone:</label><br>
+                    <input type="tel" name="" id="" size="70px" placeholder="+91" disabled=""><br>
+                    <input type="tel" name="" id="" size="70px" placeholder="Phone"><br><br>
+                    <label for="">Current Address:</label><br>
+                    <textarea name="" id="" size="70px" height="40px"></textarea><br><br>
+                    <label for="">EMAIL:</label><br>
+                    <input type="email" name="" id="" size="70px" placeholder="email"><br><br>
+                    <label for="">Password:</label><br>
+                    <input type="text" name="" id="" placeholder="Password" size="70px"><br><br><label for="">Confirm Password:</label><br>
+                    <input type="text" name="" id="" size="70px" placeholder="Confirm Password"><br><br>
+                    <button size="70px" style="background-color: lightgreen; block-size: 40px ;width: 500px;">Register</button>
+                    </div>
+        
+                </fieldset>
+        
+            </form><br>
+            <div>
+                
+
+        </div>
+    </div>
+    <!--------------------entities and symbols------------>
+    <h2 id="pp" class="head">Entities &amp; Symbols</h2>
+    <div style=" display: flex;padding: 100px;flex-wrap: wrap;"> 
+        
+        
+        
+        <div style="height: 450px; width: 130px;font-size:21px; margin:20px; background: linear-gradient(to  right,rgba(0, 0, 255, 0.676),rgba(255, 0, 0, 0.712),rgba(0, 0, 255, 0.676));border-radius: 50px;text-align : center ;color: white;">
+           
+            <center><p style=" font-size: x-large;width: 100px;color: white;"><br><br><br>
+                &lt;<br>
+                &gt;  <br>
+                &amp;  <br>
+                " <br>
+                ' <br> 
+                ¢ <br>
+                £  <br>
+                ¥  <br>
+                €  <br>
+                © <br>
+                ®  <br>
+                
+
+            </p></center>
+        </div><br>&nbsp;&nbsp;<br><br>
+        
+        <div style="height: 450px; width: 130px;font-size:21px; margin:20px; background: linear-gradient(to right,rgba(0, 0, 255, 0.676),rgba(255, 0, 0, 0.712),rgba(0, 0, 255, 0.676));border-radius: 50px;text-align : center ;">
+          
+            <center><p style=" font-size: x-large;width: 100px;color: white;"><br><br><br>
+                ⨿  <br>
+                æ <br>
+                ⁡ <br>
+                𝔄;<br>
+                𝔞<br>
+                À <br>
+                à <br>
+                Ā<br>
+                ā <br>
+                ∧  <br>
+                ⩓  <br>
+
+
+
+
+
+            </p></center>
+
+        </div><br>&nbsp;&nbsp;<br><br>
+        <div style="height: 450px; width: 130px;font-size:21px; margin:20px; background: linear-gradient(to right,rgba(0, 0, 255, 0.676),rgba(255, 0, 0, 0.712),rgba(0, 0, 255, 0.676));border-radius: 50px;text-align : center ;">
+            <center><p style=" font-size: x-large;width: 100px;color: white;"><br><br><br>
+                ⩕ <br>
+                ⩜  <br>
+                ∠  <br>
+                ⦤  <br>
+                ∠  <br>
+                ∡  <br>
+                ⦨ <br>
+                ⦩ <br>
+                ⦪<br>
+                ⦫ <br>
+
+            </p></center>
+        </div><br><br>&nbsp;&nbsp;
+        <div style="height: 450px; width: 130px;font-size:21px; margin:20px; background: linear-gradient(to right,rgba(0, 0, 255, 0.584),rgba(255, 0, 0, 0.655),rgba(0, 0, 255, 0.614));border-radius: 50px;text-align : center ;"><br><br>
+            <center><p style=" font-size: x-large;width: 100px;color: white;"><br><br>
+                Ă  <br>
+                ă  <br>
+                ∾ <br>
+                ∿  <br>
+                ∾̳  <br>
+                À  <br>
+                â   <br>
+                ´   <br>
+                А   <br>
+                а   <br>
+
+
+            </p></center>
+                </div><br>&nbsp;&nbsp;
+        <div style="height: 450px; width: 130px;font-size:21px; margin:20px; background: linear-gradient(to right,rgba(0, 0, 255, 0.676),rgba(255, 0, 0, 0.712),rgba(0, 0, 255, 0.676));border-radius: 50px;text-align : center ;">
+            <center><p style=" font-size: x-large;width: 100px;color: white;"><br><br><br>
+            
+                ∀  <br>
+                ∂  <br>
+                ∃ <br>
+                ∅  <br>
+                ∇ <br>
+                ∈ <br>
+                ∉  <br>
+                ∋  <br>
+                ∏ <br>
+                ∑  <br>
+            </p></center>
+        </div><br>&nbsp;&nbsp;
+        <div style="height: 450px; width: 130px;font-size:21px; margin:20px; background: linear-gradient(to right,rgba(0, 0, 255, 0.676),rgba(255, 0, 0, 0.712),rgba(0, 0, 255, 0.676));border-radius: 50px;text-align : center ;"><br>
+            
+            <center> <p style=" font-size: x-large;width: 100px;color: white;"><br><br>
+                ©<br>
+                ®  <br>
+                €  <br>
+                ™<br>
+                ←<br>
+                ↑  <br>
+                →  <br>
+                ↓  <br>
+                ♠ <br>
+                ♣ <br>
+                ♥ <br>
+                ♦ <br> 
+
+            </p></center>
+        </div><br><br>&nbsp;&nbsp;
+        <div style="height: 450px; width: 130px;font-size:21px; margin:20px; background: linear-gradient(to right,rgba(0, 0, 255, 0.676),rgba(255, 0, 0, 0.712),rgba(0, 0, 255, 0.676));border-radius: 50px;text-align : center ;">
+            <center> <p style=" font-size: x-large;width: 100px;color: white;"><br><br><br>
+                Å <br>
+                å<br>
+                𝒶<br>
+                𝒜<br>
+                ≔<br>
+                *<br>
+                ≈<br>
+                ≍<br>
+                Ã<br>
+                ã<br>
+
+            </p></center>
+        </div><br>&nbsp;&nbsp;
+        <div style="height: 450px; width: 130px;font-size:21px; margin:20px; background: linear-gradient(to right,rgba(0, 0, 255, 0.676),rgba(255, 0, 0, 0.712),rgba(0, 0, 255, 0.676));border-radius: 50px;text-align : center ;">
+            <center><p style=" font-size: x-large;width: 100px;color: white;"><br><br><br>
+                Ä <br>
+                ä<br>
+                ∳<br>
+                ⨑<br>
+                ϶<br>
+                ‵<br>
+                ⋍<br>
+                ∖<br>
+                ⫧<br>
+                β<br>
+
+            </p></center>
+        </div><br>&nbsp;&nbsp;
+        <div style="height: 450px; width: 130px;font-size:21px; margin:20px; background: linear-gradient(to right,rgba(0, 0, 255, 0.676),rgba(255, 0, 0, 0.712),rgba(0, 0, 255, 0.676));border-radius: 50px;text-align : center ;">
+            <center><p style=" font-size: x-large;width: 100px;color: white;"><br><br><br>
+                ⦰ <br>
+                ∵<br>
+                ⋂<br>
+                ⋃<br>
+                ⨀<br>
+                ★<br>
+                ▽<br>
+                △<br>
+                ⋁<br>
+                ⧫<br>
+
+            </p></center>
+        </div><br>&nbsp;&nbsp;
+        <div style="height: 450px; width: 130px;font-size:21px; margin:20px; background: linear-gradient(to right,rgba(0, 0, 255, 0.676),rgba(255, 0, 0, 0.712),rgba(0, 0, 255, 0.676));border-radius: 50px;text-align : center ;">
+            <center><p style=" font-size: x-large;width: 100px; color: white;"><br><br><br>
+                ∰<br>&nbsp;&nbsp;
+                ▒<br>&nbsp;&nbsp;
+                •<br>&nbsp;&nbsp;
+                █<br>&nbsp;&nbsp;
+                ⊥<br>&nbsp;&nbsp;
+                *<br>&nbsp;&nbsp;
+                ╣<br>&nbsp;&nbsp;
+                •<br>&nbsp;&nbsp;
+                ╡<br>&nbsp;&nbsp;
+                ⁁<br>&nbsp;&nbsp;
+
+            </p></center>
+        </div><br>&nbsp;&nbsp;
+    </div><br>&nbsp;
+
+
+    <!---------------emojies---------------->
+    <h2 id="qq" class="head">EMOJIES</h2>
+         
+      
+    <div style="display: flex;flex-direction: row; width: 100%; ">
+        <div style="height: 450px; width: 130px;font-size:21px; margin:20px; background: linear-gradient(to right,rgba(0, 0, 255, 0.676),rgba(255, 0, 0, 0.712),rgba(0, 0, 255, 0.676));border-radius: 500px;text-align : center ;">
+            <p>😀</p>
+            <p>😁</p>
+            <p>😂</p>
+            <p>😃</p>
+            <p>😄</p>
+            <p>😅</p>
+            <p>😆</p>
+            <p>😇</p>
+            <p>😈</p>
+            
+          </div>
+          
+        <div style="height: 450px;width: 130px;font-size:21px; margin:20px;background: linear-gradient(to right,rgba(0, 0, 255, 0.676),rgba(255, 0, 0, 0.712),rgba(0, 0, 255, 0.676)) ;border-radius: 500px;text-align: center ">
+            <p>😊</p>
+            <p>😋</p>
+            <p>😌</p>
+            <p>😍</p>
+            <p>😎</p>
+            <p>😏</p>
+            <p>😐</p>
+            <p>😑</p>
+            <p>😒</p>
+           
+            
+       
+          
+          
+        </div>
+        <div style="height: 450px;width: 130px;font-size:21px; margin:20px;background: linear-gradient(to right,rgba(0, 0, 255, 0.676),rgba(255, 0, 0, 0.712),rgba(0, 0, 255, 0.676));border-radius: 500px;text-align: center ">
+            <p>😉</p>
+            <p>😕</p>
+            <p>😖</p>
+            <p>😗</p>
+            <p>😘</p>
+            <p>😙</p>
+            <p>😚</p>
+            <p>😛</p>
+            <p>😜</p>
+           
+
+        </div>
+        <div style="height: 450px;width: 130px;font-size:21px; margin:20px;background: linear-gradient(to right,rgba(0, 0, 255, 0.676),rgba(255, 0, 0, 0.712),rgba(0, 0, 255, 0.676)); border-radius: 500px;text-align: center">
+           
+            <p>😞</p>
+            <p>😟</p>
+            <p>😠</p>
+            <p>😡</p>
+            <p>😢</p>
+            <p>😣</p>
+            <p>😤</p>
+            <p>😥</p>
+            <p>😦</p>
+            
+
+
+
+        </div>
+        <div style="height: 450px;width: 130px;font-size:21px; margin:20px;background: linear-gradient(to right,rgba(0, 0, 255, 0.676),rgba(255, 0, 0, 0.712),rgba(0, 0, 255, 0.676));border-radius: 500px;text-align: center ">
+           
+            <p>😨</p>
+            <p>😩</p>
+            <p>😪</p>
+            <p>😫</p>
+            <p>😬</p>
+            <p>😭</p>
+            <p>😮</p>
+            <p>😯</p>
+            <p>😰</p>
+            
+          
+        </div>
+        <div style="height: 450px;width: 130px;font-size:21px; margin:20px;background: linear-gradient(to right,rgba(0, 0, 255, 0.676),rgba(255, 0, 0, 0.712),rgba(0, 0, 255, 0.676)); border-radius: 500px;text-align: center;">
+           
+            <p>🖕</p>
+            <p>👉</p>
+            <p>👈</p>
+            <p>👇</p>
+            <p>👆</p>
+            <p>✊</p>
+            <p>👊</p>
+            <p>👍</p>
+            <p>👎</p>
+           
+       
+        </div> 
+        <div style="height: 450px;width: 130px;font-size:21px; margin:20px;background: linear-gradient(to right,rgba(0, 0, 255, 0.676),rgba(255, 0, 0, 0.712),rgba(0, 0, 255, 0.676));border-radius: 500px;text-align: center ">
+           
+            <p>☝</p>
+            <p>🤚</p>
+            <p>🖖</p>
+            <p>🖐</p>
+            <p>👋</p>
+            <p>丛</p>
+            <p>👿</p>
+            <p>💀</p>
+            <p>👿</p>
+            
+        </div>
+        <div style="height: 450px;width: 130px;font-size:21px; margin:20px;background: linear-gradient(to right,rgba(0, 0, 255, 0.676),rgba(255, 0, 0, 0.712),rgba(0, 0, 255, 0.676)); border-radius: 500px;text-align: center;">
+           
+            <p>💺</p>
+            <p>💻</p>
+            <p>💼</p>
+            <p>💽</p>
+            <p>💾</p>
+            <p>📈</p>
+            <p>📉</p>
+            <p>📊</p>
+            <p>🕿</p>
+           
+           
+        
+        
+        </div>
+        <div style="height: 450px;width: 130px;font-size:21px; margin:20px;background: linear-gradient(to right,rgba(0, 0, 255, 0.676),rgba(255, 0, 0, 0.712),rgba(0, 0, 255, 0.676));border-radius: 500px;text-align: center ">
+           
+            <p>🚀</p>
+            <p>🚁</p>
+            <p>🚬</p>
+            <p>🚇</p>
+            <p>🚑</p>
+            <p>🚕</p>
+            <p>🚥</p>
+            <p>🚧</p>
+            <p>🚱</p>
+            
+           
+          
+        </div>
+        <div style="height: 450px;width: 130px;font-size:21px; margin:20px;background: linear-gradient(to right,rgba(0, 0, 255, 0.676),rgba(255, 0, 0, 0.712),rgba(0, 0, 255, 0.676)); border-radius: 500px;text-align: center;">
+           
+            <p>👮</p>
+            <p>👯</p>
+            <p>💏</p>
+            <p>💑</p>
+            <p>💍</p>
+            <p>💎</p>
+            <p>💤</p>
+            <p>🜁</p>
+            <p>💫</p>
+          
+            
+        
+        
+        </div>
+       
+        
+        
+      </div></div><br>&nbsp;
+
+      <!--iframes-------------------------->
+      <h2 class="head" style="margin-bottom: 40px;">Iframes</h2><div style="display: flex;gap: 50px;justify-content: center;align-items: center;" id="0418"> <div>
+        <iframe src="embed.html" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div><div>
+
+      
+      <iframe src="embed_1.html" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe></div></div>
+      <div style="display: flex;justify-content: center;align-items: center;gap: 20px;">
+        <div>
+            <!-- audio-------------------- -->
+      <h2 id="rr" class="head" style="margin-bottom: 40px;">Audio Tag</h2>
+      
+      <div style="border: 1px solid;width: 400px;height: 80px; border-radius: 50px;padding:20px 0 0 ; background: linear-gradient(#000080,#C0C0C0,#000080);justify-content: center;align-items: center;text-align: center;"><center>
+        
+      <audio controls="">
+        <source src="media/%5BiSongs.info%5D%2003%20-%20Chuttamalle.mp3"></audio></center>
+        
+      </div>
+        </div>
+        <div>
+
+      <!------------video------------>
+      <h2 id="ss" class="head" style="margin-bottom: 40px;">Video Tag</h2><div style="justify-content: center;justify-content: center;">
+      <div style="border: 1px solid;width: 400px;padding: 20px;background: linear-gradient( #333333,#FFFFFF, #333333);border-radius: 50px;"><center>
+        
+        <video width="360" height="360" controls="">
+            <source src="media/Baby%20Wont%20You%20Tell%20Me%20-%20Saaho-%28Hd9video%29.mp4">
+            </video></center>
+            
+          <br>
+          
+      </div><br></div>
+        </div>
+      </div>
+      <!------------------svg--------------->
+      <div>
+        <h2 id="tt" class="head">
+          SVG(Scalable Vector Graphics)
+        </h2>
+      
+        <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+          <!-- First SVG (Star) -->
+          <div style="flex: 1; max-width: 500px;">
+            <svg width="100%" height="auto" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="100,10 120,75 180,75 130,110 150,170 100,135 50,170 70,110 20,75 80,75" fill="#f39c12" stroke="#e67e22" stroke-width="5"></polygon>
+            </svg>
+          </div>
+      
+          <!-- Second SVG (Circles) -->
+          <div style="flex: 1; max-width: 500px;">
+            <svg width="100%" height="auto" viewBox="0 0 500 500">
+              <!-- Larger circle -->
+              <circle cx="250" cy="250" r="200" fill="blue"></circle>
+              <!-- Smaller circle inside the larger circle -->
+              <circle cx="250" cy="250" r="100" fill="lightblue"></circle>
+            </svg>
+          </div>
+      
+          <!-- Third SVG (Cone) -->
+          <div style="flex: 1; max-width: 500px;">
+            <svg width="100%" height="auto" viewBox="0 0 200 200">
+              <!-- Cone body -->
+              <polygon points="100,20 150,180 50,180" fill="orange" stroke="black" stroke-width="2"></polygon>
+              <!-- Cone base (ellipse) -->
+              <ellipse cx="100" cy="180" rx="50" ry="10" fill="brown" stroke="black" stroke-width="2"></ellipse>
+            </svg>
+          </div>
+        </div>
+      </div>
+      
+
+        <!-------------------canvas-------
+        -->
+        <h2 id="uu" class="head">Canvas </h2><canvas id="myCanvas" style="width: 100%; height: auto;"></canvas>
+        <script>
+            // Get the canvas element
+            const canvas = document.getElementById('myCanvas');
+            // Get the context of the canvas
+            const ctx = canvas.getContext('2d');
+        
+            // Set the canvas width and height based on its container
+            function resizeCanvas() {
+                const width = canvas.clientWidth;
+                canvas.width = width;  // Update canvas width
+                canvas.height = width;  // Maintain a 1:1 aspect ratio
+        
+                // Redraw everything after resizing
+                drawShapes();
+            }
+        
+            
+            function drawShapes() {
+                const width = canvas.width;
+                const height = canvas.height;
+        
+                ctx.clearRect(0, 0, width, height);
+        
+               
+                ctx.fillStyle = 'lightblue';
+                ctx.fillRect(width * 0.1, height * 0.1, width * 0.3, height * 0.2);
+        
+               
+                ctx.beginPath();
+                ctx.moveTo(width * 0.1, height * 0.4);
+                ctx.lineTo(width * 0.4, height * 0.7);
+                ctx.strokeStyle = 'red';
+                ctx.lineWidth = 5 * (width / 500);
+                ctx.stroke();
+        
+              
+                ctx.beginPath();
+                ctx.arc(width * 0.7, height * 0.3, width * 0.15, 0, 2 * Math.PI);
+                ctx.fillStyle = 'blue';
+                ctx.fill();
+                ctx.strokeStyle = 'black';
+                ctx.lineWidth = 2 * (width / 500); 
+                ctx.stroke();
+            }
+        
+           
+            resizeCanvas();
+        
+           
+            window.addEventListener('resize', resizeCanvas);
+        </script>
+        
+        <br>  
+        <!------------------footer---------->
+        
+        
+        <footer style="background-color: #333333; height: 50px;font-size: large; color: white;text-align: center; padding-top: 50px;">2024 © copy rights reserved by Pranay Reddy
+
+        </footer>
+       
+   
+    
+
+
+
+   
+</body></html>

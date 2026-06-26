@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="images/images.png" type="image/x-icon">
+    <script src="js/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Resume Generator</h1>
+        <form id="resumeForm">
+            <div id="formSections">
+                <div class="form-section active">
+                    <input type="text" id="name" placeholder="Name" required="">
+                    <button type="button" class="nextBtn">Next</button>
+                </div>
+                <div class="form-section">
+                    <input type="email" id="email" placeholder="Email" required="">
+                    <button type="button" class="nextBtn">Next</button>
+                </div>
+                <div class="form-section">
+                    <input type="text" id="linkedin" placeholder="LinkedIn URL">
+                    <button type="button" class="nextBtn">Next</button>
+                </div>
+                <div class="form-section">
+                    <input type="text" id="phone" placeholder="Phone Number">
+                    <button type="button" class="nextBtn">Next</button>
+                </div>
+                <div class="form-section">
+                    <input type="text" id="address" placeholder="Address">
+                    <button type="button" class="nextBtn">Next</button>
+                </div>
+                <div class="form-section">
+                    <textarea id="objective" placeholder="Career Objective"></textarea>
+                    <button type="button" class="nextBtn">Next</button>
+                </div>
+                <div class="form-section">
+                    <textarea id="experience" placeholder="Work Experience"></textarea>
+                    <button type="button" class="nextBtn">Next</button>
+                </div>
+                <div class="form-section">
+                    <textarea id="projects" placeholder="Projects"></textarea>
+                    <button type="button" class="nextBtn">Next</button>
+                </div>
+                <div class="form-section">
+                    <textarea id="achievements" placeholder="Achievements"></textarea>
+                    <button type="button" class="nextBtn">Next</button>
+                </div>
+                <div class="form-section">
+                    <input type="text" id="languages" placeholder="Languages Known">
+                    <button type="button" class="nextBtn">Next</button>
+                </div>
+                <div class="form-section">
+                    <input type="text" id="skills" placeholder="Skills">
+                    <button type="button" class="nextBtn">Next</button>
+                </div>
+                <div class="form-section">
+                    <input type="text" id="education10th" placeholder="10th Education">
+                    <button type="button" class="nextBtn">Next</button>
+                </div>
+                <div class="form-section">
+                    <input type="text" id="education12th" placeholder="12th Education">
+                    <button type="button" class="nextBtn">Next</button>
+                </div>
+                <div class="form-section">
+                    <input type="text" id="higherEducation" placeholder="Higher Education">
+                    <button type="button" class="nextBtn">Next</button>
+                </div>
+                <div class="form-section">
+                    <textarea id="certifications" placeholder="Certifications"></textarea>
+                    <button type="button" class="nextBtn">Next</button>
+                </div>
+                <div class="form-section">
+                    <textarea id="extracurricular" placeholder="Extra-Curricular Activities"></textarea>
+                    <button type="button" class="nextBtn">Next</button>
+                </div>
+                <div class="form-section">
+                    <textarea id="traits" placeholder="Personality Traits"></textarea>
+                    <button type="button" class="nextBtn">Next</button>
+                </div>
+                <div class="form-section">
+                    <textarea id="interests" placeholder="Interests"></textarea>
+                    <button type="button" class="nextBtn">Next</button>
+                </div>
+                <div class="form-section">
+                    <select id="template">
+                        <option value="template1">Template 1</option>
+                        <option value="template2">Template 2</option>
+                    </select>
+                    <button type="button" id="generateBtn">Generate Resume</button>
+                </div>
+            </div>
+        </form>
+
+        <div id="resumeOutput" class="resume-output" style="display: none;"></div>
+        <button id="downloadBtn" style="display: none;">Download Resume</button>
+    </div>
+
+    <script src="js/app.js"></script>
+
+
+</body></html>

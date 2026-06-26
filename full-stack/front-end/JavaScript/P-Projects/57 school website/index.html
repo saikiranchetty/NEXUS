@@ -1,0 +1,536 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bright Future academy </title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+     <link rel="icon" href="images/logo.png" type="image/png">
+  <style>
+      /* Base styles */
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        line-height: 1.6;
+        background-color: #f5f7fa;
+      }
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .btn-primary {
+        background-color: #2c5aa0;
+        border-color: #2c5aa0;
+      }
+      .btn-primary:hover {
+        background-color: #1d4075;
+        border-color: #1d4075;
+      }
+      .navbar {
+        background: linear-gradient(135deg, #1e5799 0%, #207cca 51%, #2989d8 100%);
+      }
+      .navbar-brand {
+        font-weight: 700;
+        font-size: 1.5rem;
+      }
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      }
+      .dropdown-item:hover {
+        background-color: #f0f7ff;
+        color: #2c5aa0;
+      }
+    </style></head>
+     
+  <body>
+    <header class="header">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+          <div class="logo d-flex align-items-center">
+            <img src="images/logo.png" alt="Bright Future Academy" style="height: 50px; margin-right: 15px; color: #fff; background-color: white;">
+            <div class="logo-text">
+              <h1 style="margin: 0; font-size: 22px; color: white;">Bright Future Academy</h1>
+              <p style="margin: 0; font-size: 12px; color: rgba(255,255,255,0.8);">Empowering Minds, Shaping Futures</p>
+            </div>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active " href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="admissions.html">Admissions</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="academicsDropdown" role="button" data-bs-toggle="dropdown">
+                  Academics
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="academicsDropdown">
+                  <li><a class="dropdown-item" href="academics.html">Overview</a></li>
+                  <li><a class="dropdown-item" href="facilities.html">Facilities</a></li>
+                  <li><a class="dropdown-item" href="faculty.html">Faculty</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="gallery.html">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="login.html">
+                  <i class="fas fa-user me-1"></i>Login
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="text-center p-5" style="
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url('images/hero.png');
+        background-size: cover;
+        background-position: center;
+        color: white;
+      ">
+      <h1 style="font-weight: 800; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)">
+        Welcome to Sunrise Public School
+      </h1>
+      <p class="lead" style="font-size: 1.5rem; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5)">
+        Empowering young minds through quality education and strong values since
+        1995
+      </p>
+      <a class="btn btn-warning btn-lg mt-3" href="admissions.html" style="font-weight: 600; padding: 10px 25px">Apply Now <i class="fas fa-arrow-right ms-2"></i></a>
+    </section>
+
+    <section class="container py-5">
+      <div class="row">
+        <div class="col-md-6">
+          <h2 style="
+              color: #1e5799;
+              font-weight: 700;
+              border-bottom: 3px solid #ffd700;
+              display: inline-block;
+              padding-bottom: 5px;
+            ">
+            About Our School
+          </h2>
+          <p style="font-size: 1.1rem; line-height: 1.8; color: #555">
+            Established in 1995, Sunrise Public School has been a beacon of
+            excellence in education, nurturing young minds to become responsible
+            global citizens. Our student-centered approach focuses on holistic
+            development through academics, sports, arts, and community service.
+          </p>
+          <p style="font-size: 1.1rem; line-height: 1.8; color: #555">
+            With a sprawling 10-acre campus, state-of-the-art facilities, and a
+            team of dedicated educators, we provide an environment where every
+            child can discover their potential and excel in their chosen path.
+          </p>
+          <a class="btn btn-primary mt-2" href="about.html" style="font-weight: 600">Learn More <i class="fas fa-angle-double-right ms-1"></i></a>
+        </div>
+        <div class="col-md-6">
+          <img src="photo-1588072432836-e10032774350" class="img-fluid rounded shadow-lg" alt="School Building" style="
+              border: 5px solid white;
+              box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            ">
+        </div>
+      </div>
+    </section>
+
+    <section style="background-color: #e3f2fd; padding: 60px 0">
+      <div class="container">
+        <h2 class="text-center mb-5" style="color: #1e5799; font-weight: 700; position: relative">
+          <span style="
+              background: #e3f2fd;
+              padding: 0 20px;
+              position: relative;
+              z-index: 1;
+            ">Why Choose Sunrise?</span>
+          <span style="
+              position: absolute;
+              height: 3px;
+              background: linear-gradient(
+                90deg,
+                transparent,
+                #1e5799,
+                transparent
+              );
+              width: 100%;
+              top: 50%;
+              left: 0;
+              z-index: 0;
+            "></span>
+        </h2>
+        <div class="row text-center">
+          <div class="col-md-3 mb-4">
+            <div class="p-4 bg-white rounded shadow-sm h-100" style="transition: all 0.3s ease">
+              <i class="fas fa-chalkboard-teacher mb-3" style="font-size: 2.5rem; color: #1e5799"></i>
+              <h4 style="color: #1e5799">Expert Faculty</h4>
+              <p style="color: #666">
+                Our teachers are highly qualified with 85% holding postgraduate
+                degrees and specialized training in child-centered pedagogy.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="p-4 bg-white rounded shadow-sm h-100" style="transition: all 0.3s ease">
+              <i class="fas fa-flask mb-3" style="font-size: 2.5rem; color: #1e5799"></i>
+              <h4 style="color: #1e5799">STEM Focus</h4>
+              <p style="color: #666">
+                Advanced laboratories and robotics programs prepare students for
+                careers in science and technology.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="p-4 bg-white rounded shadow-sm h-100" style="transition: all 0.3s ease">
+              <i class="fas fa-medal mb-3" style="font-size: 2.5rem; color: #1e5799"></i>
+              <h4 style="color: #1e5799">Proven Results</h4>
+              <p style="color: #666">
+                Consistent 100% board pass rate with 85% achieving first
+                division in CBSE examinations.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="p-4 bg-white rounded shadow-sm h-100" style="transition: all 0.3s ease">
+              <i class="fas fa-heart mb-3" style="font-size: 2.5rem; color: #1e5799"></i>
+              <h4 style="color: #1e5799">Well-being</h4>
+              <p style="color: #666">
+                Comprehensive counseling services and wellness programs support
+                students' mental health.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-5">
+      <h2 class="text-center mb-5" style="color: #1e5799; font-weight: 700">
+        Academic Programs
+      </h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 border-0 shadow" style="border-radius: 15px; overflow: hidden">
+            <img src="photo-1588072432836-e10032774350" class="card-img-top" style="height: 200px; object-fit: cover" alt="Primary School">
+            <div class="card-body">
+              <h5 class="card-title" style="color: #1e5799; font-weight: 600">
+                Primary School (I-V)
+              </h5>
+              <p class="card-text" style="color: #666">
+                Our play-based learning approach builds strong foundations in
+                literacy, numeracy, and social skills through experiential
+                activities.
+              </p>
+              <ul style="color: #666; padding-left: 20px">
+                <li>Activity-based curriculum</li>
+                <li>Language immersion program</li>
+                <li>Personalized learning plans</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 border-0 shadow" style="border-radius: 15px; overflow: hidden">
+            <img src="photo-1523240795612-9a054b0db644" class="card-img-top" style="height: 200px; object-fit: cover" alt="Middle School">
+            <div class="card-body">
+              <h5 class="card-title" style="color: #1e5799; font-weight: 600">
+                Middle School (VI-VIII)
+              </h5>
+              <p class="card-text" style="color: #666">
+                Transitioning to subject specialists while maintaining
+                interdisciplinary connections and project-based learning.
+              </p>
+              <ul style="color: #666; padding-left: 20px">
+                <li>STEM enrichment programs</li>
+                <li>Leadership development</li>
+                <li>Career exploration</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 border-0 shadow" style="border-radius: 15px; overflow: hidden">
+            <img src="photo-1434030216411-0b793f4b4173" class="card-img-top" style="height: 200px; object-fit: cover" alt="High School">
+            <div class="card-body">
+              <h5 class="card-title" style="color: #1e5799; font-weight: 600">
+                High School (IX-XII)
+              </h5>
+              <p class="card-text" style="color: #666">
+                Rigorous academic preparation with multiple streams (Science,
+                Commerce, Humanities) and university counseling.
+              </p>
+              <ul style="color: #666; padding-left: 20px">
+                <li>Advanced placement courses</li>
+                <li>Research opportunities</li>
+                <li>College prep workshops</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background-color: #1e5799; color: white; padding: 60px 0">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h2 style="font-weight: 700; margin-bottom: 20px">
+              Upcoming Events
+            </h2>
+            <div style="
+                background-color: rgba(255, 255, 255, 0.1);
+                padding: 20px;
+                border-radius: 10px;
+                margin-bottom: 15px;
+              ">
+              <h5 style="font-weight: 600; color: #ffd700">
+                Annual Science Fair
+              </h5>
+              <p>
+                <i class="far fa-calendar-alt me-2"></i> October 15-17, 2025
+              </p>
+              <p>
+                Showcasing innovative student projects in biotechnology,
+                robotics, and environmental science.
+              </p>
+            </div>
+            <div style="
+                background-color: rgba(255, 255, 255, 0.1);
+                padding: 20px;
+                border-radius: 10px;
+                margin-bottom: 15px;
+              ">
+              <h5 style="font-weight: 600; color: #ffd700">
+                Parents-Teachers Meeting
+              </h5>
+              <p><i class="far fa-calendar-alt me-2"></i> November 5, 2025</p>
+              <p>
+                Discuss your child's progress with our faculty members and
+                subject specialists.
+              </p>
+            </div>
+            <a href="#" class="btn btn-outline-light mt-2" style="font-weight: 600">View All Events <i class="fas fa-arrow-right ms-1"></i></a>
+          </div>
+          <div class="col-md-6">
+            <h2 style="font-weight: 700; margin-bottom: 20px">Testimonials</h2>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div style="
+                      background-color: rgba(255, 255, 255, 0.1);
+                      padding: 30px;
+                      border-radius: 10px;
+                    ">
+                    <p style="font-style: italic">
+                      "Sunrise School provided my daughter with both academic
+                      excellence and confidence. The teachers go above and
+                      beyond to nurture each child's unique talents."
+                    </p>
+                    <div style="
+                        display: flex;
+                        align-items: center;
+                        margin-top: 20px;
+                      ">
+                      <img src="images/65.jpg" style="
+                          width: 50px;
+                          height: 50px;
+                          border-radius: 50%;
+                          object-fit: cover;
+                          margin-right: 15px;
+                        " alt="Parent">
+                      <div>
+                        <h6 style="margin: 0; font-weight: 600">Mrs. Sharma</h6>
+                        <small>Parent of Class X student</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div style="
+                      background-color: rgba(255, 255, 255, 0.1);
+                      padding: 30px;
+                      border-radius: 10px;
+                    ">
+                    <p style="font-style: italic">
+                      "The sports facilities and coaching at Sunrise helped me
+                      develop my athletic skills while maintaining my academic
+                      performance. I'm now representing the state in
+                      basketball."
+                    </p>
+                    <div style="
+                        display: flex;
+                        align-items: center;
+                        margin-top: 20px;
+                      ">
+                      <img src="images/32.jpg" style="
+                          width: 50px;
+                          height: 50px;
+                          border-radius: 50%;
+                          object-fit: cover;
+                          margin-right: 15px;
+                        " alt="Alumni">
+                      <div>
+                        <h6 style="margin: 0; font-weight: 600">Rahul Verma</h6>
+                        <small>Alumni, Class of 2023</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev" style="filter: invert(1); width: 5%">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next" style="filter: invert(1); width: 5%">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-5">
+      <div class="row">
+        <div class="col-md-6">
+          <h2 style="color: #1e5799; font-weight: 700; margin-bottom: 20px">
+            Quick Links
+          </h2>
+          <div class="row">
+            <div class="col-md-6">
+              <ul style="list-style: none; padding: 0">
+                <li style="margin-bottom: 10px">
+                  <a href="#" style="color: #555; text-decoration: none; font-weight: 500"><i class="fas fa-angle-right me-2" style="color: #1e5799"></i>
+                    School Calendar</a>
+                </li>
+                <li style="margin-bottom: 10px">
+                  <a href="#" style="color: #555; text-decoration: none; font-weight: 500"><i class="fas fa-angle-right me-2" style="color: #1e5799"></i>
+                    School Uniform</a>
+                </li>
+                <li style="margin-bottom: 10px">
+                  <a href="#" style="color: #555; text-decoration: none; font-weight: 500"><i class="fas fa-angle-right me-2" style="color: #1e5799"></i>
+                    Transport</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <ul style="list-style: none; padding: 0">
+                <li style="margin-bottom: 10px">
+                  <a href="#" style="color: #555; text-decoration: none; font-weight: 500"><i class="fas fa-angle-right me-2" style="color: #1e5799"></i>
+                    Fee Structure</a>
+                </li>
+                <li style="margin-bottom: 10px">
+                  <a href="#" style="color: #555; text-decoration: none; font-weight: 500"><i class="fas fa-angle-right me-2" style="color: #1e5799"></i>
+                    School Policies</a>
+                </li>
+                <li style="margin-bottom: 10px">
+                  <a href="#" style="color: #555; text-decoration: none; font-weight: 500"><i class="fas fa-angle-right me-2" style="color: #1e5799"></i>
+                    Careers</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h2 style="color: #1e5799; font-weight: 700; margin-bottom: 20px">
+            Contact Us
+          </h2>
+          <div style="
+              background-color: #f8f9fa;
+              padding: 20px;
+              border-radius: 10px;
+            ">
+            <p style="margin-bottom: 5px">
+              <i class="fas fa-map-marker-alt me-2" style="color: #1e5799"></i>
+              123 Education Lane, Knowledge City, 560001
+            </p>
+            <p style="margin-bottom: 5px">
+              <i class="fas fa-phone-alt me-2" style="color: #1e5799"></i> +91
+              80 1234 5678
+            </p>
+            <p style="margin-bottom: 5px">
+              <i class="fas fa-envelope me-2" style="color: #1e5799"></i>
+              info@sunrisepublic.edu.in
+            </p>
+            <div class="mt-3">
+              <a href="#" class="me-2" style="color: #1e5799; font-size: 1.5rem"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="me-2" style="color: #1e5799; font-size: 1.5rem"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="me-2" style="color: #1e5799; font-size: 1.5rem"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="me-2" style="color: #1e5799; font-size: 1.5rem"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer style="
+        background: linear-gradient(135deg, #1a4b8c 0%, #1e5799 100%);
+        color: white;
+        padding: 30px 0;
+      ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5 style="font-weight: 600; margin-bottom: 20px; color: #ffd700">
+              Sunrise Public School
+            </h5>
+            <p>
+              Committed to excellence in education since 1995. Nurturing
+              tomorrow's leaders through innovative teaching and holistic
+              development.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5 style="font-weight: 600; margin-bottom: 20px; color: #ffd700">
+              School Hours
+            </h5>
+            <p>Monday - Friday: 8:30 AM - 3:30 PM</p>
+            <p>Saturday: 9:00 AM - 1:00 PM (Special Activities)</p>
+            <p>Office Hours: 8:00 AM - 5:00 PM</p>
+          </div>
+          <div class="col-md-4">
+            <h5 style="font-weight: 600; margin-bottom: 20px; color: #ffd700">
+              Newsletter
+            </h5>
+            <p>
+              Subscribe to our newsletter for school updates and announcements.
+            </p>
+            <div class="input-group mb-3">
+              <input type="email" class="form-control" placeholder="Your Email" style="border-radius: 5px 0 0 5px; border: none">
+              <button class="btn btn-warning" type="button" style="font-weight: 600">
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+        <hr style="border-color: rgba(255, 255, 255, 0.1); margin: 30px 0">
+        <div class="row">
+          <div class="col-md-6">
+            <p>© 2025 Sunrise Public School. All Rights Reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a href="#" style="color: white; text-decoration: none; margin-left: 15px">Privacy Policy</a>
+            <a href="#" style="color: white; text-decoration: none; margin-left: 15px">Terms of Use</a>
+            <a href="#" style="color: white; text-decoration: none; margin-left: 15px">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+  
+
+</body></html>

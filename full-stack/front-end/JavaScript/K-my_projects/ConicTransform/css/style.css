@@ -1,0 +1,321 @@
+body {
+    background-color: lightblue;
+    color: black;
+    font-family: cursive;
+}
+
+h1 {
+    border: 3px solid black;
+    border-radius: 30px;
+    background-color: crimson;
+    color: white;
+    text-align: center;
+}
+
+h2 {
+    border: 3px dashed blue;
+    border-radius: 30px;
+    background-color: tomato;
+    color: white;
+    text-align: center;
+}
+
+h3 {
+    border: 5px solid tan;
+    border-radius: 30px;
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+
+.box1 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: conic-gradient(red, blue);
+}
+
+.box2 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: conic-gradient(violet, indigo, blue, green, yellow, red);
+}
+
+.box3 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: conic-gradient(red 50%, blue 50%);
+}
+
+.box4 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: conic-gradient(from 120deg, red 50%, blue 50%);
+}
+
+.box5 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: conic-gradient(blue 45deg, blue 90deg, red 45deg,
+            red 180deg);
+}
+
+.box6 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: conic-gradient(at 40% 80%, blue 45deg, blue 90deg, red 45deg,
+            red 180deg);
+}
+
+.box7 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: brown;
+}
+
+.box8 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: repeating-conic-gradient(blue 45deg, blue 90deg, red 45deg,
+            red 180deg);
+}
+
+.box9 {
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: repeating-conic-gradient(at 40% 80%, red 45deg, blue 180deg);
+}
+
+.boxtx {
+    border: 3px solid white;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: yellowgreen;
+    transform: translateX(125px);
+}
+
+.boxty {
+    border: 3px solid white;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: yellowgreen;
+    transform: translateY(50px);
+}
+
+.boxr1 {
+    border: 3px solid white;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: yellowgreen;
+    transform: rotatex(50deg);
+    margin: 90px;
+}
+
+.boxr2 {
+    border: 3px solid white;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: yellowgreen;
+    transform: rotateY(60deg);
+    margin: 90px;
+}
+
+.boxr3 {
+    border: 3px solid white;
+    border-radius: 20px;
+    width: 325px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: yellowgreen;
+    transform: rotate(90deg);
+    margin: 90px;
+}
+
+.boxsx {
+    border: 3px solid white;
+    border-radius: 20px;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: yellowgreen;
+    transform: scaleX(2);
+    margin-left: 125px;
+}
+
+.boxsy {
+    border: 3px solid white;
+    border-radius: 20px;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: yellowgreen;
+    transform: scaleY(2);
+    margin: 125px;
+}
+
+.boxSx {
+    border: 3px solid white;
+    border-radius: 20px;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: yellowgreen;
+    transform: skewX(-12deg);
+    margin-left: 50px;
+}
+
+.boxSy {
+    border: 3px solid white;
+    border-radius: 20px;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: yellowgreen;
+    transform: skewY(12deg);
+    margin-left: 50px;
+}
+
+.boxtr img {
+    border: 3px solid white;
+    border-radius: 20px;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    transition: width 4s, height 4s, transform 6s;
+    margin-left: 50px;
+}
+
+.boxtr img:hover {
+    width: 563px;
+    height: 750px;
+}
+
+.boxtr1 img {
+    border: 3px solid white;
+    border-radius: 20px;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    transition: width 2s, height 2s, transform 3s;
+    margin-left: 50px;
+}
+
+.boxtr1 img:hover {
+    width: 563px;
+    height: 750px;
+    transform: rotate(180deg);
+}

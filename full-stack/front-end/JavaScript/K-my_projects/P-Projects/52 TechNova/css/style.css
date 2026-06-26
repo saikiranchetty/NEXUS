@@ -1,0 +1,230 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Navigation Bar */
+nav {
+    background: #004080;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav .toggle-btn {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+/* Login Button */
+.login-btn {
+    background: #ffcc00;
+    color: #004080;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+    background: white;
+    color: #004080;
+}
+
+
+/* Responsive Menu */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #004080;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav .toggle-btn {
+        display: block;
+    }
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    background: url('banner.png') no-repeat center center/cover;
+    color: black;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-btn {
+    background: #ffcc00;
+    color: #004080;
+    padding: 0.8rem 2rem;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+    background: white;
+}
+
+/* Section Styles */
+section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #004080;
+}
+
+.about-section,
+.services-section,
+.solutions-section,
+.team-section,
+.contact-section {
+    background: #f9f9f9;
+}
+
+.about-section img,
+.solutions-section img,
+.team-section img {
+    max-width: 100%;
+    margin: 1.5rem 0;
+    border-radius: 10px;
+}
+
+.service-container,
+.team-container,
+.blog-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.service-card,
+.team-member,
+.blog-card {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover,
+.team-member:hover,
+.blog-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card img,
+.team-member img,
+.blog-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Contact Form */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+form input,
+form textarea,
+form button {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+}
+
+form button {
+    background: #004080;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+form button:hover {
+    background: #ffcc00;
+    color: #004080;
+}
+
+/* Footer */
+footer {
+    background: #004080;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}

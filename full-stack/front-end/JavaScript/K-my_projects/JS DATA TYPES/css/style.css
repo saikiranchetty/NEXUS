@@ -1,0 +1,54 @@
+body {
+    background-color: lightblue;
+    color: black;
+    font-family: monospace;
+    font-size: 20px;
+}
+
+.data {
+    border: 6px groove red;
+    border-radius: 30px;
+    text-align: center;
+    background-color: royalblue;
+    color: white;
+}
+
+p {
+    text-align: center;
+    border: 2px dashed;
+    border-radius: 30px;
+    background-color: lightgreen;
+}
+
+table,
+th,
+td,
+tr {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+}
+
+th,
+td {
+    border: 2px solid blueviolet;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: crimson;
+    color: white;
+}
+
+td:hover {
+    background-color: chocolate;
+    color: white;
+    font-size: larger;
+}

@@ -1,0 +1,266 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #003087;
+}
+.navbar-brand, .nav-link {
+    color: white !important;
+}
+.nav-link:hover, .nav-link.active {
+    color: #ff4d4d !important;
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('../img/hero-bg.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+.hero-section p {
+    font-size: 1.2rem;
+}
+
+/* Service Cards */
+.service-card {
+    transition: transform 0.3s;
+}
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+/* CTA Buttons */
+.btn-cta {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+}
+.btn-cta:hover {
+    background-color: #cc0000;
+}
+
+/* Form Styling */
+.form-control:focus {
+    border-color: #ff4d4d;
+    box-shadow: 0 0 5px rgba(255, 77, 77, 0.5);
+}
+
+/* CTA Section */
+.bg-cta {
+    background-color: #003087;
+}
+
+/* Footer */
+footer {
+    background-color: #003087;
+    color: white;
+    padding: 20px 0;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+.whatsapp-btn:hover {
+    background-color: #1ebe56;
+}
+/* Contact Page Styles */
+.contact-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/contact-bg.jpg') no-repeat center center/cover;
+    padding: 150px 0 100px;
+    color: #fff;
+    text-align: center;
+}
+
+.contact-info {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.info-item {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+.info-icon {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(76, 175, 80, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #4CAF50;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.info-content h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.info-content p {
+    margin-bottom: 0;
+    color: #555;
+}
+
+.social-links h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(76, 175, 80, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4CAF50;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: #4CAF50;
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+.contact-form {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form-control, .form-select {
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 0.25rem rgba(76, 175, 80, 0.25);
+}
+
+textarea.form-control {
+    height: auto;
+    min-height: 150px;
+}
+
+.map-section {
+    margin: 50px 0;
+}
+
+.map-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.contact-cta {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/contact-cta-bg.jpg') no-repeat center center/cover;
+    color: #fff;
+}
+
+.faq-section {
+    background-color: #f9f9f9;
+}
+
+.accordion-button {
+    font-weight: 500;
+    padding: 15px 20px;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #4CAF50;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(76, 175, 80, 0.25);
+    border-color: #4CAF50;
+}
+
+.accordion-body {
+    padding: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 767.98px) {
+    .contact-header {
+        padding: 120px 0 80px;
+    }
+    
+    .info-item {
+        flex-direction: column;
+    }
+    
+    .info-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .contact-cta .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .contact-cta .btn:last-child {
+        margin-bottom: 0;
+    }
+}

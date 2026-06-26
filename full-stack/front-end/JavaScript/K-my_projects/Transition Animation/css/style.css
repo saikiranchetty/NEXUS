@@ -1,0 +1,296 @@
+body {
+    background-color: lightblue;
+    color: black;
+    font-family: cursive;
+}
+
+h1 {
+    border: 0.5rem solid tan;
+    border-radius: 50px;
+    text-align: center;
+    background-color: yellow;
+}
+
+h2 {
+    border: 0.6rem solid yellowgreen;
+    border-radius: 50px;
+    text-align: center;
+    background-color: white;
+}
+
+.Img {
+    width: 400px;
+}
+
+.text {
+    border: 2px solid blue;
+    border-radius: 50px;
+    text-align: center;
+    background-color: red;
+    color: white;
+}
+
+.trans1 {
+    width: 400px;
+    height: 300px;
+    border: 3px solid red;
+    background-color: white;
+    transition: width 2s;
+    transition-timing-function: linear;
+}
+
+.trans1:hover {
+    width: 800px;
+}
+
+.trans2 {
+    width: 400px;
+    height: 310px;
+    border: 3px solid red;
+    background-color: white;
+    transition: width 2s;
+    transition-timing-function: ease;
+}
+
+.trans2:hover {
+    width: 800px;
+}
+
+.trans3 {
+    width: 400px;
+    height: 310px;
+    border: 3px solid red;
+    background-color: white;
+    transition: width 2s;
+    transition-timing-function: ease-in;
+}
+
+.trans3:hover {
+    width: 800px;
+}
+
+.trans4 {
+    width: 400px;
+    height: 300px;
+    border: 3px solid red;
+    background-color: white;
+    transition: width 2s;
+    transition-timing-function: ease-out;
+}
+
+.trans4:hover {
+    width: 800px;
+}
+
+.trans5 {
+    width: 400px;
+    height: 310px;
+    border: 3px solid red;
+    background-color: white;
+    transition: width 2s;
+    transition-timing-function: ease-in-out;
+}
+
+.trans5:hover {
+    width: 800px;
+}
+
+.trans6 {
+    width: 400px;
+    height: 310px;
+    border: 3px solid red;
+    background-color: white;
+    transition: width 2s;
+    transition-timing-function: cubic-bezier(1, 0, 0, 1);
+}
+
+.trans6:hover {
+    width: 800px;
+}
+
+.animation {
+    width: 500px;
+}
+
+.ani1 {
+    border: 3px solid blue;
+    border-radius: 30px;
+    background-color: white;
+    width: 600px;
+    height: 200px;
+    animation-name: car1;
+    animation-duration: 4s;
+}
+
+.ani1 img {
+    margin: 20px;
+}
+
+@keyframes car1 {
+    from {
+        background-color: yellow;
+    }
+
+    to {
+        background-color: tan;
+    }
+}
+
+.ani2 {
+    border: 3px solid blue;
+    border-radius: 30px;
+    background-color: white;
+    width: 600px;
+    height: 200px;
+    animation-name: car2;
+    animation-duration: 10s;
+}
+
+.ani2 img {
+    margin: 20px;
+}
+
+@keyframes car2 {
+    0% {
+        background-color: tan;
+    }
+
+    25% {
+        background-color: blue;
+    }
+
+    50% {
+        background-color: teal;
+    }
+
+    75% {
+        background-color: yellowgreen;
+    }
+
+    100% {
+        background-color: red;
+    }
+}
+
+.ani3 {
+    border: 3px solid blue;
+    border-radius: 30px;
+    background-color: white;
+    width: 600px;
+    height: 200px;
+    animation-name: car1;
+    animation-duration: 4s;
+}
+
+.ani3 img {
+    margin: 20px;
+}
+
+@keyframes car3 {
+    from {
+        background-color: yellow;
+    }
+
+    to {
+        background-color: tan;
+    }
+}
+
+.ani4 {
+    border: 3px solid blue;
+    border-radius: 30px;
+    background-color: white;
+    width: 600px;
+    height: 200px;
+    animation-name: car4;
+    animation-duration: 10s;
+    position: relative;
+}
+
+.ani4 img {
+    margin: 20px;
+}
+
+@keyframes car4 {
+    0% {
+        background-color: tan;
+        top: 0px;
+        left: 0px;
+    }
+
+    25% {
+        background-color: blue;
+        top: 0px;
+        left: 200px;
+    }
+
+    50% {
+        background-color: teal;
+        top: 200px;
+        left: 200px;
+    }
+
+    75% {
+        background-color: yellowgreen;
+        left: 0px;
+        top: 200px;
+    }
+
+    100% {
+        background-color: red;
+        left: 0px;
+        top: 200px;
+    }
+}
+
+.ani5 {
+    border: 3px solid blue;
+    border-radius: 30px;
+    background-color: white;
+    width: 400px;
+    height: 210px;
+    animation-name: car5;
+    animation-duration: 10s;
+    position: relative;
+    background-size: cover;
+}
+
+.ani5 img {
+    margin: 20px;
+}
+
+@keyframes car5 {
+    0% {
+        background-color: white;
+        top: 0px;
+        left: 0px;
+    }
+
+    25% {
+        background-image: url(https://aventadortask9.netlify.app/assets/img/home-car-4.png);
+        background-size: cover;
+        top: 0px;
+        left: 200px;
+    }
+
+    50% {
+        background-image: url(https://aventadortask9.netlify.app/assets/img/home-car-3.png);
+        background-size: cover;
+        top: 200px;
+        left: 200px;
+    }
+
+    75% {
+        background-image: url(https://aventadortask9.netlify.app/assets/img/home-car-2.png);
+        background-size: cover;
+        left: 0px;
+        top: 200px;
+    }
+
+    100% {
+        background-image: url(https://aventadortask9.netlify.app/assets/img/home-car-1.png);
+        background-size: cover;
+        left: 0px;
+        top: 200px;
+    }
+}

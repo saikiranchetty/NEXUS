@@ -1,0 +1,666 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Staff | Serenity Gardens Senior Care</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/staff.css">
+    <style>
+        /* Staff Page Specific Styles */
+
+/* Staff Intro */
+.staff-intro {
+    background-color: #fff;
+}
+
+/* Leadership Team */
+.leadership-team {
+    background-color: #f8f9fa;
+}
+
+.staff-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.staff-card:hover {
+    transform: translateY(-5px);
+}
+
+.staff-photo {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.staff-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 4px solid #2c7be5;
+}
+
+.staff-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(44, 123, 229, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.staff-card:hover .staff-overlay {
+    opacity: 1;
+}
+
+.staff-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.staff-social a {
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.staff-social a:hover {
+    background: rgba(255,255,255,0.3);
+    transform: scale(1.1);
+}
+
+.staff-info h3 {
+    color: #343a40;
+    margin-bottom: 0.5rem;
+}
+
+.staff-info .text-muted {
+    color: #6c757d !important;
+}
+
+/* Nursing Staff */
+.nursing-staff {
+    background-color: #fff;
+}
+
+.nursing-staff .staff-photo {
+    width: 180px;
+    height: 180px;
+}
+
+/* Therapy Team */
+.therapy-team {
+    background-color: #f8f9fa;
+}
+
+.therapy-team .staff-photo {
+    width: 200px;
+    height: 200px;
+}
+
+/* Staff Benefits */
+.staff-benefits {
+    background-color: #fff;
+}
+
+.staff-benefits ul {
+    margin-bottom: 2rem;
+}
+
+.staff-benefits li {
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+}
+
+/* Staff Testimonials */
+.staff-testimonials {
+    background: linear-gradient(135deg, #2c7be5 0%, #1a56b4 100%);
+}
+
+.staff-testimonials .testimonial-card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+}
+
+/* Modal Styles */
+.modal-content {
+    border-radius: 15px;
+    border: none;
+}
+
+.modal-header {
+    border-bottom: 1px solid #dee2e6;
+    padding: 1.5rem;
+}
+
+.modal-title {
+    color: #2c7be5;
+    font-weight: 600;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-body h3 {
+    color: #343a40;
+    margin-bottom: 0.5rem;
+}
+
+.modal-body .text-muted {
+    color: #6c757d !important;
+    margin-bottom: 1rem;
+}
+
+.modal-body ul {
+    padding-left: 1.5rem;
+    margin-bottom: 0;
+}
+
+.modal-body ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .staff-photo {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .nursing-staff .staff-photo {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .therapy-team .staff-photo {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .modal-body .row > div {
+        margin-bottom: 1rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+       <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="./l.png" alt="Serenity Gardens" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/facilities">Facilities</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/staff">Our Staff</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/testimonials">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                </ul>
+                <a class="btn btn-primary ms-lg-3" href="/contact#schedule-tour">Schedule a Tour</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Staff Hero -->
+    <header class="page-hero staff-hero" style="background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1920&amp;q=80');">
+        <div class="hero-overlay"></div>
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 text-center text-white">
+                    <h1 class="display-3 fw-bold mb-4">Our Care Team</h1>
+                    <p class="lead">Compassionate professionals dedicated to exceptional senior care</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section py-3 bg-light">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Our Staff</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Staff Intro -->
+    <section class="staff-intro py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title mb-4">Meet Our Dedicated Team</h2>
+                    <p class="lead">At Serenity Gardens, our staff is our greatest asset. We carefully select professionals who are not only highly skilled but also genuinely passionate about senior care. Our team undergoes extensive training and background checks to ensure we provide the safest, most compassionate care possible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section class="leadership-team py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Leadership Team</h2>
+                <p class="section-subtitle">Experienced professionals guiding our community</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="staff-card text-center">
+                        <div class="staff-photo">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="Dr. Sarah Chen" class="img-fluid rounded-circle">
+                            <div class="staff-overlay">
+                                <div class="staff-social">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="staff-info mt-3">
+                            <h3 class="h5 mb-1">Dr. Sarah Chen</h3>
+                            <p class="text-muted mb-2">Medical Director</p>
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#staffModal1">View Bio</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="staff-card text-center">
+                        <div class="staff-photo">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="Michael Rodriguez" class="img-fluid rounded-circle">
+                            <div class="staff-overlay">
+                                <div class="staff-social">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="staff-info mt-3">
+                            <h3 class="h5 mb-1">Michael Rodriguez</h3>
+                            <p class="text-muted mb-2">Administrator</p>
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#staffModal2">View Bio</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="staff-card text-center">
+                        <div class="staff-photo">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="Janet Williams" class="img-fluid rounded-circle">
+                            <div class="staff-overlay">
+                                <div class="staff-social">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="staff-info mt-3">
+                            <h3 class="h5 mb-1">Janet Williams</h3>
+                            <p class="text-muted mb-2">Director of Nursing</p>
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#staffModal3">View Bio</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="staff-card text-center">
+                        <div class="staff-photo">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="David Kim" class="img-fluid rounded-circle">
+                            <div class="staff-overlay">
+                                <div class="staff-social">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="staff-info mt-3">
+                            <h3 class="h5 mb-1">David Kim</h3>
+                            <p class="text-muted mb-2">Activities Director</p>
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#staffModal4">View Bio</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nursing Staff -->
+    <section class="nursing-staff py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Nursing &amp; Care Team</h2>
+                <p class="section-subtitle">Compassionate professionals providing daily care</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="staff-card text-center">
+                        <div class="staff-photo">
+                            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="Lisa Thompson" class="img-fluid rounded-circle">
+                        </div>
+                        <div class="staff-info mt-3">
+                            <h3 class="h5 mb-1">Lisa Thompson</h3>
+                            <p class="text-muted mb-2">Registered Nurse</p>
+                            <p class="small">15 years geriatric experience</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="staff-card text-center">
+                        <div class="staff-photo">
+                            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="Robert Johnson" class="img-fluid rounded-circle">
+                        </div>
+                        <div class="staff-info mt-3">
+                            <h3 class="h5 mb-1">Robert Johnson</h3>
+                            <p class="text-muted mb-2">Licensed Practical Nurse</p>
+                            <p class="small">Wound care specialist</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="staff-card text-center">
+                        <div class="staff-photo">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="Maria Garcia" class="img-fluid rounded-circle">
+                        </div>
+                        <div class="staff-info mt-3">
+                            <h3 class="h5 mb-1">Maria Garcia</h3>
+                            <p class="text-muted mb-2">Certified Nursing Assistant</p>
+                            <p class="small">10 years at Serenity Gardens</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="staff-card text-center">
+                        <div class="staff-photo">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="James Wilson" class="img-fluid rounded-circle">
+                        </div>
+                        <div class="staff-info mt-3">
+                            <h3 class="h5 mb-1">James Wilson</h3>
+                            <p class="text-muted mb-2">Certified Nursing Assistant</p>
+                            <p class="small">Memory care specialist</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Therapy Team -->
+    <section class="therapy-team py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Therapy Team</h2>
+                <p class="section-subtitle">Helping residents regain strength and independence</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="staff-card text-center">
+                        <div class="staff-photo">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="Dr. Emily Chen" class="img-fluid rounded-circle">
+                        </div>
+                        <div class="staff-info mt-3">
+                            <h3 class="h5 mb-1">Dr. Emily Chen</h3>
+                            <p class="text-muted mb-2">Physical Therapist</p>
+                            <p class="small">Specializes in geriatric rehab</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="staff-card text-center">
+                        <div class="staff-photo">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="Mark Davis" class="img-fluid rounded-circle">
+                        </div>
+                        <div class="staff-info mt-3">
+                            <h3 class="h5 mb-1">Mark Davis</h3>
+                            <p class="text-muted mb-2">Occupational Therapist</p>
+                            <p class="small">ADL specialist</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="staff-card text-center">
+                        <div class="staff-photo">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="Sarah Miller" class="img-fluid rounded-circle">
+                        </div>
+                        <div class="staff-info mt-3">
+                            <h3 class="h5 mb-1">Sarah Miller</h3>
+                            <p class="text-muted mb-2">Speech Therapist</p>
+                            <p class="small">Swallowing disorders expert</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Staff Benefits -->
+    <section class="staff-benefits py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="https://images.unsplash.com/photo-1584697964358-3e14ca57658b?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Staff Training" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title mb-4">Our Commitment to Staff</h2>
+                    <p>We invest in our team because we know that happy, well-trained staff provide the best care. Our staff benefits include:</p>
+                    <ul class="fa-ul">
+                        <li class="mb-3"><span class="fa-li text-primary"><i class="fas fa-check-circle"></i></span><strong>Comprehensive training:</strong> 80+ hours of initial training and ongoing education</li>
+                        <li class="mb-3"><span class="fa-li text-primary"><i class="fas fa-check-circle"></i></span><strong>Competitive compensation:</strong> Salaries above industry average with regular reviews</li>
+                        <li class="mb-3"><span class="fa-li text-primary"><i class="fas fa-check-circle"></i></span><strong>Career advancement:</strong> Tuition reimbursement and promotion opportunities</li>
+                        <li><span class="fa-li text-primary"><i class="fas fa-check-circle"></i></span><strong>Work-life balance:</strong> Flexible scheduling and generous PTO</li>
+                    </ul>
+                    <div class="mt-4">
+                        <a href="#" class="btn btn-outline-primary me-2">Join Our Team</a>
+                        <a href="#" class="btn btn-link">View Open Positions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Staff Testimonials -->
+    <section class="staff-testimonials py-5 bg-primary text-white">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Why Our Staff Loves Working Here</h2>
+                <p class="section-subtitle">Hear from our team members</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div id="staffTestimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="testimonial-card p-4 p-lg-5 text-center">
+                                    <div class="quote-icon mb-4">
+                                        <i class="fas fa-quote-left fa-2x"></i>
+                                    </div>
+                                    <p class="testimonial-text mb-4">"What I love most about working at Serenity Gardens is the genuine sense of community. The administration truly values both residents and staff, and it shows in everything we do. I've worked at other facilities, but none compare to the level of care and professionalism here."</p>
+                                    <div class="testimonial-author">
+                                        <h5 class="mb-1">Lisa Thompson</h5>
+                                        <p class="mb-0">Registered Nurse, 5 years at Serenity Gardens</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-card p-4 p-lg-5 text-center">
+                                    <div class="quote-icon mb-4">
+                                        <i class="fas fa-quote-left fa-2x"></i>
+                                    </div>
+                                    <p class="testimonial-text mb-4">"As a CNA, I appreciate the excellent staff-to-resident ratios that allow me to provide the personalized care each resident deserves. The ongoing training opportunities have helped me grow professionally, and I'm proud to be part of a team that makes a real difference in seniors' lives."</p>
+                                    <div class="testimonial-author">
+                                        <h5 class="mb-1">James Wilson</h5>
+                                        <p class="mb-0">Certified Nursing Assistant, 3 years at Serenity Gardens</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#staffTestimonialCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#staffTestimonialCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4 mb-lg-0">
+                    <h2 class="mb-3">Meet Our Team in Person</h2>
+                    <p class="lead mb-0">Schedule a tour to see our staff in action and learn more about our approach to care.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a class="btn btn-primary btn-lg px-4" href="/contact#schedule-tour">Schedule a Tour</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Staff Modals -->
+    <!-- Modal 1 -->
+    <div class="modal fade" id="staffModal1" tabindex="-1" aria-labelledby="staffModal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staffModal1Label">Dr. Sarah Chen</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="Dr. Sarah Chen" class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-8">
+                            <h3>Medical Director</h3>
+                            <p class="text-muted">Board Certified Geriatrician</p>
+                            <p>Dr. Chen brings over 20 years of experience in geriatric medicine to Serenity Gardens. She completed her medical degree at Johns Hopkins University and her geriatrics fellowship at Mayo Clinic. Dr. Chen is passionate about holistic approaches to senior care that prioritize both physical health and quality of life.</p>
+                            <h5>Specialties:</h5>
+                            <ul>
+                                <li>Geriatric assessment</li>
+                                <li>Polypharmacy management</li>
+                                <li>Dementia care</li>
+                                <li>Palliative medicine</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (same as index.html) -->
+    <footer class="footer py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="./l.png" alt="Serenity Gardens" height="50" class="mb-3">
+                    <p>Providing exceptional senior care with compassion and dignity since 1995. Our mission is to enhance the quality of life for our residents through personalized care in a warm, homelike environment.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a class="text-white" href="/">Home</a></li>
+                        <li class="mb-2"><a class="text-white" href="/about">About Us</a></li>
+                        <li class="mb-2"><a class="text-white" href="/services">Services</a></li>
+                        <li class="mb-2"><a class="text-white" href="/facilities">Facilities</a></li>
+                        <li class="mb-2"><a class="text-white" href="/staff">Our Staff</a></li>
+                        <li class="mb-2"><a class="text-white" href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            123 Care Avenue, Serenity, ST 12345
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-phone-alt me-2"></i>
+                            <a href="tel:+18005551234" class="text-white">(800) 555-1234</a>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-envelope me-2"></i>
+                            <a href="mailto:info@serenitygardens.com" class="text-white">info@serenitygardens.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock me-2"></i>
+                            Visiting Hours: 8am - 8pm Daily
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p>Subscribe to our newsletter for updates and senior care tips.</p>
+                    <form class="mt-3">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">© 2023 Serenity Gardens. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white me-3">Privacy Policy</a>
+                    <a href="#" class="text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top btn btn-primary rounded-circle" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+
+</body></html>

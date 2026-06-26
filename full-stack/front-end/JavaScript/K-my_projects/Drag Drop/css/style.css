@@ -1,0 +1,29 @@
+body {
+    background-color: hsl(217, 68%, 94%);
+}
+
+.hide {
+    display: none;
+}
+
+#draggable-object {
+    background-color: hsl(214, 100%, 50%);
+    width: 9em;
+    height: 9em;
+    border-radius: 0.5em;
+    cursor: move;
+}
+
+#drop-point {
+    height: 10em;
+    width: 10em;
+    border: 2px dashed hsl(0, 0%, 0%);
+    background-color: hsl(208, 100%, 97%);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center; }

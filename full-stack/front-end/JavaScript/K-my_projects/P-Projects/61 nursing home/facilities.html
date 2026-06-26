@@ -1,0 +1,733 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Facilities | Serenity Gardens Senior Care</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Lightbox CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #3a7ca5;
+            --secondary-color: #2f6690;
+            --accent-color: #d9dcd6;
+            --dark-color: #16425b;
+            --light-color: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #444;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Georgia', serif;
+            font-weight: 600;
+        }
+        
+        /* Navbar */
+        
+        
+        /* Hero Section */
+        .page-hero {
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .facilities-hero {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(58, 124, 165, 0.3) 0%, rgba(22, 66, 91, 0.3) 100%);
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb-section {
+            background-color: #f8f9fa;
+        }
+        
+        /* Section Titles */
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            color: var(--dark-color);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        .section-subtitle {
+            color: #6c757d;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Facilities Page Specific Styles */
+        /* Facilities Intro */
+        .facilities-intro {
+            background-color: #fff;
+        }
+        
+        /* Living Spaces */
+        .living-spaces {
+            background-color: #f8f9fa;
+        }
+        
+        .facility-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        
+        .facility-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .facility-img {
+            overflow: hidden;
+        }
+        
+        .facility-img img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .facility-card:hover .facility-img img {
+            transform: scale(1.05);
+        }
+        
+        .facility-content {
+            padding: 1.5rem;
+        }
+        
+        .facility-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .facility-features {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0 0;
+        }
+        
+        .facility-features li {
+            padding: 0.25rem 0;
+            border-bottom: 1px solid #f1f1f1;
+        }
+        
+        .facility-features li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Amenities Section */
+        .amenities-section {
+            background-color: #fff;
+        }
+        
+        .amenity-card {
+            background: white;
+            padding: 2rem 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            height: 100%;
+            text-align: center;
+        }
+        
+        .amenity-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .amenity-icon {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+        }
+        
+        .amenity-card h3 {
+            color: #343a40;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        
+        .amenity-card p {
+            color: #6c757d;
+            margin-bottom: 0;
+        }
+        
+        /* Safety Features */
+        .safety-features {
+            background-color: #f8f9fa;
+        }
+        
+        .safety-features ul {
+            margin-bottom: 2rem;
+        }
+        
+        /* Photo Gallery */
+        .photo-gallery {
+            background-color: #fff;
+        }
+        
+        .gallery-item {
+            display: block;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            margin-bottom: 1.5rem;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+            z-index: 2;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            opacity: 0.9;
+        }
+        
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(58, 124, 165, 0.1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+        
+        /* Virtual Tour */
+        .virtual-tour {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+        }
+        
+        /* Call to Action */
+        .cta-section {
+            background-color: #fff;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            display: none;
+            z-index: 1000;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .page-hero {
+                height: 50vh;
+            }
+            
+            .facility-content {
+                padding: 1rem;
+            }
+            
+            .amenity-card {
+                padding: 1.5rem 1rem;
+            }
+            
+            .gallery-item img {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="./l.png" alt="Serenity Gardens" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/facilities">Facilities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/staff">Our Staff</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/testimonials">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                </ul>
+                <a class="btn btn-primary ms-lg-3" href="/contact#schedule-tour">Schedule a Tour</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Facilities Hero -->
+    <header class="page-hero facilities-hero">
+        <div class="hero-overlay"></div>
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 text-center text-white">
+                    <h1 class="display-3 fw-bold mb-4">Our Facilities</h1>
+                    <p class="lead">A comfortable, safe, and engaging environment designed for senior living</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section py-3 bg-light">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Facilities</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Facilities Intro -->
+    <section class="facilities-intro py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title mb-4">Designed for Comfort &amp; Safety</h2>
+                    <p class="lead">Our 5-acre campus features beautifully landscaped grounds and thoughtfully designed living spaces that combine comfort, safety, and accessibility. Every detail has been considered to create an environment that feels like home while meeting the unique needs of seniors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Living Spaces -->
+    <section class="living-spaces py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Living Spaces</h2>
+                <p class="section-subtitle">Private accommodations designed for comfort and independence</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="facility-card">
+                        <div class="facility-img">
+                            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1758&amp;q=80" alt="Private Room" class="img-fluid">
+                        </div>
+                        <div class="facility-content">
+                            <h3>Private Rooms</h3>
+                            <p>Spacious private rooms with ensuite bathrooms, emergency call systems, and customizable layouts.</p>
+                            <ul class="facility-features">
+                                <li><i class="fas fa-check text-primary me-2"></i> 250-300 sq ft</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Private bathroom</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Adjustable beds</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Wi-Fi included</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="facility-card">
+                        <div class="facility-img">
+                            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1770&amp;q=80" alt="Semi-Private Room" class="img-fluid">
+                        </div>
+                        <div class="facility-content">
+                            <h3>Semi-Private Rooms</h3>
+                            <p>Comfortable shared rooms with privacy curtains and ample space for personal belongings.</p>
+                            <ul class="facility-features">
+                                <li><i class="fas fa-check text-primary me-2"></i> 300-350 sq ft</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Shared bathroom</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Privacy curtains</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Individual storage</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="facility-card">
+                        <div class="facility-img">
+                            <img src="https://images.unsplash.com/photo-1615876234886-fd9a39fda97f?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1932&amp;q=80" alt="Memory Care Suite" class="img-fluid">
+                        </div>
+                        <div class="facility-content">
+                            <h3>Memory Care Suites</h3>
+                            <p>Secure suites designed specifically for residents with dementia, featuring calming colors and wayfinding cues.</p>
+                            <ul class="facility-features">
+                                <li><i class="fas fa-check text-primary me-2"></i> 200-250 sq ft</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Secure environment</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Visual cues</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Monitoring system</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities -->
+    <section class="amenities-section py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Community Amenities</h2>
+                <p class="section-subtitle">Spaces designed for socialization, activity, and relaxation</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="amenity-card">
+                        <div class="amenity-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3>Dining Rooms</h3>
+                        <p>Restaurant-style dining with varied menus and flexible meal times</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="amenity-card">
+                        <div class="amenity-icon">
+                            <i class="fas fa-book-reader"></i>
+                        </div>
+                        <h3>Library</h3>
+                        <p>Cozy reading area with large-print books and audiobooks</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="amenity-card">
+                        <div class="amenity-icon">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <h3>Beauty Salon</h3>
+                        <p>Full-service salon for haircuts, styling, and manicures</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="amenity-card">
+                        <div class="amenity-icon">
+                            <i class="fas fa-swimming-pool"></i>
+                        </div>
+                        <h3>Therapy Pool</h3>
+                        <p>Heated pool for aquatic therapy and gentle exercise</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="amenity-card">
+                        <div class="amenity-icon">
+                            <i class="fas fa-pray"></i>
+                        </div>
+                        <h3>Chapel</h3>
+                        <p>Interfaith spiritual space for reflection and services</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="amenity-card">
+                        <div class="amenity-icon">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <h3>Movie Theater</h3>
+                        <p>Weekly movie showings with comfortable seating</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="amenity-card">
+                        <div class="amenity-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3>Gardens</h3>
+                        <p>Beautifully landscaped outdoor spaces with walking paths</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="amenity-card">
+                        <div class="amenity-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h3>Fitness Center</h3>
+                        <p>Senior-friendly exercise equipment and classes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Features -->
+    <section class="safety-features py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="https://images.unsplash.com/photo-1615876234886-fd9a39fda97f?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1932&amp;q=80" alt="Safety Features" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title mb-4">Safety &amp; Accessibility Features</h2>
+                    <p>Our facility incorporates the latest safety technologies and accessibility features to ensure resident wellbeing:</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="fa-ul">
+                                <li class="mb-2"><span class="fa-li text-primary"><i class="fas fa-check"></i></span>24/7 emergency call system</li>
+                                <li class="mb-2"><span class="fa-li text-primary"><i class="fas fa-check"></i></span>Handrails in all hallways</li>
+                                <li class="mb-2"><span class="fa-li text-primary"><i class="fas fa-check"></i></span>Non-slip flooring</li>
+                                <li><span class="fa-li text-primary"><i class="fas fa-check"></i></span>Wheelchair accessibility</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="fa-ul">
+                                <li class="mb-2"><span class="fa-li text-primary"><i class="fas fa-check"></i></span>Secure memory care unit</li>
+                                <li class="mb-2"><span class="fa-li text-primary"><i class="fas fa-check"></i></span>Fire safety system</li>
+                                <li class="mb-2"><span class="fa-li text-primary"><i class="fas fa-check"></i></span>Backup power generator</li>
+                                <li><span class="fa-li text-primary"><i class="fas fa-check"></i></span>Medication management</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-shield-alt fa-2x text-primary me-3"></i>
+                            <div>
+                                <h4 class="h5 mb-1">24/7 Security</h4>
+                                <p class="mb-0">Monitored entrances and security cameras in common areas</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-user-nurse fa-2x text-primary me-3"></i>
+                            <div>
+                                <h4 class="h5 mb-1">On-Site Nursing</h4>
+                                <p class="mb-0">Registered nurses available around the clock</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="photo-gallery py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Photo Gallery</h2>
+                <p class="section-subtitle">Take a visual tour of our facilities</p>
+            </div>
+            <div class="row g-3">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1758&amp;q=80" data-lightbox="gallery" class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=80" alt="Private Room" class="img-fluid rounded">
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="./di.png" data-lightbox="gallery" class="gallery-item">
+                        <img src="./di.png" alt="Dining Area" class="img-fluid rounded">
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="https://images.unsplash.com/photo-1615876234886-fd9a39fda97f?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1932&amp;q=80" data-lightbox="gallery" class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1615876234886-fd9a39fda97f?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=80" alt="Common Area" class="img-fluid rounded">
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1770&amp;q=80" data-lightbox="gallery" class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=80" alt="Garden" class="img-fluid rounded">
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="./t.png" data-lightbox="gallery" class="gallery-item">
+                        <img src="./t.png" alt="Therapy Room" class="img-fluid rounded">
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1770&amp;q=80" data-lightbox="gallery" class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=80" alt="Library" class="img-fluid rounded">
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="https://images.unsplash.com/photo-1618220179428-22790b461013?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1727&amp;q=80" data-lightbox="gallery" class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=80" alt="Salon" class="img-fluid rounded">
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="https://images.unsplash.com/photo-1571508601891-ca5e7a713859?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1770&amp;q=80" data-lightbox="gallery" class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1571508601891-ca5e7a713859?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=80" alt="Swimming Pool" class="img-fluid rounded">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Virtual Tour -->
+    <section class="virtual-tour py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4 mb-lg-0">
+                    <h2 class="mb-3">Can't Visit in Person?</h2>
+                    <p class="lead mb-0">Take our virtual tour to explore our facilities from the comfort of your home.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="#" class="btn btn-light btn-lg px-4">Start Virtual Tour</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4 mb-lg-0">
+                    <h2 class="mb-3">Ready to See Our Facilities in Person?</h2>
+                    <p class="lead mb-0">Schedule a personalized tour to experience our community firsthand.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a class="btn btn-primary btn-lg px-4" href="/contact#schedule-tour">Schedule a Tour</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer (same as index.html) -->
+    <footer class="footer py-5 bg-dark text-white">
+       <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="./l.png" alt="Serenity Gardens" height="50" class="mb-3">
+                    <p>Providing exceptional senior care with compassion and dignity since 1995. Our mission is to enhance the quality of life for our residents through personalized care in a warm, homelike environment.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a class="text-white" href="/">Home</a></li>
+                        <li class="mb-2"><a class="text-white" href="/about">About Us</a></li>
+                        <li class="mb-2"><a class="text-white" href="/services">Services</a></li>
+                        <li class="mb-2"><a class="text-white" href="/facilities">Facilities</a></li>
+                        <li class="mb-2"><a class="text-white" href="/staff">Our Staff</a></li>
+                        <li class="mb-2"><a class="text-white" href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            123 Care Avenue, Serenity, ST 12345
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-phone-alt me-2"></i>
+                            <a href="tel:+18005551234" class="text-white">(800) 555-1234</a>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-envelope me-2"></i>
+                            <a href="mailto:info@serenitygardens.com" class="text-white">info@serenitygardens.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock me-2"></i>
+                            Visiting Hours: 8am - 8pm Daily
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p>Subscribe to our newsletter for updates and senior care tips.</p>
+                    <form class="mt-3">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">© 2023 Serenity Gardens. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white me-3">Privacy Policy</a>
+                    <a href="#" class="text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top btn btn-primary rounded-circle" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Lightbox JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+
+</body></html>

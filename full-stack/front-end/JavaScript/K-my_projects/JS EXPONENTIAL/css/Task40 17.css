@@ -1,0 +1,65 @@
+body {
+    background-color: lightblue;
+    color: black;
+    font-family: monospace;
+    font-size: 20px;
+}
+
+h1 {
+    border: 5px solid orange;
+    border-radius: 50px;
+    text-align: center;
+    background-color: plum;
+    color: white;
+}
+
+h2 {
+    border: 3px double;
+    border-radius: 50px;
+    text-align: center;
+    background-color: teal;
+    color: wheat;
+}
+
+h3 {
+    border: 3px double;
+    border-radius: 10px;
+    text-align: center;
+    background-color: wheat;
+}
+
+.container{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.container h4 {
+    border-radius: 10px;
+    text-align: center;
+    background-color: red;
+    color: white;
+}
+
+.container h4:hover{
+    background-color: orange;
+    color: white;
+    font-size: 26px;
+}
+
+.text{
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+.red span{
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+}
+
+.red span:hover{
+    background-color: blue;
+    color: white;
+    font-size: 26px;
+}

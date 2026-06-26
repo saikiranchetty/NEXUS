@@ -1,0 +1,1255 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products - GreenHarvest</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;family=Roboto+Slab:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Product Page Styles */
+    .product-header {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")
+          no-repeat center center/cover;
+      padding: 150px 0 100px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .product-categories {
+      background-color: #f9f9f9;
+    }
+
+    .category-card {
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .category-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .category-img {
+      position: relative;
+      overflow: hidden;
+      height: 200px;
+    }
+
+    .category-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .category-card:hover .category-img img {
+      transform: scale(1.1);
+    }
+
+    .category-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .category-card:hover .category-overlay {
+      opacity: 1;
+    }
+
+    .category-info {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .category-info h3 {
+      font-size: 1.3rem;
+      margin-bottom: 5px;
+    }
+
+    .category-info p {
+      color: #6c757d;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    .product-section {
+      position: relative;
+    }
+
+    .product-card {
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background-color: #4caf50;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      z-index: 1;
+    }
+
+    .product-img {
+      position: relative;
+      overflow: hidden;
+      height: 200px;
+    }
+
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .product-card:hover .product-img img {
+      transform: scale(1.1);
+    }
+
+    .product-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .product-card:hover .product-overlay {
+      opacity: 1;
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+
+    .product-info h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .product-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      color: #4caf50;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .rating {
+      color: #ffc107;
+    }
+
+    .product-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .product-actions .btn {
+      flex: 1;
+      padding: 8px 15px;
+      font-size: 0.9rem;
+    }
+
+    .product-benefits {
+      background-color: #f9f9f9;
+    }
+
+    .benefits-img {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .benefits-img img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.5s ease;
+    }
+
+    .benefits-img:hover img {
+      transform: scale(1.03);
+    }
+
+    .benefits-list {
+      margin-top: 30px;
+    }
+
+    .benefit-item {
+      display: flex;
+      margin-bottom: 25px;
+    }
+
+    .benefit-icon {
+      width: 50px;
+      height: 50px;
+      background-color: rgba(76, 175, 80, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: #4caf50;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+
+    .benefit-content h4 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+
+    /* Modal Styles */
+    .modal-product-img {
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .modal-product-img img {
+      width: 100%;
+      height: auto;
+    }
+
+    .modal-product-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .product-features {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .product-features li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .product-features li i {
+      color: #4caf50;
+      position: absolute;
+      left: 0;
+      top: 5px;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 767.98px) {
+      .product-header {
+        padding: 120px 0 80px;
+      }
+
+      .product-info h3 {
+        font-size: 1.1rem;
+      }
+
+      .product-actions .btn {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+      }
+    }
+     .breadcrumb {
+            justify-content: center;
+            background-color: transparent;
+            padding: 0;
+        }
+        
+        .breadcrumb-item a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+        
+        .breadcrumb-item.active {
+            color: #4CAF50;
+        }
+        
+        .breadcrumb-item + .breadcrumb-item::before {
+            color: rgba(255, 255, 255, 0.5);
+        }
+  </style></head>
+  
+  <body>
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="loader">
+        <div class="loader-inner">
+          <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+          </div>
+          <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+          </div>
+          <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+          </div>
+          <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+          </div>
+          <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img src="https://images.pexels.com/photos/219794/pexels-photo-219794.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=20" alt="GreenHarvest">
+          <span>GreenHarvest</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/products">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/blog">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+     <section class="page-header product-header" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 data-aos="fade-down"> Our Agricultural Products</h1>
+                    <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item text-white"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item active " aria-current="page">Products</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page Header -->
+   
+
+    <!-- Product Categories -->
+    <section class="py-5 product-categories">
+      <div class="container">
+        <div class="section-header text-center mb-5" data-aos="fade-up">
+          <h2 class="section-title">Product Categories</h2>
+          <p class="section-subtitle">
+            High-quality agricultural produce from our farms
+          </p>
+          <div class="divider mx-auto"></div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="category-card">
+              <div class="category-img">
+               <img src="./images/grains.png" alt="Grains" class="img-fluid">
+                <div class="category-overlay">
+                  <a href="#grains" class="btn btn-sm btn-primary">View Products</a>
+                </div>
+              </div>
+              <div class="category-info">
+                <h3>Grains</h3>
+                <p>Wheat, Rice, Corn, Barley</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="category-card">
+              <div class="category-img">
+                <img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" alt="Vegetables" class="img-fluid">
+                <div class="category-overlay">
+                  <a href="#vegetables" class="btn btn-sm btn-primary">View Products</a>
+                </div>
+              </div>
+              <div class="category-info">
+                <h3>Vegetables</h3>
+                <p>Tomatoes, Potatoes, Onions, Leafy Greens</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="category-card">
+              <div class="category-img">
+                <img src="https://images.unsplash.com/photo-1550258987-190a2d41a8ba?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" alt="Fruits" class="img-fluid">
+                <div class="category-overlay">
+                  <a href="#fruits" class="btn btn-sm btn-primary">View Products</a>
+                </div>
+              </div>
+              <div class="category-info">
+                <h3>Fruits</h3>
+                <p>Apples, Oranges, Bananas, Berries</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="category-card">
+              <div class="category-img">
+<img src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" alt="Organic" class="img-fluid">                <div class="category-overlay">
+                  <a href="#organic" class="btn btn-sm btn-primary">View Products</a>
+                </div>
+              </div>
+              <div class="category-info">
+                <h3>Organic</h3>
+                <p>Certified organic produce</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grains Products -->
+    <section id="grains" class="py-5 product-section bg-light">
+      <div class="container">
+        <div class="section-header text-center mb-5" data-aos="fade-up">
+          <h2 class="section-title">Grains &amp; Cereals</h2>
+          <p class="section-subtitle">
+            High-quality grains for your daily needs
+          </p>
+          <div class="divider mx-auto"></div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-card">
+              <div class="product-badge">Popular</div>
+              <div class="product-img">
+                <img src="./images/wheat.png" alt="Premium Wheat" class="img-fluid">
+                <div class="product-overlay">
+                  <button class="btn btn-sm btn-primary quick-view" data-bs-toggle="modal" data-bs-target="#productModal" data-product="Premium Wheat">
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3>Premium Wheat</h3>
+                <div class="product-meta">
+                  <span class="price">$5.99/kg</span>
+                  <span class="rating"><i class="fas fa-star"></i> 4.8</span>
+                </div>
+                <div class="product-actions">
+                  <button class="btn btn-sm btn-outline-primary add-to-cart">
+                    Add to Cart
+                  </button>
+                  <button class="btn btn-sm btn-primary buy-now">
+                    Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="product-card">
+              <div class="product-badge">Organic</div>
+              <div class="product-img">
+                <img src="./images/basmati.png" alt="Basmati Rice" class="img-fluid">
+                <div class="product-overlay">
+                  <button class="btn btn-sm btn-primary quick-view" data-bs-toggle="modal" data-bs-target="#productModal" data-product="Basmati Rice">
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3>Basmati Rice</h3>
+                <div class="product-meta">
+                  <span class="price">$7.49/kg</span>
+                  <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                </div>
+                <div class="product-actions">
+                  <button class="btn btn-sm btn-outline-primary add-to-cart">
+                    Add to Cart
+                  </button>
+                  <button class="btn btn-sm btn-primary buy-now">
+                    Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="product-card">
+              <div class="product-img">
+                <img src="./images/sweet corn.png" alt="Sweet Corn" class="img-fluid">
+                <div class="product-overlay">
+                  <button class="btn btn-sm btn-primary quick-view" data-bs-toggle="modal" data-bs-target="#productModal" data-product="Sweet Corn">
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3>Sweet Corn</h3>
+                <div class="product-meta">
+                  <span class="price">$3.99/kg</span>
+                  <span class="rating"><i class="fas fa-star"></i> 4.7</span>
+                </div>
+                <div class="product-actions">
+                  <button class="btn btn-sm btn-outline-primary add-to-cart">
+                    Add to Cart
+                  </button>
+                  <button class="btn btn-sm btn-primary buy-now">
+                    Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="product-card">
+              <div class="product-badge">New</div>
+              <div class="product-img">
+                <img src="./images/barley.png" alt="Organic Barley" class="img-fluid">
+                <div class="product-overlay">
+                  <button class="btn btn-sm btn-primary quick-view" data-bs-toggle="modal" data-bs-target="#productModal" data-product="Organic Barley">
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3>Organic Barley</h3>
+                <div class="product-meta">
+                  <span class="price">$6.99/kg</span>
+                  <span class="rating"><i class="fas fa-star"></i> 4.6</span>
+                </div>
+                <div class="product-actions">
+                  <button class="btn btn-sm btn-outline-primary add-to-cart">
+                    Add to Cart
+                  </button>
+                  <button class="btn btn-sm btn-primary buy-now">
+                    Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vegetables Products -->
+    <section id="vegetables" class="py-5 product-section">
+      <div class="container">
+        <div class="section-header text-center mb-5" data-aos="fade-up">
+          <h2 class="section-title">Fresh Vegetables</h2>
+          <p class="section-subtitle">
+            Farm-fresh vegetables packed with nutrients
+          </p>
+          <div class="divider mx-auto"></div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-card">
+              <div class="product-badge">Best Seller</div>
+              <div class="product-img">
+                <img src="./images/onions.png" alt="Organic Onions" class="img-fluid">
+                <div class="product-overlay">
+                  <button class="btn btn-sm btn-primary quick-view" data-bs-toggle="modal" data-bs-target="#productModal" data-product="Fresh Tomatoes">
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3>Fresh Tomatoes</h3>
+                <div class="product-meta">
+                  <span class="price">$3.99/kg</span>
+                  <span class="rating"><i class="fas fa-star"></i> 4.7</span>
+                </div>
+                <div class="product-actions">
+                  <button class="btn btn-sm btn-outline-primary add-to-cart">
+                    Add to Cart
+                  </button>
+                  <button class="btn btn-sm btn-primary buy-now">
+                    Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="product-card">
+              <div class="product-img">
+                <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" alt="Premium Potatoes" class="img-fluid">
+                <div class="product-overlay">
+                  <button class="btn btn-sm btn-primary quick-view" data-bs-toggle="modal" data-bs-target="#productModal" data-product="Premium Potatoes">
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3>Premium Potatoes</h3>
+                <div class="product-meta">
+                  <span class="price">$2.49/kg</span>
+                  <span class="rating"><i class="fas fa-star"></i> 4.5</span>
+                </div>
+                <div class="product-actions">
+                  <button class="btn btn-sm btn-outline-primary add-to-cart">
+                    Add to Cart
+                  </button>
+                  <button class="btn btn-sm btn-primary buy-now">
+                    Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="product-card">
+              <div class="product-badge">Organic</div>
+              <div class="product-img">
+                <img src="https://images.unsplash.com/photo-1582284540020-8acbe03f4924?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" alt="Organic Onions" class="img-fluid">
+                <div class="product-overlay">
+                  <button class="btn btn-sm btn-primary quick-view" data-bs-toggle="modal" data-bs-target="#productModal" data-product="Organic Onions">
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3>Organic Onions</h3>
+                <div class="product-meta">
+                  <span class="price">$4.29/kg</span>
+                  <span class="rating"><i class="fas fa-star"></i> 4.8</span>
+                </div>
+                <div class="product-actions">
+                  <button class="btn btn-sm btn-outline-primary add-to-cart">
+                    Add to Cart
+                  </button>
+                  <button class="btn btn-sm btn-primary buy-now">
+                    Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="product-card">
+              <div class="product-img">
+               <img src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" alt="Fresh Spinach" class="img-fluid">
+                <div class="product-overlay">
+                  <button class="btn btn-sm btn-primary quick-view" data-bs-toggle="modal" data-bs-target="#productModal" data-product="Fresh Spinach">
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3>Fresh Spinach</h3>
+                <div class="product-meta">
+                  <span class="price">$5.99/kg</span>
+                  <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                </div>
+                <div class="product-actions">
+                  <button class="btn btn-sm btn-outline-primary add-to-cart">
+                    Add to Cart
+                  </button>
+                  <button class="btn btn-sm btn-primary buy-now">
+                    Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fruits Products -->
+    <section id="fruits" class="py-5 product-section bg-light">
+      <div class="container">
+        <div class="section-header text-center mb-5" data-aos="fade-up">
+          <h2 class="section-title">Fresh Fruits</h2>
+          <p class="section-subtitle">Naturally sweet and nutritious fruits</p>
+          <div class="divider mx-auto"></div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-card">
+              <div class="product-badge">Seasonal</div>
+              <div class="product-img">
+               <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" alt="Fresh Apples" class="img-fluid">
+                <div class="product-overlay">
+                  <button class="btn btn-sm btn-primary quick-view" data-bs-toggle="modal" data-bs-target="#productModal" data-product="Fresh Apples">
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3>Fresh Apples</h3>
+                <div class="product-meta">
+                  <span class="price">$2.99/kg</span>
+                  <span class="rating"><i class="fas fa-star"></i> 4.8</span>
+                </div>
+                <div class="product-actions">
+                  <button class="btn btn-sm btn-outline-primary add-to-cart">
+                    Add to Cart
+                  </button>
+                  <button class="btn btn-sm btn-primary buy-now">
+                    Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="product-card">
+              <div class="product-img">
+               <img src="./images/oranges.png" alt="Juicy Oranges" class="img-fluid">
+                <div class="product-overlay">
+                  <button class="btn btn-sm btn-primary quick-view" data-bs-toggle="modal" data-bs-target="#productModal" data-product="Juicy Oranges">
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3>Juicy Oranges</h3>
+                <div class="product-meta">
+                  <span class="price">$3.49/kg</span>
+                  <span class="rating"><i class="fas fa-star"></i> 4.7</span>
+                </div>
+                <div class="product-actions">
+                  <button class="btn btn-sm btn-outline-primary add-to-cart">
+                    Add to Cart
+                  </button>
+                  <button class="btn btn-sm btn-primary buy-now">
+                    Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="product-card">
+              <div class="product-badge">Organic</div>
+              <div class="product-img">
+               <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" alt="Organic Bananas" class="img-fluid">
+                <div class="product-overlay">
+                  <button class="btn btn-sm btn-primary quick-view" data-bs-toggle="modal" data-bs-target="#productModal" data-product="Organic Bananas">
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3>Organic Bananas</h3>
+                <div class="product-meta">
+                  <span class="price">$4.99/kg</span>
+                  <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                </div>
+                <div class="product-actions">
+                  <button class="btn btn-sm btn-outline-primary add-to-cart">
+                    Add to Cart
+                  </button>
+                  <button class="btn btn-sm btn-primary buy-now">
+                    Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="product-card">
+              <div class="product-img">
+                <img src="./images/mixed.png" alt="Mixed Berries" class="img-fluid">
+                <div class="product-overlay">
+                  <button class="btn btn-sm btn-primary quick-view" data-bs-toggle="modal" data-bs-target="#productModal" data-product="Mixed Berries">
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3>Mixed Berries</h3>
+                <div class="product-meta">
+                  <span class="price">$8.99/kg</span>
+                  <span class="rating"><i class="fas fa-star"></i> 4.8</span>
+                </div>
+                <div class="product-actions">
+                  <button class="btn btn-sm btn-outline-primary add-to-cart">
+                    Add to Cart
+                  </button>
+                  <button class="btn btn-sm btn-primary buy-now">
+                    Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Organic Products -->
+    <section id="organic" class="py-5 product-section">
+      <div class="container">
+        <div class="section-header text-center mb-5" data-aos="fade-up">
+          <h2 class="section-title">Organic Products</h2>
+          <p class="section-subtitle">
+            Certified organic produce for healthy living
+          </p>
+          <div class="divider mx-auto"></div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-card">
+              <div class="product-badge">Certified</div>
+              <div class="product-img">
+                <img src="./images/wheat.png" alt="Organic Wheat" class="img-fluid">
+                <div class="product-overlay">
+                  <button class="btn btn-sm btn-primary quick-view" data-bs-toggle="modal" data-bs-target="#productModal" data-product="Organic Wheat">
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3>Organic Wheat</h3>
+                <div class="product-meta">
+                  <span class="price">$7.99/kg</span>
+                  <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                </div>
+                <div class="product-actions">
+                  <button class="btn btn-sm btn-outline-primary add-to-cart">
+                    Add to Cart
+                  </button>
+                  <button class="btn btn-sm btn-primary buy-now">
+                    Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="product-card">
+              <div class="product-badge">Popular</div>
+              <div class="product-img">
+                <img src="./images/brownrice.png" alt="Organic Brown Rice" class="img-fluid">
+                <div class="product-overlay">
+                  <button class="btn btn-sm btn-primary quick-view" data-bs-toggle="modal" data-bs-target="#productModal" data-product="Organic Brown Rice">
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3>Organic Brown Rice</h3>
+                <div class="product-meta">
+                  <span class="price">$9.99/kg</span>
+                  <span class="rating"><i class="fas fa-star"></i> 4.8</span>
+                </div>
+                <div class="product-actions">
+                  <button class="btn btn-sm btn-outline-primary add-to-cart">
+                    Add to Cart
+                  </button>
+                  <button class="btn btn-sm btn-primary buy-now">
+                    Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="product-card">
+              <div class="product-img">
+                <img src="./images/tomatoes.png" alt="Organic Tomatoes" class="img-fluid">
+                <div class="product-overlay">
+                  <button class="btn btn-sm btn-primary quick-view" data-bs-toggle="modal" data-bs-target="#productModal" data-product="Organic Tomatoes">
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3>Organic Tomatoes</h3>
+                <div class="product-meta">
+                  <span class="price">$5.99/kg</span>
+                  <span class="rating"><i class="fas fa-star"></i> 4.7</span>
+                </div>
+                <div class="product-actions">
+                  <button class="btn btn-sm btn-outline-primary add-to-cart">
+                    Add to Cart
+                  </button>
+                  <button class="btn btn-sm btn-primary buy-now">
+                    Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="product-card">
+              <div class="product-badge">New</div>
+              <div class="product-img">
+                <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" alt="Organic Apples" class="img-fluid">
+                <div class="product-overlay">
+                  <button class="btn btn-sm btn-primary quick-view" data-bs-toggle="modal" data-bs-target="#productModal" data-product="Organic Apples">
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3>Organic Apples</h3>
+                <div class="product-meta">
+                  <span class="price">$4.99/kg</span>
+                  <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                </div>
+                <div class="product-actions">
+                  <button class="btn btn-sm btn-outline-primary add-to-cart">
+                    Add to Cart
+                  </button>
+                  <button class="btn btn-sm btn-primary buy-now">
+                    Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Benefits -->
+    <section class="py-5 product-benefits">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+            <div class="benefits-img">
+              <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" alt="Product Benefits" class="img-fluid rounded shadow">
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="ps-lg-4">
+              <h2 class="section-title mb-4">Why Choose Our Products?</h2>
+              <div class="benefits-list">
+                <div class="benefit-item">
+                  <div class="benefit-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="benefit-content">
+                    <h4>Farm Fresh</h4>
+                    <p>
+                      Harvested at peak ripeness and delivered fresh from our
+                      farms to your table.
+                    </p>
+                  </div>
+                </div>
+                <div class="benefit-item">
+                  <div class="benefit-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="benefit-content">
+                    <h4>No Harmful Chemicals</h4>
+                    <p>
+                      Grown without synthetic pesticides, herbicides, or
+                      chemical fertilizers.
+                    </p>
+                  </div>
+                </div>
+                <div class="benefit-item">
+                  <div class="benefit-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="benefit-content">
+                    <h4>Rich in Nutrients</h4>
+                    <p>
+                      Higher nutrient content compared to conventional produce.
+                    </p>
+                  </div>
+                </div>
+                <div class="benefit-item">
+                  <div class="benefit-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="benefit-content">
+                    <h4>Environmentally Friendly</h4>
+                    <p>
+                      Sustainably grown to protect soil health and biodiversity.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <a class="btn btn-primary mt-3" href="/contact">Contact Us for Bulk Orders</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Modal -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="productModalLabel">Product Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="modal-product-img">
+                  <img src="https://images.unsplash.com/photo-1560840067-ddcaeb7831d2?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" alt="Premium Wheat" class="img-fluid">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h3 id="modalProductTitle">Premium Wheat</h3>
+                <div class="modal-product-meta mb-3">
+                  <span class="price">$5.99/kg</span>
+                  <span class="rating"><i class="fas fa-star"></i> 4.8 (120 reviews)</span>
+                </div>
+                <div class="modal-product-desc mb-4">
+                  <p id="modalProductDesc">
+                    Our premium wheat is carefully selected and processed to
+                    retain maximum nutritional value. Grown in fertile soils
+                    with sustainable farming practices.
+                  </p>
+                  <ul class="product-features">
+                    <li>
+                      <i class="fas fa-check"></i> High in fiber and protein
+                    </li>
+                    <li><i class="fas fa-check"></i> Non-GMO</li>
+                    <li>
+                      <i class="fas fa-check"></i> Rich in essential vitamins
+                    </li>
+                    <li><i class="fas fa-check"></i> Perfect for baking</li>
+                  </ul>
+                </div>
+                <div class="product-quantity mb-4">
+                  <label class="form-label">Quantity:</label>
+                  <div class="input-group" style="max-width: 150px">
+                    <button class="btn btn-outline-secondary minus-btn" type="button">
+                      -
+                    </button>
+                    <input type="text" class="form-control text-center quantity-input" value="1">
+                    <button class="btn btn-outline-secondary plus-btn" type="button">
+                      +
+                    </button>
+                  </div>
+                </div>
+                <div class="d-flex gap-3">
+                  <button class="btn btn-primary flex-grow-1">
+                    Add to Cart
+                  </button>
+                  <button class="btn btn-outline-primary flex-grow-1">
+                    Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-top py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <div class="footer-widget about-widget">
+                <img src="https://images.pexels.com/photos/219794/pexels-photo-219794.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=100" alt="GreenHarvest" class="footer-logo">Green Harvest
+                <p class="mt-3">
+                  Empowering farmers with sustainable agricultural solutions for
+                  a food-secure future.
+                </p>
+                <div class="social-links mt-4">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-6">
+              <div class="footer-widget">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/about">About Us</a></li>
+                  <li><a href="/services">Services</a></li>
+                  <li><a href="/products">Products</a></li>
+                  <li><a href="/blog">Blog</a></li>
+                  <li><a href="/contact">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="footer-widget">
+                <h3>Our Services</h3>
+                <ul class="footer-links">
+                  <li><a href="/services">Organic Farming</a></li>
+                  <li><a href="/services">Soil Testing</a></li>
+                  <li><a href="/services">Equipment Rental</a></li>
+                  <li><a href="/services">Crop Consultancy</a></li>
+                  <li><a href="/services">Market Access</a></li>
+                  <li><a href="/services">Training Programs</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="footer-widget contact-widget">
+                <h3>Contact Us</h3>
+                <ul class="footer-contact">
+                  <li>
+                    <i class="fas fa-map-marker-alt"></i> 123 Farm Road,
+                    Agricultural Zone, India
+                  </li>
+                  <li><i class="fas fa-phone"></i> +91 9876543210</li>
+                  <li><i class="fas fa-envelope"></i> info@greenharvest.com</li>
+                  <li>
+                    <i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom py-3">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <p class="mb-md-0">© 2023 GreenHarvest. All rights reserved.</p>
+            </div>
+            <div class="col-md-6">
+              <div class="footer-bottom-links text-md-end">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Sitemap</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/products.js"></script>
+    <script>
+      // Initialize AOS animation
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+      });
+
+      // Quick view modal handler
+      $(document).ready(function () {
+        $(".quick-view").click(function () {
+          const productName = $(this).data("product");
+          $("#modalProductTitle").text(productName);
+
+          // In a real application, you would fetch product details from a database
+          // This is just a demonstration
+          let productDesc = "";
+          let productImage = "";
+
+          switch (productName) {
+            case "Premium Wheat":
+              productDesc =
+                "Our premium wheat is carefully selected and processed to retain maximum nutritional value. Grown in fertile soils with sustainable farming practices.";
+              productImage = "images/product-wheat.jpg";
+              break;
+            case "Basmati Rice":
+              productDesc =
+                "Authentic basmati rice with long grains and aromatic flavor. Perfect for biryanis and pulao. Aged for enhanced texture and taste.";
+              productImage = "images/product-rice.jpg";
+              break;
+            case "Fresh Tomatoes":
+              productDesc =
+                "Vine-ripened tomatoes with rich flavor and perfect acidity. Grown in open fields with natural sunlight for optimal taste.";
+              productImage = "images/product-tomatoes.jpg";
+              break;
+            // Add more cases as needed
+            default:
+              productDesc =
+                "High-quality product grown with care and sustainable practices. Packed with nutrients and flavor.";
+              productImage = "images/product-default.jpg";
+          }
+
+          $("#modalProductDesc").text(productDesc);
+          $("#modalProductImage").attr("src", productImage);
+        });
+
+        // Quantity controls
+        $(".plus-btn").click(function () {
+          const input = $(this).siblings(".quantity-input");
+          let value = parseInt(input.val());
+          input.val(value + 1);
+        });
+
+        $(".minus-btn").click(function () {
+          const input = $(this).siblings(".quantity-input");
+          let value = parseInt(input.val());
+          if (value > 1) {
+            input.val(value - 1);
+          }
+        });
+      });
+    </script>
+  
+
+</body></html>
